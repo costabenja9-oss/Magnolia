@@ -1,10 +1,15 @@
 <#-- Developers FAQs Component -->
 <#macro developersFaqs>
-<#assign heading = "FAQs" />
+<#assign heading = "Frequently Asked Questions" />
 <#assign faqs = [
-  {"q":"¿Qué tiempo toma integrar B-FY?","a":"La integración básica puede realizarse en menos de una hora usando nuestros SDKs."},
-  {"q":"¿Almacenan datos biométricos?","a":"No, los datos biométricos nunca salen del dispositivo del usuario."},
-  {"q":"¿Soportan OpenID?","a":"Sí, estamos certificados OpenID y OAuth2."}
+  {"q":"How long does it take to integrate B-FY?","a":"Basic integration can be completed in less than an hour using our SDKs. Most implementations are fully operational within a few days."},
+  {"q":"Do you store biometric data?","a":"No, biometric data never leaves the user's device. B-FY uses a decentralized approach where authentication templates remain on the user's smartphone."},
+  {"q":"Do you support OpenID?","a":"Yes, we are OpenID and OAuth2 certified, ensuring seamless integration with existing identity management systems."},
+  {"q":"What platforms does B-FY support?","a":"B-FY works across web, mobile (iOS and Android), and can be integrated into physical access points. Our SDKs support all major development frameworks."},
+  {"q":"How secure is B-FY authentication?","a":"B-FY uses military-grade encryption and follows strict security protocols. Our decentralized approach eliminates single points of failure and reduces attack vectors."},
+  {"q":"Can B-FY replace existing authentication systems?","a":"Yes, B-FY can completely replace traditional password-based systems or work alongside existing multi-factor authentication solutions."},
+  {"q":"What happens if a user loses their device?","a":"Users can easily re-register with a new device using our secure recovery process. The decentralized nature ensures no data is lost from central servers."},
+  {"q":"Is there a sandbox environment for testing?","a":"Yes, we provide a full sandbox environment where you can test authentication flows safely before going live."}
 ] />
 <section class="dev-faqs">
   <style>
@@ -44,3 +49,5 @@
   </div>
 </section>
 </#macro>
+
+<@developersFaqs />

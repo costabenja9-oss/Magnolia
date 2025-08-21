@@ -9,10 +9,10 @@
 
 <#-- Simple fallback array for items -->
 <#assign items = [
-  {"icon":"api.svg","name":"REST / OpenID","description":"Interoperabilidad y soporte amplio.","link":""},
-  {"icon":"webhook.svg","name":"Event hooks","description":"Reacciona a eventos del ciclo de autenticación.","link":""},
-  {"icon":"sandbox.svg","name":"Sandbox","description":"Prueba flujos de forma segura antes del lanzamiento.","link":""},
-  {"icon":"logs.svg","name":"Logs detallados","description":"Rastrea cada evento de autenticación para auditorías.","link":""}
+  {"icon":"browser-check","name":"REST / OpenID","description":"Interoperable and widely supported.","link":""},
+  {"icon":"fingerprint-cloud","name":"Event hooks","description":"React to auth lifecycle events.","link":""},
+  {"icon":"security","name":"Sandbox","description":"Test flows securely before launch.","link":""},
+  {"icon":"checklist","name":"Detailed logs","description":"Trace every auth event for audits.","link":""}
 ] />
 
 <section class="dev-details">
@@ -55,7 +55,7 @@
     <ul class="dev-items-list">
       <#list items as item>
         <li class="dev-item">
-          <img class="dev-item-icon" src="${ctx.contextPath}/.resources/b-fy/webresources/images/api.svg" alt="" />
+          <img class="dev-item-icon" src="${ctx.contextPath}/.resources/b-fy/webresources/icons/${item.icon}.svg" alt="" />
           <div class="dev-item-content">
             <strong>${item.name}</strong> ${item.description}
           </div>
@@ -65,3 +65,5 @@
   </div>
 </section>
 </#macro>
+
+<@developersDetails />

@@ -1,57 +1,54 @@
-<#-- Deveesources Component -->
-<#macro developersResources>
+<#-- Developers Resources Component -->
+<#macro developersResources
+  tagline="Resources"
+  title="Everything you need to integrate and scale"
+  resources=[
+    {"icon":"book","title":"Documentation","description":"Complete guides and API references to get you started quickly","name":"documentation","link":"#"},
+    {"icon":"security","title":"SDKs & Tools","description":"Pre-built SDKs for popular platforms and comprehensive development tools","name":"SDKs","link":"#"},
+    {"icon":"presentation","title":"Code Samples","description":"Ready-to-use code examples and integration patterns for common use cases","name":"examples","link":"#"}
+  ]
+>
+  <section class="dev-resources">
+    <style>
+      .dev-resources{padding:3.75rem 0}
+      .dev-resources-container{max-width:1280px;margin:0 auto;padding:0 1.25rem}
+      .dev-resources h2{text-align:center;margin-bottom:3rem;font-weight:700;font-size:2.25rem}
+      @media(min-width:1280px){.dev-resources h2{font-size:3rem}}
+      .resources-grid{margin:3.75rem auto 0;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:3.25rem}
+      .resource-item{width:100%;max-width:20rem;text-align:center}
+      .resource-icon{width:3.25rem;height:3.25rem;margin:0 auto 1.25rem;object-fit:contain}
+      .resource-title{width:16rem;margin:0 auto;font-weight:700;font-size:1.25rem;line-height:1.2;color:#ea580c;text-transform:uppercase}
+      .resource-description{width:20rem;margin:.75rem auto 1.25rem;line-height:1.375}
+      .resource-link{display:inline-flex;gap:.375rem;font-size:1.125rem;color:#ea580c;transition:color .3s;text-decoration:none}
+      .resource-link:hover{color:#dc2626}
+      .resource-link span{text-decoration:underline;text-underline-offset:2px}
+      .resource-arrow{width:.6875rem}
+      .resources-cta{margin-top:4.5rem;padding:.625rem 1.25rem;display:inline-block;border-radius:.375rem;background:#ea580c;font-size:1.25rem;color:#fff;text-decoration:none;transition:background-color .3s}
+      .resources-cta:hover{background:#dc2626}
+    </style>
 
-<#assign heading = "Recursos para desarrolladores" />
-<#assign resources = [
-  {"title":"Documentación","desc":"Documentación completa de APIs y SDKs para una integración exitosa.","image":"/images/developers/docs-icon.png"},
-  {"title":"Casos de uso","desc":"Ejemplos prácticos de implementaciones exitosas en diferentes industrias.","image":"/images/developers/cases-icon.png"},
-  {"title":"Soporte técnico","desc":"Equipo especializado disponible para resolver dudas durante la implementación.","image":"/images/developers/support-icon.png"}
-] />
+    <div class="dev-resources-container">
+      <h2>${title}</h2>
 
-<section class="dev-resources">
-  {"title":"Conceptual integration overview","description":"Understand how B-FY’s architecture works and how it fits your products or services from a functional perspective.","cta":"View conceptual documentation","href":"${ctx.contextPath}/docs/conceptual"}
-] />
+      <div class="resources-grid">
+        <#list resources as resource>
+          <article class="resource-item">
+            <img class="resource-icon" src="${ctx.contextPath}/.resources/b-fy/webresources/icons/${resource.icon}.svg" alt="" />
+            <h3 class="resource-title">${resource.title}</h3>
+            <p class="resource-description">${resource.description}</p>
+            <a class="resource-link" href="${resource.link}" target="_blank" rel="noreferrer">
+              <span>View ${resource.name}</span>
+              <svg class="resource-arrow" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+            </a>
+          </article>
+        </#list>
+      </div>
 
-<section class="dev-resources">
-  <style>
-    .dev-resources { padding: 3.75rem 0; }
-    
-    .dev-resources-container { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
-    
-    .dev-resources h2 { text-align: center; margin-bottom: 3rem; font-weight: 700; font-size: 2.25rem; }
-    @media (min-width:1280px){ .dev-resources h2 { font-size: 3rem; } }
-    
-    .dev-resources-grid { display: grid; gap: 1.5rem; }
-    @media (min-width:768px){ .dev-resources-grid { grid-template-columns: repeat(3, 1fr); } }
-    
-    .dev-resource-card { 
-      padding: 2rem; background: white; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      text-align: center; transition: all 0.3s ease;
-    }
-    .dev-resource-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1); }
-    
-    .dev-resource-image { width: 4rem; height: 4rem; margin: 0 auto 1.5rem; }
-    .dev-resource-image img { width: 100%; height: 100%; object-fit: cover; }
-    
-    .dev-resource-card h3 { margin-bottom: 1rem; font-weight: 700; font-size: 1.25rem; }
-    .dev-resource-card p { color: #6b7280; line-height: 1.625; }
-  </style>
-
-  <div class="dev-resources-container">
-    <h2>${heading}</h2>
-    
-    <div class="dev-resources-grid">
-      <#list resources as resource>
-        <div class="dev-resource-card">
-          <div class="dev-resource-image">
-            <img src="${resource.image}" alt="${resource.title}" />
-          </div>
-          <h3>${resource.title}</h3>
-          <p>${resource.desc}</p>
-        </div>
-      </#list>
+      <div style="text-align:center">
+        <a class="resources-cta" href="${ctx.contextPath}/contact">Need help?</a>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </#macro>
