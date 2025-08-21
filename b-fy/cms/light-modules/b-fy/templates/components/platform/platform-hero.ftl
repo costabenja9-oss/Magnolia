@@ -52,9 +52,9 @@
 				</#if>
 			</#if>
 		</#if>
-	<#assign heroTitle = cmsOrDefault(heroNode.title!'', "A unique authentication platform") />
-	<#assign heroDescription = cmsOrDefault(heroNode.description!'', "B-FY authenticates people, certifying the truth of their identity, through a simple and easy-to-use design, integrated with online applications. With B-FY, there are no credentials that can be stolen or forged.") />
-	<#assign heroImage = damOrLocal(heroNode.image!'', '/.resources/b-fy/webresources/images/platform.webp') />
+	<#assign heroTitle = cmsOrDefault(heroNode.title!'', "Una plataforma de autenticación única") />
+	<#assign heroDescription = cmsOrDefault(heroNode.description!'', "B-FY autentica a las personas, certificando la veracidad de su identidad, mediante un diseño simple y fácil de usar, integrado con aplicaciones en línea. Con B-FY no hay credenciales que puedan ser robadas o falsificadas.") />
+	<#assign heroImage = damOrLocal(heroNode.image!'', 'platform.webp') />
 	<#if wrap><section class="min-h-svh mt-12 mb-24 pb-15 px-5 bg-linear-(--color-neutral-100) bg-size-[auto_60%] bg-no-repeat bg-bottom text-center sm:px-10 lg:px-13 xl:mt-24"></#if>
 		<h1 class="font-bold text-3xl xl:text-5xl">${heroTitle}</h1>
 		<p class="max-w-240 mt-9 mb-15 mx-auto text-lg xl:text-xl/snug">${heroDescription}</p>

@@ -29,8 +29,14 @@
     {"title":"Ensure passwordless authentication","description":"Your users will enjoy an ultra-fast, simple, and seamless experience, with zero passwords."},
     {"title":"Say goodbye to hidden costs","description":"Completely eliminate expenses from fraud, data breaches, and account takeovers."}
   ] />
-  <#assign customerNode = (content.customer?children)?has_content?then(content.customer?children[0], content.customer) />
-  <#if !(customerNode?has_content)><#assign customerNode = {} /></#if>
+  <#assign customerNode = {} />
+  <#if content.customer??>
+    <#if (content.customer?children)?has_content>
+      <#assign customerNode = content.customer?children[0] />
+    <#elseif content.customer?has_content>
+      <#assign customerNode = content.customer />
+    </#if>
+  </#if>
   <#assign title = cmsOrDefault(customerNode.title!'', fbTitle) />
   <#assign description = cmsOrDefault(customerNode.description!'', fbDesc) />
   <#assign featuresContainer = customerNode.features! />

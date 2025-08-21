@@ -14,6 +14,38 @@
     .comparison-table th{font-size:.75rem;letter-spacing:.05em}
     .badge{display:inline-block;padding:.35rem .65rem;border-radius:9999px;font-size:.625rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;background:#eef2ff;color:#4338ca}
     
+    /* Enhanced platform styles for new design */
+    .bg-gradient-to-br { background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)); }
+    .from-orange-100 { --tw-gradient-from: #fed7aa; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(254, 215, 170, 0)); }
+    .to-orange-200 { --tw-gradient-to: #fecaca; }
+    .from-gray-900\/80 { --tw-gradient-from: rgba(17, 24, 39, 0.8); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(17, 24, 39, 0)); }
+    .to-gray-900\/60 { --tw-gradient-to: rgba(17, 24, 39, 0.6); }
+    .bg-white\/90 { background-color: rgba(255, 255, 255, 0.9); }
+    .bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
+    .backdrop-blur-sm { backdrop-filter: blur(4px); }
+    .rounded-2xl { border-radius: 1rem; }
+    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    .group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+    .ml-1 { margin-left: 0.25rem; }
+    
+    /* Tab navigation styles */
+    .tab-active {
+      background-color: #fff5f5;
+      border-color: #fed7d7;
+      color: #ea580c;
+      position: relative;
+    }
+    .tab-active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 12px;
+      height: 12px;
+      background-color: #ea580c;
+    }
+    
     /* Additional utility classes for exact Astro parity */
     .size-15 { width: 3.75rem; height: 3.75rem; }
     .h-17 { height: 4.25rem; }
@@ -188,11 +220,11 @@
     <section class="min-h-svh mt-12 mb-24 pb-15 px-5 bg-linear-(--color-neutral-100) bg-size-[auto_60%] bg-no-repeat bg-bottom text-center sm:px-10 lg:px-13 xl:mt-24">
       <@hero.platformHero wrap=false />
       <@features.platformFeatures />
-      <@video.platformVideo class="max-w-6xl! mx-auto mb-18" id=(content.videoId)!"dQw4w9WgXcQ" />
       <@links.platformLinks />
+      <@video.platformVideo class="max-w-6xl! mx-auto mb-18" id=(content.videoId)!"dQw4w9WgXcQ" />
       <@table.platformTable />
       <@process.platformAuthProcess />
-      <@cta.callToAction>Want to know more?</@cta.callToAction>
+      <@cta.callToAction>¿Quieres saber más?</@cta.callToAction>
     </section>
     <@details.platformDetails />
     <@customer.platformCustomer />

@@ -1,3 +1,20 @@
+<#-- Función de emergencia para resolver imágenes DAM con fallback local -->
+<#function damOrLocal damImage localPath>
+  <#if damImage?? && damImage?has_content && (damfn??)>
+    <#attempt>
+      <#local damUrl = damfn.link(damImage) />
+      <#if damUrl?has_content>
+        <#return damUrl />
+      </#if>
+    <#recover>
+    </#attempt>
+  </#if>
+  <#if localPath?starts_with("http") || localPath?starts_with("/")>
+    <#return localPath />
+  </#if>
+  <#return ctx.contextPath + "/.resources/b-fy/webresources/images/" + localPath />
+</#function>
+
 <#--	<#assign fbSteps = [
 		"The user scans the B‑FY QR code at an online or physical access point.",
 		"Biometric verification is performed through the institution's mobile app (with B‑FY libraries integrated).",
@@ -30,25 +47,43 @@
 		</#if>
 	</#if>
 	<#assign stepsList = (steps?size gt 0)?then(steps, fbSteps) />
-	<#assign infographic = '' />
-	<#if node.infographic?has_content>
-		<#assign imgNode = cmsfn.contentById(node.infographic!)! />
-		<#if imgNode?? && (damfn??)><#attempt><#assign infographic = (damfn.link(imgNode))!'' /><#recover></#attempt></#if>
-	</#if>
-	<#if !infographic?has_content>
-		<#assign infographic = ctx.contextPath + '/.resources/b-fy/webresources/images/platform-infographic-en.webp' />
-	</#if>
-	<section class="mb-24 grid gap-15 lg:grid-cols-2 lg:items-center">
-		<img src="${infographic}" alt="" class="mx-auto" loading="lazy" onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/platform-infographic-en.webp'" />
-		<div class="text-left text-lg xl:mt-15">
-			<h3 class="w-72 font-bold text-xl/tight text-balance text-orange-600 uppercase">${title}</h3>
-			<p class="mt-6 mb-7">${description}</p>
-			<ol class="pl-[1em] grid gap-5 list-decimal marker:font-bold marker:text-orange-600">
-				<#list stepsList as step>
-					<#if step?is_string><#assign txt = step /><#else><#assign txt = step.text!step["text"]!step.title!step["title"]!step /></#if>
-					<li>${txt}</li>
-				</#list>
-			</ol>
+	<#assign infographic = damOrLocal(node.infographic!'', 'platform-infographic-es.webp') />
+	
+	<section class="my-20 px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+				<div class="order-2 lg:order-1">
+					<div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+						<img src="${infographic}" 
+						     alt="Proceso de autenticación B-FY" 
+						     class="w-full h-auto" 
+						     loading="lazy" 
+						     onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/platform-infographic-es.webp'" />
+					</div>
+				</div>
+				
+				<div class="order-1 lg:order-2 text-left">
+					<div class="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wide mb-6">
+						Autenticación Simple
+					</div>
+					<h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+						${title}
+					</h3>
+					<p class="text-xl text-gray-600 mb-8 leading-relaxed">${description}</p>
+					
+					<div class="space-y-6">
+						<#list stepsList as step>
+							<#if step?is_string><#assign txt = step /><#else><#assign txt = step.text!step["text"]!step.title!step["title"]!step /></#if>
+							<div class="flex items-start">
+								<div class="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">
+									${step?index + 1}
+								</div>
+								<p class="text-lg text-gray-700 leading-relaxed">${txt}</p>
+							</div>
+						</#list>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 </#macro>

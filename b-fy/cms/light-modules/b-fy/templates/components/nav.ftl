@@ -16,7 +16,7 @@
 
       <#-- Menú principal -->
       <ul class="nav-list">
-        <@navItem path="" currentPage=currentPage>Home</@navItem>
+        <@navItem path="home" currentPage=currentPage>Home</@navItem>
         <@navItem path="platform" currentPage=currentPage>Platform</@navItem>
         <@navItem path="industries" currentPage=currentPage>Industries</@navItem>
         <@navItem path="partners" currentPage=currentPage>Partners</@navItem>
@@ -43,7 +43,7 @@
     <#-- Menú mobile (oculto por defecto) -->
     <div class="mobile-menu">
       <ul class="mobile-nav-list">
-        <@mobileNavItem path="" currentPage=currentPage>Home</@mobileNavItem>
+        <@mobileNavItem path="home" currentPage=currentPage>Home</@mobileNavItem>
         <@mobileNavItem path="platform" currentPage=currentPage>Platform</@mobileNavItem>
         <@mobileNavItem path="industries" currentPage=currentPage>Industries</@mobileNavItem>
         <@mobileNavItem path="partners" currentPage=currentPage>Partners</@mobileNavItem>

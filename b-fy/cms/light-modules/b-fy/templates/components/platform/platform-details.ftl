@@ -1,42 +1,41 @@
-<#-- Platform Details (parity with Astro _platform/Details.astro) -->
-<#-- Import shared CMS utilities -->
+<#-- Platform Det  <#assign fbItems = [
+    {"icon":"imac-shield","title":"No additional hardware","description":"B-FY leverages existing smartphone biometrics; no specialized readers are required. Users authenticate with their own devices, reducing implementation complexity."},
+    {"icon":"world","title":"Omnichannel compatibility","description":"Works across websites, mobile apps, and physical environments so you can integrate where you need it."},
+    {"icon":"bulb","title":"Fast deployment & scalability","description":"From startups to enterprises, B-FY's architecture scales to millions of users without disrupting existing workflows."}
+  ] />-->
 <#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
+<#import "/b-fy/templates/components/util/icons.ftl" as ic>
 
-<#-- Funciones de emergencia inline -->
 <#function hasRealContent value>
-  <#if !value??>
-    <#return false />
-  </#if>
+  <#if !value??><#return false/></#if>
   <#return (value?has_content && value?is_string && value?trim != '') || (value?is_hash) />
 </#function>
 
 <#function cmsOrDefault cmsValue defaultValue>
-  <#if hasRealContent(cmsValue!'')>
-    <#return cmsValue />
-  <#else>
-    <#return defaultValue />
-  </#if>
+  <#if hasRealContent(cmsValue!'')><#return cmsValue/><#else><#return defaultValue/></#if>
 </#function>
-<#import "/b-fy/templates/components/util/icons.ftl" as ic />
+
 <#macro platformDetails>
+  <#-- Fallback copy (EN) -->
   <#assign fbTitle = "How is B-FY integrated?" />
-  <#assign fbDescription = "B-FY Platform offers a well-documented API/OpenID that allows companies to quickly integrate its authentication technology into their platforms (web, mobile, or physical access points)." />
+  <#assign fbDescription = "B-FY Platform offers a well-documented API/OpenID that lets companies quickly integrate authentication into web, mobile, or even physical access points." />
   <#assign fbItems = [
-    {"icon":"platform-infographic-en.webp","title":"No additional hardware","description":"Since B-FY leverages existing smartphone biometric capabilities, companies don't need to invest in specialized hardware or readers. Users authenticate with their mobile devices, reducing implementation complexity."},
-    {"icon":"platform-infographic-es.webp","title":"Omnichannel compatibility","description":"B-FY's solution works across multiple platforms and channels, ensuring companies can integrate it into websites, mobile apps, and even physical environments."},
-    {"icon":"platform.webp","title":"Fast deployment and scalability","description":"Whether for a startup or a large enterprise, B-FY's architecture allows fast and scalable deployment for millions of users without disrupting existing workflows."}
+    {"icon":"imac-shield.svg","title":"No additional hardware","description":"B-FY leverages existing smartphone biometrics; no specialized readers are required. Users authenticate with their own devices, reducing implementation complexity."},
+    {"icon":"world.svg","title":"Omnichannel compatibility","description":"Works across websites, mobile apps, and physical environments so you can integrate where you need it."},
+    {"icon":"bulb.svg","title":"Fast deployment & scalability","description":"From startups to enterprises, B-FY’s architecture scales to millions of users without disrupting existing workflows."}
   ] />
   <#assign fbRegisterTitle = "Register in seconds" />
-  <#assign fbRegisterDesc = "Set up your account in just a few steps and start enjoying secure, passwordless authentication." />
-  <#assign fbLoginTitle = "B-FY it's that easy-to-use" />
-  <#assign fbLoginDesc = "Access your services quickly and easily. See how it works step by step." />
-  <#-- Updated fallback video IDs per user request -->
+  <#assign fbRegisterDesc  = "Set up your account in a few steps and start enjoying secure, passwordless authentication." />
+  <#assign fbLoginTitle    = "It’s that easy to use B-FY" />
+  <#assign fbLoginDesc     = "Access your services quickly and without complications. See it step by step." />
   <#assign fbRegisterVideoId = "fjvPHPtZvXk" />
-  <#assign fbLoginVideoId = "WVHd_-rQyqQ" />
-  <#assign detailsNode = (content.details?children)?has_content?then(content.details?children[0], content.details) />
-  <#if !(detailsNode?has_content)><#assign detailsNode = {} /></#if>
-  <#assign title = cmsOrDefault(detailsNode.title!'', fbTitle) />
+  <#assign fbLoginVideoId    = "WVHd_-rQyqQ" />
+
+  <#-- Read authored content if any -->
+  <#assign detailsNode = (content.details?children)?has_content?then(content.details?children[0], content.details!{}) />
+  <#assign title       = cmsOrDefault(detailsNode.title!'', fbTitle) />
   <#assign description = cmsOrDefault(detailsNode.description!'', fbDescription) />
+
   <#assign itemsContainer = detailsNode.items! />
   <#assign itemNodes = [] />
   <#if itemsContainer??>
@@ -47,61 +46,111 @@
     </#if>
   </#if>
   <#assign itemsList = (itemNodes?size gt 0)?then(itemNodes, fbItems) />
-  <#assign registerNode = detailsNode.register! />
-  <#if registerNode?has_content && registerNode?is_hash>
-    <#assign registerTitle = registerNode.title!fbRegisterTitle />
-    <#assign registerDesc = registerNode.description!fbRegisterDesc />
-    <#assign registerVideoId = registerNode.videoId!fbRegisterVideoId />
-  <#else>
-    <#assign registerTitle = fbRegisterTitle registerDesc = fbRegisterDesc registerVideoId = fbRegisterVideoId />
+
+  <#assign registerNode = detailsNode.register!{} />
+  <#assign loginNode    = detailsNode.login!{} />
+
+  <#assign registerTitle   = registerNode.title!fbRegisterTitle />
+  <#assign registerDesc    = registerNode.description!fbRegisterDesc />
+  <#assign registerVideoId = registerNode.videoId!fbRegisterVideoId />
+  <#assign loginTitle      = loginNode.title!fbLoginTitle />
+  <#assign loginDesc       = loginNode.description!fbLoginDesc />
+  <#assign loginVideoId    = loginNode.videoId!fbLoginVideoId />
+
+  <#-- Styles (namespaced) -->
+  <#if !BFY_PD_STYLE_INCLUDED??>
+    <#global BFY_PD_STYLE_INCLUDED = true />
+    <style>
+      .bfy-pd{background:#f7f7f7;}
+      .bfy-pd .section-wrap{max-width:1120px;margin:0 auto;padding:4rem 1.5rem;}
+      .bfy-pd .hdr{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:2.5rem}
+      @media(min-width:1024px){.bfy-pd .hdr{grid-template-columns:1fr 1.2fr;align-items:start}}
+      .bfy-pd h2{color:#ea580c;font-weight:800;font-size:2.25rem;letter-spacing:.2px;margin:0}
+      @media(min-width:1024px){.bfy-pd h2{font-size:2.75rem}}
+      .bfy-pd .lead{font-size:1.125rem;line-height:1.65;color:#374151;margin:0}
+
+      .bfy-pd .features{display:grid;grid-template-columns:1fr;gap:1.25rem;margin:2rem 0 3.5rem}
+      @media(min-width:768px){.bfy-pd .features{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+      .bfy-pd .card{position:relative;background:#fff;border-radius:16px;padding:1.5rem 1.25rem;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+      .bfy-pd .card--highlight{background:#fff4ee}
+      .bfy-pd .ic-wrap{width:80px;height:80px;margin-bottom:.75rem;border-radius:9999px;background:#ffe4d5;display:flex;align-items:center;justify-content:center}
+      .bfy-pd .ttl{font-weight:800;text-transform:uppercase;margin:.25rem 0  .75rem}
+      .bfy-pd .txt{color:#4b5563;line-height:1.65;margin:0}
+      .bfy-pd .plus{position:absolute;top:50%;right:-14px;transform:translateY(-50%);width:28px;height:28px;border-radius:9999px;background:#fff;border:2px solid #f97316;display:none;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,.08);pointer-events:none}
+      .bfy-pd .plus svg{width:14px;height:14px;color:#f97316}
+      @media(min-width:768px){.bfy-pd .card:not(:last-child) .plus{display:flex}}
+
+      .bfy-pd .block{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.10);margin-bottom:2rem}
+      .bfy-pd .block-grid{display:grid;grid-template-columns:1fr;align-items:center}
+      @media(min-width:768px){.bfy-pd .block-grid{grid-template-columns:1.1fr 1fr}}
+      .bfy-pd .pad{padding:2rem 1.75rem}
+      .bfy-pd .kicker{display:inline-block;background:#ffe4d5;color:#ea580c;padding:.4rem .9rem;border-radius:9999px;font-weight:700;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem}
+      .bfy-pd .h3{font-weight:800;font-size:1.6rem;margin:.25rem 0  .5rem;color:#111827}
+      .bfy-pd .p{color:#4b5563;font-size:1.05rem;line-height:1.7;margin:0}
+      .bfy-pd .video{position:relative;aspect-ratio:16/9;background:#0f172a}
+      .bfy-pd .video iframe,.bfy-pd .video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+      .bfy-pd .cta{text-align:center;margin-top:.5rem}
+      .bfy-pd .cta a{display:inline-block;background:#ea580c;color:#fff;padding:.9rem 1.6rem;border-radius:10px;font-weight:700;box-shadow:0 8px 18px rgba(234,88,12,.25);text-decoration:none}
+      .bfy-pd .cta a:hover{background:#c2410c}
+    </style>
   </#if>
-  <#assign loginNode = detailsNode.login! />
-  <#if loginNode?has_content && loginNode?is_hash>
-    <#assign loginTitle = loginNode.title!fbLoginTitle />
-    <#assign loginDesc = loginNode.description!fbLoginDesc />
-    <#assign loginVideoId = loginNode.videoId!fbLoginVideoId />
-  <#else>
-    <#assign loginTitle = fbLoginTitle loginDesc = fbLoginDesc loginVideoId = fbLoginVideoId />
-  </#if>
-  <section class="mb-20 px-5 sm:px-10 lg:px-13">
-    <div class="mb-9 flex flex-col gap-6 xl:mb-24 xl:flex-row xl:items-center">
-      <h2 class="pb-4 border-b-2 font-bold text-3xl text-balance text-orange-600 xl:shrink-0 xl:pb-0 xl:border-b-0 xl:text-5xl">${title}</h2>
-      <p class="text-lg text-pretty xl:pl-12 xl:border-l-2 xl:border-orange-600 xl:text-xl/snug">${description}</p>
-    </div>
-    <div class="mb-12 grid xl:grid-cols-3 md:mb-32">
-      <#list itemsList as it>
-        <#assign icon = it.icon!"platform.webp" />
-        <#if !icon?starts_with('http') && !icon?contains('/')>
-          <#assign icon = ctx.contextPath + '/.resources/b-fy/webresources/images/' + icon />
-        </#if>
-        <article class="relative py-15 px-6 from-white to-red-100 ${(it?index % 2 == 1)?then('even:rounded-tl-lg even:bg-linear-240','')} sm:px-12 xl:py-12">
-          <#if it?index != 0>
-            <@ic.iconSvg name="plus" class="absolute inset-x-0 w-6 my-4 mx-auto text-orange-600 ${(it?index % 2 == 0)?then('top-0 xl:right-auto','bottom-full xl:left-auto xl:right-full')} xl:inset-y-0 xl:my-auto xl:mx-4" />
-          </#if>
-          <img class="size-11 object-contain" src="${icon}" alt="" loading="lazy" />
-          <h3 class="mt-5 mb-3 font-bold text-xl/tight uppercase">${it.title!}</h3>
-          <p class="leading-snug">${it.description!}</p>
-        </article>
-      </#list>
-    </div>
-    <#-- Video sections updated to real embeds (parity with Astro Video component) -->
-    <#import "/b-fy/templates/components/platform/platform-video.ftl" as vid />
-    <section class="grid gap-y-10 md:grid-cols-[9fr_8fr] md:items-center">
-      <div class="md:ml-12">
-        <h3 class="font-bold text-xl text-orange-600 uppercase">${registerTitle}</h3>
-        <p class="mt-3 text-xl/tight text-balance">${registerDesc}</p>
+
+  <section class="bfy-pd">
+    <div class="section-wrap">
+      <header class="hdr">
+        <h2>${title}</h2>
+        <p class="lead">${description}</p>
+      </header>
+
+      <div class="features">
+        <#list itemsList as it>
+          <#assign iconName = it.icon!"laptop" />
+          <#assign highlight = (it?index == 1) />
+          <article class="card${highlight?string(' card--highlight','')}">
+            <div class="ic-wrap">
+              <img src="${ic.iconPath(iconName)}" alt="" width="48" height="48" loading="lazy"/>
+            </div>
+            <h3 class="ttl">${it.title!}</h3>
+            <p class="txt">${it.description!}</p>
+
+            <#-- Plus connector (hidden on last card / only desktop) -->
+            <#if it?index < (itemsList?size - 1)>
+              <span class="plus" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              </span>
+            </#if>
+          </article>
+        </#list>
       </div>
-      <@vid.platformVideo class="max-w-none md:row-start-1" id=registerVideoId title=registerTitle />
-    </section>
-    <section class="my-26 grid gap-y-10 md:grid-cols-[8fr_9fr] md:items-center">
-      <div class="md:mr-12 md:text-right">
-        <h3 class="font-bold text-xl text-orange-600 uppercase">${loginTitle}</h3>
-        <p class="mt-3 text-xl/tight text-balance">${loginDesc}</p>
+
+      <#-- Video/content blocks -->
+      <#import "/b-fy/templates/components/platform/platform-video.ftl" as vid />
+
+      <section class="block">
+        <div class="block-grid">
+          <div class="video"><@vid.platformVideo class="" id=registerVideoId title=registerTitle /></div>
+          <div class="pad">
+            <span class="kicker">Register in seconds</span>
+            <h3 class="h3">${registerTitle}</h3>
+            <p class="p">${registerDesc}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="block-grid">
+          <div class="pad">
+            <span class="kicker">Easy to use</span>
+            <h3 class="h3">${loginTitle}</h3>
+            <p class="p">${loginDesc}</p>
+          </div>
+          <div class="video"><@vid.platformVideo class="" id=loginVideoId title=loginTitle /></div>
+        </div>
+      </section>
+
+      <div class="cta">
+        <a href="${ctx.contextPath}/contact">Want to learn more?</a>
       </div>
-      <@vid.platformVideo id=loginVideoId title=loginTitle />
-    </section>
-    <div class="mt-16 text-center">
-      <a href="${ctx.contextPath}/contact" class="w-fit mx-auto py-2.5 px-5 block rounded bg-orange-600 text-xl text-white transition-colors hover:bg-red-800">Want to know more?</a>
     </div>
   </section>
 </#macro>
