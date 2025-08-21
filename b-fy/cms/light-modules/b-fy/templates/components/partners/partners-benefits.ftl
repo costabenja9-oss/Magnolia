@@ -7,32 +7,32 @@
 
 <#assign benefits = [
   {
-    "icon": "partners.webp",
+    "icon": "briefcase",
     "title": "Financial incentives", 
     "description": "Explore new revenue streams by collaborating on high-growth potential projects. Earn attractive financial rewards for referrals and sales."
   },
   {
-    "icon": "partners.webp",
+    "icon": "book",
     "title": "Training and certification",
     "description": "We offer a training process to help you earn your Official B-FY Partner certification."
   },
   {
-    "icon": "partners.webp", 
+    "icon": "handstack", 
     "title": "Support at every step",
     "description": "We'll assist you in generating business opportunities and expanding your solutions portfolio."
   },
   {
-    "icon": "partners.webp",
+    "icon": "security",
     "title": "Technical support",
     "description": "Our technical and commercial teams will support you to ensure your project's success."
   },
   {
-    "icon": "partners.webp",
+    "icon": "presentation",
     "title": "Marketing resources", 
     "description": "Access sales and marketing materials, plus support to strengthen your commercial strategy."
   },
   {
-    "icon": "partners.webp",
+    "icon": "users",
     "title": "Collaborative work",
     "description": "Our sales team will be by your side when needed to help shape proposals and new client projects."
   }
@@ -153,9 +153,9 @@
     <div class="benefits-grid">
       <#list benefits as benefit>
         <article class="benefit-card">
-    <img class="benefit-icon" 
-      src="${ctx.contextPath}/.resources/b-fy/webresources/images/${benefit.icon}" 
-      alt="${benefit.title}" />
+          <img class="benefit-icon" 
+               src="${ctx.contextPath}/.resources/b-fy/webresources/icons/${benefit.icon}.svg" 
+               alt="${benefit.title}" />
           <h3 class="benefit-title">${benefit.title}</h3>
           <p class="benefit-description">${benefit.description}</p>
         </article>
@@ -168,3 +168,5 @@
   </div>
 </section>
 </#macro>
+
+<@partnersBenefits />

@@ -2,18 +2,17 @@
 <#macro partnersMarquee>
 <#assign sectionTitle = "These are our partners" />
 
-<#-- Use existing magnolia-partner.webp as placeholder for all until specific logos added -->
+<#-- Use specific partner logos -->
 <#assign partners = [
-  {"name": "Four1", "logo": "magnolia-partner.webp"},
-  {"name": "Magnolia Partner", "logo": "magnolia-partner.webp"},
-  {"name": "Soldig", "logo": "magnolia-partner.webp"},
-  {"name": "Serban Group", "logo": "magnolia-partner.webp"},
-  {"name": "CTN-GTS", "logo": "magnolia-partner.webp"},
-  {"name": "Hola TI", "logo": "magnolia-partner.webp"},
-  {"name": "TSG", "logo": "magnolia-partner.webp"},
-  {"name": "Qualoom", "logo": "magnolia-partner.webp"},
-  {"name": "TAT Sales", "logo": "magnolia-partner.webp"},
-  {"name": "Asisa", "logo": "magnolia-partner.webp"}
+  {"name": "Four1", "logo": "four1.webp"},
+  {"name": "Soldig", "logo": "soldig.webp"},
+  {"name": "Serban Group", "logo": "serban-group.webp"},
+  {"name": "CTN-GTS", "logo": "ctn-gts.webp"},
+  {"name": "Hola TI", "logo": "hola-ti.webp"},
+  {"name": "TSG", "logo": "tsg.webp"},
+  {"name": "Qualoom", "logo": "qualoom.webp"},
+  {"name": "TAT Sales", "logo": "tat-sales.webp"},
+  {"name": "Asisa", "logo": "asisa.webp"}
 ] />
 
 <section style="overflow: hidden; margin: 6rem 0;">
@@ -95,3 +94,5 @@
   </div>
 </section>
 </#macro>
+
+<@partnersMarquee />
