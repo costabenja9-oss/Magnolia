@@ -83,25 +83,186 @@
 	<#if !HOME_PARTNERS_STYLE_INCLUDED??>
 		<#global HOME_PARTNERS_STYLE_INCLUDED = true />
 		<style>
-			.partners{background:#e5e5e5;display:grid;grid-template-columns:1fr;}
-			@media (min-width:1024px){.partners{grid-template-columns:1fr 1fr;}}
-			.partners__imageWrap{display:none;}
-			@media (min-width:1024px){.partners__imageWrap{display:block;}}
-			.partners__image{width:100%;height:100%;object-fit:cover;border-top-right-radius:1rem;display:block;}
-			.partners__body{padding:40px 20px;font-size:1.125rem;display:flex;flex-direction:column;align-items:flex-start;}
-			@media (min-width:640px){.partners__body{padding:56px 40px;}}
-			@media (min-width:1280px){.partners__body{padding:64px 64px;}}
-			.partners__tag{display:inline-block;padding:10px 20px;border-radius:6px;background:#ea580c;color:#fff;line-height:1;text-transform:uppercase;font-size:.75rem;letter-spacing:.04em;}
-			@media (min-width:1280px){.partners__tag{font-size:.95rem;}}
-			.partners__title{margin:32px 0 36px;font-weight:700;font-size:1.875rem;line-height:1.1;max-width:40ch;}
-			@media (min-width:1280px){.partners__title{font-size:3rem;}}
-			.partners__desc{max-width:60ch;margin:0 0 40px;line-height:1.4;}
-			.partners__benefitsLabel{margin:0 0 24px;color:#ea580c;text-transform:uppercase;font-weight:600;letter-spacing:.04em;}
-			.partners__benefits{list-style:none;margin:0 0 56px;padding:0;display:grid;gap:18px;}
-			.partners__benefit{display:flex;align-items:center;gap:14px;}
-			.partners__benefitIcon{width:44px;height:44px;object-fit:contain;flex:0 0 44px;}
-			.partners__cta{display:inline-block;padding:10px 20px;border:1px solid currentColor;color:#ea580c;border-radius:6px;font-size:.95rem;line-height:1;text-decoration:none;transition:color .25s,background .25s;}
-			.partners__cta:hover{color:#991b1b;background:#fff;}
+			/* Partners Section */
+			.partners {
+				background: #f8fafc;
+				display: grid;
+				grid-template-columns: 1fr;
+				margin-bottom: 0;
+				overflow: hidden;
+			}
+			
+			@media (min-width: 1024px) {
+				.partners {
+					grid-template-columns: 1fr 1fr;
+					min-height: 600px;
+				}
+			}
+			
+			/* Image Container */
+			.partners__imageWrap {
+				display: none;
+				position: relative;
+			}
+			
+			@media (min-width: 1024px) {
+				.partners__imageWrap {
+					display: block;
+					order: 1;
+				}
+			}
+			
+			.partners__image {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+			
+			/* Content Container */
+			.partners__body {
+				padding: 60px 20px;
+				font-size: 1.125rem;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				background: #fff;
+			}
+			
+			@media (min-width: 640px) {
+				.partners__body {
+					padding: 80px 40px;
+				}
+			}
+			
+			@media (min-width: 1024px) {
+				.partners__body {
+					order: 2;
+				}
+			}
+			
+			@media (min-width: 1280px) {
+				.partners__body {
+					padding: 80px 64px;
+				}
+			}
+			
+			/* Tag */
+			.partners__tag {
+				display: inline-block;
+				padding: 12px 24px;
+				border-radius: 12px;
+				background: #ea580c;
+				color: #fff;
+				line-height: 1;
+				text-transform: uppercase;
+				font-size: 0.875rem;
+				letter-spacing: 0.5px;
+				font-weight: 600;
+				margin-bottom: 24px;
+			}
+			
+			@media (min-width: 1280px) {
+				.partners__tag {
+					font-size: 1rem;
+				}
+			}
+			
+			/* Title */
+			.partners__title {
+				margin: 0 0 24px;
+				font-weight: 700;
+				font-size: 2rem;
+				line-height: 1.1;
+				max-width: 40ch;
+				color: #1f2937;
+			}
+			
+			@media (min-width: 1280px) {
+				.partners__title {
+					font-size: 2.5rem;
+					margin-bottom: 32px;
+				}
+			}
+			
+			/* Description */
+			.partners__desc {
+				max-width: 60ch;
+				margin: 0 0 40px;
+				line-height: 1.6;
+				color: #4b5563;
+				font-size: 1.125rem;
+			}
+			
+			@media (min-width: 1280px) {
+				.partners__desc {
+					font-size: 1.25rem;
+					margin-bottom: 48px;
+				}
+			}
+			
+			/* Benefits Section */
+			.partners__benefitsLabel {
+				margin: 0 0 24px;
+				color: #ea580c;
+				text-transform: uppercase;
+				font-weight: 700;
+				letter-spacing: 0.5px;
+				font-size: 1rem;
+			}
+			
+			.partners__benefits {
+				list-style: none;
+				margin: 0 0 48px;
+				padding: 0;
+				display: grid;
+				gap: 20px;
+			}
+			
+			.partners__benefit {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+				padding: 16px 0;
+			}
+			
+			.partners__benefitIcon {
+				width: 24px;
+				height: 24px;
+				object-fit: contain;
+				flex: 0 0 24px;
+				color: #ea580c;
+			}
+			
+			.partners__benefit span {
+				font-size: 1rem;
+				line-height: 1.5;
+				color: #374151;
+				font-weight: 500;
+			}
+			
+			/* CTA Button */
+			.partners__cta {
+				display: inline-block;
+				padding: 16px 32px;
+				border: 2px solid #ea580c;
+				color: #ea580c;
+				border-radius: 12px;
+				font-size: 1rem;
+				line-height: 1;
+				text-decoration: none;
+				transition: all 0.2s;
+				font-weight: 600;
+				background: transparent;
+			}
+			
+			.partners__cta:hover {
+				color: #fff;
+				background: #ea580c;
+				transform: translateY(-2px);
+				box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+			}
 		</style>
 	</#if>
 	<section class="partners" aria-label="Partners program">
@@ -125,7 +286,19 @@
 							<#if iconLink?has_content>
 								<img src="${iconLink}" alt="" class="partners__benefitIcon" loading="lazy" />
 							<#else>
-								<img src="${ctx.contextPath}/.resources/b-fy/webresources/icons/check.svg" alt="" class="partners__benefitIcon" loading="lazy" />
+								<#-- Smart icon fallback based on benefit description -->
+								<#assign fallbackIcon = "check.svg" />
+								<#assign desc = (b.description!"")?lower_case />
+								<#if desc?contains("technology") || desc?contains("tech")>
+									<#assign fallbackIcon = "cpu.svg" />
+								<#elseif desc?contains("support") || desc?contains("training")>
+									<#assign fallbackIcon = "users.svg" />
+								<#elseif desc?contains("marketing") || desc?contains("materials")>
+									<#assign fallbackIcon = "presentation.svg" />
+								<#elseif desc?contains("incentive") || desc?contains("profit")>
+									<#assign fallbackIcon = "medal.svg" />
+								</#if>
+								<img src="${ctx.contextPath}/.resources/b-fy/webresources/icons/${fallbackIcon}" alt="" class="partners__benefitIcon" loading="lazy" />
 							</#if>
 							<span>${b.description!}</span>
 						</li>

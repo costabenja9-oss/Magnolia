@@ -27,31 +27,230 @@
 	<#if !HOME_PLATFORM_STYLE_INCLUDED??>
 		<#global HOME_PLATFORM_STYLE_INCLUDED = true />
 		<style>
-			.platform{margin-top:80px;margin-bottom:60px;padding:0 20px;}
-			@media (min-width:640px){.platform{padding:0 40px;}}
-			@media (min-width:1024px){.platform{padding:0 52px;margin-bottom:104px;}}
-			.platform__tag{margin:0 auto;padding:10px 20px;border-radius:8px;background:#ea580c;color:#fff;text-transform:uppercase;line-height:1.1;display:inline-block;}
-			@media (min-width:1280px){.platform__tag{font-size:1.25rem;}}
-			.platform__title{margin:40px auto 0;font-weight:700;font-size:1.875rem;line-height:1.1;max-width:56rem;text-wrap:balance;text-align:center;}
-			@media (min-width:1280px){.platform__title{font-size:3rem;}}
-			.platform__hook{margin:96px 0 0;padding:0 20px;font-size:1.5rem;line-height:1.2;font-style:italic;color:#ea580c;max-width:68rem;text-align:center;margin-left:auto;margin-right:auto;}
-			@media (min-width:1280px){.platform__hook{font-size:1.875rem;}}
-			.platform__desc{margin:28px auto 0;font-size:1.125rem;line-height:1.25;text-align:center;max-width:56rem;}
-			@media (min-width:1280px){.platform__desc{font-size:1.25rem;line-height:1.25;}}
-			.platform__grid{margin-top:60px;display:grid;}
-			@media (min-width:768px){.platform__grid{margin-top:80px;grid-template-columns:repeat(2,minmax(0,1fr));}}
-			@media (min-width:1280px){.platform__grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
-			.platform__card{padding:36px 30px;display:flex;flex-direction:column;align-items:flex-start;border-radius:12px;background:linear-gradient(240deg,#fff,#fee2e2);}
-			.platform__card:nth-child(odd){background:linear-gradient(240deg,#fff,#fee2e2);}
-			@media (min-width:640px){.platform__card{padding:48px 40px;}}
-			.platform__card h3{margin:8px 0 0;font-weight:700;font-size:1.25rem;line-height:1.1;text-transform:uppercase;}
-			.platform__card-tag{margin-top:16px;margin-bottom:8px;color:#ea580c;line-height:1.1;}
-			.platform__card-desc{margin:12px 0 24px;line-height:1.25;}
-			.platform__more{margin-top:auto;display:flex;gap:6px;color:#ea580c;text-decoration:none;transition:color .25s;align-items:center;}
-			.platform__more span{text-decoration:underline;text-underline-offset:2px;}
-			.platform__more:hover{color:#991b1b;}
-			.platform__icon{width:44px;height:44px;object-fit:contain;}
-			.platform__arrow{width:11px;height:auto;}
+			/* Platform Section */
+			.platform {
+				margin-top: 80px;
+				margin-bottom: 120px;
+				padding: 0 20px;
+			}
+			
+			@media (min-width: 640px) {
+				.platform {
+					padding: 0 40px;
+				}
+			}
+			
+			@media (min-width: 1024px) {
+				.platform {
+					padding: 0 52px;
+					margin-top: 100px;
+					margin-bottom: 140px;
+				}
+			}
+			
+			/* Header Styles */
+			.platform__tag {
+				margin: 0 auto;
+				padding: 12px 24px;
+				border-radius: 12px;
+				background: #ea580c;
+				color: #fff;
+				text-transform: uppercase;
+				line-height: 1.1;
+				display: inline-block;
+				font-weight: 600;
+				letter-spacing: 0.5px;
+				font-size: 0.875rem;
+			}
+			
+			@media (min-width: 1280px) {
+				.platform__tag {
+					font-size: 1rem;
+				}
+			}
+			
+			.platform__title {
+				margin: 40px auto 0;
+				font-weight: 700;
+				font-size: 2.25rem;
+				line-height: 1.1;
+				max-width: 56rem;
+				text-wrap: balance;
+				text-align: center;
+				color: #1f2937;
+			}
+			
+			@media (min-width: 1280px) {
+				.platform__title {
+					font-size: 3rem;
+					margin-top: 48px;
+				}
+			}
+			
+			.platform__desc {
+				margin: 32px auto 0;
+				font-size: 1.125rem;
+				line-height: 1.6;
+				text-align: center;
+				max-width: 56rem;
+				color: #4b5563;
+			}
+			
+			@media (min-width: 1280px) {
+				.platform__desc {
+					font-size: 1.25rem;
+					line-height: 1.5;
+				}
+			}
+			
+			.platform__hook {
+				margin: 80px auto 0;
+				padding: 32px 24px;
+				font-size: 1.25rem;
+				line-height: 1.4;
+				font-style: italic;
+				color: #ea580c;
+				max-width: 68rem;
+				text-align: center;
+				background: rgba(234, 88, 12, 0.05);
+				border-radius: 16px;
+				border-left: 4px solid #ea580c;
+			}
+			
+			@media (min-width: 1280px) {
+				.platform__hook {
+					font-size: 1.5rem;
+					margin-top: 100px;
+					padding: 40px 32px;
+				}
+			}
+			
+			/* Grid Layout */
+			.platform__grid {
+				margin-top: 80px;
+				display: grid;
+				gap: 32px;
+			}
+			
+			@media (min-width: 768px) {
+				.platform__grid {
+					grid-template-columns: repeat(2, 1fr);
+					gap: 40px;
+				}
+			}
+			
+			@media (min-width: 1280px) {
+				.platform__grid {
+					grid-template-columns: repeat(3, 1fr);
+					margin-top: 100px;
+				}
+			}
+			
+			/* Card Styles */
+			.platform__card {
+				padding: 32px 28px;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				border-radius: 20px;
+				background: #fff;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+				transition: all 0.3s ease;
+				border: 1px solid #f1f5f9;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.platform__card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background: linear-gradient(90deg, #ea580c, #f97316);
+			}
+			
+			.platform__card:hover {
+				transform: translateY(-8px);
+				box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+				border-color: #ea580c;
+			}
+			
+			@media (min-width: 640px) {
+				.platform__card {
+					padding: 40px 36px;
+				}
+			}
+			
+			/* Icon */
+			.platform__icon {
+				width: 56px;
+				height: 56px;
+				object-fit: contain;
+				padding: 12px;
+				background: rgba(234, 88, 12, 0.1);
+				border-radius: 16px;
+				margin-bottom: 20px;
+			}
+			
+			/* Card Content */
+			.platform__card h3 {
+				margin: 0 0 12px 0;
+				font-weight: 700;
+				font-size: 1.25rem;
+				line-height: 1.2;
+				text-transform: uppercase;
+				color: #1f2937;
+			}
+			
+			.platform__card-tag {
+				margin: 0 0 16px 0;
+				color: #ea580c;
+				line-height: 1.3;
+				font-size: 0.95rem;
+				font-weight: 500;
+			}
+			
+			.platform__card-desc {
+				margin: 0 0 24px 0;
+				line-height: 1.5;
+				color: #4b5563;
+				flex: 1;
+			}
+			
+			/* Read More Link */
+			.platform__more {
+				margin-top: auto;
+				display: flex;
+				gap: 8px;
+				color: #ea580c;
+				text-decoration: none;
+				transition: all 0.2s;
+				align-items: center;
+				font-weight: 500;
+				font-size: 0.95rem;
+			}
+			
+			.platform__more span {
+				text-decoration: underline;
+				text-underline-offset: 3px;
+			}
+			
+			.platform__more:hover {
+				color: #c2410c;
+				transform: translateX(4px);
+			}
+			
+			.platform__more svg {
+				width: 14px;
+				height: auto;
+				transition: transform 0.2s;
+			}
+			
+			.platform__more:hover svg {
+				transform: translateX(2px);
+			}
 		</style>
 	</#if>
 	<#assign fallbackFeatures = [
