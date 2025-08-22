@@ -7,11 +7,6 @@ form:
       i18n: true
     description:
       $type: textField
-      label: Description
-      rows: 3
-      i18n: true
-    content:
-      $type: richTextField
-      label: Content
-      required: false
+      label: Text
+      rows: 2
       i18n: true

@@ -1,5 +1,4 @@
-title: Contact template
-renderType: freemarker
+title: Contact Page 
 templateScript: /b-fy/templates/pages/contact.ftl
-dialog: b-fy:pages/contact
-visible: true
+renderType: freemarker
+dialog: b-fy:pages/contact-1

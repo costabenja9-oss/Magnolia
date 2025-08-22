@@ -55,7 +55,7 @@
 			.home-hero {
 				display: flex;
 				flex-direction: column;
-				gap: 60px;
+				gap: 30px;
 				padding: 132px 20px 60px;
 				background: linear-gradient(108deg, #fff 0%, #f5f5f5 100%);
 				overflow: hidden;
@@ -83,14 +83,14 @@
 					padding-top: 120px;
 					flex-direction: row;
 					align-items: center;
-					justify-content: space-between;
-					gap: 80px;
+					justify-content: center;
+					gap: 40px;
 				}
 			}
 			
 			/* Text Section */
 			.home-hero__text {
-				max-width: 600px;
+				max-width: 700px;
 				flex: 1;
 			}
 			
