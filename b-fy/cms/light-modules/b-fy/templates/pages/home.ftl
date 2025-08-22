@@ -21,6 +21,8 @@
             .card:hover{transform:translateY(-4px);box-shadow:0 8px 20px -4px rgba(0,0,0,.12)}
         </style>
 </head>
+<#include "/b-fy/templates/components/cookie-banner.ftl" />
+
 <body class="font-sans antialiased text-neutral-900">
 <#-- Navegación reutilizable -->
 <#import "/b-fy/templates/components/nav.ftl" as ui>
