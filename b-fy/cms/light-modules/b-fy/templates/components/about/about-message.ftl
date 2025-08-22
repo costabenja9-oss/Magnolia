@@ -3,7 +3,7 @@
   <#if !ABOUT_MESSAGE_STYLE_INCLUDED??>
     <#global ABOUT_MESSAGE_STYLE_INCLUDED = true />
     <style>
-      .about-message{padding:80px 0}
+      .about-message{padding:80px 0;background-color:#f5f5f5}
       .about-message__inner{padding-left:20px;padding-right:20px;max-width:1340px;margin:0 auto}
       @media (min-width:640px){.about-message__inner{padding-left:40px;padding-right:40px}}
       @media (min-width:1024px){.about-message__inner{padding-left:52px;padding-right:52px}}

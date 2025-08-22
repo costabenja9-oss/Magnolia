@@ -14,7 +14,7 @@
       .industries-hero { padding: 0 3.25rem; }
     }
     @media (min-width: 1280px) {
-      .industries-hero { margin-top: 6rem; }
+      .industries-hero { margin-top: 1rem; }
     }
     .industries-hero h1 {
       max-width: 48rem;

@@ -25,9 +25,9 @@
     </div>
     <#assign _detailsImg = imageUrl!'' />
     <#if !_detailsImg?has_content>
-      <#assign _detailsImg = ctx.contextPath + '/.resources/b-fy/webresources/images/about-us.webp' />
+      <#assign _detailsImg = ctx.contextPath + '/.resources/b-fy/webresources/images/map.webp' />
     </#if>
-    <div class="about-details__image"><img src="${_detailsImg}" alt="${title}" onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/images/about-us.webp'" /></div>
+    <div class="about-details__image"><img src="${_detailsImg}" alt="${title}" onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/map.webp'" /></div>
     <#if countries?has_content>
       <p class="about-details__countries">
         <#list countries as c>

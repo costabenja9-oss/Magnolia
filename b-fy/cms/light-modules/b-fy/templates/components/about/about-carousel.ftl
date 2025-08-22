@@ -35,7 +35,7 @@
       <#list slides as s>
         <#assign _img = (s.image)!'' />
         <#if !_img?has_content>
-          <#assign _img = 'carousel-02.webp' />
+          <#assign _img = 'carousel-0' + ((s_index % 4) + 2) + '.webp' />
         </#if>
         <#-- Resolve via DAM only if damfn exists, image is local (no http), and it's a simple asset id without any slash -->
         <#if (damfn??) && _img?has_content && !_img?starts_with('http') && !(_img?contains('/'))>

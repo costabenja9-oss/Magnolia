@@ -79,16 +79,25 @@
     <div class="mobile-menu">
       <ul class="mobile-nav-list">
         <@mobileNavItem path="about-us" currentPage=currentPage>About Us</@mobileNavItem>
-        <@mobileNavItem path="platform" currentPage=currentPage>Platform</@mobileNavItem>
-        <@mobileNavItem path="industries" currentPage=currentPage>Industries</@mobileNavItem>
+        <@mobileNavItem path="platform" currentPage=currentPage items={
+          "client-authentication": "Client Authentication",
+          "user-biometry": "User-Powered Biometry", 
+          "regulatory-compliance": "Regulatory Compliance",
+          "employee-authentication": "Employee Authentication",
+          "ato-protection": "Effective Against ATO",
+          "decentralized-authentication": "Decentralized Authentication"
+        }>Platform</@mobileNavItem>
+        <@mobileNavItem path="industries" currentPage=currentPage items={
+          "education": "Education",
+          "financial-services": "Financial Services",
+          "transport-services": "Transport & Logistics",
+          "healthcare": "Healthcare Services"
+        }>Industries</@mobileNavItem>
         <@mobileNavItem path="partners" currentPage=currentPage>Partners</@mobileNavItem>
         <@mobileNavItem path="developers" currentPage=currentPage>Developers</@mobileNavItem>
         <@mobileNavItem path="resources" currentPage=currentPage>Resources</@mobileNavItem>
         <@mobileNavItem path="contact" currentPage=currentPage>Contact</@mobileNavItem>
       </ul>
-      <div class="mobile-action-buttons">
-        <a href="${base}/contact" class="demo-button">Request a demo</a>
-      </div>
     </div>
 
     <style>
@@ -426,6 +435,64 @@
         color: var(--text-hover);
       }
       
+      /* Estilos para acordeones mobile */
+      .mobile-accordion-toggle {
+        background: none;
+        border: none;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: var(--text-color);
+        cursor: pointer;
+      }
+      
+      .mobile-accordion-toggle:hover {
+        color: var(--text-hover);
+      }
+      
+      .mobile-chevron-icon {
+        width: 1rem;
+        height: 1rem;
+        transition: transform 0.2s ease;
+        transform: rotate(-90deg);
+      }
+      
+      .mobile-accordion-toggle[aria-expanded="true"] .mobile-chevron-icon {
+        transform: rotate(0deg);
+      }
+      
+      .mobile-submenu {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0 0 0.5rem 0;
+        background-color: rgba(0, 0, 0, 0.02);
+        border-radius: 0.375rem;
+      }
+      
+      .mobile-submenu.show {
+        display: block;
+      }
+      
+      .mobile-submenu-link {
+        color: var(--text-color);
+        text-decoration: none;
+        display: block;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+      }
+      
+      .mobile-submenu-link:hover {
+        color: var(--text-hover);
+        background-color: rgba(234, 88, 12, 0.05);
+      }
+      
       .mobile-action-buttons {
         display: flex;
         justify-content: center;
@@ -557,6 +624,7 @@
         const mobileMenu = document.querySelector('.mobile-menu');
         const languageSelect = document.querySelector('.language-select');
         const searchInput = document.querySelector('.search-input');
+        const accordionToggles = document.querySelectorAll('.mobile-accordion-toggle');
         
         // Toggle menu mobile
         if (mobileMenuButton && mobileMenu) {
@@ -577,6 +645,31 @@
           if (window.innerWidth >= 1280) {
             mobileMenu?.classList.remove('active');
           }
+        });
+        
+        // Accordion functionality for mobile
+        accordionToggles.forEach(function(toggle) {
+          toggle.addEventListener('click', function() {
+            const submenu = this.nextElementSibling;
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other accordions
+            accordionToggles.forEach(function(otherToggle) {
+              if (otherToggle !== toggle) {
+                otherToggle.setAttribute('aria-expanded', 'false');
+                const otherSubmenu = otherToggle.nextElementSibling;
+                if (otherSubmenu) {
+                  otherSubmenu.classList.remove('show');
+                }
+              }
+            });
+            
+            // Toggle current accordion
+            this.setAttribute('aria-expanded', !isExpanded);
+            if (submenu) {
+              submenu.classList.toggle('show');
+            }
+          });
         });
         
         // Language switcher
@@ -643,7 +736,7 @@
 </#macro>
 
 <#-- Macro para items de navegación mobile -->
-<#macro mobileNavItem path currentPage>
+<#macro mobileNavItem path currentPage items={}>
   <#assign fullPath>
     <#if path == "">
       ${base}/
@@ -654,8 +747,26 @@
   <#assign isActive = (currentPage == path)>
   
   <li class="mobile-nav-item ${isActive?then('active', '')}">
-    <a href="${fullPath}" class="mobile-nav-link">
-      <#nested>
-    </a>
+    <#if items?has_content>
+      <button class="mobile-accordion-toggle" aria-expanded="false">
+        <span><#nested></span>
+        <svg class="mobile-chevron-icon" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"/>
+        </svg>
+      </button>
+      <ul class="mobile-submenu">
+        <#list items?keys as itemPath>
+          <li>
+            <a href="${base}/${path}/${itemPath}" class="mobile-submenu-link">
+              ${items[itemPath]}
+            </a>
+          </li>
+        </#list>
+      </ul>
+    <#else>
+      <a href="${fullPath}" class="mobile-nav-link">
+        <#nested>
+      </a>
+    </#if>
   </li>
 </#macro>

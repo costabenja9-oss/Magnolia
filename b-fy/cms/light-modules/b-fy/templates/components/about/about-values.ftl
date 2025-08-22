@@ -22,14 +22,16 @@
     <#if !_valuesImg?has_content>
       <#assign _valuesImg = ctx.contextPath + '/.resources/b-fy/webresources/images/values.webp' />
     </#if>
-    <img class="about-values__media" src="${_valuesImg}" alt="${title}" onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/images/values.webp'" />
+    <img class="about-values__media" src="${_valuesImg}" alt="${title}" onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/values.webp'" />
     <div class="about-values__body">
       <h2 class="about-values__badge">${title}</h2>
       <#import "/b-fy/templates/components/util/icons.ftl" as ic />
       <ul class="about-values__list">
         <#list values as v>
           <li class="about-values__item">
-            <img src="${ic.iconPath('chevron.svg')}" alt="" class="about-values__item-icon" loading="lazy" onerror="this.onerror=null;this.src='${ic.iconPath('circle-chevron.svg')}'" />
+            <svg class="about-values__item-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z" clip-rule="evenodd" />
+            </svg>
             <p><strong>${v.name}:</strong> ${v.description}</p>
           </li>
         </#list>
