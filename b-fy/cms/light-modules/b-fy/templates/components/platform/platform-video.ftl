@@ -17,8 +17,12 @@
   <#-- Get current language (you may need to adjust this based on your i18n setup) -->
   <#assign currentLang = "en" /> <#-- Default to English, adjust as needed -->
   
-  <#-- Video configuration - ONLY main video -->
-  <#assign mainVideoId = getVideoId("platform", currentLang) />
+  <#-- Video configuration - Use provided ID if available, otherwise fallback to default -->
+  <#if id?has_content && id?trim != "">
+    <#assign mainVideoId = id />
+  <#else>
+    <#assign mainVideoId = getVideoId("platform", currentLang) />
+  </#if>
   
   <#if !PLATFORM_VIDEO_STYLE_INCLUDED??>
     <#global PLATFORM_VIDEO_STYLE_INCLUDED = true />

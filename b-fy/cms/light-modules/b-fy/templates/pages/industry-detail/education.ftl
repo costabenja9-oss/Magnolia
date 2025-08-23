@@ -684,7 +684,7 @@
       </hgroup>
       
       <#-- Video section -->
-      <#assign videoId = cmsValueWithFallback(content.videoId!"", "fjvPHPtZvXk") />
+      <#assign videoId = cmsValueWithFallback(content.videoId!"", "is1jZ3sPWjE") />
       <div class="hero-video-container">
         <#import "/b-fy/templates/components/platform/platform-video.ftl" as vid />
         <@vid.platformVideo class="max-w-none" id=videoId title=heroTitle />

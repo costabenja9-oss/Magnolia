@@ -684,7 +684,7 @@
       </hgroup>
       
       <#-- Video section -->
-      <#assign videoId = cmsValueWithFallback(content.videoId!"", "fjvPHPtZvXk") />
+      <#assign videoId = cmsValueWithFallback(content.videoId!"", "HN-FtB8-eks") />
       <div class="hero-video-container">
         <#import "/b-fy/templates/components/platform/platform-video.ftl" as vid />
         <@vid.platformVideo class="max-w-none" id=videoId title=heroTitle />
@@ -727,7 +727,7 @@
 
         <#-- Detail 4 -->
         <article class="detail-card">
-          <#assign detail4Icon = damImageWithFallback(content.detail4Icon!"", "icons/world.svg") />
+          <#assign detail4Icon = damImageWithFallback(content.detail4Icon!"", "icons/checklist.svg") />
           <img class="detail-icon" src="${detail4Icon}" alt="" />
           <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "OPERACIONES 24/7") />
           <h3 class="detail-title">${detail4Title}</h3>
@@ -805,7 +805,7 @@
 
         <#-- Feature 2 -->
         <article class="feature-item">
-          <#assign feature2Icon = damImageWithFallback(content.feature2Icon!"", "icons/search.svg") />
+          <#assign feature2Icon = damImageWithFallback(content.feature2Icon!"", "icons/security.svg") />
           <img class="feature-icon" src="${feature2Icon}" alt="" />
           <div class="feature-content">
             <#assign feature2Title = cmsValueWithFallback(content.feature2Title!"", "TRAZABILIDAD TOTAL") />
