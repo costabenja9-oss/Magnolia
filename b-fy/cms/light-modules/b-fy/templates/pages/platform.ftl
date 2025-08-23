@@ -126,7 +126,6 @@
 <#import "/b-fy/templates/components/platform/platform-video.ftl" as video>
 <#import "/b-fy/templates/components/platform/platform-details.ftl" as details>
 <#import "/b-fy/templates/components/platform/platform-customer.ftl" as customer>
-<#import "/b-fy/templates/components/platform/platform-call-to-action.ftl" as cta>
 
 <#-- HELPERS -->
 <#function firstChild nodeName>
@@ -224,7 +223,6 @@
       <@video.platformVideo class="max-w-6xl! mx-auto mb-18" id=(content.videoId)!"dQw4w9WgXcQ" />
       <@table.platformTable />
       <@process.platformAuthProcess />
-      <@cta.callToAction>¿Quieres saber más?</@cta.callToAction>
     </section>
     <@details.platformDetails />
     <@customer.platformCustomer />

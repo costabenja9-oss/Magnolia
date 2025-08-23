@@ -19,7 +19,7 @@
     <#if !_missionImg?has_content>
       <#assign _missionImg = ctx.contextPath + '/.resources/b-fy/webresources/images/mission.webp' />
     </#if>
-    <img class="about-mission__media" src="${_missionImg}" alt="${title}" onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/mission.webp'" />
+    <img class="about-mission__media" src="${_missionImg}" alt="${title}" onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/images/mission.webp'" />
     <div class="about-mission__body">
       <h2 class="about-mission__badge">${title}</h2>
       <p>${description}</p>

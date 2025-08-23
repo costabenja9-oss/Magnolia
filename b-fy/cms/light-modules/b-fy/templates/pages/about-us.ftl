@@ -108,7 +108,7 @@
       <@aboutCarouselCmp.aboutCarousel slides=slides />
     </section>
     <@aboutMessageCmp.aboutMessage tagline=msgTagline title=msgTitle htmlContent=msgHtml />
-    <#assign detailsImage = ctx.contextPath + '/.resources/b-fy/webresources/images/map.webp' />
+    <#assign detailsImage = ctx.contextPath + '/.resources/b-fy/webresources/images/about-us.webp' />
     <#if detailsNode.image?? && (damfn??)><#attempt><#assign detailsImage = (damfn.link(detailsNode.image))!detailsImage /><#recover></#attempt></#if>
     <@aboutDetailsCmp.aboutDetails title=detailsTitle description=detailsDesc imageUrl=detailsImage countries=detailsCountries />
     <@aboutMissionCmp.aboutMission title=missionTitle description=missionDesc imageUrl=missionImage />

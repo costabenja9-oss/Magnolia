@@ -1,36 +1,51 @@
-<#-- Refactored to mirror Astro Links - Tab navigation style matching image reference -->
-<#macro platformLinks>
-	<#assign fallback = [
-		{"name":"customer-authentication","title":"Customer authentication"},
-		{"name":"employee-authentication","title":"Employee authentication"},
-		{"name":"user-controlled-biometrics","title":"User-controlled biometrics"},
-		{"name":"ato-protection","title":"Effective against ATO, AI-driven fraud and phishing"},
-		{"name":"compliance","title":"Compliance"},
-		{"name":"decentralized-authentication","title":"Decentralized authentication"}
-	] />
-	<#assign nodes = [] />
-	<#-- Source: /features subtree like Astro -->
-	<#if content.features??>
-		<#assign c = (content.features?children)![] />
-		<#if c?size gt 0><#assign nodes = c /></#if>
-	</#if>
-	<#assign links = (nodes?size gt 0)?then(nodes, fallback) />
-	
-	<#-- Tab Navigation Style -->
-	<div class="mb-16">
-		<nav class="flex flex-wrap justify-center gap-2 sm:gap-4 lg:gap-6 xl:gap-8">
-			<#list links as l>
-				<#assign name = l.name!l["name"]!"" />
-				<#assign title = l.title!l["title"]!name />
-				<#assign isActive = (l?index == 1) /> <#-- Make "Employee authentication" active by default -->
-				<a class="group relative px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 text-xs sm:text-sm lg:text-base font-medium text-center ${isActive?then('text-orange-600 bg-orange-50 border-orange-200','text-gray-600 hover:text-orange-600')} border rounded-lg transition-all duration-200 hover:bg-orange-50 hover:border-orange-200" 
-				   href="${ctx.contextPath}/platform/${name}">
-					<span class="block leading-tight">${title}</span>
-					<#if isActive>
-						<span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-3 h-3 bg-orange-600 rotate-45"></span>
-					</#if>
-				</a>
-			</#list>
-		</nav>
-	</div>
+<#-- Platform Links: match image (uppercase, grey inactive, orange active with underline) -->
+<#macro platformLinks active="employee-authentication">
+  <#-- Fallback (EN) -->
+  <#assign fallback = [
+    {"name":"customer-authentication","title":"CUSTOMER AUTHENTICATION"},
+    {"name":"employee-authentication","title":"EMPLOYEE AUTHENTICATION"},
+    {"name":"user-controlled-biometrics","title":"USER-CONTROLLED BIOMETRICS"},
+    {"name":"ato-protection","title":"EFFECTIVE AGAINST ATO, AI-DRIVEN FRAUD AND PHISHING"},
+    {"name":"compliance","title":"REGULATORY COMPLIANCE"},
+    {"name":"decentralized-authentication","title":"DECENTRALIZED AUTHENTICATION"}
+  ] />
+
+  <#assign nodes = [] />
+  <#if content.features??>
+    <#assign c = (content.features?children)![] />
+    <#if c?size gt 0><#assign nodes = c /></#if>
+  </#if>
+  <#assign links = (nodes?size gt 0)?then(nodes, fallback) />
+  <#assign activeName = (active?has_content)?then(active, (links[1].name)!"employee-authentication") />
+
+  <#-- Scoped styles, included once -->
+  <#if !BFY_PLINKS_STYLE_INCLUDED??>
+    <#global BFY_PLINKS_STYLE_INCLUDED = true />
+    <style>
+      .bfy-tabs{border-top:1px solid #eee;padding-top:26px}
+      .bfy-tabs__nav{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;align-items:center}
+      .bfy-tab{position:relative;text-transform:uppercase;letter-spacing:.02em;
+               font-weight:600;font-size:14px;line-height:1;color:#9ca3af;text-decoration:none;
+               padding:.5rem .25rem;transition:color .2s ease}
+      .bfy-tab:hover{color:#ea580c}
+      .bfy-tab--active{color:#ea580c}
+      .bfy-tab--active::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:3px;
+                              background:#ea580c;border-radius:2px}
+      @media (min-width:1024px){ .bfy-tab{font-size:15px} }
+    </style>
+  </#if>
+
+  <div class="bfy-tabs">
+    <nav class="bfy-tabs__nav max-w-6xl mx-auto px-4">
+      <#list links as l>
+        <#assign name = l.name!l["name"]!"" />
+        <#assign title = l.title!l["title"]!name />
+        <#assign isActive = (name == activeName) />
+        <a href="${ctx.contextPath}/platform#${name}"
+           class="bfy-tab ${isActive?then('bfy-tab--active','')}">
+          <span>${title}</span>
+        </a>
+      </#list>
+    </nav>
+  </div>
 </#macro>

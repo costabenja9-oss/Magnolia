@@ -1,8 +1,3 @@
-<#-- Platform Det  <#assign fbItems = [
-    {"icon":"imac-shield","title":"No additional hardware","description":"B-FY leverages existing smartphone biometrics; no specialized readers are required. Users authenticate with their own devices, reducing implementation complexity."},
-    {"icon":"world","title":"Omnichannel compatibility","description":"Works across websites, mobile apps, and physical environments so you can integrate where you need it."},
-    {"icon":"bulb","title":"Fast deployment & scalability","description":"From startups to enterprises, B-FY's architecture scales to millions of users without disrupting existing workflows."}
-  ] />-->
 <#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
 <#import "/b-fy/templates/components/util/icons.ftl" as ic>
 
@@ -21,8 +16,8 @@
   <#assign fbDescription = "B-FY Platform offers a well-documented API/OpenID that lets companies quickly integrate authentication into web, mobile, or even physical access points." />
   <#assign fbItems = [
     {"icon":"imac-shield.svg","title":"No additional hardware","description":"B-FY leverages existing smartphone biometrics; no specialized readers are required. Users authenticate with their own devices, reducing implementation complexity."},
-    {"icon":"world.svg","title":"Omnichannel compatibility","description":"Works across websites, mobile apps, and physical environments so you can integrate where you need it."},
-    {"icon":"bulb.svg","title":"Fast deployment & scalability","description":"From startups to enterprises, B-FY’s architecture scales to millions of users without disrupting existing workflows."}
+    {"icon":"bulb.svg","title":"Omnichannel compatibility","description":"Works across websites, mobile apps, and physical environments so you can integrate where you need it."},
+    {"icon":"mobile.svg","title":"Fast deployment & scalability","description":"From startups to enterprises, B-FY’s architecture scales to millions of users without disrupting existing workflows."}
   ] />
   <#assign fbRegisterTitle = "Register in seconds" />
   <#assign fbRegisterDesc  = "Set up your account in a few steps and start enjoying secure, passwordless authentication." />
@@ -106,8 +101,11 @@
         <#list itemsList as it>
           <#assign iconName = it.icon!"laptop" />
           <#assign highlight = (it?index == 1) />
+          
           <article class="card${highlight?string(' card--highlight','')}">
             <div class="ic-wrap">
+              <#-- Usar siempre iconos locales de webresources/icons -->
+              <!-- DEBUG: iconName=${iconName}, localIconPath=${ic.iconPath(iconName)} -->
               <img src="${ic.iconPath(iconName)}" alt="" width="48" height="48" loading="lazy"/>
             </div>
             <h3 class="ttl">${it.title!}</h3>

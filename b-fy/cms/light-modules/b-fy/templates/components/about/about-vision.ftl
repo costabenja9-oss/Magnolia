@@ -23,6 +23,6 @@
     <#if !_visionImg?has_content>
       <#assign _visionImg = ctx.contextPath + '/.resources/b-fy/webresources/images/vision.webp' />
     </#if>
-    <img class="about-vision__media" src="${_visionImg}" alt="${title}" onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/vision.webp'" />
+    <img class="about-vision__media" src="${_visionImg}" alt="${title}" onerror="this.onerror=null;this.src='${ctx.contextPath}/.resources/b-fy/webresources/images/images/vision.webp'" />
   </section>
 </#macro>

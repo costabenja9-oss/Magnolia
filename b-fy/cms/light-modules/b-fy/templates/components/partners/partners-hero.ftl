@@ -48,16 +48,16 @@
 <#assign description = cmsValueWithFallback(content.description!"", "Conecta con B-FY y ofrece a tus usuarios la experiencia de autenticación biométrica más segura y privada del mercado.") />
 <#assign heroImage = damImageWithFallback(content.image!"", "partners-hero.webp") />
 
-<section style="margin: 0 0 2.5rem; padding: 0 1.25rem 0 1.25rem; text-align: center;">
+<section style="margin: 1rem 0 3rem; padding: 0 1.25rem; text-align: center;">
   <style>
     @media (min-width: 640px) {
-      .partners-hero { padding: 0 2.5rem; margin-top: 0 !important; }
+      .partners-hero { padding: 0 2.5rem; }
     }
     @media (min-width: 1024px) {
-      .partners-hero { padding: 0 3.25rem; margin-top: 0 !important; }
+      .partners-hero { padding: 0 3.25rem; }
     }
     @media (min-width: 1280px) {
-      .partners-hero { margin-top: 0 !important; }
+      .partners-hero { margin-top: 1rem; }
     }
     .partners-tagline {
       padding: 0.625rem 1.25rem;
@@ -75,15 +75,11 @@
       }
     }
     .partners-hero h1 {
-      margin: 0 0 2rem !important;
+      margin: 1.75rem 0 2.5rem;
       font-weight: bold;
       font-size: 1.875rem;
       line-height: 1.2;
       text-wrap: pretty;
-    }
-    .partners-hero {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
     }
     @media (min-width: 1280px) {
       .partners-hero h1 {

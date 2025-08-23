@@ -1,5 +1,0 @@
-title: Platform Detail 1
-renderType: freemarker
-templateScript: /b-fy/templates/pages/platform-detail1.ftl
-dialog: b-fy:pages/platform-detail1
-visible: true
