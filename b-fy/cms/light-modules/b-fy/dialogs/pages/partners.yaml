@@ -168,7 +168,7 @@ form:
               label: Content
               height: 180
               i18n: true
-              defaultValue: "<p>Completa el formulario y nuestro equipo se pondrá en contacto contigo para explorar oportunidades de colaboración.</p>"
+              defaultValue: "Completa el formulario y nuestro equipo se pondrá en contacto contigo para explorar oportunidades de colaboración."
             description:
               $type: textField
               label: Description

@@ -86,9 +86,6 @@
         <@mobileNavItem path="resources" currentPage=currentPage>Resources</@mobileNavItem>
         <@mobileNavItem path="contact" currentPage=currentPage>Contact</@mobileNavItem>
       </ul>
-      <div class="mobile-action-buttons">
-        <a href="${base}/contact" class="demo-button">Request a demo</a>
-      </div>
     </div>
 
     <style>
@@ -390,7 +387,6 @@
         display: none;
         background-color: var(--white);
         position: fixed;
-        top: 6rem; /* Espacio para topbar + navbar */
         left: 0;
         right: 0;
         z-index: 999;

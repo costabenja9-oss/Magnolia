@@ -745,7 +745,7 @@
       <div class="threats-grid">
         <#-- Threat 1 -->
         <article class="threat-card">
-          <#assign threat1Image = damImageWithFallback(content.threat1Image!"", "images/logistics-threats-01.webp") />
+          <#assign threat1Image = damImageWithFallback(content.threat1Image!"", "images/transportation-logistics-threats-01.webp") />
           <img class="threat-image" src="${threat1Image}" alt="Threat 1" />
           <div class="threat-content">
             <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "ROBO DE CARGA Y MERCANCÍAS") />
@@ -757,7 +757,7 @@
 
         <#-- Threat 2 -->
         <article class="threat-card">
-          <#assign threat2Image = damImageWithFallback(content.threat2Image!"", "images/logistics-threats-02.webp") />
+          <#assign threat2Image = damImageWithFallback(content.threat2Image!"", "images/transportation-logistics-threats-02.webp") />
           <img class="threat-image" src="${threat2Image}" alt="Threat 2" />
           <div class="threat-content">
             <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "FRAUDE EN DOCUMENTACIÓN") />
@@ -769,7 +769,7 @@
 
         <#-- Threat 3 -->
         <article class="threat-card">
-          <#assign threat3Image = damImageWithFallback(content.threat3Image!"", "images/logistics-threats-03.webp") />
+          <#assign threat3Image = damImageWithFallback(content.threat3Image!"", "images/transportation-logistics-threats-03.webp") />
           <img class="threat-image" src="${threat3Image}" alt="Threat 3" />
           <div class="threat-content">
             <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "ATAQUES A INFRAESTRUCTURA CRÍTICA") />
@@ -793,7 +793,7 @@
       <div class="features-list">
         <#-- Feature 1 -->
         <article class="feature-item">
-          <#assign feature1Icon = damImageWithFallback(content.feature1Icon!"", "icons/mobile-shield.svg") />
+          <#assign feature1Icon = damImageWithFallback(content.feature1Icon!"", "icons/mobile.svg") />
           <img class="feature-icon" src="${feature1Icon}" alt="" />
           <div class="feature-content">
             <#assign feature1Title = cmsValueWithFallback(content.feature1Title!"", "ACCESO RÁPIDO A TERMINALES") />
@@ -843,7 +843,7 @@
 
     <#-- Product Section -->
     <section class="product-section">
-      <#assign productImage = damImageWithFallback(content.productImage!"", "images/logistics-product.webp") />
+      <#assign productImage = damImageWithFallback(content.productImage!"", "images/transportation-logistics-product.webp") />
       <img class="product-image" src="${productImage}" alt="Product" />
       
       <div class="product-content">
@@ -861,7 +861,7 @@
     </section>
 
     <#-- CTA Section -->
-    <section class="cta-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${damImageWithFallback(content.ctaBackground!"", "images/logistics-call-to-action.webp")}');">
+    <section class="cta-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${damImageWithFallback(content.ctaBackground!"", "images/transportation-logistics-call-to-action.webp")}');">
       <div class="cta-content">
         <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "¿LISTO PARA OPTIMIZAR TU LOGÍSTICA?") />
         <p class="cta-tag">${ctaTag}</p>

@@ -14,13 +14,11 @@
     <#import "/b-fy/templates/components/developers/developers-hero.ftl" as hero />
     <#import "/b-fy/templates/components/developers/developers-details.ftl" as details />
     <#import "/b-fy/templates/components/developers/developers-features.ftl" as features />
-    <#import "/b-fy/templates/components/developers/developers-resources.ftl" as res />
     <#import "/b-fy/templates/components/developers/developers-architecture.ftl" as arch />
     <#import "/b-fy/templates/components/developers/developers-faqs.ftl" as faqs />
     <@hero.developersHero />
     <@details.developersDetails />
     <@features.developersFeatures />
-    <@res.developersResources />
     <@arch.developersArchitecture />
     <@faqs.developersFaqs />
   </main>

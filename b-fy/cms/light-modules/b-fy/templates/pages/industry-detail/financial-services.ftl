@@ -727,7 +727,7 @@
 
         <#-- Detail 4 -->
         <article class="detail-card">
-          <#assign detail4Icon = damImageWithFallback(content.detail4Icon!"", "icons/mobile-bfy.svg") />
+          <#assign detail4Icon = damImageWithFallback(content.detail4Icon!"", "icons/mobile.svg") />
           <img class="detail-icon" src="${detail4Icon}" alt="" />
           <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "TRANSACCIONES DE ALTO VALOR") />
           <h3 class="detail-title">${detail4Title}</h3>
@@ -745,7 +745,7 @@
       <div class="threats-grid">
         <#-- Threat 1 -->
         <article class="threat-card">
-          <#assign threat1Image = damImageWithFallback(content.threat1Image!"", "images/financial-threats-01.webp") />
+          <#assign threat1Image = damImageWithFallback(content.threat1Image!"", "images/financial-services-threats-01.webp") />
           <img class="threat-image" src="${threat1Image}" alt="Threat 1" />
           <div class="threat-content">
             <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "FRAUDE EN PAGOS DIGITALES") />
@@ -757,7 +757,7 @@
 
         <#-- Threat 2 -->
         <article class="threat-card">
-          <#assign threat2Image = damImageWithFallback(content.threat2Image!"", "images/financial-threats-02.webp") />
+          <#assign threat2Image = damImageWithFallback(content.threat2Image!"", "images/financial-services-threats-02.webp") />
           <img class="threat-image" src="${threat2Image}" alt="Threat 2" />
           <div class="threat-content">
             <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "ATAQUES DE ACCOUNT TAKEOVER (ATO)") />
@@ -769,7 +769,7 @@
 
         <#-- Threat 3 -->
         <article class="threat-card">
-          <#assign threat3Image = damImageWithFallback(content.threat3Image!"", "images/financial-threats-03.webp") />
+          <#assign threat3Image = damImageWithFallback(content.threat3Image!"", "images/financial-services-threats-03.webp") />
           <img class="threat-image" src="${threat3Image}" alt="Threat 3" />
           <div class="threat-content">
             <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "PHISHING Y DEEPFAKES FINANCIEROS") />
@@ -843,7 +843,7 @@
 
     <#-- Product Section -->
     <section class="product-section">
-      <#assign productImage = damImageWithFallback(content.productImage!"", "images/financial-product.webp") />
+      <#assign productImage = damImageWithFallback(content.productImage!"", "images/financial-services-product.webp") />
       <img class="product-image" src="${productImage}" alt="Product" />
       
       <div class="product-content">
@@ -861,7 +861,7 @@
     </section>
 
     <#-- CTA Section -->
-    <section class="cta-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${damImageWithFallback(content.ctaBackground!"", "images/financial-call-to-action.webp")}');">
+    <section class="cta-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${damImageWithFallback(content.ctaBackground!"", "images/financial-services-call-to-action.webp")}');">
       <div class="cta-content">
         <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "¿LISTO PARA REVOLUCIONAR TU SEGURIDAD FINANCIERA?") />
         <p class="cta-tag">${ctaTag}</p>
