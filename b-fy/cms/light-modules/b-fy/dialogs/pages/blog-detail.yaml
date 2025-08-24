@@ -1,0 +1,10 @@
+form:
+  tabs:
+    - name: tabMain
+      label: Content
+      fields:
+        - name: slug
+          class: info.magnolia.ui.field.TextFieldDefinition
+          label: Blog Post Slug
+          description: "The slug from the URL to find the blog post"
+          required: true

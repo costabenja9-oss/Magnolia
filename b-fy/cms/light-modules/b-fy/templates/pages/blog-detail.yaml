@@ -1,0 +1,3 @@
+title: Blog Detail
+renderType: freemarker
+templateScript: /b-fy/templates/pages/blog-detail.ftl

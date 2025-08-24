@@ -1,0 +1,3 @@
+title: Blog List
+renderType: freemarker
+templateScript: /b-fy/templates/pages/blog-list.ftl

@@ -1,0 +1,3 @@
+class: info.magnolia.virtualuri.VirtualUriMapping
+fromUri: /resources/blog/*
+toUri: forward:/blog-detail?slug=$1
