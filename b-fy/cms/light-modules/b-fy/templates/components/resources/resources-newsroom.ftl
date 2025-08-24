@@ -1,76 +1,118 @@
-<#-- Resources Newsroom Component -->
+<#-- Resources Newsroom - UI matched to reference image (design only) -->
 <#macro resourcesNewsroom>
 <#assign pressReleases = [
-  {
-    "title": "B‑FY passwordless biometric solution: a real gamechanger in the fight against Cybercrime",
-    "date": "September 18, 2024",
-    "formats": ["WORD", "PDF"]
-  },
-  {
-    "title": "B‑FY's revolutionary solution against cybercrime, a huge success in Washington ID Week",
-    "date": "September 16, 2024", 
-    "formats": ["WORD", "PDF"]
-  },
-  {
-    "title": "B‑FY introduces revolutionary solution to terminate Online ID Fraud and Cybercrime",
-    "date": "September 9, 2024",
-    "formats": ["WORD", "PDF"]
-  },
-  {
-    "title": "B‑FY presents its universal solution to Online ID Fraud in Washington DC",
-    "date": "September 4, 2024",
-    "formats": ["WORD", "PDF"]
-  },
-  {
-    "title": "B‑FY the biometric solution that stops Cybercrime",
-    "date": "June 11, 2024",
-    "formats": ["WORD", "PDF"]
-  }
+  {"title":"B-FY passwordless biometric solution: a real gamechanger in the fight against Cybercrime","date":"September 18, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"B-FY's revolutionary solution against cybercrime, a huge success in Washington ID Week","date":"September 16, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"B-FY introduces revolutionary solution to terminate Online ID Fraud and Cybercrime","date":"September 9, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"B-FY presents its universal solution to Online ID Fraud in Washington DC","date":"September 4, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"B-FY the biometric solution that stops Cybercrime","date":"June 11, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"Company logo package","date":"Updated 2024","formats":["PNG","SVG"],"type":"graphic-resources"},
+  {"title":"Product screenshots and diagrams","date":"Updated 2024","formats":["ZIP"],"type":"graphic-resources"},
+  {"title":"Team photos and executive portraits","date":"Updated 2024","formats":["ZIP"],"type":"graphic-resources"}
 ] />
 
-<section class="py-20 px-5 sm:px-10 lg:px-13" id="newsroom">
-  <div class="text-center">
-    <hgroup>
-      <p class="py-2.5 px-5 inline-block rounded bg-orange-600 leading-none text-white uppercase xl:text-xl">
-        Newsroom
-      </p>
-      <h2 class="my-7 font-bold text-3xl xl:text-5xl">Essential resources to communicate about B-FY</h2>
-    </hgroup>
-    <p class="max-w-5xl mx-auto text-lg xl:text-xl/snug">
+<section id="newsroom" class="nr">
+  <div class="nr__head">
+    <p class="nr__pill">Newsroom</p>
+    <h2 class="nr__title">Essential resources to communicate about B-FY</h2>
+    <p class="nr__subtitle">
       If you're a journalist or content creator, here you'll find key information to report on our technology, event participation, and more.
     </p>
   </div>
-  
-  <div class="mt-15">
-    <div class="flex justify-center gap-6 mb-10">
-      <button class="py-2 px-4 rounded bg-orange-600 text-white">Press releases</button>
-      <button class="py-2 px-4 rounded bg-gray-100 text-gray-700 hover:bg-gray-200">Visual assets</button>
-    </div>
-    
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <#list pressReleases as release>
-        <article class="p-6 border border-gray-200 rounded-lg">
-          <p class="text-sm text-gray-500 mb-2">${release.date}</p>
-          <h3 class="font-bold text-lg mb-4">${release.title}</h3>
-          <div class="flex gap-3">
-            <#list release.formats as format>
-              <a class="py-1.5 px-3 text-sm bg-orange-600 text-white rounded hover:bg-red-800 transition-colors"
-                 href="${ctx.contextPath}/downloads/press-release-${release?index + 1}-${format?lower_case}.${format?lower_case}"
-                 download>
-                ${format}
-              </a>
-            </#list>
-          </div>
-        </article>
-      </#list>
-    </div>
-    
-    <div class="text-center mt-10">
-      <a class="py-2.5 px-5 inline-block rounded bg-orange-600 text-xl text-white transitions-colors hover:bg-red-800"
-         href="${ctx.contextPath}/newsroom">
-        View more
-      </a>
-    </div>
+
+  <div class="nr__tabs" id="newsroom-filters">
+    <button class="nr__tab nr__tab--active" data-type="press-releases">Press releases</button>
+    <button class="nr__tab" data-type="graphic-resources">Graphic resources</button>
+  </div>
+
+  <div id="newsroom-grid" class="nr__grid">
+    <#list pressReleases as release>
+      <article class="nr__item newsroom-item" data-type="${release.type}">
+        <p class="nr__date">${release.date}</p>
+        <h3 class="nr__item-title">${release.title}</h3>
+        <p class="nr__formats">
+          <#list release.formats as f>
+            <a href="${ctx.contextPath}/downloads/press-release-${release?index + 1}-${f?lower_case}.${f?lower_case}" download>${f}</a><#if f_has_next> · </#if>
+          </#list>
+        </p>
+        <a class="nr__more" href="${ctx.contextPath}/press/${release?index + 1}">
+          <span>Learn more</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </a>
+      </article>
+    </#list>
+  </div>
+
+  <div class="nr__cta">
+    <button id="newsroom-view-more" class="nr__viewmore">View more</button>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.nr__tab');
+  const items = document.querySelectorAll('.newsroom-item');
+  const viewMoreBtn = document.getElementById('newsroom-view-more');
+
+  let currentType = 'press-releases';
+  let visible = 9, page = 9;
+
+  function update() {
+    const filtered = Array.from(items).filter(i => i.dataset.type === currentType);
+    items.forEach(i => i.style.display = 'none');
+    filtered.slice(0, visible).forEach(i => i.style.display = 'block');
+    viewMoreBtn.style.display = visible >= filtered.length ? 'none' : 'inline-flex';
+  }
+
+  tabs.forEach(t => {
+    t.addEventListener('click', () => {
+      tabs.forEach(x => x.classList.remove('nr__tab--active'));
+      t.classList.add('nr__tab--active');
+      currentType = t.dataset.type;
+      visible = page;
+      update();
+    });
+  });
+
+  viewMoreBtn.addEventListener('click', () => { visible += page; update(); });
+
+  update();
+});
+</script>
+
+<#-- Scoped styles (design only) -->
+<#if !NR_STYLE_INCLUDED??>
+  <#global NR_STYLE_INCLUDED = true />
+  <style>
+    .nr{padding:72px 20px}
+    .nr__head{text-align:center;max-width:960px;margin:0 auto 28px}
+    .nr__pill{display:inline-block;padding:10px 18px;border-radius:10px;background:#ea580c;color:#fff;font-weight:800;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 10px 22px rgba(234,88,12,.25)}
+    .nr__title{margin:18px 0;font-weight:800;color:#0f172a;font-size:clamp(28px,4vw,38px);line-height:1.1}
+    .nr__subtitle{margin:0 auto;color:#374151;max-width:820px;font-size:clamp(16px,2vw,18px);line-height:1.55}
+
+    .nr__tabs{display:flex;gap:28px;justify-content:center;align-items:center;margin:26px auto 10px}
+    .nr__tab{position:relative;background:transparent;border:0;padding:10px 4px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:#6b7280;cursor:pointer}
+    .nr__tab--active{color:#ea580c}
+    .nr__tab--active:after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-8px;width:60%;height:3px;background:#ea580c;border-radius:2px}
+
+    .nr__grid{display:grid;gap:34px 40px;grid-template-columns:1fr}
+    @media(min-width:768px){.nr__grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.nr__grid{grid-template-columns:repeat(3,1fr)}}
+
+    .nr__item{padding:0}
+    .nr__date{color:#ea580c;font-size:13px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;margin-bottom:6px}
+    .nr__item-title{font-weight:800;color:#0f172a;font-size:18px;line-height:1.35;margin:6px 0 8px}
+    .nr__formats{font-size:13px;color:#9ca3af;margin-bottom:10px}
+    .nr__formats a{color:#ea580c;text-decoration:none}
+    .nr__formats a:hover{color:#c2410c;text-decoration:underline}
+
+    .nr__more{display:inline-flex;align-items:center;gap:6px;color:#ea580c;font-weight:700;font-size:14px;text-decoration:none}
+    .nr__more:hover{color:#c2410c}
+    .nr__more svg{width:14px;height:14px}
+
+    .nr__cta{display:flex;justify-content:center}
+    .nr__viewmore{margin-top:36px;display:inline-flex;align-items:center;gap:8px;background:#ea580c;color:#fff;font-weight:700;padding:10px 18px;border-radius:10px;border:0;cursor:pointer;box-shadow:0 10px 22px rgba(234,88,12,.25)}
+    .nr__viewmore:hover{background:#c2410c}
+  </style>
+</#if>
 </#macro>
