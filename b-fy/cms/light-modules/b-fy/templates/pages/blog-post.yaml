@@ -1,7 +1,0 @@
-title: Blog Post
-renderType: content-editor-freemarker
-templateScript: /b-fy/templates/pages/blog-post.ftl
-description: Blog post detail template using Magnolia Stories
-dialog: b-fy:pages/blog-post
-
-visible: true
