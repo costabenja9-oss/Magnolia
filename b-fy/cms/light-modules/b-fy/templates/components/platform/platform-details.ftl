@@ -21,7 +21,7 @@
   <#assign fbDescription = "B-FY Platform offers a well-documented API/OpenID that lets companies quickly integrate authentication into web, mobile, or even physical access points." />
   <#assign fbItems = [
     {"icon":"imac-shield.svg","title":"No additional hardware","description":"B-FY leverages existing smartphone biometrics; no specialized readers are required. Users authenticate with their own devices, reducing implementation complexity."},
-    {"icon":"world.svg","title":"Omnichannel compatibility","description":"Works across websites, mobile apps, and physical environments so you can integrate where you need it."},
+    {"icon":"mobile.svg","title":"Omnichannel compatibility","description":"Works across websites, mobile apps, and physical environments so you can integrate where you need it."},
     {"icon":"bulb.svg","title":"Fast deployment & scalability","description":"From startups to enterprises, B-FY’s architecture scales to millions of users without disrupting existing workflows."}
   ] />
   <#assign fbRegisterTitle = "Register in seconds" />

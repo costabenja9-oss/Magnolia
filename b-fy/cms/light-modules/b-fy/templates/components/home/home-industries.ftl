@@ -1,5 +1,4 @@
 
-<#-- Import shared CMS utilities -->
 <#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
 
 <#-- Funciones de emergencia inline -->
@@ -31,7 +30,7 @@
 	<#assign fallbackIndustryItems = [
 		{"name":"Financial Services","summary":"Stop ATO and APP threats, MFA bombing, and other attacks and data breaches with B-FY’s secure, decentralized biometric authentication. Balance regulatory compliance and user experience with strong security measures that stop all forms of online identity fraud.","link":"/industries#financial","thumbnail":financialThumb},
 		{"name":"Transport & Logistics","summary":"Meet all sector-specific regulatory requirements while offering a seamless user experience with B-FY’s decentralized, passwordless-by-design solution. Eliminate financial fraud stemming from identity theft caused by both internal and external actors.","link":"/industries#transport","thumbnail":transportThumb},
-		{"name":"Education","summary":"Protect students, teachers, and administrative staff against ransomware, data breaches, and online financial fraud in payments, student loans, grants, and scholarships. Improve user experience by streamlining enrollment and ensure only authorized individuals access restricted areas with B-FY.","link":"/industries#education","thumbnail":educationThumb},
+		{"name":"Education","summary":"Protect students, teachers, and administrative staff against ransomware, data breaches, and online financial fraud in payments, student loans, grants, and scholarships. Improve user experience by streamlining enrollment and ensure only authorized individuals access restricted areas with B-FY.","link":"${ctx.contextPath}/industries/education","thumbnail":educationThumb},
 		{"name":"Healthcare Services","summary":"Comply with all privacy, quality, and security regulations, including HIPAA and GDPR. Deliver a frictionless user experience with B-FY’s decentralized, passwordless-by-design solution. We protect healthcare institutions and their users against medical identity theft, insurance fraud, and data breaches.","link":"/industries#healthcare","thumbnail":healthcareThumb}
 	] />
 	<#if !HOME_INDUSTRIES_STYLE_INCLUDED??>
@@ -259,10 +258,10 @@
 		</style>
 	</#if>
 	<#assign fallbackIndustryItems = [
-		{"name":"Financial Services","summary":"Stop ATO and APP threats, MFA bombing, and other attacks and data breaches with B-FY’s secure, decentralized biometric authentication. Balance regulatory compliance and user experience with strong security measures that stop all forms of online identity fraud.","link":"/industries#financial"},
-		{"name":"Transport & Logistics","summary":"Meet all sector-specific regulatory requirements while offering a seamless user experience with B-FY’s decentralized, passwordless-by-design solution. Eliminate financial fraud stemming from identity theft caused by both internal and external actors.","link":"/industries#transport"},
-		{"name":"Education","summary":"Protect students, teachers, and administrative staff against ransomware, data breaches, and online financial fraud in payments, student loans, grants, and scholarships. Improve user experience by streamlining enrollment and ensure only authorized individuals access restricted areas with B-FY.","link":"/industries#education","thumbnail":"${ctx.contextPath}/.resources/b-fy/webresources/images/education-thumbnail.webp"},
-		{"name":"Healthcare Services","summary":"Comply with all privacy, quality, and security regulations, including HIPAA and GDPR. Deliver a frictionless user experience with B-FY’s decentralized, passwordless-by-design solution. We protect healthcare institutions and their users against medical identity theft, insurance fraud, and data breaches.","link":"/industries#healthcare"}
+		{"name":"Financial Services","summary":"Stop ATO and APP threats, MFA bombing, and other attacks and data breaches with B-FY’s secure, decentralized biometric authentication. Balance regulatory compliance and user experience with strong security measures that stop all forms of online identity fraud.","link":"${ctx.contextPath}/industries/financial-services"},
+		{"name":"Transport & Logistics","summary":"Meet all sector-specific regulatory requirements while offering a seamless user experience with B-FY’s decentralized, passwordless-by-design solution. Eliminate financial fraud stemming from identity theft caused by both internal and external actors.","link":"${ctx.contextPath}/industries/transport-services"},
+		{"name":"Education","summary":"Protect students, teachers, and administrative staff against ransomware, data breaches, and online financial fraud in payments, student loans, grants, and scholarships. Improve user experience by streamlining enrollment and ensure only authorized individuals access restricted areas with B-FY.","link":"${ctx.contextPath}/industries/education","thumbnail":"${ctx.contextPath}/.resources/b-fy/webresources/images/education-thumbnail.webp"},
+		{"name":"Healthcare Services","summary":"Comply with all privacy, quality, and security regulations, including HIPAA and GDPR. Deliver a frictionless user experience with B-FY’s decentralized, passwordless-by-design solution. We protect healthcare institutions and their users against medical identity theft, insurance fraud, and data breaches.","link":"${ctx.contextPath}/industries/healthcare"}
 	] />
 	<#assign _industries = {} />
 	<#if content.industries??>
