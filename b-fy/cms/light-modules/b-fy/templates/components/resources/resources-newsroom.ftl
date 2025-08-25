@@ -1,11 +1,14 @@
 <#-- Resources Newsroom - UI matched to reference image (design only) -->
 <#macro resourcesNewsroom>
 <#assign pressReleases = [
-  {"title":"B-FY passwordless biometric solution: a real gamechanger in the fight against Cybercrime","date":"September 18, 2024","formats":["DOCX","PDF"],"type":"press-releases","filename":"b-fy-passwordless-biometric-solution-real-gamechanger-fight-cybercrime"},
-  {"title":"B-FY's revolutionary solution against cybercrime, a huge success in Washington ID Week","date":"September 16, 2024","formats":["DOCX","PDF"],"type":"press-releases","filename":"b-fys-revolutionary-solution-cybercrime-huge-success-washington-id-week"},
-  {"title":"B-FY introduces revolutionary solution to terminate Online ID Fraud and Cybercrime","date":"September 9, 2024","formats":["DOCX","PDF"],"type":"press-releases","filename":"b-fy-introduces-revolutionary-solution-terminate-online-id-fraud-cybercrime"},
-  {"title":"B-FY presents its universal solution to Online ID Fraud in Washington DC","date":"September 4, 2024","formats":["DOCX","PDF"],"type":"press-releases","filename":"b-fy-presents-universal-solution-online-id-fraud-washington-dc"},
-  {"title":"B-FY the biometric solution that stops Cybercrime","date":"June 11, 2024","formats":["DOCX","PDF"],"type":"press-releases","filename":"b-fy-biometric-solution-stops-cybercrime"}
+  {"title":"B-FY passwordless biometric solution: a real gamechanger in the fight against Cybercrime","date":"September 18, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"B-FY's revolutionary solution against cybercrime, a huge success in Washington ID Week","date":"September 16, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"B-FY introduces revolutionary solution to terminate Online ID Fraud and Cybercrime","date":"September 9, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"B-FY presents its universal solution to Online ID Fraud in Washington DC","date":"September 4, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"B-FY the biometric solution that stops Cybercrime","date":"June 11, 2024","formats":["WORD","PDF"],"type":"press-releases"},
+  {"title":"Company logo package","date":"Updated 2024","formats":["PNG","SVG"],"type":"graphic-resources"},
+  {"title":"Product screenshots and diagrams","date":"Updated 2024","formats":["ZIP"],"type":"graphic-resources"},
+  {"title":"Team photos and executive portraits","date":"Updated 2024","formats":["ZIP"],"type":"graphic-resources"}
 ] />
 
 <section id="newsroom" class="nr">
@@ -17,6 +20,11 @@
     </p>
   </div>
 
+  <div class="nr__tabs" id="newsroom-filters">
+    <button class="nr__tab nr__tab--active" data-type="press-releases">Press releases</button>
+    <button class="nr__tab" data-type="graphic-resources">Graphic resources</button>
+  </div>
+
   <div id="newsroom-grid" class="nr__grid">
     <#list pressReleases as release>
       <article class="nr__item newsroom-item" data-type="${release.type}">
@@ -24,10 +32,10 @@
         <h3 class="nr__item-title">${release.title}</h3>
         <p class="nr__formats">
           <#list release.formats as f>
-            <a href="${ctx.contextPath}/.resources/b-fy/webresources/press-resources/${release.filename}.${f?lower_case}" download>${f}</a><#if f_has_next> · </#if>
+            <a href="${ctx.contextPath}/downloads/press-release-${release?index + 1}-${f?lower_case}.${f?lower_case}" download>${f}</a><#if f_has_next> · </#if>
           </#list>
         </p>
-        <a class="nr__more" href="${ctx.contextPath}/.resources/b-fy/webresources/press-resources/${release.filename}.pdf" download>
+        <a class="nr__more" href="${ctx.contextPath}/press/${release?index + 1}">
           <span>Learn more</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
         </a>
@@ -42,22 +50,31 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.nr__tab');
   const items = document.querySelectorAll('.newsroom-item');
   const viewMoreBtn = document.getElementById('newsroom-view-more');
 
-  let visible = 6, page = 6;
+  let currentType = 'press-releases';
+  let visible = 9, page = 9;
 
   function update() {
-    items.forEach((item, index) => {
-      item.style.display = index < visible ? 'block' : 'none';
-    });
-    viewMoreBtn.style.display = visible >= items.length ? 'none' : 'inline-flex';
+    const filtered = Array.from(items).filter(i => i.dataset.type === currentType);
+    items.forEach(i => i.style.display = 'none');
+    filtered.slice(0, visible).forEach(i => i.style.display = 'block');
+    viewMoreBtn.style.display = visible >= filtered.length ? 'none' : 'inline-flex';
   }
 
-  viewMoreBtn.addEventListener('click', () => { 
-    visible += page; 
-    update(); 
+  tabs.forEach(t => {
+    t.addEventListener('click', () => {
+      tabs.forEach(x => x.classList.remove('nr__tab--active'));
+      t.classList.add('nr__tab--active');
+      currentType = t.dataset.type;
+      visible = page;
+      update();
+    });
   });
+
+  viewMoreBtn.addEventListener('click', () => { visible += page; update(); });
 
   update();
 });
