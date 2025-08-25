@@ -193,6 +193,30 @@
     <#assign currentBlog = blogData["bfy-higher-education"] />
   <#elseif blogSlug?contains("bfy-fuel-industry") || blogSlug?contains("fuel-industry") || blogSlug?contains("mexico")>
     <#assign currentBlog = blogData["bfy-fuel-industry-mexico"] />
+  <#elseif blogSlug?contains("bfy-eudi") || blogSlug?contains("eudi") || blogSlug?contains("compliance")>
+    <#assign currentBlog = blogData["bfy-eudi-compliance"] />
+  <#elseif blogSlug?contains("bfy-banking") || blogSlug?contains("banking-experiences") || blogSlug?contains("decentralized-biometric")>
+    <#assign currentBlog = blogData["bfy-banking-experiences"] />
+  <#elseif blogSlug?contains("biometric-edge") || blogSlug?contains("edge-education") || blogSlug?contains("educational-industry")>
+    <#assign currentBlog = blogData["biometric-edge-education"] />
+  <#elseif blogSlug?contains("biometric-ux") || blogSlug?contains("ux-compliance") || blogSlug?contains("revolutionize-ux")>
+    <#assign currentBlog = blogData["biometric-ux-compliance"] />
+  <#elseif blogSlug?contains("biometric-financial") || blogSlug?contains("financial-leverage") || blogSlug?contains("leverage-financial")>
+    <#assign currentBlog = blogData["biometric-financial-leverage"] />
+  <#elseif blogSlug?contains("biometric-iam") || blogSlug?contains("iam-solution") || blogSlug?contains("effective-iam")>
+    <#assign currentBlog = blogData["biometric-iam-solution"] />
+  <#elseif blogSlug?contains("healthcare-biometric") || blogSlug?contains("healthcare-investment") || blogSlug?contains("medical-biometric")>
+    <#assign currentBlog = blogData["healthcare-biometric-investment"] />
+  <#elseif blogSlug?contains("hidden-costs") || blogSlug?contains("fraud-costs") || blogSlug?contains("identity-fraud")>
+    <#assign currentBlog = blogData["hidden-costs-fraud"] />
+  <#elseif blogSlug?contains("higher-education") || blogSlug?contains("gen-z") || blogSlug?contains("generation-alpha")>
+    <#assign currentBlog = blogData["higher-education-gen-z"] />
+  <#elseif blogSlug?contains("mfa-biometric") || blogSlug?contains("multi-factor") || blogSlug?contains("authentication-biometric")>
+    <#assign currentBlog = blogData["mfa-biometrics"] />
+  <#elseif blogSlug?contains("password-cybercriminal") || blogSlug?contains("passwords-key") || blogSlug?contains("cybercriminal-access")>
+    <#assign currentBlog = blogData["passwords-cybercriminals"] />
+  <#elseif blogSlug?contains("protect-company") || blogSlug?contains("cyber-threat") || blogSlug?contains("company-protection")>
+    <#assign currentBlog = blogData["protect-company-threats"] />
   <#else>
     <#-- Si no hay slug o no coincide, usar el blog por defecto -->
     <#assign currentBlog = blogData["identity-verification-challenge"] />
