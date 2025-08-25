@@ -1,0 +1,4 @@
+title: section-text
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-text.ftl
+dialog: b-fy-web:components/section-text

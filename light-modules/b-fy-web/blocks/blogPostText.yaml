@@ -1,0 +1,8 @@
+templateId: b-fy-web:blocks/blogPostText
+block:
+  properties:
+    text:
+      $type: richTextField
+      height: 500
+      source: true
+      configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js

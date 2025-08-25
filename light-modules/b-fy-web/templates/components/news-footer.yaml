@@ -1,0 +1,4 @@
+title: news-footer
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/news-footer.ftl
+dialog: b-fy-web:components/news-footer

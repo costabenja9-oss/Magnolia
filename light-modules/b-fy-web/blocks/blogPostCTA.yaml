@@ -1,0 +1,53 @@
+templateId: b-fy-web:blocks/blogPostCTA
+icon: share
+block:
+  properties:
+    label:
+      label: Label
+      $type: textField
+      required: true
+    link:
+      $type: switchableField
+      label: ""
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: asset
+              label: Asset
+              value: asset
+            - name: url
+              label: URL
+              value: url
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        - name: asset
+          properties:
+            asset:
+              $type: damLinkField
+              label: Asset
+        - name: url
+          properties:
+            url:
+              $type: textField
+              label: URL
+
+    alignment:
+      label: Alignment
+      $type: comboBoxField
+      emptySelectionAllowed: true
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: center
+            label: Center
+            value: center
+          - name: left
+            label: Left
+            value: left
+          - name: right
+            label: Right
+            value: right

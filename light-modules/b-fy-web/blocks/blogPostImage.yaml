@@ -1,0 +1,18 @@
+# !inherit:content-editor:blocks/image
+templateId: b-fy-web:blocks/blogPostImage
+icon: file-image
+block:
+  properties:
+    image:
+      $type: damLinkField
+      required: true
+    imageAltText:
+      $type: textField
+    imageCaption:
+      $type: textField
+    imageCredit:
+      $type: textField
+    link:
+      $type: textField
+      label: Link
+      description: URL that will be opened when image is clicked

@@ -1,0 +1,53 @@
+title: Standard Page
+templateScript: /b-fy-web/templates/pages/standard.ftl
+renderType: freemarker
+dialog: b-fy-web:pages/standard
+visible: true
+
+areas:
+  navbar:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/navbar.ftl
+  gdpr:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/gdpr-dialog.ftl
+  hero:
+    type: single
+    availableComponents:
+      hero:
+        id: b-fy-web:components/hero
+      hero-carousel:
+        id: b-fy-web:components/hero-carousel
+  footer:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/footer.ftl
+  main:
+    type: list
+    availableComponents:
+      text:
+        id: b-fy-web:components/section-text
+      cards:
+        id: b-fy-web:components/section-cards
+      section-banner:
+        id: b-fy-web:components/section-banner
+      section-offices:
+        id: b-fy-web:components/section-offices
+      request-demo:
+        id: b-fy-web:components/request-demo
+      section-team:
+        id: b-fy-web:components/section-team
+      section-banner-jumbo:
+        id: b-fy-web:components/section-banner-jumbo
+      section-app:
+        id: b-fy-web:components/section-app
+      section-cases-studies:
+        id: b-fy-web:components/section-cases-studies
+      contact-form:
+        id: form:components/form
+      section-highlight:
+        id: b-fy-web:components/section-highlight
+      section-cta:
+        id: b-fy-web:components/section-cta

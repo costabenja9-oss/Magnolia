@@ -1,0 +1,19 @@
+label: blog-post
+form:
+  properties:
+  # Just for testing purposes
+    story:
+      label: Story(for testing)
+      $type: linkField
+      converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path (the default converter stores a UUID)
+      datasource:
+        $type: jcrDatasource
+        workspace: stories
+        allowedNodeTypes:
+          - mgnl:composition
+          - mgnl:folder
+    hideInNav:
+      $type: checkBoxField
+      defaultValue: true
+      label: Hide in navigation
+      buttonLabel: Hide

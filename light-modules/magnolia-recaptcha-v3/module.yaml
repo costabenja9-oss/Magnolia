@@ -1,0 +1,7 @@
+version: 6.2
+dependencies:
+  core:
+    version: 6.2/*
+  form: 
+    version: 2.7/*
+    

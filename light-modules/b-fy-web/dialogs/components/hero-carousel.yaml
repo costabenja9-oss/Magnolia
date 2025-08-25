@@ -1,0 +1,35 @@
+label: hero-carousel
+form:
+  properties:
+    navigationColor:
+      $type: textField
+      label: Navigation color
+    paginationColor:
+      $type: textField
+      label: Pagination color
+    delay:
+      $type: textField
+      label: Delay between slides
+    speed:
+      $type: textField
+      label: Speed moving slides
+    slides:
+      label: Slides
+      $type: jcrMultiField
+      field:
+        $type: compositeField
+        label: ""
+        properties:
+          title:
+            $type: richTextField
+            configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+            label: Title
+            i18n: true
+          image:
+            label: Image
+            $type: damLinkField    
+          description:
+            $type: richTextField
+            configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+            label: Description
+            i18n: true

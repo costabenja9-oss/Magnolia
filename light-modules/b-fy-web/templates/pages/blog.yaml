@@ -1,0 +1,24 @@
+title: Blog
+templateScript: /b-fy-web/templates/pages/blog.ftl
+renderType: freemarker
+dialog: b-fy-web:pages/blog
+visible: true
+
+areas:
+  navbar:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/navbar.ftl
+  gdpr:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/gdpr-dialog.ftl    
+  main:
+    type: list
+    availableComponents:
+      blog-list-post:
+        id: b-fy-web:components/blog-list-post
+  footer:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/footer.ftl    

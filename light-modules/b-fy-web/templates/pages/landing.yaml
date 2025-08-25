@@ -1,0 +1,32 @@
+title: Landing
+templateScript: /b-fy-web/templates/pages/landing.ftl
+renderType: freemarker
+dialog: b-fy-web:pages/landing
+visible: true
+
+areas:
+  hero:
+    type: single
+    availableComponents:
+      hero:
+        id: b-fy-web:components/hero
+      heroVideo:
+        id: b-fy-web:components/hero-video
+
+  main:
+    type: list
+    availableComponents:
+      app:
+        id: b-fy-web:components/section-app    
+      cards:
+        id: b-fy-web:components/section-cards
+      cta:
+        id: b-fy-web:components/section-cta
+      form:
+        id: form:components/form        
+      highlight:
+        id: b-fy-web:components/section-highlight
+      text:
+        id: b-fy-web:components/section-text
+      video:
+        id: b-fy-web:components/section-video

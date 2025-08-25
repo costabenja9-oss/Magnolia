@@ -1,0 +1,4 @@
+title: hero
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/hero.ftl
+dialog: b-fy-web:components/hero

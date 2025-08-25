@@ -1,0 +1,6 @@
+subApps:
+  detail:
+    form:
+      properties:
+        displayName:
+          i18n: true

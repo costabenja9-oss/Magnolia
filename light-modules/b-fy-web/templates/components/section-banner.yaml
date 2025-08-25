@@ -1,0 +1,4 @@
+title: section-banner
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-banner.ftl
+dialog: b-fy-web:components/section-banner

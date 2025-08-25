@@ -1,0 +1,88 @@
+label: section-cta
+form:
+  properties:
+    label:
+      label: Label
+      $type: textField
+      required: true
+      i18n: true
+    link:
+      $type: switchableField
+      label: ""
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: asset
+              label: Asset
+              value: asset
+            - name: url
+              label: URL
+              value: url
+            - name: page
+              label: Page
+              value: page
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        - name: asset
+          properties:
+            asset:
+              $type: damLinkField
+              label: Asset
+        - name: url
+          properties:
+            url:
+              $type: textField
+              label: URL
+        - name: page
+          properties:
+            page:
+              $type: pageLinkField
+              label: Page
+              # textInputAllowed=true and showOptions=true enable filtering (performance issues may occur with a large number of items)
+              showOptions: true
+              textInputAllowed: true
+              converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path (the default converter stores a UUID)
+
+    alignment:
+      label: Alignment
+      $type: comboBoxField
+      emptySelectionAllowed: true
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: center
+            label: Center
+            value: center
+          - name: left
+            label: Left
+            value: left
+          - name: right
+            label: Right
+            value: right
+    target:
+      label: Target
+      description: Specifies where to open the link 
+      $type: comboBoxField
+      emptySelectionAllowed: true
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: _blank
+            label: New tab
+            value: _blank
+          - name: _self
+            label: Same tab
+            value: _self
+          - name: modal__form
+            label: Modal window
+            value: modal__form
+          - name: _parent
+            label: Parent frame
+            value: _parent
+          - name: _top
+            label: Parent frame
+            value: _parent

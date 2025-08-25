@@ -1,0 +1,45 @@
+label: news-cards
+form:
+  properties:
+    cards:
+      label: Cards
+      $type: jcrMultiField
+      field:
+        $type: compositeField
+        label: ""
+        properties:
+          title:
+            $type: textField
+            label: Title
+            i18n: true
+          image:
+            label: Image
+            $type: damLinkField
+          text:
+            label: Text
+            $type: richTextField
+            i18n: true
+          buttonLink:
+            $type: compositeField
+            label: ButtonLink
+            itemProvider:
+              $type: jcrChildNodeProvider
+            properties:
+              label:
+                label: Label
+                $type: textField
+                i18n: true
+              link:
+                label: Link
+                description: Link to a page
+                $type: pageLinkField
+                # textInputAllowed=true and showOptions=true enable filtering (performance issues may occur with a large number of items)
+                showOptions: true
+                textInputAllowed: true
+                converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path (the default converter stores a UUID)
+              url:
+                label: Url
+                description: Link to an external page
+                $type: textField
+                i18n: true
+

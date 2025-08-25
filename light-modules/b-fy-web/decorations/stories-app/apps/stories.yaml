@@ -1,0 +1,83 @@
+# Decorations on stories app
+subApps:
+  browser:
+    workbench:
+      contentViews:
+        tree: 
+          columns: &defaultColumns !override
+            - name: jcrName
+              $type: jcrTitleColumn
+              nodeTypeToIcon:
+                mgnl:folder: icon-folder
+            - name: author
+              filterComponent:
+                $type: textField
+            - name: created
+              $type: dateColumn
+              label: Created on
+            - name: mgnl:lastModified
+              $type: dateColumn
+            - name: jcrPublishingStatus
+              $type: jcrStatusColumn
+        list:
+          columns: *defaultColumns
+  editor:
+    form:
+      properties:
+        authorInfo:
+          properties:
+            authorBio:
+              $type: richTextField
+            teamMember:
+              $type: linkField
+              label: Team member
+              datasource:
+                $type: jcrDatasource
+                workspace: bfy-team
+        lead: !override
+          $type: collapsibleCompositeField
+          collapsed: true
+          label: Lead text and SEO
+          itemProvider:
+            $type: currentItemProvider
+          properties:
+            lead:
+              $type: expandingTextField
+              i18n: true
+              rows: 2
+              required: false
+              styleName: text-field-medium
+              label: stories.editor.lead.label
+              description: stories.editor.lead.description
+              placeholder: stories.editor.lead.placeholder          
+            seoDescription:
+              $type: textField
+              label: SEO Description
+              i18n: true
+              rows: 5
+            seoKeywords:
+              $type: textField
+              label: SEO Keywords
+              i18n: true
+              rows: 3
+        category:
+          label: Category
+          $type: linkField
+          converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path
+          datasource:
+            $type: jcrDatasource
+            workspace: category
+        blocks:
+          initialBlock: blogPostText
+          defaultBlock: blogPostImage
+          blocks:
+            - blogPostText
+            - blogPostImage
+            - blogPostYoutube
+            - blogPostCTA
+            - blogPostSocial
+            - text
+            - image
+            - video
+            - externalLink
+          # i18n: false

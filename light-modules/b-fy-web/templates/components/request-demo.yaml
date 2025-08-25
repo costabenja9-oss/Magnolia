@@ -1,0 +1,3 @@
+title: request-demo
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/request-demo.ftl

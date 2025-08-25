@@ -1,0 +1,4 @@
+title: blog-list-post
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/blog-list-post.ftl
+dialog: b-fy-web:components/blog-list-post

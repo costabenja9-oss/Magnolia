@@ -1,0 +1,30 @@
+/* Dropdown navbar
+******************/
+.dropdown.open {
+  background-color: #fe5000;
+  color: white;
+}
+
+.dropdown.open > a {
+  color: white;
+}
+
+.dropdown ~ *[role="dropdown-content"] {
+  opacity: 0%;
+  transition-duration: 500ms;
+  height: 0px;
+  z-index: -10;
+}
+
+.dropdown.open ~ *[role="dropdown-content"] {
+  opacity: 100%;
+  transform: translateY(0);
+  transition-duration: 500ms;
+  height: auto;
+  z-index: 10;
+}
+
+.dropdown.open  svg[role="collapsed"] {
+  transform: rotate(180deg);
+  transition-duration: 500ms;
+}

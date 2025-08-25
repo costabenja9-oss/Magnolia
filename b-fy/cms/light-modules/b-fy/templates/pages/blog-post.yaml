@@ -1,7 +1,7 @@
 title: Blog Post
-renderType: freemarker
+renderType: content-editor-freemarker
 templateScript: /b-fy/templates/pages/blog-post.ftl
-description: Blog post detail template migrated from Astro dynamic blog route (fallback content)
+description: Blog post detail template using Magnolia Stories
 dialog: b-fy:pages/blog-post
 
 visible: true

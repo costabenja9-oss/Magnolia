@@ -1,0 +1,4 @@
+title: news-cards
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/news-cards.ftl
+dialog: b-fy-web:components/news-cards

@@ -1,0 +1,4 @@
+title: section-cases-studies
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-cases-studies.ftl
+dialog: b-fy-web:components/section-cases-studies

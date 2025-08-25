@@ -1,0 +1,4 @@
+title: section-cards
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-cards.ftl
+dialog: b-fy-web:components/section-cards

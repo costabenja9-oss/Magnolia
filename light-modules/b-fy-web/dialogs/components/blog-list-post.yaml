@@ -1,0 +1,32 @@
+label: blog-list-post
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    folder:
+      label: Folder of stories
+      $type: linkField
+      required: true
+      converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path (the default converter stores a UUID)
+      datasource:
+        $type: jcrDatasource
+        workspace: stories
+        allowedNodeTypes:
+          - mgnl:folder
+    limit:
+      label: Limit
+      $type: textField
+    sortBy:
+      label: Sort by
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: desc
+            label: Latest posts first
+            value: desc
+          - name: none
+            label: Position inside the folder
+            value: none

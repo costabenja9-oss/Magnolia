@@ -1,0 +1,4 @@
+title: hero-carousel
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/hero-carousel.ftl
+dialog: b-fy-web:components/hero-carousel

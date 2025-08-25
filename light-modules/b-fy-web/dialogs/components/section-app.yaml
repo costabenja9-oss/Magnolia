@@ -1,0 +1,30 @@
+label: section-app
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    image:
+      label: Image
+      $type: damLinkField
+    description:
+      label: Description
+      $type: textField
+      i18n: true
+    instructions:
+      label: Instructions
+      $type: jcrMultiField
+      field:
+        $type: compositeField
+        label: ""
+        properties:
+          label:
+            $type: textField
+            label: Title
+            i18n: true
+          text:
+            $type: textField
+            label: text
+            i18n: true
+

@@ -1,0 +1,32 @@
+label: section-claim
+form:
+  properties:
+    text:
+      label: Description
+      $type: richTextField
+      configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+      i18n: true
+      required: true
+    backgroundColor:
+      label: Background color
+      $type: comboBoxField
+      emptySelectionAllowed: true
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: primary
+            label: Orange
+            value: primary
+          - name: smoke
+            label: Smoke
+            value: smoke
+    textColor:
+      label: Text color
+      $type: comboBoxField
+      emptySelectionAllowed: true
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: white
+            label: White
+            value: white

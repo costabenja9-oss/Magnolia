@@ -1,0 +1,8 @@
+form:
+  tabs:
+    tabGoogleCaptcha:
+      label: Google reCAPTCHA
+      fields:
+        secretKey:
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Secret key

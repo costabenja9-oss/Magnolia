@@ -1,0 +1,54 @@
+label: standard
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    navigationTitle:
+      $type: textField
+      label: Navigation title
+      i18n: true
+    windowTitle:
+      $type: textField
+      label: Window title
+      i18n: true
+    hideInNav:
+      $type: checkBoxField
+      defaultValue: false
+      label: Hide in navigation
+      buttonLabel: Hide
+    text:
+      label: Content
+      $type: richTextField
+      i18n: true
+      height: 800
+      configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+      tables: true
+      source: true
+    keywords:
+      $type: textField
+      label: Keywords
+      i18n: true
+      rows: 3
+    description:
+      $type: textField
+      label: Description
+      i18n: true
+      rows: 5
+  layout:
+    $type: tabbedLayout
+    tabs:
+      tabMain:
+        label: Main tab
+        fields:
+          - name: title
+          - name: navigationTitle
+          - name: windowTitle
+          - name: hideInNav
+          - name: text
+      tabMeta:
+        label: Metadata
+        fields:
+          - name: keywords
+          - name: description

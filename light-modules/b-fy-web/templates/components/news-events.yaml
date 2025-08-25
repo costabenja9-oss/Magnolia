@@ -1,0 +1,4 @@
+title: news-events
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/news-events.ftl
+dialog: b-fy-web:components/news-events

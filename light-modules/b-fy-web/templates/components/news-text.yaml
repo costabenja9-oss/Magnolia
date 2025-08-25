@@ -1,0 +1,4 @@
+title: news-text
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/news-text.ftl
+dialog: b-fy-web:components/news-text

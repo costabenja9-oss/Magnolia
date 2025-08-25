@@ -1,0 +1,35 @@
+label: news-events
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    events:
+      label: Events
+      $type: jcrMultiField
+      field:
+        $type: compositeField
+        label: ""
+        properties:
+          title:
+            $type: textField
+            label: Title
+            i18n: true
+          image:
+            label: Image
+            $type: damLinkField
+          link:
+            label: Link
+            description: Link to a page
+            $type: pageLinkField
+            # textInputAllowed=true and showOptions=true enable filtering (performance issues may occur with a large number of items)
+            showOptions: true
+            textInputAllowed: true
+            converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path (the default converter stores a UUID)
+          url:
+            label: Url
+            description: Link to an external page
+            $type: textField
+            i18n: true
+

@@ -1,0 +1,4 @@
+title: section-app
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-app.ftl
+dialog: b-fy-web:components/section-app

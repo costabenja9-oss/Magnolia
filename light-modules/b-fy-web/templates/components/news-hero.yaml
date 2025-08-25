@@ -1,0 +1,4 @@
+title: news-hero
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/news-hero.ftl
+dialog: b-fy-web:components/news-hero

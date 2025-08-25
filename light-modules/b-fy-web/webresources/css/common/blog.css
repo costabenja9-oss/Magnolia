@@ -1,0 +1,28 @@
+.blog-post__text h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-family: Raleway, sans-serif;
+}
+
+.blog-post__text p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: Roboto;
+    padding: .85em 0;
+}
+
+.blog-post__text ul {
+    list-style-type: disc;
+    margin-left: 1rem;
+}
+
+.blog-post__text li {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: Roboto;
+
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}

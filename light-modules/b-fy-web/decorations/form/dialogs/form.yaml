@@ -1,0 +1,12 @@
+form:
+  tabs:
+    tabLeads:
+      label: Leads
+      fields:
+        purpose:
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Purpose
+        inputs:
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Inputs
+          rows: 5

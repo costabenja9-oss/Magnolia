@@ -1,0 +1,26 @@
+!content-type:team
+name: team
+label: Team
+
+subApps:
+  detail:
+    label: Team
+    form:
+      properties:
+        isManagement:
+          label: ""
+          buttonLabel: Management team
+  browser:
+    workbench:
+      contentViews:
+        tree:
+          columns:
+            position:
+              name: position
+              label: Position
+              width: 300
+            isManagement:
+              name: isManagement
+              label: Management?
+              type: java.lang.Boolean
+              width: 120

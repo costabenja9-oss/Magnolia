@@ -1,0 +1,40 @@
+!content-type:certs
+name: certs
+label: Certifications
+
+subApps:
+  detail:
+    label: Certification
+    form:
+      properties:
+        link:
+          $type: switchableField
+          label: ""
+          i18n: true
+          field:
+            $type: radioButtonGroupField
+            layout: horizontal
+            datasource:
+              $type: optionListDatasource
+              options:
+                - name: asset
+                  label: PDF
+                  value: asset
+                - name: url
+                  label: External page
+                  value: url
+          itemProvider:
+            $type: jcrChildNodeProvider
+          forms:
+            - name: asset
+              properties:
+                asset:
+                  $type: damLinkField
+                  label: PDF
+                  i18n: true
+            - name: url
+              properties:
+                url:
+                  $type: textField
+                  label: External page
+                  i18n: true

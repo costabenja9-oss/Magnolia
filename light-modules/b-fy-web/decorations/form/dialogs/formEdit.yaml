@@ -1,0 +1,6 @@
+form:
+  tabs:
+    tabAdvanced:
+      fields:
+        placeholder:
+          i18n: true

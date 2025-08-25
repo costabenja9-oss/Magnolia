@@ -1,0 +1,27 @@
+datasource:
+  workspace: bfy-leads
+  namespaces:
+    bfy: https://www.b-fy.com
+  autoCreate: true
+
+model:
+  nodeType: bfy:lead
+  properties:
+    - name: leadName
+      label: Name
+      type: String
+    - name: purpose
+      label: Purpose
+      type: String
+    - name: email
+      label: Email
+      type: String
+    - name: companyType
+      label: Company type
+      type: String
+    - name: industry
+      label: Industry
+      type: String
+    - name: interest
+      label: Interest in B-FY
+      type: String

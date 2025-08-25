@@ -1,0 +1,116 @@
+label: section-cards
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    text:
+      $type: richTextField
+      label: Text
+      i18n: true
+    alignment:
+      label: Alignment
+      $type: comboBoxField
+      defaultValue: col
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: col
+            label: Columns
+            value: col        
+          - name: row
+            label: Rows
+            value: row
+    cards:
+      label: Cards
+      $type: jcrMultiField
+      field:
+        $type: compositeField
+        label: ""
+        properties:
+          title:
+            $type: textField
+            label: Title
+            i18n: true
+          image:
+            label: Image
+            $type: damLinkField
+          imageUrl:
+            label: Image link
+            description: Url to be redirected when image is clicked
+            $type: textField
+            i18n: true
+          youtube:
+            label: Youtube URL
+            $type: textField
+          description:
+            label: Description
+            $type: richTextField
+            i18n: true
+          buttonLink:
+            $type: compositeField
+            label: ButtonLink
+            itemProvider:
+              $type: jcrChildNodeProvider
+            properties:
+              label:
+                label: Label
+                $type: textField
+                i18n: true
+              link:
+                label: Link
+                description: Link to a page
+                $type: pageLinkField
+                # textInputAllowed=true and showOptions=true enable filtering (performance issues may occur with a large number of items)
+                showOptions: true
+                textInputAllowed: true
+                converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path (the default converter stores a UUID)
+              url:
+                label: Url
+                description: Link to an external page
+                $type: textField
+                i18n: true
+    folder:
+      label: Folder of stories
+      $type: linkField
+      converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path (the default converter stores a UUID)
+      datasource:
+        $type: jcrDatasource
+        workspace: stories
+        allowedNodeTypes:
+          - mgnl:folder
+    limit:
+      label: Limit
+      $type: textField
+    sortBy:
+      label: Sort by
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: desc
+            label: Latest posts first
+            value: desc
+          - name: none
+            label: Position inside the folder
+            value: none
+  layout:
+    $type: tabbedLayout
+    tabs:
+      main:
+        label: Main
+        fields:
+          - name: title
+          - name: text
+      cards:
+        label: Cards
+        fields:
+          - name: alignment
+          - name: cards
+      blog:
+        label: Blog
+        fields:
+          - name: folder
+          - name: limit
+          - name: sortBy

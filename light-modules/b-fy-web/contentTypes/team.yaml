@@ -1,0 +1,26 @@
+datasource:
+  workspace: bfy-team
+  namespaces:
+    bfy: https://www.b-fy.com
+  autoCreate: true
+
+model:
+  nodeType: bfy:team
+  properties:
+    - name: name
+      type: String
+      label: Name
+      required: true
+    - name: photo
+      type: asset
+      label: Photo
+    - name: isManagement
+      type: Boolean
+    - name: position
+      type: String
+      label: Position
+      i18n: true
+    - name: bio
+      type: richText
+      label: Bio
+      i18n: true

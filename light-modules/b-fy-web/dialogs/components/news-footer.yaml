@@ -1,0 +1,13 @@
+label: news-footer
+form:
+  properties:
+    logo:
+      label: Logo
+      $type: damLinkField
+    text:
+      label: Text
+      $type: richTextField
+      i18n: true
+      height: 200
+      configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+

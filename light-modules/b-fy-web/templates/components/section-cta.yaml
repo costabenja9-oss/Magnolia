@@ -1,0 +1,4 @@
+title: section-cta
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-cta.ftl
+dialog: b-fy-web:components/section-cta

@@ -1,0 +1,36 @@
+title: Case study
+templateScript: /b-fy-web/templates/pages/case-study.ftl
+renderType: freemarker
+dialog: b-fy-web:pages/case-study
+visible: true
+
+areas:
+  navbar:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/navbar.ftl
+  gdpr:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/gdpr-dialog.ftl
+  hero:
+    type: single
+    availableComponents:
+      hero:
+        id: b-fy-web:components/hero
+
+  footer:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/footer.ftl
+  main:
+    type: list
+    availableComponents:
+      text:
+        id: b-fy-web:components/section-text
+      cards:
+        id: b-fy-web:components/section-cards
+      section-banner:
+        id: b-fy-web:components/section-banner
+      section-cases-studies:
+        id: b-fy-web:components/section-cases-studies        

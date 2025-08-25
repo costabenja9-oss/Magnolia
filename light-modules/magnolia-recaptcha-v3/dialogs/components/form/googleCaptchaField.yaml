@@ -1,0 +1,15 @@
+form:
+  properties:
+    title:
+      $type: textField
+      i18n: true
+      required: true
+    controlName:
+      $type: hiddenField
+      defaultValue: "recaptcha-v3"
+    captchaSiteKey:
+      $type: textField
+      required: true
+    mandatory:
+      buttonLabel: ""
+      $type: checkBoxField

@@ -1,0 +1,8 @@
+# The reason of the dependency with workflow-pages is to disable the publishing workflow in the Pages app 
+#####
+version: 1.0
+dependencies:
+  workflow-pages:
+    version: "*"
+  magnolia-recaptcha-v3: 
+    version: "*"

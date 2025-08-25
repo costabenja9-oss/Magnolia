@@ -1,0 +1,36 @@
+label: section-video
+form:
+  properties:
+    youtube:
+      $type: switchableField
+      label: "Youtube Video"
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: url
+              label: URL
+              value: url
+            - name: embed
+              label: Embed
+              value: embed
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        - name: url
+          properties:
+            url:
+              $type: textField
+              label: URL      
+        - name: embed
+          properties:
+            embed:
+              $type: textField
+              label: Embed
+              rows: 5    
+    text:
+      label: Text
+      $type: richTextField
+      i18n: true

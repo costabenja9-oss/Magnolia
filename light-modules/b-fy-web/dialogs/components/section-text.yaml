@@ -1,0 +1,69 @@
+label: section-text
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    text:
+      label: Description
+      $type: richTextField
+      configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+      i18n: true
+    alignment:
+      label: Text alignment
+      $type: comboBoxField
+      emptySelectionAllowed: true
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: left
+            label: Left
+            value: left
+          - name: center
+            label: Center
+            value: center
+          - name: right
+            label: Right
+            value: right
+    image:
+      label: Image
+      $type: damLinkField
+    caption:
+      $type: textField
+      label: Image Caption
+      i18n: true
+    color:
+      label: Color
+      $type: comboBoxField
+      emptySelectionAllowed: true
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: smoke
+            label: Smoke
+            value: smoke
+    buttonLink:
+      $type: compositeField
+      label: ButtonLink
+      itemProvider:
+        $type: jcrChildNodeProvider
+      properties:
+        label:
+          label: Label
+          $type: textField
+          i18n: true
+        link:
+          label: Link
+          $type: pageLinkField
+          # textInputAllowed=true and showOptions=true enable filtering (performance issues may occur with a large number of items)
+          showOptions: true
+          textInputAllowed: true
+          converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path (the default converter stores a UUID)
+    hideSeparator:
+      $type: checkBoxField
+      defaultValue: false
+      label: Hide separator
+      description: Specifies if the separator at the top of the section must be hidden
+      buttonLabel: " "
+

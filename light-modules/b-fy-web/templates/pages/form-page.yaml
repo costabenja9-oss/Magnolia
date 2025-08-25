@@ -1,0 +1,12 @@
+title: Form
+templateScript: /b-fy-web/templates/pages/form-page.ftl
+renderType: freemarker
+dialog: b-fy-web:pages/form-page
+visible: true
+
+areas:
+  main:
+    type: single
+    availableComponents:
+      form:
+        id: form:components/form

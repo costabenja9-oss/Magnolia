@@ -1,0 +1,14 @@
+label: news-text
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    text:
+      label: Text
+      $type: richTextField
+      height: 600
+      configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+      i18n: true
+

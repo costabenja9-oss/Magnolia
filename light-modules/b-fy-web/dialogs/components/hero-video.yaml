@@ -1,0 +1,59 @@
+label: hero-video
+form:
+  properties:
+    claim:
+      $type: textField
+      label: Landing claim
+      i18n: true
+    title:
+      $type: textField
+      label: Landing title
+      i18n: true
+    youtube:
+      $type: switchableField
+      label: "Youtube Video"
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: url
+              label: URL
+              value: url
+            - name: embed
+              label: Embed
+              value: embed
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        - name: url
+          properties:
+            url:
+              $type: textField
+              label: URL      
+        - name: embed
+          properties:
+            embed:
+              $type: textField
+              label: Embed
+              rows: 5
+    text:
+      label: Text
+      $type: richTextField
+      i18n: true
+      configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+    buttonLink:
+      $type: compositeField
+      label: ButtonLink
+      itemProvider:
+        $type: jcrChildNodeProvider
+      properties:
+        label:
+          label: Label
+          $type: textField
+          i18n: true
+        url:
+          label: URL
+          $type: textField
+

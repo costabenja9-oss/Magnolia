@@ -1,0 +1,47 @@
+label: hero
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    image:
+      label: Image
+      $type: damLinkField
+    description:
+      $type: richTextField
+      configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+      label: Description
+      i18n: true
+    alignment:
+      label: Alignment
+      $type: comboBoxField
+      emptySelectionAllowed: true
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: left
+            label: Left
+            value: left
+          - name: center
+            label: Center
+            value: center
+    buttonLink:
+      $type: compositeField
+      label: ButtonLink
+      itemProvider:
+        $type: jcrChildNodeProvider
+      properties:
+        label:
+          label: Label
+          $type: textField
+          i18n: true
+        link:
+          label: Link
+          $type: pageLinkField
+          # textInputAllowed=true and showOptions=true enable filtering (performance issues may occur with a large number of items)
+          showOptions: true
+          textInputAllowed: true
+          converterClass: info.magnolia.ui.editor.converter.JcrNodeToPathConverter # stores the value as a path (the default converter stores a UUID)
+
+

@@ -1,0 +1,25 @@
+label: section-offices
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    image:
+      label: Image
+      $type: damLinkField
+    offices:
+      label: Offices
+      $type: jcrMultiField
+      field:
+        label: Address
+        $type: compositeField
+        properties:
+          flag:
+            label: Flag
+            $type: damLinkField
+          address:
+            label: Address
+            $type: textField
+            rows: 3
+

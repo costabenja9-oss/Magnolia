@@ -1,0 +1,25 @@
+datasource:
+  workspace: bfy-certifications
+  namespaces:
+    bfy: https://www.b-fy.com
+  autoCreate: true
+model:
+    nodeType: bfy:certification
+    properties:
+    - name: image
+      label: Image
+      type: asset
+      required: true
+    - name: caption
+      label: Caption
+      type: String
+      i18n: true
+    - name: link
+      type: Link
+    subModels:
+      - name: Link
+        properties:
+          - name: asset
+          - name: url
+
+

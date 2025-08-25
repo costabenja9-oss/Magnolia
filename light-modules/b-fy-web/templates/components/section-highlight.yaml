@@ -1,0 +1,4 @@
+title: section-highlight
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-highlight.ftl
+dialog: b-fy-web:components/section-highlight

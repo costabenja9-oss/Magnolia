@@ -1,0 +1,15 @@
+# Automatically generated dialog with few most often used fields (text, right, link, DAM image, multivalue, link to app, select). Feel free to modify them for your specific component.
+
+label: news-hero
+form:
+  properties:
+    image:
+      label: Image
+      $type: damLinkField
+      i18n: true
+    title:
+      label: Text
+      $type: richTextField
+      height: 200
+      configJsFile: /.resources/b-fy-web/ckeditor/config-with-format.js
+      i18n: true

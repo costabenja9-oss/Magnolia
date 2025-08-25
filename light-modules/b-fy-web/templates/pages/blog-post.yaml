@@ -1,0 +1,24 @@
+title: Blog Post
+templateScript: /b-fy-web/templates/pages/blog-post.ftl
+# renderType: freemarker
+renderType: content-editor-freemarker # Necesario para consultar los "blocks" de un story - ver ContentEditorTemplatingFunctions.java -
+dialog: b-fy-web:pages/blog-post
+visible: true
+
+areas:
+  navbar:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/navbar.ftl
+  gdpr:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/gdpr-dialog.ftl    
+  filter:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/blog-filter.ftl
+  footer:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/footer.ftl

@@ -1,0 +1,4 @@
+title: Private leads
+templateScript: /b-fy-web/templates/pages/private-leads.ftl
+renderType: freemarker
+visible: true

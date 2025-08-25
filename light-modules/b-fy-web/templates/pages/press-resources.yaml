@@ -1,0 +1,19 @@
+title: press-resources
+templateScript: /b-fy-web/templates/pages/press-resources.ftl
+renderType: freemarker
+dialog: b-fy-web:pages/press-resources
+visible: true
+
+areas:
+  navbar:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/navbar.ftl
+  gdpr:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/gdpr-dialog.ftl
+  footer:
+    type: noComponent
+    createAreaNode: false
+    templateScript: /b-fy-web/templates/pages/areas/footer.ftl

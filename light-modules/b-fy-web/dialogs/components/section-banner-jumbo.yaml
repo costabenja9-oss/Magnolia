@@ -1,0 +1,35 @@
+label: section-banner-jumbo
+form:
+  properties:
+    image:
+      label: Image
+      $type: damLinkField
+    alignment:
+      label: Alignment
+      $type: comboBoxField
+      emptySelectionAllowed: true
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: left
+            label: Left
+            value: left
+          - name: right
+            label: Right
+            value: right
+    blocks:
+      label: Blocks
+      $type: jcrMultiField
+      field:
+        label: Block
+        $type: compositeField
+        properties:
+          title:
+            $type: textField
+            label: Title
+            i18n: true
+          text:
+            $type: richTextField
+            label: Text
+            i18n: true
+

@@ -1,0 +1,8 @@
+label: Newsletter
+form:
+  properties:
+    disclaim:
+      label: Newsletter disclaim
+      $type: textField
+      i18n: true
+      rows: 3

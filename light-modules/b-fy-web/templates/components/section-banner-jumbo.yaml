@@ -1,0 +1,4 @@
+title: section-banner-jumbo
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-banner-jumbo.ftl
+dialog: b-fy-web:components/section-banner-jumbo

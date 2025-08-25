@@ -1,0 +1,4 @@
+title: hero-video
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/hero-video.ftl
+dialog: b-fy-web:components/hero-video

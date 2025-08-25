@@ -1,0 +1,33 @@
+templateId: b-fy-web:blocks/blogPostYoutube
+icon: file-video
+block:
+  properties:
+    video:
+      $type: switchableField
+      label: "Youtube"
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: url
+              label: URL
+              value: url
+            - name: embed
+              label: Embed
+              value: embed
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        - name: url
+          properties:
+            url:
+              $type: textField
+              label: URL      
+        - name: embed
+          properties:
+            embed:
+              $type: textField
+              label: Embed
+              rows: 5

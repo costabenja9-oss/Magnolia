@@ -1,0 +1,8 @@
+templateId: b-fy-web:blocks/blogPostSocial
+icon: forums-app
+block:
+  properties:
+    embed:
+      $type: textField
+      label: Embed
+      rows: 9

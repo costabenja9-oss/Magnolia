@@ -1,0 +1,3 @@
+class: info.magnolia.virtualuri.mapping.RegexpVirtualUriMapping
+fromUri: ^/(?!\.\w+/)(.*/)?author/(.*)
+toUri: forward:/search?author=$2

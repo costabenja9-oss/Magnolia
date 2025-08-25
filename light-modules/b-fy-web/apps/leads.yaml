@@ -1,0 +1,46 @@
+!content-type:leads
+name: leads
+label: Leads
+
+subApps:
+  detail:
+    label: Leads
+  browser:
+    workbench:
+      contentViews:
+        tree:
+          columns: !override
+            purpose:
+              name: purpose
+              label: Purpose
+              width: 190
+              filterComponent:
+                $type: textField
+            leadName:
+              name: leadName
+              label: Lead name
+              width: 190
+              filterComponent:
+                $type: textField
+            companyType:
+              name: companyType
+              label: Company type
+              width: 190
+              filterComponent:
+                $type: textField
+            industry:
+              name: industry
+              label: Industry
+              width: 190
+              filterComponent:
+                $type: textField
+            interest:
+              name: interest
+              label: Interest
+              width: 190
+              filterComponent:
+                $type: textField
+            lastModified:
+              $type: dateColumn
+              name: mgnl:lastModified
+              width: 190

@@ -1,0 +1,26 @@
+title: newsletter
+templateScript: /b-fy-web/templates/pages/newsletter.ftl
+renderType: freemarker
+dialog: b-fy-web:pages/newsletter
+visible: true
+
+areas:
+  hero:
+    type: single
+    availableComponents:
+      text:
+        id: b-fy-web:components/news-hero
+  main:
+    type: list
+    availableComponents:
+      text:
+        id: b-fy-web:components/news-text
+      cards:
+        id: b-fy-web:components/news-cards
+      events:
+        id: b-fy-web:components/news-events
+  footer:
+    type: single
+    availableComponents:
+      text:
+        id: b-fy-web:components/news-footer

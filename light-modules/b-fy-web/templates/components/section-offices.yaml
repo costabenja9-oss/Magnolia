@@ -1,0 +1,4 @@
+title: section-offices
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-offices.ftl
+dialog: b-fy-web:components/section-offices

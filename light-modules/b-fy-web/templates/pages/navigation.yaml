@@ -1,0 +1,6 @@
+title: Navigation
+templateScript: /b-fy-web/templates/pages/navigation.ftl
+renderType: freemarker
+dialog: b-fy-web:pages/navigation
+visible: true
+

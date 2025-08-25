@@ -1,0 +1,4 @@
+title: section-video
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-video.ftl
+dialog: b-fy-web:components/section-video

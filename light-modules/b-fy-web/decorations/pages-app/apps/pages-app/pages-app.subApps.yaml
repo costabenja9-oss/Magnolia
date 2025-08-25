@@ -1,0 +1,50 @@
+browser:
+  actions:
+    publish: !override &publish
+      icon: icon-publish
+      $type: jcrCommandAction
+      command: publish
+      catalog: versioned
+      availability:
+        rules:
+          notDeleted: &notDeleted
+            $type: jcrIsDeletedRule
+            negate: true
+          isPublishable: &isPublishable
+            $type: jcrPublishableRule
+    publishRecursive: !override
+      icon: icon-publish-incl-sub
+      $type: jcrCommandAction
+      command: publish
+      asynchronous: true
+      params:
+        recursive: true
+      availability:
+        rules:
+          notDeleted: *notDeleted
+          hasSubPages:
+            $type: jcrHasChildrenRule
+          isPublishable: *isPublishable
+    unpublish: !override &unpublish
+      icon: icon-unpublish
+      $type: jcrCommandAction
+      command: unpublish
+      availability:
+        rules:
+          notDeleted: *notDeleted
+          isPublished:
+            $type: jcrPublishedRule
+    publishDeletion: !override
+      icon: icon-publish
+      $type: jcrCommandAction
+      command: publish
+      availability:
+        multiple: true
+        rules:
+          isDeleted: &isDeleted
+            $type: jcrIsDeletedRule
+            negate: false
+detail:
+  actions:
+    activate: *publish
+    deactivate: *unpublish

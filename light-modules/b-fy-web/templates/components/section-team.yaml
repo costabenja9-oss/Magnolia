@@ -1,0 +1,4 @@
+title: section-team
+renderType: freemarker
+templateScript: /b-fy-web/templates/components/section-team.ftl
+dialog: b-fy-web:components/section-team
