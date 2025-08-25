@@ -129,144 +129,429 @@
 <#-- DATOS DE TODOS LOS BLOGS DISPONIBLES -->
 <#assign blogData = {
   "identity-verification-challenge": {
-    "title": "Verificación de identidad, un desafío creciente",
-    "description": "En un entorno digital cada vez más complejo, la verificación de identidad y la ciberseguridad son esenciales para proteger a usuarios y empresas de las amenazas emergentes.",
-    "keywords": "verificación de identidad, ciberseguridad, biometría, B-FY",
+    "title": "Identity verification, a growing challenge",
+    "description": "In an increasingly complex digital environment, human identity verification and cybersecurity are essential to protect users and businesses from emerging threats.",
+    "keywords": "identity verification, cybersecurity, biometrics, B-FY, digital identity",
     "author": "B-FY Research Team",
-    "date": "12 de enero, 2025",
+    "date": "January 12, 2025",
     "heroImage": "identity-verification-growing-challenge.webp",
-    "heroAlt": "Verificación de identidad, un desafío creciente",
+    "heroAlt": "Identity verification, a growing challenge",
     "content": [
       {
         "type": "text",
-        "text": "En un entorno digital cada vez más complejo, la verificación de identidad y la ciberseguridad son esenciales para proteger a usuarios y empresas de las amenazas emergentes. De cara a 2025, tecnologías como la biometría, la inteligencia artificial y el blockchain están redefiniendo la seguridad en línea.",
+        "text": "In an increasingly complex digital environment, human identity verification and cybersecurity are essential to protect users and businesses from emerging threats. Looking towards 2025, technologies such as biometrics, artificial intelligence, and quantum computing will redefine online security.",
         "strong": true
       },
       {
         "type": "text", 
-        "text": "El mundo digital está evolucionando rápidamente, trayendo consigo tanto oportunidades como riesgos. En este contexto, la verificación de identidad y la ciberseguridad se están convirtiendo en áreas clave para proteger a usuarios y empresas de amenazas cada vez más sofisticadas."
+        "text": "The digital world is evolving rapidly, bringing with it both opportunities and risks. In this context, identity verification and cybersecurity are becoming key areas to protect users and businesses from increasingly sophisticated threats."
       },
       {
         "type": "text",
-        "text": "A medida que las tecnologías avanzan, soluciones como B-FY, que se centran en la identificación inequívoca de personas sin dar acceso a identidades digitales, se presentan como un avance importante para abordar estos desafíos."
+        "text": "As technologies advance, solutions like B-FY, which focus on unequivocal identification of people without giving access to digital identities, are presented as an important advance to address these challenges."
       },
       {
         "type": "section_title",
-        "text": "Verificación de identidad, la clave"
+        "text": "Identity verification, the key"
       },
       {
         "type": "text",
-        "text": "La verificación de identidad se ha convertido en un aspecto fundamental de la seguridad en línea. A medida que las actividades digitales se multiplican, los riesgos de robo de identidad y fraude también aumentan. Las contraseñas tradicionales ya no son suficientes para proteger la información confidencial.",
-        "strong": "verificación de identidad"
+        "text": "Identity verification has become a fundamental aspect of online security. As digital activities multiply, the risks of identity theft and fraud also increase. Traditional passwords are no longer sufficient to protect confidential information.",
+        "strong": "Identity verification"
       },
       {
         "type": "text",
-        "text": "En este sentido, la biometría (como el reconocimiento facial, las huellas dactilares y el reconocimiento de voz) está emergiendo como una herramienta clave para asegurar que solo las personas autorizadas puedan acceder a servicios en línea."
+        "text": "In this regard, biometrics (such as facial recognition, fingerprints and voice recognition) is emerging as a key tool to ensure that only authorized people can access online services."
       },
       {
         "type": "image",
         "src": "human-authentication-revolutionary-approach-data-protection.webp",
-        "alt": "Autenticación humana: un enfoque revolucionario"
+        "alt": "Human authentication: a revolutionary approach"
       },
       {
         "type": "text",
-        "text": "A medida que las amenazas se vuelven más complejas, la autenticación biométrica sigue ganando terreno en sectores como la banca, la salud y otros servicios críticos. No obstante, más allá de la biometría estándar, soluciones como B-FY se destacan por su capacidad para identificar inequívocamente a las personas, evitando el acceso a identidades digitales."
+        "text": "As threats become more complex, biometric authentication continues to gain ground in sectors such as banking, healthcare and other critical services. However, beyond standard biometrics, solutions like B-FY stand out for their ability to unequivocally identify people, avoiding access to digital identities."
       },
       {
         "type": "section_title",
-        "text": "El aumento de las amenazas cibernéticas"
+        "text": "The rise of cyber threats"
       },
       {
         "type": "text",
-        "text": "A medida que las empresas dependen más de la tecnología, las amenazas cibernéticas se vuelven cada vez más complejas. El uso de la inteligencia artificial por parte de los cibercriminales está creciendo, permitiéndoles ejecutar ataques más dirigidos y efectivos."
+        "text": "As companies become more dependent on technology, cyber threats become increasingly complex. The use of artificial intelligence by cybercriminals is growing, allowing them to execute more targeted and effective attacks."
       },
       {
         "type": "text",
-        "text": "Entre las amenazas emergentes, los deepfakes son una de las más preocupantes. Estas falsificaciones creadas con IA, pueden engañar a los sistemas de autenticación y a los empleados, lo que pone en riesgo la seguridad."
+        "text": "Among emerging threats, deepfakes are one of the most concerning. These AI-created falsifications can fool authentication systems and employees, putting security at risk."
+      },
+      {
+        "type": "section_title",
+        "text": "The future of digital security"
+      },
+      {
+        "type": "text",
+        "text": "Looking ahead to 2025 and beyond, the convergence of biometric authentication, artificial intelligence, and blockchain technology promises to create more robust and user-friendly security frameworks. Organizations that adapt early to these technologies will be better positioned to protect their assets and maintain customer trust."
       }
     ]
   },
   "cybersecurity-trends-2025": {
-    "title": "Tendencias de ciberseguridad: un panorama en evolución",
-    "description": "La aceleración digital y la proliferación de amenazas cibernéticas han redefinido las prioridades empresariales en materia de seguridad.",
-    "keywords": "ciberseguridad, tendencias 2025, amenazas digitales, B-FY",
+    "title": "Cybersecurity trends: an evolving landscape",
+    "description": "Digital acceleration and the proliferation of cyber threats have redefined business priorities in security. In 2025, cybersecurity is set to become a critical element.",
+    "keywords": "cybersecurity trends, 2025, digital security, AI threats, B-FY",
     "author": "B-FY Security Team",
-    "date": "15 de enero, 2025",
+    "date": "January 15, 2025",
     "heroImage": "cybersecurity-trends-evolving-landscape.webp",
-    "heroAlt": "Tendencias de ciberseguridad 2025",
+    "heroAlt": "Cybersecurity trends: an evolving landscape",
     "content": [
       {
         "type": "text",
-        "text": "La aceleración digital y la proliferación de amenazas cibernéticas han redefinido las prioridades empresariales en materia de seguridad. En 2025, la ciberseguridad está destinada a convertirse en un elemento crítico no solo para proteger datos, sino también para garantizar la confianza del cliente y la continuidad operacional.",
+        "text": "Digital acceleration and the proliferation of cyber threats have redefined business priorities in security. In 2025, cybersecurity is set to become a critical element not only for protecting data but also for ensuring customer trust and operational continuity.",
         "strong": true
       },
       {
         "type": "text",
-        "text": "El panorama de la ciberseguridad está evolucionando a un ritmo sin precedentes. Las organizaciones enfrentan desafíos cada vez más complejos que requieren soluciones innovadoras y enfoques proactivos."
+        "text": "The cybersecurity landscape is evolving at an unprecedented pace. Organizations face increasingly complex challenges that require innovative solutions and proactive approaches to stay ahead of emerging threats."
       },
       {
         "type": "section_title",
-        "text": "Principales tendencias para 2025"
+        "text": "Key trends for 2025"
       },
       {
         "type": "text",
-        "text": "Las empresas están adoptando tecnologías emergentes como la inteligencia artificial y el machine learning para detectar y prevenir amenazas en tiempo real. La autenticación biométrica se está convirtiendo en el estándar de oro para la verificación de identidad."
+        "text": "Companies are adopting emerging technologies such as artificial intelligence and machine learning to detect and prevent threats in real time. Biometric authentication is becoming the gold standard for identity verification.",
+        "strong": "artificial intelligence and machine learning"
+      },
+      {
+        "type": "text",
+        "text": "The rise of quantum computing presents both opportunities and challenges for cybersecurity. While it promises enhanced encryption capabilities, it also threatens to render current cryptographic methods obsolete."
+      },
+      {
+        "type": "image",
+        "src": "cybersecurity-moves-toward-passwordless-future-b-fys-approach.webp",
+        "alt": "Passwordless future with B-FY's approach"
+      },
+      {
+        "type": "section_title",
+        "text": "AI-powered security solutions"
+      },
+      {
+        "type": "text",
+        "text": "Artificial intelligence is revolutionizing how organizations approach cybersecurity. From predictive analytics to automated threat response, AI enables faster and more accurate security decisions than ever before."
+      },
+      {
+        "type": "text",
+        "text": "Machine learning algorithms can analyze vast amounts of data to identify patterns and anomalies that would be impossible for human analysts to detect. This capability is particularly valuable in identifying zero-day attacks and advanced persistent threats."
+      },
+      {
+        "type": "section_title",
+        "text": "The human factor"
+      },
+      {
+        "type": "text",
+        "text": "Despite technological advances, the human factor remains the weakest link in cybersecurity. Organizations are investing heavily in employee training and awareness programs to reduce the risk of social engineering attacks."
+      },
+      {
+        "type": "text",
+        "text": "Solutions like B-FY's human authentication technology address this challenge by ensuring that the person behind every digital interaction is genuine, effectively eliminating the risk of impersonation and identity fraud."
       }
     ]
   },
   "identity-fraud-threat": {
-    "title": "Fraude de identidad: una amenaza creciente",
-    "description": "A medida que el fraude de identidad se vuelve cada vez más sofisticado, las organizaciones deben estar más vigilantes que nunca.",
-    "keywords": "fraude de identidad, seguridad digital, prevención de fraude, B-FY",
+    "title": "Identity fraud: a growing threat",
+    "description": "As identity fraud becomes increasingly sophisticated, organizations and individuals must be more vigilant than ever in safeguarding their data.",
+    "keywords": "identity fraud, cybercrime, data protection, AI attacks, deepfakes",
     "author": "B-FY Fraud Prevention Team",
-    "date": "18 de enero, 2025",
+    "date": "January 18, 2025",
     "heroImage": "identity-fraud-growing-threat.webp",
-    "heroAlt": "Fraude de identidad: una amenaza creciente",
+    "heroAlt": "Identity fraud: a growing threat",
     "content": [
       {
         "type": "text",
-        "text": "A medida que el fraude de identidad se vuelve cada vez más sofisticado, las organizaciones y los individuos deben estar más vigilantes que nunca en la protección de sus datos. Con el aumento de ataques impulsados por IA y deepfakes, las pérdidas financieras y los riesgos de seguridad digital continúan escalando.",
+        "text": "As identity fraud becomes increasingly sophisticated, organizations and individuals must be more vigilant than ever in safeguarding their data. With a rise in AI-driven attacks and deepfakes, financial losses and digital security risks continue to escalate.",
         "strong": true
       },
       {
         "type": "text",
-        "text": "El fraude de identidad ha evolucionado desde simples robos de información hasta operaciones complejas que aprovechan tecnologías avanzadas para crear identidades falsas convincentes."
+        "text": "Identity fraud has evolved from simple information theft to complex operations that leverage advanced technologies to create convincing false identities. The financial and reputational damage caused by these attacks is reaching unprecedented levels."
       },
       {
         "type": "section_title",
-        "text": "El impacto del fraude de identidad"
+        "text": "The impact of identity fraud"
       },
       {
         "type": "text",
-        "text": "Las estadísticas muestran un aumento alarmante en los casos de fraude de identidad, con pérdidas que alcanzan billones de dólares anualmente. Las víctimas no solo sufren pérdidas financieras, sino también daños a su reputación y bienestar emocional."
+        "text": "Statistics show an alarming increase in identity fraud cases, with losses reaching trillions of dollars annually. Victims suffer not only financial losses but also damage to their reputation and emotional well-being.",
+        "strong": "trillions of dollars annually"
+      },
+      {
+        "type": "text",
+        "text": "The proliferation of digital services and online transactions has created more opportunities for fraudsters to exploit vulnerabilities. Traditional security measures are proving inadequate against sophisticated attack vectors."
+      },
+      {
+        "type": "image",
+        "src": "b-fy-introduces-revolutionary-solution-terminate-online-id-fraud-cybercrime.webp",
+        "alt": "B-FY's revolutionary solution against fraud"
+      },
+      {
+        "type": "section_title",
+        "text": "AI-driven fraud techniques"
+      },
+      {
+        "type": "text",
+        "text": "Artificial intelligence has become a double-edged sword in the fight against fraud. While it enables better detection and prevention capabilities, it also empowers fraudsters with new tools to create convincing fake identities and bypass security measures."
+      },
+      {
+        "type": "text",
+        "text": "Deepfake technology, in particular, poses a significant threat to biometric authentication systems. These AI-generated videos and audio recordings can fool traditional verification methods, making it crucial to implement more sophisticated detection techniques."
+      },
+      {
+        "type": "section_title",
+        "text": "Prevention and mitigation strategies"
+      },
+      {
+        "type": "text",
+        "text": "Organizations must adopt a multi-layered approach to fraud prevention, combining advanced technology with robust policies and procedures. This includes implementing real-time monitoring, behavioral analytics, and adaptive authentication systems."
+      },
+      {
+        "type": "text",
+        "text": "B-FY's human authentication technology offers a unique solution by verifying the physical presence of individuals without storing sensitive biometric data. This approach significantly reduces the risk of fraud while maintaining user privacy and compliance with data protection regulations."
+      },
+      {
+        "type": "section_title",
+        "text": "The future of fraud prevention"
+      },
+      {
+        "type": "text",
+        "text": "As fraud techniques continue to evolve, so must our defense mechanisms. The future of fraud prevention lies in proactive, intelligent systems that can adapt to new threats in real-time while maintaining a seamless user experience."
       }
     ]
   },
   "biometric-myths": {
-    "title": "Cinco mitos sobre la autenticación biométrica",
-    "description": "Desmitifica las ideas erróneas comunes sobre la tecnología de autenticación biométrica y descubre la realidad.",
-    "keywords": "autenticación biométrica, mitos, seguridad, tecnología, B-FY",
+    "title": "Five myths about biometric authentication",
+    "description": "Debunking common misconceptions about biometric authentication technology and discovering the reality behind these innovative security solutions.",
+    "keywords": "biometric authentication, myths, security technology, privacy, B-FY",
     "author": "B-FY Technology Team",
-    "date": "20 de enero, 2025",
+    "date": "January 20, 2025",
     "heroImage": "five-myths-abouth-biometric-authentication.webp",
-    "heroAlt": "Cinco mitos sobre la autenticación biométrica",
+    "heroAlt": "Five myths about biometric authentication",
     "content": [
       {
         "type": "text",
-        "text": "La autenticación biométrica ha ganado popularidad como una solución de seguridad avanzada, pero también ha generado varios mitos y malentendidos. Es importante separar los hechos de la ficción para entender verdaderamente el potencial y las limitaciones de esta tecnología.",
+        "text": "Biometric authentication has gained popularity as an advanced security solution, but it has also generated several myths and misunderstandings. It's important to separate facts from fiction to truly understand the potential and limitations of this technology.",
         "strong": true
       },
       {
         "type": "text",
-        "text": "En este artículo, desmitificaremos cinco conceptos erróneos comunes sobre la autenticación biométrica y proporcionaremos información precisa basada en evidencia científica y experiencia práctica."
+        "text": "In this article, we'll debunk five common misconceptions about biometric authentication and provide accurate information based on scientific evidence and practical experience."
       },
       {
         "type": "section_title",
-        "text": "Mito 1: La biometría es infalible"
+        "text": "Myth 1: Biometrics is infallible"
       },
       {
         "type": "text",
-        "text": "Aunque la autenticación biométrica es altamente segura, no es completamente infalible. Como cualquier tecnología, tiene sus limitaciones y vulnerabilidades que deben ser consideradas en su implementación."
+        "text": "While biometric authentication is highly secure, it is not completely infallible. Like any technology, it has limitations and vulnerabilities that must be considered in its implementation.",
+        "strong": "highly secure"
+      },
+      {
+        "type": "text",
+        "text": "The key is to understand that biometrics should be part of a comprehensive security strategy, not a standalone solution. When properly implemented with additional security layers, biometric systems can achieve extremely high levels of accuracy and security."
+      },
+      {
+        "type": "section_title",
+        "text": "Myth 2: Biometric data can be easily stolen"
+      },
+      {
+        "type": "text",
+        "text": "One of the most persistent myths is that biometric data is easily compromised. In reality, modern biometric systems like B-FY's don't store raw biometric data but instead use mathematical representations that cannot be reverse-engineered."
+      },
+      {
+        "type": "image",
+        "src": "human-authentication-revolutionary-approach-data-protection.webp",
+        "alt": "Secure biometric data protection"
+      },
+      {
+        "type": "text",
+        "text": "B-FY's approach goes even further by ensuring that biometric data never leaves the user's device, eliminating the risk of centralized data breaches while maintaining the highest levels of security and privacy."
+      },
+      {
+        "type": "section_title",
+        "text": "Myth 3: Biometrics violates privacy"
+      },
+      {
+        "type": "text",
+        "text": "Privacy concerns are valid but often based on outdated understanding of biometric technology. Modern solutions like B-FY prioritize privacy by design, ensuring that personal biometric information remains under the user's control at all times."
+      },
+      {
+        "type": "text",
+        "text": "The technology uses the native biometric capabilities of users' devices without transmitting or storing sensitive biometric data externally. This approach complies with the strictest data protection regulations while providing robust authentication."
+      },
+      {
+        "type": "section_title",
+        "text": "Myth 4: Biometric systems are too expensive"
+      },
+      {
+        "type": "text",
+        "text": "While the initial investment in biometric systems may seem high, the long-term benefits far outweigh the costs. Reduced fraud, improved security, and enhanced user experience lead to significant cost savings over time."
+      },
+      {
+        "type": "text",
+        "text": "Additionally, cloud-based biometric solutions like B-FY's Authentication as a Service (AaaS) model make advanced biometric authentication accessible to organizations of all sizes without requiring significant upfront investments."
+      },
+      {
+        "type": "section_title",
+        "text": "Myth 5: Biometrics is complicated to implement"
+      },
+      {
+        "type": "text",
+        "text": "Modern biometric solutions are designed for easy integration with existing systems. APIs and SDKs make it possible to implement biometric authentication without extensive technical knowledge or infrastructure changes."
+      },
+      {
+        "type": "text",
+        "text": "B-FY's platform exemplifies this approach, offering seamless integration with existing cybersecurity and 2FA systems, allowing organizations to enhance their security posture without disrupting current operations."
+      },
+      {
+        "type": "section_title",
+        "text": "The reality of biometric authentication"
+      },
+      {
+        "type": "text",
+        "text": "Biometric authentication represents a significant advancement in digital security, offering a balance of convenience, security, and privacy when properly implemented. Understanding the facts helps organizations make informed decisions about adopting this transformative technology."
+      }
+    ]
+  },
+  "human-authentication-revolutionary": {
+    "title": "Human authentication: a revolutionary approach to data protection",
+    "description": "Human authentication, driven by biometric technologies, is transforming digital security by offering a safer and more efficient solution to the risks posed by traditional passwords.",
+    "keywords": "human authentication, biometric technology, data protection, digital security, B-FY",
+    "author": "B-FY Innovation Team",
+    "date": "January 22, 2025",
+    "heroImage": "human-authentication-revolutionary-approach-data-protection.webp",
+    "heroAlt": "Human authentication: a revolutionary approach to data protection",
+    "content": [
+      {
+        "type": "text",
+        "text": "Human authentication, driven by biometric technologies, is transforming digital security by offering a safer and more efficient solution to the risks posed by traditional passwords. In this context, B-FY stands out as a leader, developing an innovative technology that protects data without compromising user privacy.",
+        "strong": true
+      },
+      {
+        "type": "text",
+        "text": "The era of passwords is coming to an end. As digital transformation accelerates, organizations worldwide are recognizing the need for more secure, user-friendly authentication methods that can adapt to the evolving threat landscape."
+      },
+      {
+        "type": "section_title",
+        "text": "The password problem"
+      },
+      {
+        "type": "text",
+        "text": "Traditional password-based authentication suffers from numerous vulnerabilities. Users often choose weak passwords, reuse them across multiple platforms, and struggle to manage the growing number of accounts they need to access."
+      },
+      {
+        "type": "text",
+        "text": "Cybercriminals exploit these weaknesses through various attack vectors including brute force attacks, credential stuffing, and social engineering. The result is a security landscape where passwords represent the weakest link in an organization's defense strategy."
+      },
+      {
+        "type": "section_title",
+        "text": "The biometric advantage"
+      },
+      {
+        "type": "text",
+        "text": "Biometric authentication leverages unique physical characteristics that cannot be easily replicated or stolen. Unlike passwords, biometric traits are inherently tied to the individual, providing a more secure foundation for digital identity verification.",
+        "strong": "unique physical characteristics"
+      },
+      {
+        "type": "image",
+        "src": "b-fys-human-authentication-transforms-traveler-experience.webp",
+        "alt": "B-FY transforming user experience"
+      },
+      {
+        "type": "text",
+        "text": "Modern biometric systems offer several advantages over traditional authentication methods: improved security, enhanced user experience, reduced administrative overhead, and compliance with regulatory requirements."
+      },
+      {
+        "type": "section_title",
+        "text": "B-FY's innovative approach"
+      },
+      {
+        "type": "text",
+        "text": "B-FY's human authentication technology goes beyond conventional biometric solutions by ensuring that biometric data never leaves the user's device. This approach addresses privacy concerns while maintaining the highest levels of security."
+      },
+      {
+        "type": "text",
+        "text": "The technology works by utilizing the native biometric capabilities of users' smartphones and other devices, creating a seamless authentication experience that doesn't compromise on security or privacy."
+      },
+      {
+        "type": "section_title",
+        "text": "Real-world applications"
+      },
+      {
+        "type": "text",
+        "text": "Human authentication technology is being successfully deployed across various industries, from healthcare and banking to logistics and events. Each sector benefits from reduced fraud, improved security, and enhanced user satisfaction."
+      },
+      {
+        "type": "text",
+        "text": "In the travel industry, for example, B-FY's technology is transforming the passenger experience by enabling secure, contactless authentication at various touchpoints throughout the journey, from check-in to boarding and beyond."
+      },
+      {
+        "type": "section_title",
+        "text": "The future of authentication"
+      },
+      {
+        "type": "text",
+        "text": "As we move towards an increasingly connected world, human authentication will play a crucial role in securing digital interactions. The technology's ability to provide strong authentication while preserving privacy makes it ideal for the challenges ahead."
+      },
+      {
+        "type": "text",
+        "text": "Organizations that adopt human authentication technology today will be better positioned to face future security challenges while providing their users with a superior digital experience."
+      }
+    ]
+  },
+  "bfy-consolidates-presence-worldwide": {
+    "title": "B-FY consolidates its presence worldwide",
+    "description": "B-FY's solution has already proven its effectiveness in various sectors, reinforcing its commitment to the battle against cybercrime and identity fraud.",
+    "keywords": "B-FY expansion, global presence, cybersecurity, identity fraud prevention",
+    "author": "B-FY Communications Team",
+    "date": "January 25, 2025",
+    "heroImage": "b-fy-consolidates-presence-worldwide.webp",
+    "heroAlt": "B-FY consolidates its presence worldwide",
+    "content": [
+      {
+        "type": "text",
+        "text": "B-FY's solution has already proven its effectiveness in various sectors, including healthcare, banking, logistics, and events, among others, in countries like Spain and Mexico. By launching its solution in the US market, B-FY consolidates its worldwide presence and reinforces its commitment to the battle against cybercrime and identity fraud.",
+        "strong": true
+      },
+      {
+        "type": "text",
+        "text": "The company's global expansion represents a significant milestone in the fight against digital fraud, bringing advanced human authentication technology to new markets and industries worldwide."
+      },
+      {
+        "type": "section_title",
+        "text": "Proven track record"
+      },
+      {
+        "type": "text",
+        "text": "B-FY's technology has demonstrated remarkable success across diverse industries and geographical locations. From preventing identity fraud in banking transactions to securing access in healthcare facilities, the solution has consistently delivered outstanding results."
+      },
+      {
+        "type": "text",
+        "text": "The company's success in Spain and Mexico has provided valuable insights into different market requirements and regulatory environments, preparing B-FY for successful expansion into other regions."
+      },
+      {
+        "type": "section_title",
+        "text": "Global market opportunity"
+      },
+      {
+        "type": "text",
+        "text": "The global cybersecurity market is experiencing unprecedented growth, driven by increasing digitalization and rising cyber threats. B-FY's unique approach to human authentication positions it to capture a significant share of this expanding market."
+      },
+      {
+        "type": "image",
+        "src": "b-fy-enters-us-market.webp",
+        "alt": "B-FY enters the US market"
+      },
+      {
+        "type": "text",
+        "text": "With the potential to address cybercrime losses estimated at $145 billion annually, B-FY's technology represents not just a security solution but a significant economic opportunity for organizations worldwide."
       }
     ]
   }
@@ -298,16 +583,20 @@
   <#assign currentBlog = blogData[blogSlug] />
 <#else>
   <#-- Si no encuentra por slug exacto, intentar por coincidencias parciales -->
-  <#if blogSlug?contains("identity-verification") || blogSlug?contains("verificacion-identidad")>
+  <#if blogSlug?contains("identity-verification") || blogSlug?contains("verification")>
     <#assign currentBlog = blogData["identity-verification-challenge"] />
-  <#elseif blogSlug?contains("cybersecurity") || blogSlug?contains("ciberseguridad")>
+  <#elseif blogSlug?contains("cybersecurity") || blogSlug?contains("trends")>
     <#assign currentBlog = blogData["cybersecurity-trends-2025"] />
-  <#elseif blogSlug?contains("fraud") || blogSlug?contains("fraude")>
+  <#elseif blogSlug?contains("fraud") || blogSlug?contains("threat")>
     <#assign currentBlog = blogData["identity-fraud-threat"] />
-  <#elseif blogSlug?contains("biometric") || blogSlug?contains("myths") || blogSlug?contains("mitos")>
+  <#elseif blogSlug?contains("biometric") || blogSlug?contains("myths")>
     <#assign currentBlog = blogData["biometric-myths"] />
+  <#elseif blogSlug?contains("human-authentication") || blogSlug?contains("revolutionary")>
+    <#assign currentBlog = blogData["human-authentication-revolutionary"] />
+  <#elseif blogSlug?contains("bfy-consolidates") || blogSlug?contains("worldwide")>
+    <#assign currentBlog = blogData["bfy-consolidates-presence-worldwide"] />
   <#else>
-    <#-- Si no hay slug o no coincide, usar el blog por defecto que es identity-verification-challenge -->
+    <#-- Si no hay slug o no coincide, usar el blog por defecto -->
     <#assign currentBlog = blogData["identity-verification-challenge"] />
   </#if>
 </#if>
@@ -315,25 +604,39 @@
 <#-- SIDEBAR DATA - Lista de otros blogs -->
 <#assign sidebarBlogs = [
   {
-    "title": "FRAUDE DE IDENTIDAD: UNA AMENAZA CRECIENTE",
-    "excerpt": "A medida que el fraude de identidad se vuelve cada vez más sofisticado, las organizaciones...",
+    "title": "IDENTITY FRAUD: A GROWING THREAT",
+    "excerpt": "As identity fraud becomes increasingly sophisticated, organizations and individuals must be more vigilant...",
     "image": "identity-fraud-growing-threat.webp",
-    "alt": "Fraude de identidad: una amenaza creciente",
+    "alt": "Identity fraud: a growing threat",
     "url": "identity-fraud-threat"
   },
   {
-    "title": "TENDENCIAS DE CIBERSEGURIDAD: UN PANORAMA EN EVOLUCIÓN",
-    "excerpt": "La aceleración digital y la proliferación de amenazas cibernéticas han redefinido...",
+    "title": "CYBERSECURITY TRENDS: AN EVOLVING LANDSCAPE",
+    "excerpt": "Digital acceleration and the proliferation of cyber threats have redefined business priorities...",
     "image": "cybersecurity-trends-evolving-landscape.webp",
-    "alt": "Tendencias de ciberseguridad 2025",
+    "alt": "Cybersecurity trends: an evolving landscape",
     "url": "cybersecurity-trends-2025"
   },
   {
-    "title": "CINCO MITOS SOBRE LA AUTENTICACIÓN BIOMÉTRICA",
-    "excerpt": "Desmitifica las ideas erróneas comunes sobre la tecnología de autenticación biométrica...",
+    "title": "FIVE MYTHS ABOUT BIOMETRIC AUTHENTICATION",
+    "excerpt": "Debunking common misconceptions about biometric authentication technology and discovering the reality...",
     "image": "five-myths-abouth-biometric-authentication.webp",
-    "alt": "Cinco mitos sobre la autenticación biométrica",
+    "alt": "Five myths about biometric authentication",
     "url": "biometric-myths"
+  },
+  {
+    "title": "HUMAN AUTHENTICATION: A REVOLUTIONARY APPROACH",
+    "excerpt": "Human authentication is transforming digital security by offering a safer solution to password risks...",
+    "image": "human-authentication-revolutionary-approach-data-protection.webp",
+    "alt": "Human authentication: a revolutionary approach",
+    "url": "human-authentication-revolutionary"
+  },
+  {
+    "title": "B-FY CONSOLIDATES ITS PRESENCE WORLDWIDE",
+    "excerpt": "B-FY's solution has proven its effectiveness in various sectors, reinforcing its global commitment...",
+    "image": "b-fy-consolidates-presence-worldwide.webp",
+    "alt": "B-FY consolidates its presence worldwide",
+    "url": "bfy-consolidates-presence-worldwide"
   }
 ] />
 
@@ -517,22 +820,6 @@
           <!-- Meta información -->
           <div class="blog-meta">
             Por ${currentBlog.author} • ${currentBlog.date}
-          </div>
-          
-          <!-- DEBUG INFO (remover en producción) -->
-          <div style="background: #f0f0f0; padding: 10px; margin: 10px 0; font-size: 12px; color: #666;">
-            <strong>DEBUG:</strong><br>
-            Request URI: ${currentPath!"N/A"}<br>
-            Full URL: ${fullURL!"N/A"}<br>
-            Query String: ${queryString!"N/A"}<br>
-            Story Param: ${ctx.request.getParameter("story")!"N/A"}<br>
-            Complete Path: ${completePath!"N/A"}<br>
-            Blog Slug: ${blogSlug!"N/A"}<br>
-            Content Name: ${(content.@name)!"N/A"}<br>
-            Content Title: ${(content.title)!"N/A"}<br>
-            Selected Blog: ${currentBlog.title!"N/A"}<br>
-            Content Items: ${(currentBlog.content![])?size}<br>
-            Available Blog Keys: identity-verification-challenge, cybersecurity-trends-2025, identity-fraud-threat, biometric-myths
           </div>
           
           <!-- Contenido del Blog Dinámico -->
