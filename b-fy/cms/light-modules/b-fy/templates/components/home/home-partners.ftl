@@ -305,7 +305,7 @@
 					</#list>
 				</ul>
 			</#if>
-			<a href="${base!""}/partners#form" class="partners__cta">Let's do business</a>
+			<a href="${base!"${ctx.contextPath}"}/contact" class="partners__cta">Let's do business</a>
 		</div>
 	</section>
 </#macro>
