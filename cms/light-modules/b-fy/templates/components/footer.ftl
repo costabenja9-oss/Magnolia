@@ -325,7 +325,6 @@
           <nav class="footer-legal-nav" aria-label="Legal">
             <a href="${base}/legal/privacy-policy">Política de Privacidad</a>
             <a href="${base}/legal/terms-of-service">Términos de Servicio</a>
-            <a href="${base}/legal/legal-notice">Aviso Legal</a>
             <a href="${base}/legal/cookies-policy">Política de Cookies</a>
           </nav>
         </div>

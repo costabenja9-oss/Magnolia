@@ -173,9 +173,11 @@
       <p class="home-hero__desc">${_desc}</p>
       <p class="home-hero__hook">${_hook}</p>
 
-      <form class="home-hero__form" method="post" action="#" onsubmit="return false;">
+      <form id="hero-form" class="home-hero__form" onsubmit="return false;">
+        <!-- Honeypot (antispam) -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; opacity:0;" />
         <div class="home-hero__form-row">
-          <input type="email" placeholder="${_emailPh}" class="home-hero__input" required />
+          <input type="email" name="email" placeholder="${_emailPh}" class="home-hero__input" required />
           <button class="home-hero__btn" type="submit">${_btn}</button>
         </div>
         <p class="home-hero__privacy">${_priv} <a href="${ctx.contextPath}/privacy-policy">${_privHere}</a></p>
@@ -205,4 +207,72 @@
       </div>
     </div>
   </section>
+
+  <!-- EmailJS SDK + envío para hero -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Verificar que EmailJS esté disponible
+      if (typeof window.emailjs === 'undefined') {
+        console.error('EmailJS SDK no se cargó correctamente');
+        return;
+      }
+
+      // 1) Init - usando las mismas credenciales que contact
+      emailjs.init("KQDglcggc3HBv46cx"); // <-- Mismo public key que contact
+
+      const form = document.getElementById("hero-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Honeypot: si está relleno, no enviamos
+        const hp = form.querySelector('input[name="website"]');
+        if (hp && hp.value.trim() !== "") return;
+
+        // Validación básica del email
+        const emailInput = form.querySelector('input[name="email"]');
+        if (!emailInput || !emailInput.value.trim()) {
+          alert("Please enter your email address.");
+          return;
+        }
+
+        // Validación simple de formato de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+
+        // UX botón
+        const btn = form.querySelector('button[type="submit"]');
+        const original = btn ? btn.textContent : null;
+        if (btn) { btn.disabled = true; btn.textContent = "Requesting..."; }
+
+        // 3) Crear objeto filtrado solo con campos que tienen valor
+        const templateParams = {};
+        
+        // Solo agregar el email (que ya validamos que existe)
+        templateParams.email = emailInput.value.trim();
+        
+        // Agregar tipo de formulario para identificación en el template
+        templateParams.form_type = "hero_demo_request";
+        
+        // 4) Enviar usando emailjs.send - mismas credenciales que contact
+        emailjs.send("service_bd0x4ke", "template_txdnffe", templateParams)
+          .then(() => {
+            alert("Thank you! We'll contact you soon to schedule your demo.");
+            form.reset();
+          })
+          .catch((err) => {
+            console.error(err);
+            alert("We couldn't process your request. Please try again.");
+          })
+          .finally(() => {
+            if (btn) { btn.disabled = false; btn.textContent = original; }
+          });
+      });
+    });
+  </script>
 </#macro>
