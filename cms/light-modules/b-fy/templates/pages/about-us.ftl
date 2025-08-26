@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en     <#assign fbDetailsTitle = "Our Company" />
-    <#assign fbDetailsDesc = "<p>At B-FY we have revolutionized the access protocol to authenticate real people, always putting human beings at the center. For more than 18 years, we have driven a profound transformation in the field of digital and physical identity. Our objective: to change forever the way people authenticate, guaranteeing security, privacy and trust.</p><p>We have developed a new access protocol that achieves the perfect balance between simplicity, speed and security. In less than three seconds we offer you a fluid identification, robust and free of passwords, and prevents any type of digital identity fraud and protects user data privacy. At B-FY we do not identify credentials, certificates or people's devices. Our technology guarantees that each authentication process will be initiated and completed by a human, manually, and independent of passwords or fragile tokens. Thus, the user has total control of their identity. Includes connection to a human.</p><p>We believe that true security is only possible when we know with certainty who is behind each digital credential. For this reason, our solution does not validate data, but human presence. We use the best available technology and the most advanced security protocols to offer the most secure, robust and accessible system for people of all ages and backgrounds. Our technology eliminates online anonymity, blocks identity fraud and protects user privacy from the first click. We are pioneers in biometric authentication without credentials, based on personal devices. Thanks to our own model—secure, scalable and totally aligned with global regulations (such as GDPR)— we help companies and institutions convince their own identity providers. With B-FY, each access is transparent, traceable and truly secure. We are not just innovating in technology, we are redefining trust in digital and physical environments.</p>" /> <#assign fbDetailsTitle = "Our Company" />
-    <#assign fbDetailsDesc = "<p>At B-FY we have revolutionized the access protocol to authenticate real people, always putting human beings at the center. For more than 18 years, we have driven a profound transformation in the field of digital and physical identity. Our objective: to change forever the way people authenticate, guaranteeing security, privacy and trust.</p><p>We have developed a new access protocol that achieves the perfect balance between simplicity, speed and security. In less than three seconds we offer you a unique digital identity, robust and free of passwords, and prevents any type of digital identity fraud and protects user data privacy. At B-FY we do not identify credentials, certificates or people's devices. Our technology guarantees that each authentication process will be initiated and completed by a human, manually, and independent of passwords or fragile tokens. Thus, the user has total control of their identity. Includes connection to a human.</p><p>We believe that true security is only possible when we know with certainty who is behind each digital credential. For this reason, our solution does not validate data, but human presence. We use the best available technology and the most advanced security protocols to offer the most secure, robust and accessible system for people of all ages and backgrounds. Our technology eliminates online anonymity, blocks identity fraud and protects user privacy from the first click. We are pioneers in biometric authentication without credentials, based on personal devices. Thanks to our own model—secure, scalable and totally aligned with global regulations (such as GDPR)— we help companies and institutions convince their own identity providers. With B-FY, each access is transparent, traceable and truly secure. We are not just innovating in technology, we are redefining trust in digital and physical environments.</p>" />
-<head>
-  <meta charset="UTF-8" />
-  <title>${content.title!"About Us | B-FY"}</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>${content.title!"About Us | B-FY"}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="${ctx.contextPath}/.resources/b-fy/webresources/favicon.png" />
   <link rel="stylesheet" href="${ctx.contextPath}/.resources/b-fy/webresources/styles.css" />
@@ -27,25 +25,42 @@
     <#import "/b-fy/templates/components/about/about-vision.ftl" as aboutVisionCmp />
     <#import "/b-fy/templates/components/about/about-values.ftl" as aboutValuesCmp />
     <#import "/b-fy/templates/components/cta.ftl" as ctaCmp />
-    <#assign fbMsgTagline = "Message from our founder" />
-    <#assign fbMsgTitle = "B-FY: Universal innovation" />
-    <#assign fbMsgContent = "<p>B-FY stops identity fraud and cybercrime online without the need for passwords, access keys, online biometrics or multi-factor identification.</p><p>Identity fraud and online cybercrime can never be stopped as long as access is granted to identified identities (tools instead of people). It is impossible for these identified tools, to which access is granted, to identify online operators, who always remain anonymous and, therefore, can be any cybercriminal on the planet in any digital transaction.</p><p>In the same way that cybercriminals who empty your account using your credit card credentials are also identified.</p><p>That's why we're always too late, when the damage is done, the money has already disappeared and the access doors have automatically closed.</p><p>This is also the cause of the increasing annual loss of 10.5 billion dollars, and that cybersecurity companies, technology giants and governments continue to be hacked regularly.</p><p>B-FY changes the access protocol by allowing access only to identified people, which makes identity impersonation or hacking by scammers or cybercriminals impossible.</p><p>Transactions with B-FY, in addition to being secure, can be completed in less than three seconds.</p>" />
+    <#assign fbMsgTagline = "Message from Our Founder" />
+    <#assign fbMsgTitle = "B-FY, THE UNIVERSAL BREAKTHROUGH" />
+    <#assign fbMsgContent = "<p>B-FY stops online ID fraud/cybercrime, without needing passwords, passkeys, online biometrics, or multifactor identities.</p><p>Online ID fraud/cybercrime can never be stopped when continued access is given to identified identities (tools instead of humans). It is impossible for these identified tools that are given access to identify online operators who always remain anonymous and therefore can be any cybercriminal on the planet at any online transaction.</p><p>Just like the cybercriminals that empty your account with your credit card credentials are never identified either. This is why we always find out too late, when damage is already done, money is already gone, or the unmanned security gates trespassed.</p><p>Also, this is the reason behind the ever-increasing loss of 10.5 trillion dollars per annum —and why cybersecurity firms, IT giants, and governments are still being hacked on a regular basis.</p><p>B-FY changes the access protocol by giving access to identified individuals only, whereby impersonation or hacking by ID fraudsters/cybercriminals becomes impossible. The user-friendly B-FY transactions can be completed in less than three seconds.</p><p><strong>Founder and Chief Innovation Officer at B-FY</strong></p>" />
     <#assign fbDetailsTitle = "Our company" />
-    <#assign fbDetailsDesc = "<p>B-FY has changed the access protocol... We’re not just innovating in technology: we’re redefining digital and physical trust.</p>" />
+    <#assign fbDetailsDesc = "<p>B-FY has changed the access protocol for authenticating all human beings. Putting legitimate human users at the center.
+At B-FY, we have been driving a quiet but profound revolution for over 18 years: to forever change how people are authenticated in both the digital and physical worlds.
+Our new access protocol has created a perfect balance between simple, fast, and easy authentication (Less than 3 seconds), with superior security avoiding all online ID fraud and protecting and guaranteeing user’s data privacy.
+B-FY Identifies real individuals as opossed to identifying identities.
+
+B-FY makes sure there is a real human being starting and finishing a manual authentication process. Protecting their privacy, giving them the power to authenticate offline and making it the easiest and fastest passwordless experience in the market.
+We were born with a firm conviction: real security is only possible when we know with certainty who is behind any digital ID credential. 
+That’s why we developed a solution that validates not data, but human presence.
+B-FY uses the best available technology and security protocols in the market to create the most secure, robust, and friendly protocol for users of all ages and geographies.
+Our technology eliminates online anonymity, blocks identity fraud, and protects user privacy from the very first click.
+We are pioneers in passwordless authentication based on biometrics and personal devices. Thanks to our proprietary model—secure, scalable, and regulatory-compliant (e.g., GDPR)—we empower companies and institutions to become their own identity providers.
+With B-FY, every access is transparent, traceable, and truly secure.
+We’re not just innovating in technology: we’re redefining digital and physical trust.
+
+</p>" />
     <#assign fbCountries = ["Mexico","Colombia","Peru","Chile","Argentina","Spain"] />
-    <#assign fbMissionTitle = "Mission" />
-    <#assign fbMissionDesc = "Authenticate legitimate users, eliminate fraud, and protect privacy by ensuring only real individuals gain access." />
-    <#assign fbVisionTitle = "Vision" />
-    <#assign fbVisionDesc = "Become the global benchmark access protocol by eliminating online anonymity and eradicating identity fraud." />
-    <#assign fbValuesTitle = "Values" />
+    <#assign fbMissionTitle = "Our Mission" />
+    <#assign fbMissionDesc = "At B-FY, our mission is clear: to authenticate legitimate users of any company or institution, eliminate fraud, and protect privacy. Our commitment is to ensure that only authentic individuals—not faked or hacked digital identities (passwords, passkeys, online biometrics, ID cards)—gain access to digital or physical environments and services.
+" />
+    <#assign fbVisionTitle = "Our Vision" />
+    <#assign fbVisionDesc = "To become the global benchmark new access protocol for transforming digital and physical access by eliminating online anonymity and eradicating identity fraud, through the unequivocal authentication of real human beings—without passwords, without credentials that can be stolen, and without relying on centralized databases." />
+    <#assign fbValuesTitle = "Our Values" />
     <#assign fbValues = [
-      {"name":"Authenticity","description":"Identify real people, not impersonal data."},
-      {"name":"Privacy","description":"Protecting personal information is essential for trust."},
-      {"name":"Passwordless architecture","description":"Fraud-resistant: no passwords, no anonymity, no impersonation."},
-      {"name":"Transparency","description":"Only the right person gets access; every action has an owner."},
-      {"name":"Continuous innovation","description":"18+ years of R&D anticipating future threats."},
-      {"name":"User empowerment","description":"Decentralized biometric solution centered on user control."}
-    ] />
+  {"name":"Authenticity","description":"We believe in identifying real people, not impersonal data."},
+  {"name":"Privacy","description":"Protecting personal information is essential for trust and the reputation of any organization."},
+  {"name":"Passwordless architecture by design","description":"Our solution is built on a fraud-resistant model—no passwords, no anonymity, no risk of impersonation."},
+  {"name":"Transparency","description":"Only the right person gets access, and every action has a clear owner."},
+  {"name":"Continuous innovation","description":"With over 18 years of R&D, we keep evolving to anticipate future threats."},
+  {"name":"User empowerment","description":"At B-FY, the user is at the center of the authentication process. Our decentralized biometric solution gives users the power to manage, protect, and control their authentication from the comfort, ease, and privacy of their own mobile device—using only their biometrics and their B-FY private key."},
+  {"name":"No passwords, no friction","description":"No passwords, no friction, and no need to transmit or store biometric data."}
+] />
+
     <#assign msgNode = firstChild('message') />
     <#assign msgTagline = msgNode.tagline!fbMsgTagline />
     <#assign msgTitle = msgNode.title!fbMsgTitle />
@@ -75,9 +90,31 @@
     <#if (content.carousel)??><#assign slides = (content.carousel?children)![] /></#if>
     <#if slides?size == 0>
       <#assign slides = [
-        {"title":"18+ years of R&D","description":"Continuous innovation anticipating threats.","image":"carousel-02.webp"},
-        {"title":"Global presence","description":"Teams and clients across multiple regions.","image":"carousel-03.webp"},
-        {"title":"Security & Privacy","description":"Architecture that preserves biometric privacy.","image":"carousel-04.webp"}
+        {
+          "title":"Who we are",
+          "description":"We authenticate legitimate users, not digital identities.\nAt B-FY, we have been developing technology for over 18 years to solve a critical problem:\nthe inability to know who is truly behind a digital transaction.\nOur goal is clear: to eliminate online anonymity and eradicate identity fraud.",
+          "image":"about-us.webp"
+        },
+        {
+          "title":"Why we exist", 
+          "description":"Because current systems fail.\nDigital access is still granted to spoofable identities, not to real people.\nPasswords, personal data, and tokens can be stolen.\nAs long as anonymity exists, fraud will persist.\nB-FY was born to change that paradigm.",
+          "image":"carousel-02.webp"
+        },
+        {
+          "title":"Our Philosophy",
+          "description":"One identity, one person. Just one.\nWe believe that each access should be unequivocally linked to an authentic human being.\nNo passwords. No vulnerable databases. No room for impersonation.\nAuthentication must mean real presence, not just data matching.",
+          "image":"carousel-03.webp"
+        },
+        {
+          "title":"How We Make It Possible",
+          "description":"With advanced technology and firm principles.\nB-FY works with the user's mobile phone, their biometrics, and an encrypted private key.\nA passwordless solution, with no direct interaction with databases, protecting privacy by design.\nSecure, transparent, and ethical.",
+          "image":"carousel-04.webp"
+        },
+        {
+          "title":"Our Vision",
+          "description":"Redefining the access protocol.\nWe envision a future where organizations no longer guess who is accessing,\nbut know it with certainty—frictionlessly, fraud-free, and without compromising privacy.\nThat future starts now.\nAnd we're building it at B-FY.",
+          "image":"carousel-05.webp"
+        }
       ] />
     </#if>
     <#-- Normalize slides and resolve images locally -->
@@ -102,8 +139,8 @@
         @media (min-width:1280px){.about-intro p{font-size:1.25rem}}
       </style>
     </#if>
-    <#assign pageTitle = content.title!msgTitle />
-    <#assign pageDesc = content.description!msgHtml />
+    <#assign pageTitle = content.title!"The End of Online Anonymity Begins with B-FY" />
+    <#assign pageDesc = content.description!"B-FY changes the access protocol without the need for passwords, passkeys, or online biometrics. B-FY grants access only to identified individuals who cannot be impersonated or hacked, ensuring that both online and physical access are fully secure." />
     <section class="about-intro">
       <h1>${pageTitle}</h1>
       <p>${content.description!""}</p>
