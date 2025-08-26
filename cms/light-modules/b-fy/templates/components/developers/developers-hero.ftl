@@ -28,16 +28,16 @@
 
 <#macro developersHero>
 
-<#assign title = cmsValueWithFallback(content.title!"", "Construye con B-FY") />
-<#assign description = cmsValueWithFallback(content.description!"", "APIs y SDKs potentes para integrar autenticación biométrica descentralizada") />
-<#assign subtitle = cmsValueWithFallback(content.subtitle!"", "Documentación completa y herramientas para developers") />
+<#assign title = cmsValueWithFallback(content.title!"", "Easy and Seamless Integration") />
+<#assign description = cmsValueWithFallback(content.description!"", "Forget about passwords, complex tokens, or never-ending integrations. We provide everything you need to integrate our solution into your product quickly, securely, and without hassle.") />
+<#assign subtitle = cmsValueWithFallback(content.subtitle!"", "Frictionless Security, Smooth Integration") />
 
 <#-- Use fallback features for now - CMS integration will work through defaultValue in dialogs -->
 <#assign features = [
-  {"name":"OpenID / OAuth2","description":"Integración estándar para flujos de identidad."},
-  {"name":"SDKs para clientes","description":"Librerías móviles y web para acelerar implementación."},
-  {"name":"Modelo biométrico descentralizado","description":"Sin almacenamiento biométrico central que comprometer."},
-  {"name":"Arquitectura escalable","description":"Diseñado para millones de autenticaciones."}
+  {"name":"API/OpenID First Architecture / SAML B-FY Compatibility.","description":"B-FY offers a well-documented API and OpenID interface that allows companies to rapidly integrate our authentication technology into their platforms—whether mobile apps or physical access points."},
+  {"name":"No Extra Hardware Needed.","description":"B-FY leverages the biometric capabilities of mobile devices, eliminating the need to invest in specialized readers or additional hardware. Users authenticate with their smartphones, simplifying deployment."},
+  {"name":"Omnichannel Compatibility.","description":"The B-FY solution works across multiple platforms and channels, ensuring seamless integration into websites, mobile apps, and even physical environments."},
+  {"name":"Fast Deployment and Scalability.","description":"Whether you're a startup or an enterprise, B-FY's architecture allows for fast deployment and scalability to millions of users—without disrupting existing workflows."}
 ] />
 
 <section class="dev-hero">

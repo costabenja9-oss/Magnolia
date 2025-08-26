@@ -2,14 +2,12 @@
 <#macro developersFaqs>
 <#assign heading = "Frequently Asked Questions" />
 <#assign faqs = [
-  {"q":"How long does it take to integrate B-FY?","a":"Basic integration can be completed in less than an hour using our SDKs. Most implementations are fully operational within a few days."},
-  {"q":"Do you store biometric data?","a":"No, biometric data never leaves the user's device. B-FY uses a decentralized approach where authentication templates remain on the user's smartphone."},
-  {"q":"Do you support OpenID?","a":"Yes, we are OpenID and OAuth2 certified, ensuring seamless integration with existing identity management systems."},
-  {"q":"What platforms does B-FY support?","a":"B-FY works across web, mobile (iOS and Android), and can be integrated into physical access points. Our SDKs support all major development frameworks."},
-  {"q":"How secure is B-FY authentication?","a":"B-FY uses military-grade encryption and follows strict security protocols. Our decentralized approach eliminates single points of failure and reduces attack vectors."},
-  {"q":"Can B-FY replace existing authentication systems?","a":"Yes, B-FY can completely replace traditional password-based systems or work alongside existing multi-factor authentication solutions."},
-  {"q":"What happens if a user loses their device?","a":"Users can easily re-register with a new device using our secure recovery process. The decentralized nature ensures no data is lost from central servers."},
-  {"q":"Is there a sandbox environment for testing?","a":"Yes, we provide a full sandbox environment where you can test authentication flows safely before going live."}
+  {"q":"Can I integrate the B-FY library into my hybrid application?","a":"If your hybrid app can use native libraries, then B-FY can be integrated without any issues."},
+  {"q":"How can I download the library?","a":"You can download our library from the NEXUS repository."},
+  {"q":"How do I configure my client with my library?","a":"The specific configuration parameters are provided by B-FY and are attributes of the client's dedicated REALM. These include: CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, and LICENSE_CODE."},
+  {"q":"How do I configure my client with B-FY?","a":"Just like with the library, the configuration parameters are provided by B-FY and correspond to your client's dedicated REALM. These are: CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, and LICENSE_CODE."},
+  {"q":"Can I launch authorized requests to perform simple actions?","a":"Yes, we've developed an API that allows you to perform operations using a temporary token, simplifying tasks the client may want to carry out with B-FY—whether in a corporate back office or another internal tool."},
+  {"q":"Why do we recommend using a short-lived JWT?","a":"For security reasons, we recommend generating a new JWT for each request, with a lifespan of 30–60 seconds. This helps prevent unauthorized use of the token for unintended activities."}
 ] />
 <section class="dev-faqs">
   <style>

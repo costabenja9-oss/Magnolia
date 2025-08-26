@@ -1,11 +1,12 @@
-<#-- Developers Architecture / Standards Component -->
+<#<#assign subheading = "A Robust and Proven Tech Stack" />
+<#assign description = "B-FY is easy to integrate: With B-FY, you'll have an authentication platform built on cutting-edge infrastructure, open protocols, and best-in-class security practices. Our service meets the most stringent regulatory requirements for privacy and data protection and can be integrated into your applications in just a few days through a fast and secure process based on high-security architectures and standards." /> Developers Architecture / Standards Component -->
 <#macro developersArchitecture>
 <#assign subheading = "A robust and proven tech stack" />
 <#assign description = "B‑FY is easy to integrate: With B-FY, you’ll have an authentication platform built on cutting-edge infrastructure, open protocols, and best-in-class security practices. Our service meets the most stringent regulatory requirements for privacy and data protection and can be integrated into your applications in just a few days through a fast and secure process based on high-security architectures and standards." />
 <#assign items = [
-  {"icon":"mobile","title":"OpenID certification","text":"An open identity protocol based on OAuth 2.0. It enables your applications to trust the authentication performed by B-FY to verify real user identities."},
+  {"icon":"mobile","title":"OpenID Certification","text":"An open identity protocol based on OAuth 2.0. It enables your applications to trust the authentication performed by B-FY to verify real user identities."},
   {"icon":"shield-lock","title":"Amazon Web Services","text":"Secure, scalable, and highly available cloud infrastructure. We run our services on AWS to ensure stability and performance."},
-  {"icon":"security","title":"GDPR – Regulatory compliance","text":"We fully comply with the General Data Protection Regulation. User privacy is protected by design."}
+  {"icon":"security","title":"GDPR – Regulatory Compliance","text":"We fully comply with the General Data Protection Regulation. User privacy is protected by design."}
 ] />
 <section class="dev-arch">
   <style>
