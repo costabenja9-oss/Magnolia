@@ -60,8 +60,8 @@
     <#-- Hero section con título principal -->
     <section style="padding: 4rem 1.25rem; text-align: center; background-color: #f8fafc;">
       <div style="max-width: 56rem; margin: 0 auto;">
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Cumplimiento normativo") />
-        <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY facilita el cumplimiento de regulaciones internacionales de privacidad y seguridad como GDPR, CCPA, PCI-DSS y normativas bancarias mediante biometría descentralizada.") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Regulatory Compliance") />
+        <#assign heroDescription = cmsValueWithFallback(content.description!"", "A solution tailored to meet the strictest regulatory requirements, ensuring the protection of users' personal data.") />
         
         <h1 style="font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #1f2937;">
           ${heroTitle}
@@ -78,8 +78,8 @@
         
         <#-- Sección 01 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "GDPR y privacidad by design") />
-          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "Al mantener datos biométricos exclusivamente en el dispositivo del usuario, B-FY cumple nativamente con GDPR, eliminando riesgos de transferencias no autorizadas.") />
+          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "B-FY complies with all regulations") />
+          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "By using secure, native biometrics processed offline directly on the user's mobile device, B-FY meets all national and European data privacy regulations.") />
           <#assign section1ImageUrl = damImageWithFallback(content.section1Image!"", "images/regulatory-compliance-01.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -118,8 +118,8 @@
 
         <#-- Sección 02 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Certificaciones internacionales") />
-          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "B-FY cuenta con certificaciones ISO 27001, ISO 9001 e ISO 27701, demostrando compromiso con los más altos estándares de seguridad y calidad internacional.") />
+          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "With B-FY, biometric data never leaves the user's device") />
+          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "This eliminates the risks associated with centralized data storage or processing.") />
           <#assign section2ImageUrl = damImageWithFallback(content.section2Image!"", "images/regulatory-compliance-02.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -158,8 +158,8 @@
 
         <#-- Sección 03 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 4rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Auditorías simplificadas") />
-          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "La arquitectura descentralizada reduce dramáticamente la superficie de auditoría, facilitando el cumplimiento continuo y reduciendo costos de verificación normativa.") />
+          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Protected privacy") />
+          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "By completely dissociating users from the main institutional accounts during the authentication process, B-FY protects against identity theft and supports compliance with privacy regulations.") />
           <#assign section3ImageUrl = damImageWithFallback(content.section3Image!"", "images/regulatory-compliance-03.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">

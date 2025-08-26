@@ -60,8 +60,8 @@
     <#-- Hero section con título principal -->
     <section style="padding: 4rem 1.25rem; text-align: center; background-color: #f8fafc;">
       <div style="max-width: 56rem; margin: 0 auto;">
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Autenticación descentralizada") />
-        <#assign heroDescription = cmsValueWithFallback(content.description!"", "Con B-FY la información biométrica nunca abandona su dispositivo móvil, eliminando los riesgos asociados con el almacenamiento centralizado de datos.") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Decentralized Authentication") />
+        <#assign heroDescription = cmsValueWithFallback(content.description!"", "With B-FY, biometric information never leaves your mobile device, eliminating the risks associated with centralized data storage.") />
         
         <h1 style="font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #1f2937;">
           ${heroTitle}
@@ -78,8 +78,8 @@
         
         <#-- Sección 01 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Su información siempre bajo su control") />
-          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "Nuestro enfoque de biometría descentralizada permite que los usuarios controlen completamente su información biométrica, garantizando que nunca abandona su dispositivo móvil.") />
+          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Your information always under your control") />
+          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "Our decentralized biometric approach allows users to have full control over their biometric data, ensuring it never leaves their mobile device.") />
           <#assign section1ImageUrl = damImageWithFallback(content.section1Image!"", "images/decentralized-authentication-01.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -118,8 +118,8 @@
 
         <#-- Sección 02 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Alineado con Zero Trust") />
-          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "Al alinearse con los principios de Zero Trust. B-FY asegura que solo personas verificadas puedan interactuar con sistemas digitales o fisicos") />
+          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Aligned with Zero Trust") />
+          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "By adhering to Zero Trust principles, B-FY ensures that only verified individuals can interact with digital or physical systems.") />
           <#assign section2ImageUrl = damImageWithFallback(content.section2Image!"", "images/decentralized-authentication-02.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -158,8 +158,8 @@
 
         <#-- Sección 03 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 4rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Óptima experiencia de usuario") />
-          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "B-FY fortalece la seguridad y cumple con las regulaciones de privacidad, sin comprometer la experiencia del usuario.") />
+          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Optimal user experience") />
+          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "B-FY strengthens security and ensures compliance with privacy regulations—without compromising user experience.") />
           <#assign section3ImageUrl = damImageWithFallback(content.section3Image!"", "images/decentralized-authentication-03.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">

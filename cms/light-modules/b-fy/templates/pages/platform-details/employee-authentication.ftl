@@ -60,8 +60,8 @@
     <#-- Hero section con título principal -->
     <section style="padding: 4rem 1.25rem; text-align: center; background-color: #f8fafc;">
       <div style="max-width: 56rem; margin: 0 auto;">
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Autenticación de empleados") />
-        <#assign heroDescription = cmsValueWithFallback(content.description!"", "Fortalece la seguridad interna con autenticación biométrica descentralizada para empleados, eliminando riesgos de acceso no autorizado y simplificando procesos.") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Employee Authentication") />
+        <#assign heroDescription = cmsValueWithFallback(content.description!"", "Secure access in any environment. With B-FY, protection becomes a seamless part of your organization's daily operations.") />
         
         <h1 style="font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #1f2937;">
           ${heroTitle}
@@ -78,8 +78,8 @@
         
         <#-- Sección 01 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Acceso seguro a sistemas corporativos") />
-          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "Los empleados acceden a aplicaciones críticas, bases de datos y sistemas internos mediante verificación biométrica, eliminando credenciales compartidas o robadas.") />
+          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Say goodbye to online fraud attacks") />
+          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "From bots and phishing to AI-driven threats, B-FY neutralizes the tactics that are increasingly harming both users and institutions.") />
           <#assign section1ImageUrl = damImageWithFallback(content.section1Image!"", "images/employee-authentication-01.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -118,8 +118,8 @@
 
         <#-- Sección 02 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Control de acceso físico") />
-          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "Integra el acceso físico a oficinas, laboratorios y áreas restringidas con la misma tecnología biométrica que protege los sistemas digitales.") />
+          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Omnichannel, passwordless access") />
+          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "Our solution adapts to both physical and digital entry points, offering a smooth and frictionless experience—no passwords, no hassle.") />
           <#assign section2ImageUrl = damImageWithFallback(content.section2Image!"", "images/employee-authentication-02.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -158,8 +158,8 @@
 
         <#-- Sección 03 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 4rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Trazabilidad y auditoría completa") />
-          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "Registra cada acceso con verificación biométrica irrefutable, facilitando auditorías de seguridad y cumplimiento de normativas corporativas.") />
+          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Always regulation-ready") />
+          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "Compliant with the most stringent data protection standards, so your business stays aligned with today's security regulations.") />
           <#assign section3ImageUrl = damImageWithFallback(content.section3Image!"", "images/employee-authentication-03.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">

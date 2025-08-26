@@ -60,8 +60,8 @@
     <#-- Hero section con título principal -->
     <section style="padding: 4rem 1.25rem; text-align: center; background-color: #f8fafc;">
       <div style="max-width: 56rem; margin: 0 auto;">
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Efectivo contra ATO, fraude IA y phishing") />
-        <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY neutraliza las amenazas más sofisticadas del cibercrimen actual: Account Takeover, deepfakes de IA y ataques de phishing mediante verificación biométrica real.") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Effective Against ATO, Phishing and AI-Based Fraud") />
+        <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY shields you from advanced threats, including those powered by generative AI.") />
         
         <h1 style="font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #1f2937;">
           ${heroTitle}
@@ -78,8 +78,8 @@
         
         <#-- Sección 01 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Inmune a deepfakes y ataques IA") />
-          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "La tecnología biométrica de B-FY detecta y rechaza intentos de suplantación mediante deepfakes, videos sintéticos o grabaciones, garantizando que solo personas reales accedan.") />
+          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Robust protection") />
+          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "B-FY protects you from account takeover (ATO), phishing attacks and threats driven by artificial intelligence (AI), including generative models.") />
           <#assign section1ImageUrl = damImageWithFallback(content.section1Image!"", "images/effective-against-ato-ai-fraud-and-phishing-01.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -118,8 +118,8 @@
 
         <#-- Sección 02 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Bloquea Account Takeover (ATO)") />
-          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "Aún con credenciales robadas, los atacantes no pueden completar el ATO sin la presencia física del usuario legítimo, convirtiendo cada cuenta en impenetrable.") />
+          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Three-factor authentication") />
+          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "By authenticating users through a multi-layered, three-factor process that uses the biometric capabilities of their mobile device, B-FY ensures that only authorized individuals can access systems and services—eliminating the risk of unauthorized access and identity impersonation.") />
           <#assign section2ImageUrl = damImageWithFallback(content.section2Image!"", "images/effective-against-ato-ai-fraud-and-phishing-02.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -158,8 +158,8 @@
 
         <#-- Sección 03 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 4rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Anula eficacia del phishing") />
-          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "Los ataques de phishing se vuelven inútiles al requerir verificación biométrica real del usuario, eliminando el vector de ataque más común en ciberseguridad.") />
+          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Reduced attack surface") />
+          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "By keeping biometric data exclusively on the user's device, B-FY significantly reduces the attack surface and protects against advanced threats, including those powered by generative AI.") />
           <#assign section3ImageUrl = damImageWithFallback(content.section3Image!"", "images/effective-against-ato-ai-fraud-and-phishing-03.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">

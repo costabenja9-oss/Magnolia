@@ -60,8 +60,8 @@
     <#-- Hero section con título principal -->
     <section style="padding: 4rem 1.25rem; text-align: center; background-color: #f8fafc;">
       <div style="max-width: 56rem; margin: 0 auto;">
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Autenticación de clientes") />
-        <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY revoluciona la autenticación de clientes con tecnología biométrica descentralizada que garantiza seguridad máxima y experiencia de usuario superior.") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Customer Authentication") />
+        <#assign heroDescription = cmsValueWithFallback(content.description!"", "With B-FY, maximum security is matched with superior user experience.") />
         
         <h1 style="font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #1f2937;">
           ${heroTitle}
@@ -78,8 +78,8 @@
         
         <#-- Sección 01 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Verificación biométrica instantánea") />
-          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "Los clientes acceden a sus cuentas mediante reconocimiento facial, dactilar o vocal sin comprometer su privacidad, manteniendo los datos biométricos siempre en su dispositivo.") />
+          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Our passwordless solution delivers a secure experience") />
+          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "It's easy to use and frictionless, eliminating the complexity of traditional identification systems.") />
           <#assign section1ImageUrl = damImageWithFallback(content.section1Image!"", "images/client-authentication-01.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -118,8 +118,8 @@
 
         <#-- Sección 02 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Eliminación de contraseñas") />
-          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "Olvídate de contraseñas complejas y procesos de recuperación. B-FY ofrece autenticación sin fricciones que los usuarios prefieren y reduce costos operativos.") />
+          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "B-FY requires no learning curve") />
+          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "This means your users can access quickly and securely, protecting their privacy without compromising on comfort.") />
           <#assign section2ImageUrl = damImageWithFallback(content.section2Image!"", "images/client-authentication-02.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -158,8 +158,8 @@
 
         <#-- Sección 03 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 4rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Reducción de fraude hasta 99%") />
-          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "La autenticación biométrica descentralizada de B-FY prácticamente elimina el fraude de identidad, protegiendo tanto a clientes como a la organización.") />
+          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Biometric data always remains in the user's hands") />
+          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "This ensures full control over their personal information.") />
           <#assign section3ImageUrl = damImageWithFallback(content.section3Image!"", "images/client-authentication-03.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">

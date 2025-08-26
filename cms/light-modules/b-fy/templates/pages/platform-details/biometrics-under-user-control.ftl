@@ -60,8 +60,8 @@
     <#-- Hero section con título principal -->
     <section style="padding: 4rem 1.25rem; text-align: center; background-color: #f8fafc;">
       <div style="max-width: 56rem; margin: 0 auto;">
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Biometría bajo control del usuario") />
-        <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY empodera a los usuarios con control total sobre su información biométrica, garantizando privacidad absoluta y confianza mediante tecnología descentralizada.") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "User-Controlled Biometrics") />
+        <#assign heroDescription = cmsValueWithFallback(content.description!"", "Whether in digital or physical environments, B-FY ensures that every transaction is protected against identity theft and hacking, delivering a smooth and easy-to-use authentication experience.") />
         
         <h1 style="font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; color: #1f2937;">
           ${heroTitle}
@@ -78,8 +78,8 @@
         
         <#-- Sección 01 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Datos nunca abandonan el dispositivo") />
-          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "La información biométrica se procesa y almacena exclusivamente en el dispositivo del usuario, eliminando riesgos de filtración, hackeos o uso indebido por terceros.") />
+          <#assign section1Title = cmsValueWithFallback(content.section1Title!"", "Your phone is your key") />
+          <#assign section1Description = cmsValueWithFallback(content.section1Description!"", "With B-FY, biometric data always remains under the user's control, using the native biometric capabilities of their mobile device to ensure secure authentication of the legitimate user.") />
           <#assign section1ImageUrl = damImageWithFallback(content.section1Image!"", "images/biometrics-under-user-control-01.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -118,8 +118,8 @@
 
         <#-- Sección 02 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 6rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Usuario decide qué compartir") />
-          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "Cada usuario mantiene soberanía completa sobre sus datos, decidiendo cuándo, cómo y con quién compartir su verificación biométrica sin comprometer privacidad.") />
+          <#assign section2Title = cmsValueWithFallback(content.section2Title!"", "Decentralized process") />
+          <#assign section2Description = cmsValueWithFallback(content.section2Description!"", "By completely disconnecting the user from the institution's main accounts during the authentication process, B-FY helps prevent identity fraud.") />
           <#assign section2ImageUrl = damImageWithFallback(content.section2Image!"", "images/biometrics-under-user-control-02.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
@@ -158,8 +158,8 @@
 
         <#-- Sección 03 - Texto izquierda, imagen derecha -->
         <article style="margin-bottom: 4rem; background-color: #f3f4f6; border-radius: 1rem; padding: 3rem;">
-          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Revocación instantánea de accesos") />
-          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "Los usuarios pueden revocar inmediatamente cualquier acceso o servicio vinculado a su biometría, manteniendo control permanente sobre su identidad digital.") />
+          <#assign section3Title = cmsValueWithFallback(content.section3Title!"", "Transparent and secure") />
+          <#assign section3Description = cmsValueWithFallback(content.section3Description!"", "With B-FY, the authentication process is entirely transparent, eradicating the risk of anonymous and unprotected interactions.") />
           <#assign section3ImageUrl = damImageWithFallback(content.section3Image!"", "images/biometrics-under-user-control-03.webp") />
           
           <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
