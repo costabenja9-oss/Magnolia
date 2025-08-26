@@ -1,47 +1,24 @@
 <#-- /b-fy/templates/components/platform/platform-customer.ftl -->
-<#-- Helpers mínimos -->
-<#function hasRealContent v>
-  <#if !v??><#return false/></#if>
-  <#return (v?has_content && v?is_string && v?trim != '') || (v?is_hash) />
-</#function>
-<#function cmsOrDefault cmsVal defVal>
-  <#if hasRealContent(cmsVal!'')><#return cmsVal/><#else><#return defVal/></#if>
-</#function>
+<#-- Import shared CMS utilities -->
+<#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
 
 <#macro platformCustomer>
-  <#-- Copia por defecto (EN) — si el CMS trae contenido, lo usa -->
-  <#assign fbTitle = "B-FY: At the Service of Its Clients" />
-  <#assign fbDesc  = "Every company has unique needs, and at B-FY we adapt to their infrastructure to offer a robust and efficient authentication solution." />
-  <#assign fbFeatures = [
+  <#-- DEF: Resolve all values once -->
+  <#assign DEF = {
+    "title": cms.cmsOrDefault((content.customer?? && content.customer.title??)?then(content.customer.title, ""), "B-FY: At the Service of Its Clients"),
+    "description": cms.cmsOrDefault((content.customer?? && content.customer.description??)?then(content.customer.description, ""), "Every company has unique needs, and at B-FY we adapt to their infrastructure to offer a robust and efficient authentication solution."),
+    "features": cms.processMultifield((content.customer?? && content.customer.features??)?then(content.customer.features, [])),
+    "bgImage": (ctx.contextPath) + "/.resources/b-fy/webresources/images/customer.webp"
+  } />
+  <#-- Fallback para features si está vacío -->
+  <#assign fallbackFeatures = [
     {"title":"Be your own identity authority","description":"Become your own Identity Provider and manage access with full autonomy."},
-    {"title":"Maximize your revenue","description":"With B-FY, optimize your operational profitability and take your bottom line to a new level."},
     {"title":"Break free from vendor lock-in","description":"Say goodbye to dependencies on large providers and regain control of your tech strategy."},
-    {"title":"Get guaranteed financial security","description":"Protect every transaction and safeguard your revenue with an impenetrable system."},
     {"title":"Ensure passwordless authentication","description":"Your users will enjoy an ultra-fast, simple, and seamless experience, with zero passwords."},
+    {"title":"Maximize your revenue","description":"With B-FY, optimize your operational profitability and take your bottom line to a new level."},
+    {"title":"Get guaranteed financial security","description":"Protect every transaction and safeguard your revenue with an impenetrable system."},
     {"title":"Say goodbye to hidden costs","description":"Completely eliminate expenses from fraud, data breaches, and account takeovers."}
   ] />
-
-  <#-- Nodos opcionales desde el CMS -->
-  <#assign node = {} />
-  <#if content.customer??>
-    <#if (content.customer?children)?has_content>
-      <#assign node = content.customer?children[0] />
-    <#elseif content.customer?has_content>
-      <#assign node = content.customer />
-    </#if>
-  </#if>
-
-  <#assign title = cmsOrDefault(node.title!'', fbTitle) />
-  <#assign description = cmsOrDefault(node.description!'', fbDesc) />
-  <#assign featsContainer = node.features! />
-  <#assign featNodes = [] />
-  <#if featsContainer??>
-    <#assign featNodes = featsContainer?is_sequence?then(featsContainer, (featsContainer?children)![]) />
-  </#if>
-  <#assign features = (featNodes?size gt 0)?then(featNodes, fbFeatures) />
-
-  <#-- Imagen de fondo -->
-  <#assign bgImage = (ctx.contextPath) + "/.resources/b-fy/webresources/images/customer.webp" />
 
   <#-- Estilos namespaced (incluir una sola vez) -->
   <#if !BFY_CUST_FULL_STYLE_INCLUDED??>
@@ -65,15 +42,15 @@
   </#if>
 
   <section class="bfy-cust" aria-label="B-FY at the service of its clients">
-    <img class="bfy-cust__bg" src="${bgImage}" alt="" />
+    <img class="bfy-cust__bg" src="${DEF.bgImage}" alt="" />
     <span class="bfy-cust__overlay" aria-hidden="true"></span>
 
     <div class="bfy-cust__container">
-      <h2 class="bfy-cust__title">${title}</h2>
-      <p class="bfy-cust__lead">${description}</p>
+      <h2 class="bfy-cust__title">${DEF.title}</h2>
+      <p class="bfy-cust__lead">${DEF.description}</p>
 
       <div class="bfy-cust__grid">
-        <#list features as f>
+        <#list (DEF.features?size > 0)?then(DEF.features, fallbackFeatures) as f>
           <article class="bfy-cust__item">
             <h3>${f.title!}</h3>
             <p>${f.description!}</p>

@@ -1,40 +1,28 @@
-<#-- Platform Det  <#assign fbItems = [
-    {"icon":"imac-shield","title":"No additional hardware","description":"B-FY leverages existing smartphone biometrics; no specialized readers are required. Users authenticate with their own devices, reducing implementation complexity."},
-    {"icon":"world","title":"Omnichannel compatibility","description":"Works across websites, mobile apps, and physical environments so you can integrate where you need it."},
-    {"icon":"bulb","title":"Fast deployment & scalability","description":"From startups to enterprises, B-FY's architecture scales to millions of users without disrupting existing workflows."}
-  ] />-->
+
+<#-- Import sh  <#assign fbLoginTitle    = "B-FY it's that easy-to-use" />red CMS utilities -->
 <#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
 <#import "/b-fy/templates/components/util/icons.ftl" as ic>
-
-<#function hasRealContent value>
-  <#if !value??><#return false/></#if>
-  <#return (value?has_content && value?is_string && value?trim != '') || (value?is_hash) />
-</#function>
-
-<#function cmsOrDefault cmsValue defaultValue>
-  <#if hasRealContent(cmsValue!'')><#return cmsValue/><#else><#return defaultValue/></#if>
-</#function>
 
 <#macro platformDetails>
   <#-- Fallback copy (EN) -->
   <#assign fbTitle = "How is B-FY integrated?" />
   <#assign fbDescription = "B-FY Platform offers a well-documented API/OpenID that lets companies quickly integrate authentication into web, mobile, or even physical access points." />
   <#assign fbItems = [
-    {"icon":"imac-shield.svg","title":"No additional hardware","description":"B-FY leverages existing smartphone biometrics; no specialized readers are required. Users authenticate with their own devices, reducing implementation complexity."},
-    {"icon":"mobile.svg","title":"Omnichannel compatibility","description":"Works across websites, mobile apps, and physical environments so you can integrate where you need it."},
+    {"icon":"imac-shield.svg","title":"No additional hardware","description":"Since B-FY leverages existing smartphone biometric capabilities, companies don't need to invest in specialized hardware or readers. Users authenticate with their mobile devices, reducing implementation complexity."},
+    {"icon":"mobile.svg","title":"Omnichannel compatibility","description":"B-FY's solution works across multiple platforms and channels, ensuring companies can integrate it into websites, mobile apps, and even physical environments."},
     {"icon":"bulb.svg","title":"Fast deployment & scalability","description":"From startups to enterprises, B-FY’s architecture scales to millions of users without disrupting existing workflows."}
   ] />
   <#assign fbRegisterTitle = "Register in seconds" />
-  <#assign fbRegisterDesc  = "Set up your account in a few steps and start enjoying secure, passwordless authentication." />
+  <#assign fbRegisterDesc  = "Set up your account in just a few steps and start enjoying secure, passwordless authentication." />
   <#assign fbLoginTitle    = "It’s that easy to use B-FY" />
-  <#assign fbLoginDesc     = "Access your services quickly and without complications. See it step by step." />
+  <#assign fbLoginDesc     = "Access your services quickly and easily. See how it works step by step." />
   <#assign fbRegisterVideoId = "fjvPHPtZvXk" />
   <#assign fbLoginVideoId    = "WVHd_-rQyqQ" />
 
   <#-- Read authored content if any -->
   <#assign detailsNode = (content.details?children)?has_content?then(content.details?children[0], content.details!{}) />
-  <#assign title       = cmsOrDefault(detailsNode.title!'', fbTitle) />
-  <#assign description = cmsOrDefault(detailsNode.description!'', fbDescription) />
+  <#assign title       = cms.cmsOrDefault(detailsNode.title!'', fbTitle) />
+  <#assign description = cms.cmsOrDefault(detailsNode.description!'', fbDescription) />
 
   <#assign itemsContainer = detailsNode.items! />
   <#assign itemNodes = [] />
@@ -50,12 +38,12 @@
   <#assign registerNode = detailsNode.register!{} />
   <#assign loginNode    = detailsNode.login!{} />
 
-  <#assign registerTitle   = registerNode.title!fbRegisterTitle />
-  <#assign registerDesc    = registerNode.description!fbRegisterDesc />
-  <#assign registerVideoId = registerNode.videoId!fbRegisterVideoId />
-  <#assign loginTitle      = loginNode.title!fbLoginTitle />
-  <#assign loginDesc       = loginNode.description!fbLoginDesc />
-  <#assign loginVideoId    = loginNode.videoId!fbLoginVideoId />
+  <#assign registerTitle   = cms.cmsOrDefault(registerNode.title!'', fbRegisterTitle) />
+  <#assign registerDesc    = cms.cmsOrDefault(registerNode.description!'', fbRegisterDesc) />
+  <#assign registerVideoId = cms.cmsOrDefault(registerNode.videoId!'', fbRegisterVideoId) />
+  <#assign loginTitle      = cms.cmsOrDefault(loginNode.title!'', fbLoginTitle) />
+  <#assign loginDesc       = cms.cmsOrDefault(loginNode.description!'', fbLoginDesc) />
+  <#assign loginVideoId    = cms.cmsOrDefault(loginNode.videoId!'', fbLoginVideoId) />
 
   <#-- Styles (namespaced) -->
   <#if !BFY_PD_STYLE_INCLUDED??>

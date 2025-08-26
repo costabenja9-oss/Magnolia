@@ -127,90 +127,15 @@
 <#import "/b-fy/templates/components/platform/platform-details.ftl" as details>
 <#import "/b-fy/templates/components/platform/platform-customer.ftl" as customer>
 
-<#-- HELPERS -->
-<#function firstChild nodeName>
-  <#if (content[nodeName])??>
-    <#assign ch = (content[nodeName]?children)![] />
-    <#if ch?size gt 0><#return ch[0] /></#if>
-  </#if>
-  <#return {} />
-</#function>
+<#-- Import CMS helpers -->
+<#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
 
-<#-- FALLBACK DATA FROM ASTRO TEXT -->
-<#assign fbHeroTitle = "A unique authentication platform" />
-<#assign fbHeroDesc = "B-FY authenticates people, certifying the truth of their identity, through a simple and easy-to-use design, integrated with online applications. With B-FY, there are no credentials that can be stolen or forged." />
-
-<#assign fbFeatureBlocks = [
-  {"title":"Prevention of malicious AI and phishing attacks","description":"It blocks all malicious generative AI attacks, ensuring access only to legitimate websites and access points."},
-  {"title":"Protection against account takeover","description":"Each transaction is dynamically verified to neutralize cyberattacks and protect users. B-FY, OpenID certified, guarantees security and interoperability, simplifying SSO and advanced identity management with easy and reliable implementation."},
-  {"title":"Zero Trust model with OpenID certification","description":"It eliminates reliance on central databases, reducing the risk of data breaches and preventing account takeover attacks (ATO)."},
-  {"title":"User-controlled biometrics","description":"Users maintain complete control over their biometric data, ensuring privacy and security while enabling seamless authentication experiences."}
-] />
-
-<#assign fbTabs = [
-  "Customer authentication",
-  "Employee authentication", 
-  "User-controlled biometrics",
-  "Effective against ATO, AI-driven fraud and phishing",
-  "Compliance",
-  "Decentralized authentication"
-] />
-
-<#assign fbComparisonHeaders = ["Traditional 2FA (SMS, OTP, Apps)","Passwords","Passwordless by design","Decentralized security","Fraud and AI attack prevention","Frictionless user experience","Protection against ATO","User transparency","Easy integration"] />
-
-<#assign fbComparisonMatrix = [
-  {"capability":"Passwordless by design","legacy2fa":"✕","passwords":"✕","bfy":"✔"},
-  {"capability":"Decentralized (no shared secrets)","legacy2fa":"✕","passwords":"✕","bfy":"✔"},
-  {"capability":"Prevents phishing / AI spoofing","legacy2fa":"△","passwords":"✕","bfy":"✔"},
-  {"capability":"Blocks ATO (account takeover)","legacy2fa":"△","passwords":"✕","bfy":"✔"},
-  {"capability":"Eliminates credential reuse","legacy2fa":"△","passwords":"✕","bfy":"✔"},
-  {"capability":"Frictionless UX","legacy2fa":"✕","passwords":"✕","bfy":"✔"},
-  {"capability":"Open standards (OIDC)","legacy2fa":"△","passwords":"✕","bfy":"✔"},
-  {"capability":"No OTP fatigue / SIM swap risk","legacy2fa":"✕","passwords":"✕","bfy":"✔"},
-  {"capability":"Real-time fraud detection","legacy2fa":"✕","passwords":"✕","bfy":"✔"}
-] />
-
-<#assign fbProcessTitle = "Simple and frictionless authentication" />
-<#assign fbProcessIntro = "A smarter and safer way to authenticate:" />
-<#assign fbProcessSteps = [
-  {"title":"The user scans the B‑FY QR code at an online or physical access point."},
-  {"title":"Biometric verification is performed through the institution's mobile app (with B‑FY libraries integrated)."},
-  {"title":"B‑FY grants direct access to the user, not just their credentials."},
-  {"title":"Why it matters: Hackers can steal credentials, but they cannot replicate a real person."},
-  {"title":"B-FY renders identification credentials useless to hackers. Even if leaked, they are worthless without biometric validation."}
-] />
-
-<#assign fbIntegrationTitle = "How is B-FY integrated?" />
-<#assign fbIntegrationParagraphs = [
-  "B-FY Platform offers a well-documented API/OpenID that allows companies to quickly integrate its authentication technology into their platforms (web, mobile, or physical access points).",
-  "No additional hardware - Since B-FY leverages existing smartphone biometric capabilities, companies don't need to invest in specialized hardware or readers.",
-  "Omnichannel compatibility - B-FY's solution works across multiple platforms and channels, ensuring companies can integrate it into websites, mobile apps, and even physical environments.",
-  "Fast deployment and scalability - Whether for a startup or a large enterprise, B-FY's architecture allows fast and scalable deployment for millions of users without disrupting existing workflows.",
-  "Enterprise-grade security - Built with enterprise security requirements in mind, B-FY provides comprehensive audit logs, compliance reporting, and administrative controls.",
-  "Developer-friendly SDKs - Complete software development kits available for all major platforms including iOS, Android, Web (JavaScript), Python, .NET, and Java."
-] />
-
-<#assign fbBenefits = [
-  {"title":"Be your own identity authority","description":"Become your own Identity Provider and manage access with full autonomy."},
-  {"title":"Maximize your revenue","description":"With B-FY, optimize your operational profitability and take your bottom line to a new level."},
-  {"title":"Break free from vendor lock‑in","description":"Say goodbye to dependencies on large providers and regain control of your tech strategy."},
-  {"title":"Get guaranteed financial security","description":"Protect every transaction and safeguard your revenue with an impenetrable system."},
-  {"title":"Ensure passwordless authentication","description":"Your users will enjoy an ultra-fast, simple, and seamless experience, with zero passwords."},
-  {"title":"Say goodbye to hidden costs","description":"Completely eliminate expenses from fraud, data breaches, and account takeovers."}
-] />
-
-<#assign fbLinksNav = [
-  {"label":"Features","anchor":"features"},
-  {"label":"Capabilities","anchor":"capabilities"}, 
-  {"label":"Process","anchor":"process"},
-  {"label":"Integration","anchor":"integration"},
-  {"label":"Benefits","anchor":"benefits"},
-  {"label":"Prevention","anchor":"prevention"}
-] />
-
-<#assign fbKnowMoreTitle = "Want to know more?" />
-<#assign fbServiceTitle = "B-FY: At the Service of Its Clients" />
-<#assign fbServiceDesc = "Every company has unique needs, and at B-FY we adapt to their infrastructure to offer a robust and efficient authentication solution." />
+<#-- DEF: Resolve all values once using cms.cmsOrDefault -->
+<#assign DEF = {
+  "heroTitle": cms.cmsOrDefault((content.hero?? && content.hero.title??)?then(content.hero.title, ""), "A unique authentication platform"),
+  "heroDesc": cms.cmsOrDefault((content.hero?? && content.hero.description??)?then(content.hero.description, ""), "B-FY authenticates people, certifying the truth of their identity, through a simple and easy-to-use design, integrated with online applications. With B-FY, there are no credentials that can be stolen or forged."),
+  "videoId": cms.cmsOrDefault(content.videoId!"", "obqGpsrI1Jc")
+} />
 
   <#import "/b-fy/templates/components/nav.ftl" as ui />
   <@ui.nav currentPage="platform" />
@@ -220,7 +145,7 @@
       <@hero.platformHero wrap=false />
       <@features.platformFeatures />
       <@links.platformLinks />
-      <@video.platformVideo class="max-w-6xl! mx-auto mb-18" id=(content.videoId)!"dQw4w9WgXcQ" />
+      <@video.platformVideo class="max-w-6xl! mx-auto mb-18" id=DEF.videoId />
       <@table.platformTable />
       <@process.platformAuthProcess />
     </section>

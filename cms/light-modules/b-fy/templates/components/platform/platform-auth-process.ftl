@@ -1,4 +1,56 @@
-<#-- Función de emergencia para resolver imágenes DAM con fallback local -->
+<#-- Import shared CMS utilities -->
+<#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
+
+<#-- Platform Authentication Process Component -->
+<#macro platformAuthProcess>
+	<#-- DEF: Resolve all values once -->
+	<#assign DEF = {
+		"title": cms.cmsOrDefault(content.process.title, "Simple and frictionless authentication"),
+		"description": cms.cmsOrDefault(content.process.description, "A smarter and safer way to authenticate:"),
+		"stepsList": cms.processMultifield(content.process.items, [
+			"The user scans the B-FY QR code at an online or physical access point.",
+			"Biometric verification is performed through the institution's mobile app (with B-FY libraries integrated).",
+			"B-FY grants direct access to the user, not just to their credentials.",
+			"Why it matters: Hackers can steal credentials, but they can't replicate a real person.",
+			"B-FY renders identification credentials useless to hackers. Even if leaked, they are worthless without biometric validation."
+		])
+	} />
+	
+	<section class="py-16 px-6 lg:px-8 bg-white">
+		<div class="max-w-4xl mx-auto text-left">
+			<!-- Header with badge and title -->
+			<div class="mb-12">
+				<div class="inline-block bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wide mb-6">
+					AUTENTICACIÓN SIMPLE
+				</div>
+				<div class="text-orange-500 text-sm font-semibold uppercase tracking-wide mb-2">
+					Y SIN FRICCIONES
+				</div>
+				<h2 class="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
+					${DEF.title}
+				</h2>
+				<p class="text-xl text-gray-700 leading-relaxed max-w-3xl">
+					${DEF.description}
+				</p>
+			</div>
+			
+			<!-- Steps list -->
+			<div class="space-y-8">
+				<#list DEF.stepsList as step>
+					<#if step?is_string><#assign txt = step /><#else><#assign txt = step.text!step.title!step /></#if>
+					<div class="flex items-start">
+						<div class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg mr-6 mt-1">
+							${step?index + 1}
+						</div>
+						<div class="flex-1">
+							<p class="text-lg text-gray-800 leading-relaxed font-medium">${txt}</p>
+						</div>
+					</div>
+				</#list>
+			</div>
+		</div>
+	</section>
+</#macro>emergencia para resolver imágenes DAM con fallback local -->
 <#function damOrLocal damImage localPath>
   <#if damImage?? && damImage?has_content && (damfn??)>
     <#attempt>
