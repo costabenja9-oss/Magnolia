@@ -1,0 +1,72 @@
+---
+import magnolia from '@/lib/magnolia'
+import { getLocalePath } from '@/lib/utils'
+import Layout from '@/components/Layout.astro'
+import Image from '@/components/Image'
+import FAQs from '@/components/FAQs.astro'
+import Posts from './Posts/index.astro'
+import WhitePapers from './WhitePapers/index.astro'
+import Newsroom from './Newsroom/index.astro'
+
+const currentLocale = Astro.currentLocale!
+
+const { t } = Astro.locals
+
+const { title, description, featuredPost } = await magnolia.get(
+  '/pages/resources',
+  { lang: currentLocale }
+)
+---
+
+<Layout title={Astro.locals.t['resources']} description={description}>
+  <section
+    class:list={[
+      'max-w-4xl mt-12 mx-auto px-5 text-center text-balance sm:px-10 lg:px-13',
+      'xl:max-w-6xl xl:mt-24'
+    ]}
+  >
+    <h1 class="font-bold text-3xl xl:text-5xl">{title}</h1>
+    <p class="mt-5 text-lg xl:text-xl/snug">{description}</p>
+  </section>
+  <section class="mt-20 mb-10 p-5 sm:p-10 lg:px-13" id="blog">
+    <article
+      class:list={[
+        'grid gap-10 text-lg/none md:grid-cols-[2fr_3fr] lg:grid-cols-2',
+        'lg:items-center lg:gap-13 xl:grid-cols-[4fr_3fr]'
+      ]}
+    >
+      <Image
+        class="size-full object-cover rounded-lg"
+        data={featuredPost.image}
+        loading="eager"
+      />
+      <div class="text-pretty">
+        <hgroup>
+          <p
+            class:list={[
+              'w-fit py-2.5 px-5 rounded bg-orange-600 text-white uppercase',
+              'xl:text-xl'
+            ]}
+          >
+            {t['featured_post']}
+          </p>
+          <h2 class="mt-7 mb-5 font-bold text-3xl">{featuredPost.title}</h2>
+        </hgroup>
+        <p class="mb-8 leading-snug">{featuredPost.description}</p>
+        <a
+          class:list={[
+            'py-2.5 px-5 inline-block rounded ring ring-inset',
+            'text-orange-600 transition-colors hover:text-red-800'
+          ]}
+          href={getLocalePath(currentLocale, `blog/${featuredPost['@name']}`)}
+        >
+          {t['discover_more']}
+        </a>
+      </div>
+    </article>
+    <Posts featuredPost={featuredPost['@name']} />
+  </section>
+  <WhitePapers />
+  <Newsroom />
+  <FAQs page="resources" />
+</Layout>

@@ -1,0 +1,92 @@
+label: Platform Detail 1 Page
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Autenticación descentralizada"
+        description:
+          $type: richTextField
+          label: Description
+          i18n: true
+          defaultValue: "Con B-FY la información biométrica nunca abandona su dispositivo móvil, eliminando los riesgos asociados con el almacenamiento centralizado de datos."
+    section1:
+      label: Section 1
+      fields:
+        section1Title:
+          $type: textField
+          label: Section 1 Title
+          i18n: true
+          defaultValue: "Su información siempre bajo su control"
+        section1Description:
+          $type: richTextField
+          label: Section 1 Description
+          i18n: true
+          defaultValue: "Nuestro enfoque de biometría descentralizada permite que los usuarios controlen completamente su información biométrica, garantizando que nunca abandona su dispositivo móvil."
+        section1Image:
+          $type: damLinkField
+          label: Section 1 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section2:
+      label: Section 2
+      fields:
+        section2Title:
+          $type: textField
+          label: Section 2 Title
+          i18n: true
+          defaultValue: "Alineado con Zero Trust"
+        section2Description:
+          $type: richTextField
+          label: Section 2 Description
+          i18n: true
+          defaultValue: "Al alinearse con los principios de Zero Trust. B-FY asegura que solo personas verificadas puedan interactuar con sistemas digitales o fisicos"
+        section2Image:
+          $type: damLinkField
+          label: Section 2 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section3:
+      label: Section 3
+      fields:
+        section3Title:
+          $type: textField
+          label: Section 3 Title
+          i18n: true
+          defaultValue: "Óptima experiencia de usuario"
+        section3Description:
+          $type: richTextField
+          label: Section 3 Description
+          i18n: true
+          defaultValue: "B-FY fortalece la seguridad y cumple con las regulaciones de privacidad, sin comprometer la experiencia del usuario."
+        section3Image:
+          $type: damLinkField
+          label: Section 3 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset

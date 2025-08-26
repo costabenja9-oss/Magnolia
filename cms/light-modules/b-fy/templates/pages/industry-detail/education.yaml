@@ -1,0 +1,5 @@
+title: Education
+renderType: freemarker
+templateScript: /b-fy/templates/pages/industry-detail/education.ftl
+dialog: b-fy:pages/industry-detail/education
+visible: true

@@ -1,0 +1,5 @@
+title: Biometrics Under User Control
+renderType: freemarker
+templateScript: /b-fy/templates/pages/platform-details/biometrics-under-user-control.ftl
+dialog: b-fy:pages/platform-details/biometrics-under-user-control
+visible: true

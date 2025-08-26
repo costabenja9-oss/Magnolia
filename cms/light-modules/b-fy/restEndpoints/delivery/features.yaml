@@ -1,0 +1,18 @@
+$type: jcrDeliveryEndpoint_v2
+workspace: features
+bypassWorkspaceAcls: true
+
+nodeTypes:
+  - mgnl:features
+  - mgnl:contentNode
+
+references:
+  iconReference:
+    propertyName: icon
+    referenceResolver:
+      $type: assetReferenceResolver
+      expand: false
+  imageReference:
+    propertyName: image
+    referenceResolver:
+      $type: assetReferenceResolver

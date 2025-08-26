@@ -1,0 +1,91 @@
+label: Developers Page
+workspace: website
+nodeType: mgnl:page
+properties:
+  title:
+    $type: text
+    required: true
+  description:
+    $type: text
+    required: true
+  subtitle:
+    $type: text
+    required: true
+  features:
+    $type: collection
+    properties:
+      name:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+  details:
+    $type: composite
+    properties:
+      image:
+        $type: reference
+        required: true
+      tagline:
+        $type: text
+        required: true
+      title:
+        $type: text
+        required: true
+      subtitle:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+      items:
+        $type: collection
+        properties:
+          icon:
+            $type: reference
+            required: true
+          name:
+            $type: text
+            required: true
+          description:
+            $type: text
+            required: true
+          link:
+            $type: text
+  resources:
+    $type: composite
+    properties:
+      tagline:
+        $type: text
+        required: true
+      title:
+        $type: text
+        required: true
+      items:
+        $type: collection
+        properties:
+          icon:
+            $type: reference
+            required: true
+          title:
+            $type: text
+            required: true
+          description:
+            $type: text
+            required: true
+          name:
+            $type: text
+            required: true
+          link:
+            $type: text
+            required: true
+  faqs:
+    $type: collection
+    required: true
+    properties:
+      question:
+        $type: text
+        required: true
+      answer:
+        $type: text
+        required: true

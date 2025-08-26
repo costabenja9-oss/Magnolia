@@ -1,0 +1,6 @@
+title: Home template
+renderType: freemarker
+templateScript: /b-fy/templates/pages/home.ftl
+dialog: b-fy:pages/home
+visible: true
+description: Home page migrated from Astro (initial version)

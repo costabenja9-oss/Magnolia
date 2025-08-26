@@ -1,0 +1,63 @@
+---
+import Image from './Image'
+---
+
+<div class="lg:flex lg:items-center xl:mx-6">
+  <h2
+    class:list={[
+      'pb-1 border-b font-bold text-2xl lg:p-0 lg:border-0',
+      'xl:text-[1.6875rem]'
+    ]}
+  >
+    {Astro.locals.t['certifications']}
+  </h2>
+  <div
+    class:list={[
+      'mt-6 grid grid-cols-3 items-center gap-6 sm:grid-cols-4 md:grid-cols-6',
+      'lg:mt-0 lg:ml-5 lg:pl-12 lg:gap-12 lg:border-l'
+    ]}
+  >
+    <Image
+      class="w-full"
+      src="/images/iso-9001.svg"
+      alt="ISO 9001"
+      width={103}
+      height={52}
+    />
+    <Image
+      class="w-full"
+      src="/images/iso-iec-27001.svg"
+      alt="ISO/IEC 27001"
+      width={102}
+      height={52}
+    />
+    <Image
+      class="w-full"
+      src="/images/iso-iec-27701.svg"
+      alt="ISO/IEC 27701"
+      width={103}
+      height={52}
+    />
+    <Image
+      class="w-full"
+      src="/images/pacto-digital.webp"
+      alt="Pacto Digital para la protección de las personas"
+      width={320}
+      height={160}
+    />
+    <Image
+      class="w-full"
+      src="/images/incibe.webp"
+      alt="INCIBE"
+      width={220}
+      height={132}
+    />
+    <Image
+      class="w-full"
+      src="/images/openid.webp"
+      alt="OpenID"
+      width={234}
+      height={122}
+    />
+  </div>
+</div>

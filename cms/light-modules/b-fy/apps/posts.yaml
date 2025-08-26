@@ -1,0 +1,17 @@
+!content-type:post
+name: posts
+label: Blog
+subApps:
+  detail:
+    label: Properties
+    form:
+      properties:
+        title:
+          rows: 2
+        description:
+          rows: 6
+        content:
+          alignment: true
+          images: true
+          source: true
+          tables: true

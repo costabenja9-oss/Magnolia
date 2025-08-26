@@ -1,0 +1,47 @@
+---
+import Logo from '@/assets/logo.svg'
+import IconX from '@/assets/icons/x.svg'
+import IconCheck from '@/assets/icons/check.svg'
+
+interface Props {
+  features: string[]
+}
+
+const { t } = Astro.locals
+const { features } = Astro.props
+---
+
+<div class="overflow-x-auto my-26">
+  <table class="w-full leading-tight lg:text-xl/tight">
+    <thead>
+      <tr class="*:p-7">
+        <th></th>
+        <th class="w-64 text-zinc-400" scope="col">{t['traditional_2fa']}</th>
+        <th class="w-64 text-zinc-400" scope="col">{t['passwords']}</th>
+        <th class="xl:pr-14" scope="col">
+          <Logo class="w-auto h-17 mx-auto text-orange-600" />
+        </th>
+      </tr>
+    </thead>
+    <tbody class="text-sm lg:text-lg">
+      {
+        features.map((feature) => (
+          <tr class="border-zinc-400 not-last:border-b *:py-3 *:px-5 lg:*:px-7">
+            <th class="font-normal text-left" scope="row">
+              <span class="w-32 lg:w-64 block">{feature}</span>
+            </th>
+            <td>
+              <IconX class="w-6 mx-auto text-neutral-300" />
+            </td>
+            <td>
+              <IconX class="w-6 mx-auto text-neutral-300" />
+            </td>
+            <td class="xl:pr-14">
+              <IconCheck class="w-8 mx-auto" />
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

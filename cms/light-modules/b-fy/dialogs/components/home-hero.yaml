@@ -1,0 +1,54 @@
+label: Home Hero
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        tagline:
+          $type: textField
+          label: Tagline
+          i18n: true
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+        description:
+          $type: textField
+          label: Description
+          rows: 3
+          i18n: true
+        hook:
+          $type: textField
+          label: Hook
+          rows: 2
+          i18n: true
+        heroImage:
+          $type: damLinkField
+          label: Hero Image
+          required: false
+        buttonLabel:
+          $type: textField
+          label: Button Label
+          i18n: true
+        emailPlaceholder:
+          $type: textField
+          label: Email Placeholder
+          i18n: true
+        privacyIntro:
+          $type: textField
+          label: Privacy Intro
+          i18n: true
+        privacyLinkLabel:
+          $type: textField
+          label: Privacy Link Label
+          i18n: true
+        securityActivated:
+          $type: textField
+          label: Security Activated Text
+          i18n: true
+        systemGreeting:
+          $type: textField
+          label: System Greeting Text
+          i18n: true
+actions: !include /b-fy/dialogs/common-actions.yaml

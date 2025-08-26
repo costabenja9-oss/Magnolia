@@ -1,0 +1,92 @@
+label: Client Authentication Page
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Autenticación de clientes"
+        description:
+          $type: richTextField
+          label: Description
+          i18n: true
+          defaultValue: "B-FY revoluciona la autenticación de clientes con tecnología biométrica descentralizada que garantiza seguridad máxima y experiencia de usuario superior."
+    section1:
+      label: Section 1
+      fields:
+        section1Title:
+          $type: textField
+          label: Section 1 Title
+          i18n: true
+          defaultValue: "Verificación biométrica instantánea"
+        section1Description:
+          $type: richTextField
+          label: Section 1 Description
+          i18n: true
+          defaultValue: "Los clientes acceden a sus cuentas mediante reconocimiento facial, dactilar o vocal sin comprometer su privacidad, manteniendo los datos biométricos siempre en su dispositivo."
+        section1Image:
+          $type: damLinkField
+          label: Section 1 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section2:
+      label: Section 2
+      fields:
+        section2Title:
+          $type: textField
+          label: Section 2 Title
+          i18n: true
+          defaultValue: "Eliminación de contraseñas"
+        section2Description:
+          $type: richTextField
+          label: Section 2 Description
+          i18n: true
+          defaultValue: "Olvídate de contraseñas complejas y procesos de recuperación. B-FY ofrece autenticación sin fricciones que los usuarios prefieren y reduce costos operativos."
+        section2Image:
+          $type: damLinkField
+          label: Section 2 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section3:
+      label: Section 3
+      fields:
+        section3Title:
+          $type: textField
+          label: Section 3 Title
+          i18n: true
+          defaultValue: "Reducción de fraude hasta 99%"
+        section3Description:
+          $type: richTextField
+          label: Section 3 Description
+          i18n: true
+          defaultValue: "La autenticación biométrica descentralizada de B-FY prácticamente elimina el fraude de identidad, protegiendo tanto a clientes como a la organización."
+        section3Image:
+          $type: damLinkField
+          label: Section 3 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset

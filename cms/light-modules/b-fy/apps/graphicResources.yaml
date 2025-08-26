@@ -1,0 +1,6 @@
+!content-type:graphicResource
+name: graphicResources
+label: Visual Assets
+subApps:
+  detail:
+    label: Properties

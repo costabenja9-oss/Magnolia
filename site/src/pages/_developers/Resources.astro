@@ -1,0 +1,84 @@
+---
+import magnolia from '@/lib/magnolia'
+import { getLocalePath } from '@/lib/utils'
+import Image from '@/components/Image'
+import IconArrowRight from '@/assets/icons/arrow-right.svg'
+
+interface Item {
+  icon: string
+  title: string
+  description: string
+  name: string
+  link: string
+}
+
+const currentLocale = Astro.currentLocale!
+
+const { t } = Astro.locals
+
+const [{ tagline, title }, items] = await Promise.all([
+  magnolia.get('/pages/developers/resources', { lang: currentLocale }),
+  magnolia.get<Item[]>('/pages/developers/resources/items/@nodes', {
+    lang: currentLocale
+  })
+])
+---
+
+<section class="my-15 px-5 text-center sm:px-10 lg:px-13">
+  <hgroup>
+    <p
+      class:list={[
+        'py-2.5 px-5 inline-block rounded bg-orange-600 leading-tight',
+        'text-white uppercase xl:text-xl'
+      ]}
+    >
+      {tagline}
+    </p>
+    <h2
+      class="max-w-200 mt-9 mx-auto font-bold text-3xl text-pretty xl:text-5xl"
+    >
+      {title}
+    </h2>
+  </hgroup>
+  <div class="mt-15 flex flex-wrap items-baseline justify-center gap-13">
+    {
+      items.map(({ icon, title, description, name, link }) => (
+        <article>
+          <Image class="size-13 mb-5 mx-auto object-contain" src={icon} />
+          <h3
+            class:list={[
+              'w-64 mx-auto font-bold text-xl/tight text-orange-600',
+              'uppercase'
+            ]}
+          >
+            {title}
+          </h3>
+          <p class="w-80 mt-3 mb-5 mx-auto leading-snug">{description}</p>
+          <a
+            class:list={[
+              'inline-flex gap-1.5 text-lg text-orange-600 transition-colors',
+              'hover:text-red-800'
+            ]}
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="underline underline-offset-2">
+              {t['view']} {name}
+            </span>
+            <IconArrowRight class="w-2.75" />
+          </a>
+        </article>
+      ))
+    }
+  </div>
+  <a
+    class:list={[
+      'mt-18 py-2.5 px-5 inline-block rounded bg-orange-600 text-xl text-white',
+      'transitions-colors hover:bg-red-800'
+    ]}
+    href={getLocalePath(Astro.currentLocale!, 'contact')}
+  >
+    {t['need_help']}
+  </a>
+</section>

@@ -1,0 +1,46 @@
+---
+import magnolia from '@/lib/magnolia'
+import Pagination from './Pagination'
+
+const lang = Astro.currentLocale!
+
+const { t } = Astro.locals
+
+const params = {
+  orderBy: 'date desc,mgnl:lastModified desc',
+  limit: '9',
+  lang
+}
+
+const [{ tagline, title, description }, pressReleases] = await Promise.all([
+  magnolia.get('/pages/resources/newsroom', { lang }),
+  magnolia.get('/press-releases', params)
+])
+---
+
+<section class="py-20 px-5 sm:px-10 lg:px-13" id="newsroom">
+  <div class="text-center">
+    <hgroup>
+      <p
+        class:list={[
+          'py-2.5 px-5 inline-block rounded bg-orange-600 leading-none',
+          'text-white uppercase xl:text-xl'
+        ]}
+      >
+        {tagline}
+      </p>
+      <h2 class="my-7 font-bold text-3xl xl:text-5xl">{title}</h2>
+    </hgroup>
+    <p class="max-w-5xl mx-auto text-lg xl:text-xl/snug">{description}</p>
+  </div>
+  <Pagination
+    types={[
+      ['press-releases', t['press_releaes']],
+      ['graphic-resources', t['graphic_resources']]
+    ]}
+    initialState={pressReleases}
+    params={params}
+    label={t['view_more']}
+    client:visible
+  />
+</section>

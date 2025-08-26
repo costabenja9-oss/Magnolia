@@ -1,0 +1,27 @@
+form:
+  tabs:
+    - name: tabBlogPost
+      label: Blog Post Settings
+      fields:
+        - name: story
+          class: info.magnolia.ui.field.LinkFieldDefinition
+          label: Story
+          description: Link to the story content
+          appName: stories
+        - name: title
+          class: info.magnolia.ui.field.TextFieldDefinition
+          label: Fallback Title
+          description: Title to use if no story is selected
+        - name: description
+          class: info.magnolia.ui.field.TextAreaFieldDefinition
+          label: Fallback Description
+        - name: body
+          class: info.magnolia.ui.field.RichTextFieldDefinition
+          label: Fallback Content
+          description: Content to use if no story is selected
+        - name: author
+          class: info.magnolia.ui.field.TextFieldDefinition
+          label: Fallback Author
+        - name: date
+          class: info.magnolia.ui.field.DateFieldDefinition
+          label: Fallback Date

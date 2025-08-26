@@ -1,0 +1,92 @@
+label: Effective Against ATO AI Fraud and Phishing Page
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Efectivo contra ATO, fraude IA y phishing"
+        description:
+          $type: richTextField
+          label: Description
+          i18n: true
+          defaultValue: "B-FY neutraliza las amenazas más sofisticadas del cibercrimen actual: Account Takeover, deepfakes de IA y ataques de phishing mediante verificación biométrica real."
+    section1:
+      label: Section 1
+      fields:
+        section1Title:
+          $type: textField
+          label: Section 1 Title
+          i18n: true
+          defaultValue: "Inmune a deepfakes y ataques IA"
+        section1Description:
+          $type: richTextField
+          label: Section 1 Description
+          i18n: true
+          defaultValue: "La tecnología biométrica de B-FY detecta y rechaza intentos de suplantación mediante deepfakes, videos sintéticos o grabaciones, garantizando que solo personas reales accedan."
+        section1Image:
+          $type: damLinkField
+          label: Section 1 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section2:
+      label: Section 2
+      fields:
+        section2Title:
+          $type: textField
+          label: Section 2 Title
+          i18n: true
+          defaultValue: "Bloquea Account Takeover (ATO)"
+        section2Description:
+          $type: richTextField
+          label: Section 2 Description
+          i18n: true
+          defaultValue: "Aún con credenciales robadas, los atacantes no pueden completar el ATO sin la presencia física del usuario legítimo, convirtiendo cada cuenta en impenetrable."
+        section2Image:
+          $type: damLinkField
+          label: Section 2 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section3:
+      label: Section 3
+      fields:
+        section3Title:
+          $type: textField
+          label: Section 3 Title
+          i18n: true
+          defaultValue: "Anula eficacia del phishing"
+        section3Description:
+          $type: richTextField
+          label: Section 3 Description
+          i18n: true
+          defaultValue: "Los ataques de phishing se vuelven inútiles al requerir verificación biométrica real del usuario, eliminando el vector de ataque más común en ciberseguridad."
+        section3Image:
+          $type: damLinkField
+          label: Section 3 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset

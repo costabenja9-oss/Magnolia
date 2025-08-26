@@ -1,0 +1,17 @@
+!content-type:feature
+name: features
+label: Features
+subApps:
+  detail:
+    label: Properties
+    form:
+      properties:
+        description:
+          rows: 3
+        summary:
+          rows: 2
+        items:
+          field:
+            properties:
+              description:
+                rows: 4

@@ -1,0 +1,10 @@
+{
+  "placeholder": "Región",
+  "options": [
+    "España y Portugal",
+    "Resto de Europa",
+    "Estados Unidos",
+    "América Latina",
+    "Otro"
+  ]
+}

@@ -1,0 +1,25 @@
+workspace: website
+nodeType: mgnl:page
+properties:
+  title:
+    $type: text
+  description:
+    $type: richText
+  section1Title:
+    $type: text
+  section1Description:
+    $type: richText
+  section1Image:
+    $type: reference
+  section2Title:
+    $type: text
+  section2Description:
+    $type: richText
+  section2Image:
+    $type: reference
+  section3Title:
+    $type: text
+  section3Description:
+    $type: richText
+  section3Image:
+    $type: reference

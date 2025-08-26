@@ -1,0 +1,14 @@
+form:
+  tabs:
+    - name: tabBlog
+      label: Blog Settings
+      fields:
+        - name: title
+          class: info.magnolia.ui.field.TextFieldDefinition
+          label: Page Title
+        - name: description
+          class: info.magnolia.ui.field.TextAreaFieldDefinition
+          label: Description
+        - name: keywords
+          class: info.magnolia.ui.field.TextFieldDefinition
+          label: Keywords

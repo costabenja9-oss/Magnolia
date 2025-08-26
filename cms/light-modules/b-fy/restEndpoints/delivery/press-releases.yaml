@@ -1,0 +1,11 @@
+$type: jcrDeliveryEndpoint_v2
+workspace: pressReleases
+bypassWorkspaceAcls: true
+depth: 2
+
+references:
+  linkReference:
+    propertyName: link
+    referenceResolver:
+      $type: assetReferenceResolver
+      expand: false

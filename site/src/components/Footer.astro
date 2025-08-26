@@ -1,0 +1,125 @@
+---
+import { getLocalePath } from '@/lib/utils'
+import IconLinkedin from '@/assets/icons/linkedin.svg'
+import Logo from '@/assets/logo.svg'
+import Certifications from './Certifications.astro'
+
+interface Props {
+  navLinks: Array<[string, string]>
+}
+
+const currentLocale = Astro.currentLocale!
+
+const { t } = Astro.locals
+
+const legalityLinks = [
+  ['privacy-policy', t['privacy_policy']],
+  ['cookies-policy', t['cookies_policy']],
+  ['terms-conditions', t['terms_and_conditions']]
+]
+---
+
+<footer class="text-white">
+  <section class="pt-12 pb-15 px-5 bg-stone-800 sm:px-10 lg:px-13">
+    <div
+      class:list={[
+        'mb-18 grid fit-cols-2 justify-between gap-y-12 sm:fit-cols-3 md:gap-0',
+        'lg:fit-cols-4 xl:text-lg'
+      ]}
+    >
+      <div class="flex flex-col items-start gap-10">
+        <a href={getLocalePath(currentLocale)} aria-label="B-FY">
+          <Logo class="w-29 xl:w-38" />
+        </a>
+        <a
+          class="transitions-colors hover:text-orange-600"
+          href="https://www.linkedin.com/company/b-fy/"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+        >
+          <IconLinkedin class="w-6 xl:w-6.25" />
+        </a>
+      </div>
+      <div
+        class:list={[
+          'row-span-3 sm:row-auto sm:col-span-2 md:col-auto md:row-span-2',
+          'lg:row-auto xl:px-12'
+        ]}
+      >
+        <h2
+          class:list={[
+            'mb-3 font-bold text-right text-2xl sm:text-left',
+            'xl:text-[1.6875rem]'
+          ]}
+        >
+          {t['links']}
+        </h2>
+        <nav
+          class:list={[
+            'grid gap-1 sm:grid-flow-col sm:grid-rows-4 sm:justify-between',
+            'md:grid-rows-6 md:gap-x-12 lg:gap-x-15'
+          ]}
+        >
+          {
+            Astro.props.navLinks.map(([path, label]) => (
+              <a
+                class:list={[
+                  'w-fit ml-auto block transition-colors hover:text-orange-600',
+                  'sm:ml-0'
+                ]}
+                href={getLocalePath(currentLocale, path)}
+              >
+                {label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+      <div
+        class="flex flex-col items-start gap-1 sm:col-start-2 md:col-start-3"
+      >
+        <h2 class="mb-2 font-bold text-2xl xl:text-[1.6875rem]">
+          {t['legality']}
+        </h2>
+        {
+          legalityLinks.map(([path, label]) => (
+            <a
+              class="transition-colors hover:text-orange-600"
+              href={getLocalePath(currentLocale, path)}
+            >
+              {label}
+            </a>
+          ))
+        }
+      </div>
+      <div
+        class:list={[
+          'row-start-2 flex flex-col items-start gap-3 sm:col-start-3',
+          'lg:col-start-4 lg:row-auto'
+        ]}
+      >
+        <h2 class="font-bold text-2xl xl:text-[1.6875rem]">{t['contact']}</h2>
+        <a
+          class="transition-colors hover:text-orange-600"
+          href="mailto:info@b-fy.com"
+        >
+          info@b-fy.com
+        </a>
+        <a
+          class:list={[
+            'py-2.5 px-5 rounded bg-white text-black leading-none',
+            'transition-colors hover:text-red-800'
+          ]}
+          href={getLocalePath(currentLocale, 'contact')}
+        >
+          {t['contact_us']}
+        </a>
+      </div>
+    </div>
+    <Certifications />
+  </section>
+  <p class="py-2.5 px-5 bg-neutral-700 text-center">
+    B-FY 2025 - {t['all_rights_reserved']}
+  </p>
+</footer>

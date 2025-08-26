@@ -1,0 +1,13 @@
+---
+import { getLocalePath } from '@/lib/utils'
+---
+
+<a
+  class:list={[
+    'w-fit mx-auto py-2.5 px-5 block rounded bg-orange-600 text-xl text-white',
+    'transitions-colors hover:bg-red-800'
+  ]}
+  href={getLocalePath(Astro.currentLocale!, 'contact')}
+>
+  <slot />
+</a>

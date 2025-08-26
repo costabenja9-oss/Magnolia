@@ -1,0 +1,33 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+interface Feature {
+  icon: string
+  title: string
+  description: string
+}
+
+const data: Feature[] = await magnolia.get('/pages/platform/features/@nodes', {
+  lang: Astro.currentLocale!
+})
+---
+
+<div class="max-w-6xl mb-26 mx-auto grid gap-12 lg:grid-cols-3">
+  {
+    data.map(({ icon, title, description }) => (
+      <article>
+        <Image class="size-15 mx-auto object-contain" src={icon} />
+        <h3
+          class:list={[
+            'mt-6 mb-3 font-bold text-xl/tight text-pretty text-orange-600',
+            'uppercase'
+          ]}
+        >
+          {title}
+        </h3>
+        <p class="leading-snug text-balance">{description}</p>
+      </article>
+    ))
+  }
+</div>

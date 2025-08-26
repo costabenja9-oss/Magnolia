@@ -1,0 +1,92 @@
+label: Employee Authentication Page
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Autenticación de empleados"
+        description:
+          $type: richTextField
+          label: Description
+          i18n: true
+          defaultValue: "Fortalece la seguridad interna con autenticación biométrica descentralizada para empleados, eliminando riesgos de acceso no autorizado y simplificando procesos."
+    section1:
+      label: Section 1
+      fields:
+        section1Title:
+          $type: textField
+          label: Section 1 Title
+          i18n: true
+          defaultValue: "Acceso seguro a sistemas corporativos"
+        section1Description:
+          $type: richTextField
+          label: Section 1 Description
+          i18n: true
+          defaultValue: "Los empleados acceden a aplicaciones críticas, bases de datos y sistemas internos mediante verificación biométrica, eliminando credenciales compartidas o robadas."
+        section1Image:
+          $type: damLinkField
+          label: Section 1 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section2:
+      label: Section 2
+      fields:
+        section2Title:
+          $type: textField
+          label: Section 2 Title
+          i18n: true
+          defaultValue: "Control de acceso físico"
+        section2Description:
+          $type: richTextField
+          label: Section 2 Description
+          i18n: true
+          defaultValue: "Integra el acceso físico a oficinas, laboratorios y áreas restringidas con la misma tecnología biométrica que protege los sistemas digitales."
+        section2Image:
+          $type: damLinkField
+          label: Section 2 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section3:
+      label: Section 3
+      fields:
+        section3Title:
+          $type: textField
+          label: Section 3 Title
+          i18n: true
+          defaultValue: "Trazabilidad y auditoría completa"
+        section3Description:
+          $type: richTextField
+          label: Section 3 Description
+          i18n: true
+          defaultValue: "Registra cada acceso con verificación biométrica irrefutable, facilitando auditorías de seguridad y cumplimiento de normativas corporativas."
+        section3Image:
+          $type: damLinkField
+          label: Section 3 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset

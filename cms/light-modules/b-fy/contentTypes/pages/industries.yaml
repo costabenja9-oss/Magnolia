@@ -1,0 +1,28 @@
+label: Industries Page
+workspace: website
+nodeType: mgnl:page
+properties:
+  title:
+    $type: text
+    required: true
+  image:
+    $type: reference
+    required: true
+  description:
+    $type: text
+    required: true
+  list:
+    $type: collection
+    properties:
+      image:
+        $type: reference
+        required: true
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+      link:
+        $type: reference
+        required: true

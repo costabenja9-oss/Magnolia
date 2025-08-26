@@ -1,0 +1,262 @@
+label: Education Page
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        tagline:
+          $type: textField
+          label: Tagline
+          i18n: true
+          defaultValue: "EDUCACIÓN SEGURA"
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Protección integral para instituciones educativas"
+        description:
+          $type: richTextField
+          label: Description
+          i18n: true
+          defaultValue: "Acceso seguro y controlado a instalaciones educativas: aulas, laboratorios, bibliotecas, dormitorios y áreas administrativas. La solución biométrica descentralizada de B-FY garantiza la protección de estudiantes, profesores y personal mientras facilita un entorno educativo seguro y eficiente."
+        videoId:
+          $type: textField
+          label: Video ID
+          i18n: true
+          defaultValue: "fjvPHPtZvXk"
+
+    # Tarjetas de Detalles
+    details:
+      label: Details (4 cards)
+      fields:
+        detail1Icon:
+          $type: damLinkField
+          label: Detail 1 Icon
+          required: false
+        detail1Title:
+          $type: textField
+          label: Detail 1 Title
+          i18n: true
+          defaultValue: "CONTROL DE ACCESO ESTUDIANTIL"
+        detail1Description:
+          $type: textField
+          label: Detail 1 Description
+          i18n: true
+          defaultValue: "Verificación biométrica instantánea para estudiantes, profesores y personal en aulas, laboratorios y áreas especializadas de la institución."
+        detail2Icon:
+          $type: damLinkField
+          label: Detail 2 Icon
+          required: false
+        detail2Title:
+          $type: textField
+          label: Detail 2 Title
+          i18n: true
+          defaultValue: "SEGURIDAD EN CAMPUS"
+        detail2Description:
+          $type: textField
+          label: Detail 2 Description
+          i18n: true
+          defaultValue: "Acceso controlado a dormitorios, bibliotecas, instalaciones deportivas y áreas comunes, garantizando un entorno seguro 24/7."
+        detail3Icon:
+          $type: damLinkField
+          label: Detail 3 Icon
+          required: false
+        detail3Title:
+          $type: textField
+          label: Detail 3 Title
+          i18n: true
+          defaultValue: "PROTECCIÓN DE MENORES"
+        detail3Description:
+          $type: textField
+          label: Detail 3 Description
+          i18n: true
+          defaultValue: "Control riguroso de acceso en instituciones educativas primarias y secundarias, con registro detallado de entradas y salidas."
+        detail4Icon:
+          $type: damLinkField
+          label: Detail 4 Icon
+          required: false
+        detail4Title:
+          $type: textField
+          label: Detail 4 Title
+          i18n: true
+          defaultValue: "GESTIÓN ADMINISTRATIVA"
+        detail4Description:
+          $type: textField
+          label: Detail 4 Description
+          i18n: true
+          defaultValue: "Acceso seguro a oficinas administrativas, secretarías y archivos confidenciales con trazabilidad completa de actividades."
+
+    threats:
+      label: Threats Section
+      fields:
+        threatsTitle:
+          $type: textField
+          label: Threats Title
+          i18n: true
+          defaultValue: "Riesgos de seguridad en instituciones educativas"
+        threat1Image:
+          $type: damLinkField
+          label: Threat 1 Image
+          required: false
+        threat1Title:
+          $type: textField
+          label: Threat 1 Title
+          i18n: true
+          defaultValue: "ACCESO NO AUTORIZADO A MENORES"
+        threat1Description:
+          $type: richTextField
+          label: Threat 1 Description
+          i18n: true
+          defaultValue: "Infiltración de personas no autorizadas en colegios y universidades mediante suplantación de identidad o credenciales falsificadas."
+        threat2Image:
+          $type: damLinkField
+          label: Threat 2 Image
+          required: false
+        threat2Title:
+          $type: textField
+          label: Threat 2 Title
+          i18n: true
+          defaultValue: "ROBO EN LABORATORIOS Y EQUIPOS"
+        threat2Description:
+          $type: richTextField
+          label: Threat 2 Description
+          i18n: true
+          defaultValue: "Sustracción de equipos costosos, materiales de investigación y tecnología especializada en laboratorios y aulas de informática."
+        threat3Image:
+          $type: damLinkField
+          label: Threat 3 Image
+          required: false
+        threat3Title:
+          $type: textField
+          label: Threat 3 Title
+          i18n: true
+          defaultValue: "VIOLACIÓN DE PRIVACIDAD ESTUDIANTIL"
+        threat3Description:
+          $type: richTextField
+          label: Threat 3 Description
+          i18n: true
+          defaultValue: "Acceso no autorizado a expedientes académicos, datos personales de estudiantes y información confidencial administrativa."
+    features:
+      label: Features Section
+      fields:
+        featuresTagline:
+          $type: textField
+          label: Features Tagline
+          i18n: true
+          defaultValue: "EDUCACIÓN INTELIGENTE"
+        featuresTitle:
+          $type: textField
+          label: Features Title
+          i18n: true
+          defaultValue: "B-FY protege tu comunidad educativa"
+        feature1Icon:
+          $type: damLinkField
+          label: Feature 1 Icon
+          required: false
+        feature1Title:
+          $type: textField
+          label: Feature 1 Title
+          i18n: true
+          defaultValue: "ACCESO SEGURO A INSTALACIONES"
+        feature1Description:
+          $type: richTextField
+          label: Feature 1 Description
+          i18n: true
+          defaultValue: "Estudiantes y profesores acceden rápidamente a aulas, laboratorios y bibliotecas con verificación biométrica, eliminando el riesgo de tarjetas perdidas."
+        feature2Icon:
+          $type: damLinkField
+          label: Feature 2 Icon
+          required: false
+        feature2Title:
+          $type: textField
+          label: Feature 2 Title
+          i18n: true
+          defaultValue: "PROTECCIÓN INFANTIL AVANZADA"
+        feature2Description:
+          $type: richTextField
+          label: Feature 2 Description
+          i18n: true
+          defaultValue: "Sistema de control parental que notifica a tutores sobre entradas y salidas, garantizando la seguridad de menores en todo momento."
+        feature3Icon:
+          $type: damLinkField
+          label: Feature 3 Icon
+          required: false
+        feature3Title:
+          $type: textField
+          label: Feature 3 Title
+          i18n: true
+          defaultValue: "GESTIÓN DE ASISTENCIA AUTOMÁTICA"
+        feature3Description:
+          $type: richTextField
+          label: Feature 3 Description
+          i18n: true
+          defaultValue: "Registro automático de asistencia de estudiantes y profesores, eliminando procesos manuales y mejorando la administración académica."
+        feature4Icon:
+          $type: damLinkField
+          label: Feature 4 Icon
+          required: false
+        feature4Title:
+          $type: textField
+          label: Feature 4 Title
+          i18n: true
+          defaultValue: "CUMPLIMIENTO DE NORMATIVAS EDUCATIVAS"
+        feature4Description:
+          $type: richTextField
+          label: Feature 4 Description
+          i18n: true
+          defaultValue: "Cumplimiento automático con regulaciones de protección de menores, privacidad estudiantil y normativas de seguridad educativa."
+    product:
+      label: Product Section
+      fields:
+        productImage:
+          $type: damLinkField
+          label: Product Image
+          required: false
+        productTagline:
+          $type: textField
+          label: Product Tagline
+          i18n: true
+          defaultValue: "EDUCACIÓN PROTEGIDA"
+        productTitle:
+          $type: textField
+          label: Product Title
+          i18n: true
+          defaultValue: "Un entorno educativo verdaderamente seguro"
+        productDescription:
+          $type: richTextField
+          label: Product Description
+          i18n: true
+          defaultValue: "B-FY transforma la seguridad educativa mediante autenticación biométrica descentralizada que protege a toda la comunidad académica. Desde preescolar hasta universidad, garantizamos que solo personal autorizado acceda a instalaciones, mientras los padres y administradores mantienen control total. Protegemos la privacidad estudiantil, cumplimos normativas educativas y creamos un ambiente de aprendizaje verdaderamente seguro."
+    cta:
+      label: Call to Action
+      fields:
+        ctaBackground:
+          $type: damLinkField
+          label: CTA Background Image
+          required: false
+        ctaTitle:
+          $type: textField
+          label: CTA Title
+          i18n: true
+          defaultValue: "¿LISTO PARA PROTEGER TU INSTITUCIÓN?"
+        ctaHeading:
+          $type: textField
+          label: CTA Heading
+          i18n: true
+          defaultValue: "Transforma la seguridad de tu institución educativa."
+        ctaDescription:
+          $type: textField
+          label: CTA Description
+          i18n: true
+          defaultValue: "Descubre cómo B-FY puede proteger tu comunidad educativa y brindar tranquilidad a padres y administradores. Solicita una demo adaptada a tu institución."
+        ctaButton1:
+          $type: textField
+          label: CTA Button 1
+          i18n: true
+          defaultValue: "Solicita una demo"
+        ctaButton2:
+          $type: textField
+          label: CTA Button 2
+          i18n: true
+          defaultValue: "Habla con un experto"

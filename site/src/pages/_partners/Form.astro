@@ -1,0 +1,102 @@
+---
+import { getEntry } from 'astro:content'
+import magnolia from '@/lib/magnolia'
+import FormContainer from '@/components/FormContainer.astro'
+import Input from '@/components/Input.astro'
+import Select from '@/components/Select.astro'
+
+const currentLocale = Astro.currentLocale!
+
+const { t } = Astro.locals
+
+const [{ title, content, description }, opportunities] = await Promise.all([
+  magnolia.get('/pages/partners/form', { lang: currentLocale }),
+  getEntry('translations', `${currentLocale}/opportunities-select`)
+])
+
+const questions = [
+  'has_saas_or_digital_auth_experience',
+  'has_technical_sales_team',
+  'has_established_client_network',
+  'has_authentication_implementation_experience',
+  'has_post_sales_support_infrastructure',
+  'available_for_training_and_certifications'
+]
+---
+
+<section
+  class:list={[
+    'pt-18 pb-28 px-5 bg-linear-(--color-neutral-200) bg-size-[auto_58%]',
+    'bg-no-repeat sm:px-10 lg:px-13'
+  ]}
+  id="form"
+>
+  <FormContainer>
+    <Fragment slot="header">
+      <h2 class="font-bold text-2xl/tight text-orange-600 xl:text-4xl">
+        {title}
+      </h2>
+      <div
+        class="mt-4 space-y-10 *:not-first:text-balance"
+        set:html={content}
+      />
+    </Fragment>
+    <p>{description}</p>
+    <h3 class="mt-8 mb-5 font-bold text-orange-600 uppercase">
+      {t['company_data']}
+    </h3>
+    <div class="grid gap-5 md:grid-cols-2 xl:gap-6">
+      <Input placeholder={t['company_name']} required />
+      <Input type="url" placeholder={t['website']} />
+      <Select src="region-select" />
+      <Input placeholder={t['country']} />
+      <Select src="industry-select" />
+    </div>
+    <h3 class="mt-10 mb-5 font-bold text-orange-600 uppercase">
+      {t['representative_data']}
+    </h3>
+    <div class="grid gap-5 md:grid-cols-2 xl:gap-6">
+      <Input placeholder={t['first_name']} required />
+      <Input placeholder={t['last_name']} required />
+      <Input type="email" placeholder={t['corporate_email']} required />
+      <Input placeholder={t['job_title']} required />
+      <Input type="number" placeholder={t['phone_number']} required />
+    </div>
+    <h3 class="mt-10 mb-5 font-bold text-orange-600 uppercase">
+      {t['capacity_and_experience']}
+    </h3>
+    <div class="grid gap-5 md:grid-cols-2 xl:gap-6">
+      <div class="flex items-center justify-between gap-3">
+        <label class="text-sm/tight" for="years_in_market">
+          {t['years_in_market']}
+        </label>
+        <Input class="w-26" type="number" id="years_in_market" />
+      </div>
+      {
+        questions.map((question) => (
+          <div class="flex items-center justify-between gap-4">
+            <label class="text-sm/tight" for={question}>
+              {t[question]}
+            </label>
+            <Select class="w-26" id={question}>
+              <option>{t['yes']}</option>
+              <option>{t['no']}</option>
+            </Select>
+          </div>
+        ))
+      }
+      <div class="grid gap-4">
+        <label class="text-sm/tight" for="opportunities_with_bfy">
+          {opportunities?.data.label}
+        </label>
+        <Select id="opportunities_with_bfy">
+          {
+            opportunities?.data.options.map((option: string) => (
+              <option>{option}</option>
+            ))
+          }
+        </Select>
+      </div>
+    </div>
+  </FormContainer>
+</section>

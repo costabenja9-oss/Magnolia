@@ -1,0 +1,9 @@
+apache-tomcat
+node_modules
+.astro
+dist
+pnpm-lock.yaml
+mgnl.error.log
+
+./mgnl.error.log
+./mgnl.error.log

@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --animate-marquee: marquee 15s linear infinite;
+  --color-gray-500: oklch(0.5067 0.0083 268.48);
+  --color-neutral-100: oklch(0.9551 0 0);
+  --color-neutral-200: oklch(0.9521 0 0);
+  --color-neutral-300: oklch(0.8853 0 0);
+  --color-neutral-400: oklch(0.6895 0 0);
+  --color-neutral-700: oklch(0.3829 0 0);
+  --color-orange-600: oklch(0.6646 0.1927 38.11);
+  --color-red-50: oklch(0.9815 0.0095 41.89);
+  --color-red-100: oklch(0.9149 0.0288 39.34);
+  --color-red-800: oklch(0.418 0.1137 21.34);
+  --color-stone-800: oklch(0.2853 0.0092 53.12);
+  --color-zinc-400: oklch(0.7257 0.0054 228.85);
+  --font-sans: Arial;
+  --shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 4px 4px 20px rgba(0, 0, 0, 0.25);
+  --shadow-xl: 4px 4px 25px rgba(0, 0, 0, 0.25);
+  --text-xs: 0.875rem;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1;
+  --text-xl--line-height: 1;
+  --text-4xl: 2.1875rem;
+  --text-5xl: 2.5rem;
+  --text-5xl--line-height: 1.15;
+  --text-lg--line-height: 1.375;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer base {
+  *:focus-visible {
+    border-radius: var(--radius-sm);
+    outline: 4px solid color-mix(in oklab, var(--color-black) 5%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  input[type='number'] {
+    appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+    }
+  }
+
+  ::details-content {
+    transition: content-visibility 300ms ease-in-out allow-discrete;
+  }
+
+  figure.table {
+    height: auto !important;
+    overflow-x: auto;
+    max-width: 100%;
+    td,
+    th {
+      padding-block: var(--spacing) !important;
+    }
+  }
+}
+
+@utility fit-cols-* {
+  grid-template-columns: repeat(--value(integer), max-content);
+}

@@ -1,0 +1,21 @@
+---
+import 'lite-youtube-embed/src/lite-yt-embed.css'
+
+interface Props {
+  class?: string
+  id: string
+}
+
+const { class: className, id } = Astro.props
+---
+
+<lite-youtube
+  class:list={[className || 'max-w-none!', 'rounded-lg']}
+  videoid={id}
+  style={{
+    backgroundImage: `url('https://i.ytimg.com/vi_webp/${id}/maxresdefault.webp')`
+  }}></lite-youtube>
+
+<script>
+  import 'lite-youtube-embed/src/lite-yt-embed.js'
+</script>

@@ -1,0 +1,120 @@
+label: Home Page
+workspace: website
+nodeType: mgnl:page
+properties:
+  tagline:
+    $type: text
+  title:
+    $type: text
+  description:
+    $type: text
+  hook:
+    $type: text
+  heroImage:
+    $type: reference
+  platform:
+    $type: composite
+    properties:
+      tagline:
+        $type: text
+      title:
+        $type: text
+      description:
+        $type: text
+  industries:
+    $type: composite
+    properties:
+      tagline:
+        $type: text
+      title:
+        $type: text
+      description:
+        $type: text
+      items:
+        $type: collection
+        properties:
+          name:
+            $type: text
+          summary:
+            $type: text
+          link:
+            $type: text
+          thumbnail:
+            $type: reference
+  testimonialsConfig:
+    $type: composite
+    properties:
+      title:
+        $type: text
+      description:
+        $type: text
+  testimonials:
+    $type: collection
+    properties:
+      testimonial:
+        $type: text
+      name:
+        $type: text
+      position:
+        $type: text
+  partners:
+    $type: composite
+    properties:
+      image:
+        $type: reference
+      tagline:
+        $type: text
+      title:
+        $type: text
+      description:
+        $type: text
+      benefits:
+        $type: collection
+        properties:
+          icon:
+            $type: reference
+          description:
+            $type: text
+  cta:
+    $type: composite
+    properties:
+      tagline:
+        $type: text
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+      primaryButtonLabel:
+        $type: text
+      primaryButtonLink:
+        $type: text
+      secondaryButtonLabel:
+        $type: text
+      secondaryButtonLink:
+        $type: text
+      background:
+        $type: reference
+  newsletter:
+    $type: composite
+    properties:
+      title:
+        $type: text
+      description:
+        $type: text
+  certifications:
+    $type: collection
+    properties:
+      image:
+        $type: reference
+        required: true
+      alt:
+        $type: text
+  logos:
+    $type: collection
+    properties:
+      logo:
+        $type: reference
+        required: true
+      alt:
+        $type: text

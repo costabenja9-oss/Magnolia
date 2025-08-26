@@ -1,0 +1,7 @@
+title: Privacy Policy
+renderType: freemarker
+templateScript: /b-fy/templates/pages/privacy-policy.ftl
+description: Privacy Policy page migrated from Astro with fallback text
+dialog: b-fy:pages/privacy-policy
+
+visible: true

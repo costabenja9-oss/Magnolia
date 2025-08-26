@@ -1,0 +1,172 @@
+label: About Us
+form:
+  $type: tabbedForm
+  tabs:
+    page:
+      label: Properties
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+        description:
+          $type: textField
+          label: Description
+          rows: 3
+          i18n: true
+    carousel:
+      label: Carousel
+      fields:
+        carousel:
+          $type: jcrMultiField
+          label: Properties
+          field:
+            $type: compositeField
+            label: Item
+            properties:
+              image:
+                $type: damLinkField
+                label: Image
+              title:
+                $type: textField
+                label: Title
+                i18n: true
+              description:
+                $type: richTextField
+                label: Description
+                height: 140
+                i18n: true
+    message:
+      label: Message
+      fields:
+        message:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            tagline:
+              $type: textField
+              label: Tagline
+              i18n: true
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            content:
+              $type: richTextField
+              label: Content
+              height: 500
+              i18n: true
+    details:
+      label: Details
+      fields:
+        details:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: richTextField
+              label: Description
+              height: 560
+              i18n: true
+            image:
+              $type: damLinkField
+              label: Image
+            countries:
+              $type: jcrMultiField
+              label: Countries
+              field:
+                $type: textField
+                label: Country
+                i18n: true
+    mission:
+      label: Mission
+      fields:
+        mission:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            image:
+              $type: damLinkField
+              label: Image
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 4
+              i18n: true
+    vision:
+      label: Vision
+      fields:
+        vision:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            image:
+              $type: damLinkField
+              label: Image
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 4
+              i18n: true
+    values:
+      label: Values
+      fields:
+        values:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            image:
+              $type: damLinkField
+              label: Image
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            list:
+              $type: jcrMultiField
+              label: List
+              field:
+                $type: compositeField
+                label: Value
+                properties:
+                  name:
+                    $type: textField
+                    label: Name
+                    i18n: true
+                  description:
+                    $type: textField
+                    label: Description
+                    rows: 6
+                    i18n: true

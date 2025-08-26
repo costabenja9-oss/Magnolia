@@ -1,0 +1,203 @@
+label: Platform
+form:
+  $type: tabbedForm
+  tabs:
+    page:
+      label: Properties
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+        description:
+          $type: textField
+          label: Description
+          rows: 3
+          i18n: true
+        image:
+          $type: damLinkField
+          label: Image
+        videoId:
+          $type: textField
+          label: Video ID
+          i18n: true
+    features:
+      label: Features
+      fields:
+        features:
+          $type: jcrMultiField
+          label: Properties
+          field:
+            $type: compositeField
+            label: Feature
+            properties:
+              icon:
+                $type: damLinkField
+                label: Icon
+              title:
+                $type: textField
+                label: Title
+                i18n: true
+              description:
+                $type: textField
+                label: Description
+                rows: 4
+                i18n: true
+    comparison:
+      label: Comparison
+      fields:
+        comparison:
+          $type: multiValueField
+          label: Properties
+          i18n: true
+          field:
+            $type: textField
+            label: Feature
+    process:
+      label: Auth Process
+      fields:
+        process:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            infographic:
+              $type: damLinkField
+              label: Infographic
+              i18n: true
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              i18n: true
+            items:
+              $type: multiValueField
+              label: Items
+              i18n: true
+              field:
+                $type: textField
+                label: Item
+                rows: 2
+    details:
+      label: Details
+      fields:
+        details:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 3
+              i18n: true
+            items:
+              $type: jcrMultiField
+              label: Items
+              field:
+                $type: compositeField
+                label: Item
+                properties:
+                  icon:
+                    $type: damLinkField
+                    label: Icon
+                  title:
+                    $type: textField
+                    label: Title
+                    i18n: true
+                  description:
+                    $type: textField
+                    label: Description
+                    rows: 4
+                    i18n: true
+            register:
+              $type: compositeField
+              label: Register
+              layout:
+                $type: stacked
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                title:
+                  $type: textField
+                  label: Title
+                  i18n: true
+                description:
+                  $type: textField
+                  label: Description
+                  rows: 2
+                  i18n: true
+                videoId:
+                  $type: textField
+                  label: Video ID
+                  i18n: true
+            login:
+              $type: compositeField
+              label: Login
+              layout:
+                $type: stacked
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                title:
+                  $type: textField
+                  label: Title
+                  i18n: true
+                description:
+                  $type: textField
+                  label: Description
+                  rows: 2
+                  i18n: true
+                videoId:
+                  $type: textField
+                  label: Video ID
+                  i18n: true
+    customer:
+      label: Customer
+      fields:
+        customer:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 2
+              i18n: true
+            features:
+              $type: jcrMultiField
+              label: Features
+              field:
+                $type: compositeField
+                label: Feature
+                properties:
+                  title:
+                    $type: textField
+                    label: Title
+                    i18n: true
+                  description:
+                    $type: textField
+                    label: Description
+                    rows: 2
+                    i18n: true

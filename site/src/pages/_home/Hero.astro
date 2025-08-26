@@ -1,0 +1,90 @@
+---
+import { getLocalePath } from '@/lib/utils'
+import Input from '@/components/Input.astro'
+import Image from '@/components/Image'
+import IconUser from '@/assets/icons/user.svg'
+import IconFingerprint from '@/assets/icons/fingerprint.svg'
+
+interface Props {
+  tagline: string
+  title: string
+  description: string
+}
+
+const { t } = Astro.locals
+const { tagline, title, description } = Astro.props
+---
+
+<section
+  class:list={[
+    'pt-33 pb-15 px-5 flex flex-col gap-15 bg-linear-108 from-white',
+    'to-neutral-100 sm:pb-22 sm:px-10 lg:px-13 xl:pt-44 xl:flex-row',
+    'xl:items-center xl:justify-between'
+  ]}
+>
+  <div class="text-pretty xl:max-w-182 max-xl:text-center">
+    <hgroup>
+      <p class="leading-snug text-orange-600 uppercase xl:text-lg xl:pr-15">
+        {tagline}
+      </p>
+      <h1 class="mt-6 font-bold text-3xl text-pretty xl:text-4xl">{title}</h1>
+    </hgroup>
+    <p class="mt-8 mb-6 text-lg xl:text-2xl">{description}</p>
+    <form class="max-w-159 max-xl:mx-auto">
+      <div class="flex flex-col gap-4 sm:flex-row">
+        <Input placeholder={`${t['enter_your_email']}...`} />
+        <button
+          class:list={[
+            'py-3.5 px-5 rounded bg-orange-600 text-lg/none text-white',
+            'transition-colors hover:bg-red-800 sm:shrink-0'
+          ]}
+        >
+          {t['request_demo']}
+        </button>
+      </div>
+      <p class="mt-2 pl-1 text-left text-xs">
+        {t['review_our_privacy_policy']}
+        <a
+          class:list={[
+            'text-orange-600 underline transition-colors hover:text-red-800'
+          ]}
+          href={getLocalePath(Astro.currentLocale!, 'privacy-policy')}
+        >
+          {t['here']}
+        </a>
+      </p>
+    </form>
+  </div>
+  <div
+    class:list={[
+      'relative w-fit mx-auto p-8 pb-20 px-5 sm:py-0 sm:pl-25 sm:pr-18 xl:pl-0',
+      'xl:shrink-0'
+    ]}
+    aria-hidden="true"
+  >
+    <div
+      class:list={[
+        'absolute top-0 left-0 w-65 py-3 px-2 flex items-center gap-3 rounded',
+        'shadow-xl bg-white text-orange-600 sm:top-8 xl:-left-25'
+      ]}
+    >
+      <div class="p-3.5 border-4 rounded-full"><IconUser class="w-6.5" /></div>
+      <div>
+        <b class="text-black">Samuel</b>
+        <p class="text-xs/tight">{t['security_activated']}</p>
+      </div>
+    </div>
+    <Image class="rounded" src="/images/hero.webp" width={430} height={610} />
+    <div
+      class:list={[
+        'absolute bottom-0 right-0 w-67 p-5 rounded shadow-xl bg-white',
+        'text-orange-600 sm:bottom-20'
+      ]}
+    >
+      <p class="text-center text-pretty leading-tight">
+        {t['system_secure_greeting']}
+      </p>
+      <IconFingerprint class="w-18.25 my-8 mx-auto" />
+    </div>
+  </div>
+</section>

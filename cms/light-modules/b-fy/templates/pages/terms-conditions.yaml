@@ -1,0 +1,7 @@
+title: Terms & Conditions
+renderType: freemarker
+templateScript: /b-fy/templates/pages/terms-conditions.ftl
+description: Terms & Conditions page migrated from Astro with fallback text
+dialog: b-fy:pages/terms-conditions
+
+visible: true

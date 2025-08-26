@@ -1,0 +1,10 @@
+label: Platform Feature Page
+workspace: website
+nodeType: mgnl:page
+properties:
+  title:
+    $type: text
+    required: true
+  content:
+    $type: richText
+    required: true

@@ -1,0 +1,9 @@
+virtualUriMappings:
+  default:
+    fromUri: /b-fy/*
+    toUri: forward:/b-fy/$1
+    class: info.magnolia.virtualuri.mapping.DefaultVirtualUriMapping
+  root:
+    fromUri: /b-fy
+    toUri: forward:/b-fy/
+    class: info.magnolia.virtualuri.mapping.DefaultVirtualUriMapping

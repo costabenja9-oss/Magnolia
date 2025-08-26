@@ -1,0 +1,5 @@
+title: Hero
+renderType: freemarker
+templateScript: /b-fy/templates/components/hero.ftl
+dialog: b-fy:components/hero
+description: Hero section component

@@ -1,0 +1,55 @@
+---
+import { marked } from 'marked'
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+interface Props {
+  title: string
+}
+
+type Data = Array<{ image: any; title: string; description: string }>
+
+const data: Data = await magnolia.get(
+  `/industries/${Astro.params.name}/threats/@nodes`,
+  { lang: Astro.currentLocale! }
+)
+---
+
+<section class="py-20 px-5 bg-neutral-200 text-pretty sm:px-10 lg:px-13">
+  <h2 class="max-w-2xl mx-auto font-bold text-3xl text-center xl:text-5xl">
+    {Astro.props.title}
+  </h2>
+  <div
+    class:list={[
+      'max-w-6xl mt-16 mx-auto grid gap-16 sm:gap-0 lg:grid-cols-3',
+      'lg:gap-12'
+    ]}
+  >
+    {
+      data.map(({ image, title, description }, index) => (
+        <article
+          class:list={[
+            'h-fit grid gap-y-8 sm:grid-cols-2 sm:items-center lg:grid-cols-1',
+            'lg:items-start'
+          ]}
+        >
+          <Image class="size-full object-cover" data={image} />
+          <div
+            class:list={[
+              index % 2
+                ? 'sm:pr-10 sm:col-start-1 sm:row-start-1 lg:row-start-2'
+                : 'sm:pl-10',
+              'sm:py-10 lg:p-0'
+            ]}
+          >
+            <h3 class="font-bold text-xl/tight uppercase">{title}</h3>
+            <p
+              class="mt-3 leading-snug"
+              set:html={marked.parseInline(description, { breaks: true })}
+            />
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

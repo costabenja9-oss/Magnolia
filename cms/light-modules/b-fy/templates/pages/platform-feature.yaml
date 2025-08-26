@@ -1,0 +1,7 @@
+title: Platform Feature Detail
+renderType: freemarker
+templateScript: /b-fy/templates/pages/platform-feature.ftl
+description: Platform feature detail template (fallback) from dynamic Astro feature route
+dialog: b-fy:pages/platform-feature
+
+visible: true

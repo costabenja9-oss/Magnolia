@@ -1,0 +1,80 @@
+---
+import magnolia from '@/lib/magnolia'
+import { getLocalePath } from '@/lib/utils'
+import Image from '@/components/Image'
+
+interface Industry {
+  '@id': string
+  tagline: string
+  '@name': string
+}
+
+type Data = Array<{
+  image: any
+  link: string
+  title: string
+  description: string
+}>
+
+const currentLocale = Astro.currentLocale!
+
+const { t } = Astro.locals
+
+const [data, { results }] = await Promise.all([
+  magnolia.get<Data>('/pages/industries/list/@nodes', { lang: currentLocale }),
+  magnolia.get<{ results: Industry[] }>('/industries', {
+    'thumbnail[null]': 'false',
+    properties: 'tagline',
+    lang: currentLocale
+  })
+])
+---
+
+<section class="my-25 px-5 grid gap-20 text-pretty sm:px-10 md:px-0 md:gap-0">
+  {
+    data.map(({ image, link, title, description }) => {
+      const industry = results.find(({ '@id': id }) => id === link)
+
+      return (
+        <article class="group md:grid md:grid-cols-2 md:items-center">
+          <Image
+            class="size-full object-cover hidden rounded-tr-2xl md:block"
+            data={image}
+          />
+          <div
+            class:list={[
+              'group-even:text-right md:p-10 md:group-even:col-start-1',
+              'md:group-even:row-start-1 lg:p-13'
+            ]}
+          >
+            <hgroup>
+              <p
+                class:list={[
+                  'py-2.5 px-5 inline-block rounded bg-orange-600',
+                  'text-white leading-none uppercase xl:text-xl'
+                ]}
+              >
+                {industry?.tagline}
+              </p>
+              <h2 class="my-8 font-bold text-3xl xl:text-5xl">{title}</h2>
+            </hgroup>
+            <p class="mb-8 text-lg xl:text-xl/snug">{description}</p>
+            <a
+              class:list={[
+                'py-2.5 px-5 inline-block rounded ring ring-inset',
+                'text-lg/none text-orange-600 transition-colors',
+                'hover:text-red-800 xl:text-xl'
+              ]}
+              href={getLocalePath(
+                currentLocale,
+                `industries/${industry?.['@name']}`
+              )}
+            >
+              {t['discover_more']}
+            </a>
+          </div>
+        </article>
+      )
+    })
+  }
+</section>

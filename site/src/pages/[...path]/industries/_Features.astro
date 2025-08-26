@@ -1,0 +1,52 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+interface Props {
+  tagline?: string
+  title?: string
+}
+
+type Data = Array<{ icon: any; name: string; description: string }>
+
+const { tagline, title } = Astro.props
+
+const data: Data = await magnolia.get(
+  `/industries/${Astro.params.name}/features/@nodes`,
+  { lang: Astro.currentLocale! }
+)
+---
+
+<section class="py-20 px-5 text-pretty sm:px-10 md:py-25 lg:px-13">
+  {
+    tagline && title && (
+      <hgroup class="mb-20 text-center">
+        <p
+          class:list={[
+            'py-2.5 px-5 inline-block rounded bg-orange-600 leading-none',
+            'text-white uppercase'
+          ]}
+        >
+          {tagline}
+        </p>
+        <h2 class="mt-6 font-bold text-3xl xl:text-5xl">{title}</h2>
+      </hgroup>
+    )
+  }
+  <div class="max-w-4xl mx-auto grid gap-13">
+    {
+      data.map(({ icon, name, description }) => (
+        <article class="flex gap-4 sm:items-center sm:gap-8">
+          <Image
+            class="size-11 shrink-0 object-contain sm:size-33"
+            src={icon}
+          />
+          <div class="text-lg md:text-xl/snug">
+            <h3 class="mb-3 font-bold uppercase">{name}</h3>
+            <p>{description}</p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

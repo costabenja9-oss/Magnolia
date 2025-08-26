@@ -1,0 +1,30 @@
+---
+import Input from '@/components/Input.astro'
+
+const { t } = Astro.locals
+---
+
+<section class="my-20 px-5 sm:px-10 lg:px-13">
+  <div
+    class:list={[
+      'max-w-6xl mx-auto py-9 px-10 flex flex-col gap-8 rounded-lg text-lg',
+      'bg-orange-600 text-white lg:flex-row lg:items-center xl:gap-16'
+    ]}
+  >
+    <div class="lg:max-w-104 lg:shrink-0">
+      <h3 class="font-bold text-3xl">{t['newsletter_subscribe']}</h3>
+      <p class="mt-2 text-pretty">{t['newsletter_description']}</p>
+    </div>
+    <form class="w-full flex flex-col gap-5 sm:flex-row">
+      <Input ring="ring-current" placeholder={t['enter_your_email']} />
+      <button
+        class:list={[
+          'py-4 px-5 rounded bg-white leading-none text-orange-600',
+          'transition-colors hover:text-red-800 sm:shrink-0'
+        ]}
+      >
+        {t['request_demo']}
+      </button>
+    </form>
+  </div>
+</section>

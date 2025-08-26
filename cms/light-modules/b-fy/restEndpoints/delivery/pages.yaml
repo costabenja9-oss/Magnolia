@@ -1,0 +1,41 @@
+$type: jcrDeliveryEndpoint_v2
+workspace: website
+bypassWorkspaceAcls: true
+referenceDepth: 2
+
+nodeTypes:
+  - mgnl:page
+  - mgnl:contentNode
+
+references:
+  imageReference:
+    propertyName: image
+    referenceResolver:
+      $type: assetReferenceResolver
+  iconReference:
+    propertyName: icon
+    referenceResolver:
+      $type: assetReferenceResolver
+      expand: false
+  infographicReference:
+    propertyName: infographic
+    referenceResolver:
+      $type: assetReferenceResolver
+  logoReference:
+    propertyName: logo
+    referenceResolver:
+      $type: assetReferenceResolver
+  featuredPostReference:
+    propertyName: featuredPost
+    referenceResolver:
+      $type: jcrReferenceResolver
+      targetWorkspace: posts
+      properties:
+        - image
+        - title
+        - description
+  documentReference:
+    propertyName: document
+    referenceResolver:
+      $type: assetReferenceResolver
+      expand: false

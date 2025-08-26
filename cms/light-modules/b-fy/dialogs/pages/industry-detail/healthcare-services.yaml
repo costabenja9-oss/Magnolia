@@ -1,0 +1,259 @@
+label: Healthcare Services Page
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        tagline:
+          $type: textField
+          label: Tagline
+          i18n: true
+          defaultValue: "SECTOR DE SALUD"
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Protección biométrica para personas y procesos médicos"
+        description:
+          $type: richTextField
+          label: Description
+          i18n: true
+          defaultValue: "B-FY vincula la identidad física real de médicos, pacientes y personal sanitario con cada acceso digital o presencial, evitando amenazas internas, protege los datos más sensibles y ayuda a garantizar el cumplimiento de normas como GDPR y HIPAA."
+        videoId:
+          $type: textField
+          label: Video ID
+          i18n: true
+          defaultValue: "fjvPHPtZvXk"
+    details:
+      label: Details (4 cards)
+      fields:
+        detail1Icon:
+          $type: damLinkField
+          label: Detail 1 Icon
+          required: false
+        detail1Title:
+          $type: textField
+          label: Detail 1 Title
+          i18n: true
+          defaultValue: "FACILIDAD DE USO"
+        detail1Description:
+          $type: textField
+          label: Detail 1 Description
+          i18n: true
+          defaultValue: "Tus pacientes pueden acceder fácilmente a sus registros usando verificación biométrica desde su dispositivo móvil."
+        detail2Icon:
+          $type: damLinkField
+          label: Detail 2 Icon
+          required: false
+        detail2Title:
+          $type: textField
+          label: Detail 2 Title
+          i18n: true
+          defaultValue: "REDUCE EL RIESGO 4.91B PACIENTES"
+        detail2Description:
+          $type: textField
+          label: Detail 2 Description
+          i18n: true
+          defaultValue: "Elimina el riesgo de registros no correspondientes de los pacientes en cada cita e interacción con los servicios."
+        detail3Icon:
+          $type: damLinkField
+          label: Detail 3 Icon
+          required: false
+        detail3Title:
+          $type: textField
+          label: Detail 3 Title
+          i18n: true
+          defaultValue: "ACCESO SEGURO 24/7"
+        detail3Description:
+          $type: textField
+          label: Detail 3 Description
+          i18n: true
+          defaultValue: "Conecta la aplicación de la clínica con el portal del paciente desde donde pueden lograr acceso hasta en líneas para sus pacientes, dividiendo por horarios."
+        detail4Icon:
+          $type: damLinkField
+          label: Detail 4 Icon
+          required: false
+        detail4Title:
+          $type: textField
+          label: Detail 4 Title
+          i18n: true
+          defaultValue: "PROTEGE LA BIOMETRÍA"
+        detail4Description:
+          $type: textField
+          label: Detail 4 Description
+          i18n: true
+          defaultValue: "Reduce una identificación sin riesgo de un sistema de gestión de clave biométrica permanente en un proceso descriptor móvil."
+    threats:
+      label: Threats Section
+      fields:
+        threatsTitle:
+          $type: textField
+          label: Threats Title
+          i18n: true
+          defaultValue: "Vectores de ataque en la atención médica moderna"
+        threat1Image:
+          $type: damLinkField
+          label: Threat 1 Image
+          required: false
+        threat1Title:
+          $type: textField
+          label: Threat 1 Title
+          i18n: true
+          defaultValue: "RIESGO DE SUPLANTACIÓN DE PROFESIONALES"
+        threat1Description:
+          $type: richTextField
+          label: Threat 1 Description
+          i18n: true
+          defaultValue: "Acceso no autorizado mediante el uso de credenciales comprometidas de médicos o personal sanitario, permitiendo acceso a sistemas críticos y datos de pacientes."
+        threat2Image:
+          $type: damLinkField
+          label: Threat 2 Image
+          required: false
+        threat2Title:
+          $type: textField
+          label: Threat 2 Title
+          i18n: true
+          defaultValue: "CIBERATAQUES DIRIGIDOS AL SECTOR SALUD"
+        threat2Description:
+          $type: richTextField
+          label: Threat 2 Description
+          i18n: true
+          defaultValue: "Ataques sofisticados que explotan vulnerabilidades en sistemas hospitalarios, desde ransomware hasta phishing dirigido específicamente al personal médico."
+        threat3Image:
+          $type: damLinkField
+          label: Threat 3 Image
+          required: false
+        threat3Title:
+          $type: textField
+          label: Threat 3 Title
+          i18n: true
+          defaultValue: "FRAUDES DE IDENTIDAD DE PACIENTES"
+        threat3Description:
+          $type: richTextField
+          label: Threat 3 Description
+          i18n: true
+          defaultValue: "Suplantación de identidad de pacientes para acceder de forma fraudulenta a servicios médicos, seguros o información sanitaria sensible."
+    features:
+      label: Features Section
+      fields:
+        featuresTagline:
+          $type: textField
+          label: Features Tagline
+          i18n: true
+          defaultValue: "SOLO Y PRIVADO"
+        featuresTitle:
+          $type: textField
+          label: Features Title
+          i18n: true
+          defaultValue: "B-FY protege la experiencia sanitaria"
+        feature1Icon:
+          $type: damLinkField
+          label: Feature 1 Icon
+          required: false
+        feature1Title:
+          $type: textField
+          label: Feature 1 Title
+          i18n: true
+          defaultValue: "ACCESO SIN CONTRASEÑAS"
+        feature1Description:
+          $type: richTextField
+          label: Feature 1 Description
+          i18n: true
+          defaultValue: "Tus pacientes inician sesión en portales y apps con un único gesto biométrico, eliminando por completo la gestión de claves y evitando retrasos en urgencias o consultorios."
+        feature2Icon:
+          $type: damLinkField
+          label: Feature 2 Icon
+          required: false
+        feature2Title:
+          $type: textField
+          label: Feature 2 Title
+          i18n: true
+          defaultValue: "AUTENTICACIÓN OMNICANAL"
+        feature2Description:
+          $type: richTextField
+          label: Feature 2 Description
+          i18n: true
+          defaultValue: "En menos de un segundo, confirmamos que quien accede a la cita, querándo o tele consulta es la persona correcta, reduciendo el riesgo de tratamientos erróneos y fraudes sanitarios."
+        feature3Icon:
+          $type: damLinkField
+          label: Feature 3 Icon
+          required: false
+        feature3Title:
+          $type: textField
+          label: Feature 3 Title
+          i18n: true
+          defaultValue: "PROTECCIÓN ANTI-IA GENERATIVA"
+        feature3Description:
+          $type: richTextField
+          label: Feature 3 Description
+          i18n: true
+          defaultValue: "Identifica y bloquea en tiempo real deep fakes, voces sintéticas y manipulaciones faciales creadas por IA, evitando que correos, vídeos o selfies falsos engañen los sistemas médicos."
+        feature4Icon:
+          $type: damLinkField
+          label: Feature 4 Icon
+          required: false
+        feature4Title:
+          $type: textField
+          label: Feature 4 Title
+          i18n: true
+          defaultValue: "CUMPLIMIENTO NORMATIVO"
+        feature4Description:
+          $type: richTextField
+          label: Feature 4 Description
+          i18n: true
+          defaultValue: "B-FY con su proceso de autenticación de 3 capas cumple los criterios más exigentes SCA (Strong Customer Authentication) y de privacidad para el sector de salud."
+    product:
+      label: Product Section
+      fields:
+        productImage:
+          $type: damLinkField
+          label: Product Image
+          required: false
+        productTagline:
+          $type: textField
+          label: Product Tagline
+          i18n: true
+          defaultValue: "SOLO Y PRIVADO"
+        productTitle:
+          $type: textField
+          label: Product Title
+          i18n: true
+          defaultValue: "Confianza y privacidad en cada interacción clínica"
+        productDescription:
+          $type: richTextField
+          label: Product Description
+          i18n: true
+          defaultValue: "B-FY elimina las fricciones por suplantación de identidad, potencia la verificación de pacientes en cada interacción y elimina por completo las credenciales vulnerables, evitando así brechas de seguridad en pacientes y profesionales. Con B-FY refuerza la privacidad y optimiza la experiencia de tus pacientes, profesionales sanitarios y personal administrativo."
+    cta:
+      label: Call to Action
+      fields:
+        ctaBackground:
+          $type: damLinkField
+          label: CTA Background Image
+          required: false
+        ctaTitle:
+          $type: textField
+          label: CTA Title
+          i18n: true
+          defaultValue: "¿QUÉ ESTÁS ESPERANDO?"
+        ctaHeading:
+          $type: textField
+          label: CTA Heading
+          i18n: true
+          defaultValue: "Prueba la nueva era de la autenticación."
+        ctaDescription:
+          $type: textField
+          label: CTA Description
+          i18n: true
+          defaultValue: "Descubre cómo B-FY puede transformar la seguridad de tu empresa. Solicita una demo y comencemos a crear más información."
+        ctaButton1:
+          $type: textField
+          label: CTA Button 1
+          i18n: true
+          defaultValue: "Solicita una demo"
+        ctaButton2:
+          $type: textField
+          label: CTA Button 2
+          i18n: true
+          defaultValue: "Conocénos"

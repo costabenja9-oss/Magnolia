@@ -1,0 +1,247 @@
+
+label: Transport & Logistics Page
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        tagline:
+          $type: textField
+          label: Tagline
+          i18n: true
+          defaultValue: "TRANSPORTE Y LOGÍSTICA"
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Seguridad y eficiencia en toda tu cadena logística"
+        description:
+          $type: richTextField
+          label: Description
+          i18n: true
+          defaultValue: "Acceso seguro en toda tu cadena logística: terminales, estaciones de servicio, almacenes y centros de distribución. La solución biométrica descentralizada de B-FY garantiza autenticación ágil y segura de conductores, personal y clientes, eliminando riesgos de suplantación mientras optimiza las operaciones."
+        videoId:
+          $type: textField
+          label: Video ID
+          i18n: true
+          defaultValue: "fjvPHPtZvXk"
+    details:
+      label: Details (4 cards)
+      fields:
+        detail1Icon:
+          $type: damLinkField
+          label: Detail 1 Icon
+        detail1Title:
+          $type: textField
+          label: Detail 1 Title
+          i18n: true
+          defaultValue: "CONTROL DE ACCESOS"
+        detail1Description:
+          $type: textField
+          label: Detail 1 Description
+          i18n: true
+          defaultValue: "Verificación biométrica instantánea para conductores, personal logístico y visitantes en terminales, almacenes y centros de distribución."
+        detail2Icon:
+          $type: damLinkField
+          label: Detail 2 Icon
+        detail2Title:
+          $type: textField
+          label: Detail 2 Title
+          i18n: true
+          defaultValue: "GESTIÓN DE FLOTAS"
+        detail2Description:
+          $type: textField
+          label: Detail 2 Description
+          i18n: true
+          defaultValue: "Seguimiento y autorización biométrica de conductores, garantizando que solo personal autorizado maneje vehículos de la flota."
+        detail3Icon:
+          $type: damLinkField
+          label: Detail 3 Icon
+        detail3Title:
+          $type: textField
+          label: Detail 3 Title
+          i18n: true
+          defaultValue: "CADENA DE CUSTODIA"
+        detail3Description:
+          $type: textField
+          label: Detail 3 Description
+          i18n: true
+          defaultValue: "Trazabilidad completa de mercancías con verificación biométrica en cada punto de transferencia y almacenamiento."
+        detail4Icon:
+          $type: damLinkField
+          label: Detail 4 Icon
+        detail4Title:
+          $type: textField
+          label: Detail 4 Title
+          i18n: true
+          defaultValue: "OPERACIONES 24/7"
+        detail4Description:
+          $type: textField
+          label: Detail 4 Description
+          i18n: true
+          defaultValue: "Acceso seguro y rápido para operaciones nocturnas y turnos especiales sin comprometer la seguridad ni la agilidad operativa."
+    threats:
+      label: Threats Section
+      fields:
+        threatsTitle:
+          $type: textField
+          label: Threats Title
+          i18n: true
+          defaultValue: "Riesgos de seguridad en transporte y logística"
+        threat1Image:
+          $type: damLinkField
+          label: Threat 1 Image
+        threat1Title:
+          $type: textField
+          label: Threat 1 Title
+          i18n: true
+          defaultValue: "ROBO DE CARGA Y MERCANCÍAS"
+        threat1Description:
+          $type: richTextField
+          label: Threat 1 Description
+          i18n: true
+          defaultValue: "Acceso no autorizado a vehículos y almacenes mediante suplantación de identidad de conductores o personal logístico autorizado."
+        threat2Image:
+          $type: damLinkField
+          label: Threat 2 Image
+        threat2Title:
+          $type: textField
+          label: Threat 2 Title
+          i18n: true
+          defaultValue: "FRAUDE EN DOCUMENTACIÓN"
+        threat2Description:
+          $type: richTextField
+          label: Threat 2 Description
+          i18n: true
+          defaultValue: "Falsificación de licencias de conducir, documentos de transporte y credenciales de acceso a instalaciones logísticas críticas."
+        threat3Image:
+          $type: damLinkField
+          label: Threat 3 Image
+        threat3Title:
+          $type: textField
+          label: Threat 3 Title
+          i18n: true
+          defaultValue: "ATAQUES A INFRAESTRUCTURA CRÍTICA"
+        threat3Description:
+          $type: richTextField
+          label: Threat 3 Description
+          i18n: true
+          defaultValue: "Infiltración en centros de distribución, terminales portuarias y aeroportuarias mediante credenciales comprometidas."
+    features:
+      label: Features Section
+      fields:
+        featuresTagline:
+          $type: textField
+          label: Features Tagline
+          i18n: true
+          defaultValue: "LOGÍSTICA INTELIGENTE"
+        featuresTitle:
+          $type: textField
+          label: Features Title
+          i18n: true
+          defaultValue: "B-FY optimiza tu cadena de suministro"
+        feature1Icon:
+          $type: damLinkField
+          label: Feature 1 Icon
+        feature1Title:
+          $type: textField
+          label: Feature 1 Title
+          i18n: true
+          defaultValue: "ACCESO RÁPIDO A TERMINALES"
+        feature1Description:
+          $type: richTextField
+          label: Feature 1 Description
+          i18n: true
+          defaultValue: "Conductores y personal acceden instantáneamente a terminales, almacenes y zonas restringidas con verificación biométrica, eliminando demoras en carga y descarga."
+        feature2Icon:
+          $type: damLinkField
+          label: Feature 2 Icon
+        feature2Title:
+          $type: textField
+          label: Feature 2 Title
+          i18n: true
+          defaultValue: "TRAZABILIDAD TOTAL"
+        feature2Description:
+          $type: richTextField
+          label: Feature 2 Description
+          i18n: true
+          defaultValue: "Registro biométrico en cada punto de la cadena logística, desde origen hasta destino, garantizando la integridad y responsabilidad en cada transferencia."
+        feature3Icon:
+          $type: damLinkField
+          label: Feature 3 Icon
+        feature3Title:
+          $type: textField
+          label: Feature 3 Title
+          i18n: true
+          defaultValue: "GESTIÓN DE FLOTAS INTELIGENTE"
+        feature3Description:
+          $type: richTextField
+          label: Feature 3 Description
+          i18n: true
+          defaultValue: "Control biométrico de vehículos que impide el uso no autorizado de la flota, reduciendo robos, accidentes y uso indebido de recursos."
+        feature4Icon:
+          $type: damLinkField
+          label: Feature 4 Icon
+        feature4Title:
+          $type: textField
+          label: Feature 4 Title
+          i18n: true
+          defaultValue: "CUMPLIMIENTO REGULATORIO"
+        feature4Description:
+          $type: richTextField
+          label: Feature 4 Description
+          i18n: true
+          defaultValue: "Cumplimiento automático con regulaciones de transporte internacional, aduanas y normativas de seguridad logística específicas de cada región."
+    product:
+      label: Product Section
+      fields:
+        productImage:
+          $type: damLinkField
+          label: Product Image
+        productTagline:
+          $type: textField
+          label: Product Tagline
+          i18n: true
+          defaultValue: "LOGÍSTICA SEGURA"
+        productTitle:
+          $type: textField
+          label: Product Title
+          i18n: true
+          defaultValue: "Eficiencia y seguridad en cada kilómetro"
+        productDescription:
+          $type: richTextField
+          label: Product Description
+          i18n: true
+          defaultValue: "B-FY revoluciona la logística mediante autenticación biométrica descentralizada que protege toda tu cadena de suministro. Desde terminales hasta destinos finales, garantizamos que solo personal autorizado maneje mercancías, vehículos e instalaciones. Reducimos robos, optimizamos operaciones y cumplimos con regulaciones internacionales, todo mientras mejoramos la eficiencia operativa y la experiencia del personal."
+    cta:
+      label: Call to Action
+      fields:
+        ctaBackground:
+          $type: damLinkField
+          label: CTA Background Image
+        ctaTitle:
+          $type: textField
+          label: CTA Title
+          i18n: true
+          defaultValue: "¿LISTO PARA OPTIMIZAR TU LOGÍSTICA?"
+        ctaHeading:
+          $type: textField
+          label: CTA Heading
+          i18n: true
+          defaultValue: "Transforma tu cadena de suministro con seguridad biométrica."
+        ctaDescription:
+          $type: textField
+          label: CTA Description
+          i18n: true
+          defaultValue: "Descubre cómo B-FY puede proteger tu operación logística y aumentar la eficiencia. Solicita una demo adaptada a tu cadena de suministro."
+        ctaButton1:
+          $type: textField
+          label: CTA Button 1
+          i18n: true
+          defaultValue: "Solicita una demo"
+        ctaButton2:
+          $type: textField
+          label: CTA Button 2
+          i18n: true
+          defaultValue: "Habla con un experto"

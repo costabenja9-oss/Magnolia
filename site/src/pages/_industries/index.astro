@@ -1,0 +1,25 @@
+---
+import magnolia from '@/lib/magnolia'
+import Layout from '@/components/Layout.astro'
+import Image from '@/components/Image'
+import CallToAction from '@/components/CallToAction.astro'
+import List from './List.astro'
+
+const { t } = Astro.locals
+
+const { title, image, description } = await magnolia.get('/pages/industries', {
+  lang: Astro.currentLocale!
+})
+---
+
+<Layout title={t['industries']} description={description}>
+  <section class="mt-12 px-5 text-center sm:px-10 lg:px-13 xl:mt-24">
+    <h1 class="max-w-3xl mx-auto font-bold text-3xl xl:text-5xl">{title}</h1>
+    <Image class="my-10 mx-auto rounded-lg" data={image} loading="eager" />
+    <p class="max-w-280 mx-auto text-lg text-pretty xl:text-xl/snug">
+      {description}
+    </p>
+  </section>
+  <List />
+  <CallToAction />
+</Layout>

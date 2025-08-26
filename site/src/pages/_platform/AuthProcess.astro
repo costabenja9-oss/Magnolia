@@ -1,0 +1,39 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+interface Data {
+  infographic: any
+  title: string
+  description: string
+  items: string[]
+}
+
+const { infographic, title, description, items }: Data = await magnolia.get(
+  '/pages/platform/process',
+  { lang: Astro.currentLocale! }
+)
+---
+
+<section class="mb-24 grid gap-15 lg:grid-cols-2 lg:items-center">
+  <Image data={infographic} />
+  <div class="text-left text-lg xl:mt-15">
+    <h3
+      class:list={[
+        'w-72 font-bold text-xl/tight text-balance text-orange-600',
+        'uppercase'
+      ]}
+    >
+      {title}
+    </h3>
+    <p class="mt-6 mb-7">{description}</p>
+    <ol
+      class:list={[
+        'pl-[1em] grid gap-5 list-decimal marker:font-bold',
+        'marker:text-orange-600'
+      ]}
+    >
+      {items.map((item) => <li>{item}</li>)}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import { getEntry } from 'astro:content'
+import Checkbox from './Checkbox.astro'
+
+const { data: t } = await getEntry(
+  'translations',
+  `${Astro.currentLocale}/form-container`
+)!
+---
+
+<div class="max-w-236 mx-auto text-center text-lg xl:text-xl/snug">
+  <slot name="header" />
+  <form
+    class:list={[
+      'mt-15 py-10 px-7 rounded-lg shadow-lg bg-white text-left',
+      'text-base/snug text-neutral-700 xl:px-10'
+    ]}
+  >
+    <slot />
+    <p class="my-6 text-red-800">* {t['required_fields']}</p>
+    <Checkbox label={t['accept_privacy_policy_and_legal_notice']} required />
+    <Checkbox label={t['subscribe_to_updates']} />
+    <button
+      class:list={[
+        'mt-8 w-fit ml-auto block py-2.5 px-5 rounded bg-orange-600',
+        'text-lg/none text-white transition-colors hover:bg-red-800'
+      ]}
+    >
+      {t['submit']}
+    </button>
+  </form>
+</div>

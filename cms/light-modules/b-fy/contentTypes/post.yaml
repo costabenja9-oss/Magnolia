@@ -1,0 +1,41 @@
+datasource:
+  workspace: posts
+  autoCreate: true
+
+model:
+  nodeType: mgnl:posts
+  properties:
+    image:
+      type: asset
+      label: Image
+      required: true
+    title:
+      label: Title
+      required: true
+      i18n: true
+    description:
+      label: Description
+      required: true
+      i18n: true
+    category:
+      label: Category
+      required: true
+      options:
+        regulation:
+          label: Regulation
+          value: regulation
+        biometrics:
+          label: Biometrics
+          value: biometrics
+        cybersecurity:
+          label: Cybersecurity
+          value: cybersecurity
+    createdAt:
+      type: Date
+      label: Created at
+      required: true
+    content:
+      type: richText
+      label: Content
+      required: true
+      i18n: true

@@ -1,0 +1,12 @@
+title: Blog
+templateScript: /b-fy/templates/pages/blog.ftl
+renderType: freemarker
+dialog: b-fy:pages/blog
+visible: true
+
+areas:
+  main:
+    type: list
+    availableComponents:
+      blog-list-post:
+        id: b-fy:components/blog-list-post

@@ -1,0 +1,17 @@
+---
+import IconSearch from '@/assets/icons/search.svg'
+
+const { t } = Astro.locals
+---
+
+<label class="flex gap-2.5">
+  <IconSearch class="w-4.75" />
+  <input
+    class:list={[
+      'w-29 outline-none placeholder:text-current',
+      'focus:placeholder:opacity-70'
+    ]}
+    type="text"
+    placeholder={`${t['search']}...`}
+  />
+</label>

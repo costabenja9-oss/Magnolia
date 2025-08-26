@@ -1,0 +1,23 @@
+---
+import magnolia from '@/lib/magnolia'
+import Layout from '@/components/Layout.astro'
+
+const title = Astro.locals.t['privacy_policy']
+
+const { content } = await magnolia.get('/pages/privacy-policy', {
+  lang: Astro.currentLocale!
+})
+---
+
+<Layout title={title}>
+  <article class="my-12 px-5 sm:px-10 lg:px-13 xl:my-24">
+    <h1 class="font-bold text-center text-3xl xl:text-5xl">{title}</h1>
+    <div
+      class:list={[
+        'overflow-hidden mt-10 mx-auto max-w-5xl prose prose-neutral',
+        'prose-a:text-red-800 xl:mt-13 xl:prose-lg'
+      ]}
+      set:html={content.replaceAll(' style="text-align:justify;"', '')}
+    />
+  </article>
+</Layout>

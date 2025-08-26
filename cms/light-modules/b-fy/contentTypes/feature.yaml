@@ -1,0 +1,47 @@
+datasource:
+  workspace: features
+  autoCreate: true
+
+model:
+  nodeType: mgnl:features
+  properties:
+    icon:
+      type: asset
+      label: Icon
+      required: true
+    tagline:
+      label: Tagline
+      required: true
+      i18n: true
+    title:
+      label: Title
+      required: true
+      i18n: true
+    description:
+      label: Description
+      required: true
+      i18n: true
+    summary:
+      label: Summary
+      required: true
+      i18n: true
+    items:
+      type: item
+      label: Items
+      multiple: true
+
+  subModels:
+    item:
+      properties:
+        title:
+          label: Title
+          required: true
+          i18n: true
+        description:
+          label: Description
+          required: true
+          i18n: true
+        image:
+          type: asset
+          label: Image
+          required: true

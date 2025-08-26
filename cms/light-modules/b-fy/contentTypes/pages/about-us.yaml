@@ -1,0 +1,94 @@
+label: About Us Page
+workspace: website
+nodeType: mgnl:page
+properties:
+  title:
+    $type: text
+    required: true
+  description:
+    $type: text
+    required: true
+  carousel:
+    $type: collection
+    properties:
+      image:
+        $type: reference
+        required: true
+      title:
+        $type: text
+        required: true
+      description:
+        $type: richText
+        required: true
+  message:
+    $type: composite
+    properties:
+      tagline:
+        $type: text
+        required: true
+      title:
+        $type: text
+        required: true
+      content:
+        $type: richText
+        required: true
+  details:
+    $type: composite
+    properties:
+      title:
+        $type: text
+        required: true
+      description:
+        $type: richText
+        required: true
+      image:
+        $type: reference
+        required: true
+      countries:
+        $type: collection
+        properties:
+          country:
+            $type: text
+            required: true
+  mission:
+    $type: composite
+    properties:
+      image:
+        $type: reference
+        required: true
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+  vision:
+    $type: composite
+    properties:
+      image:
+        $type: reference
+        required: true
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+  values:
+    $type: composite
+    properties:
+      image:
+        $type: reference
+        required: true
+      title:
+        $type: text
+        required: true
+      list:
+        $type: collection
+        properties:
+          name:
+            $type: text
+            required: true
+          description:
+            $type: text
+            required: true

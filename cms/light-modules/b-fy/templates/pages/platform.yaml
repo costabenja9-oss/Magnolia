@@ -1,0 +1,7 @@
+title: Platform
+dialog: b-fy:pages/platform
+renderType: freemarker
+templateScript: /b-fy/templates/pages/platform.ftl
+description: Platform page migrated from Astro with default content
+
+visible: true

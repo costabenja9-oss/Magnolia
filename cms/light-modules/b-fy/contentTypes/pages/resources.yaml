@@ -1,0 +1,58 @@
+label: Resources Page
+workspace: website
+nodeType: mgnl:page
+properties:
+  title:
+    $type: text
+    required: true
+  description:
+    $type: text
+    required: true
+  featuredPost:
+    $type: reference
+    required: true
+  white-papers:
+    $type: composite
+    properties:
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+      items:
+        $type: collection
+        properties:
+          image:
+            $type: reference
+            required: true
+          title:
+            $type: text
+            required: true
+          description:
+            $type: text
+            required: true
+          document:
+            $type: reference
+            required: true
+  newsroom:
+    $type: composite
+    properties:
+      tagline:
+        $type: text
+        required: true
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+  faqs:
+    $type: collection
+    properties:
+      question:
+        $type: text
+        required: true
+      answer:
+        $type: richText
+        required: true

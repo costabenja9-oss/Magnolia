@@ -1,0 +1,12 @@
+{
+  "placeholder": "Industria",
+  "options": [
+    "Tecnología",
+    "Finanzas",
+    "Educación",
+    "Salud",
+    "Gobierno",
+    "Energía",
+    "Otros"
+  ]
+}

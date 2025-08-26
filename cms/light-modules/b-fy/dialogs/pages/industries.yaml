@@ -1,0 +1,63 @@
+label: Industries
+form:
+  $type: tabbedForm
+  tabs:
+    page:
+      label: Properties
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Soluciones por industrias"
+        image:
+          $type: damLinkField
+          label: Image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes: 
+              - mgnl:asset
+        description:
+          $type: textField
+          label: Description
+          rows: 7
+          i18n: true
+          defaultValue: "B-FY se adapta a las necesidades específicas de cada sector, ofreciendo soluciones de autenticación biométrica personalizadas que cumplen con las normativas más exigentes y mejoran la experiencia del usuario en cada industria."
+    list:
+      label: List
+      fields:
+        list:
+          $type: jcrMultiField
+          label: Properties
+          field:
+            $type: compositeField
+            label: Industry
+            properties:
+              image:
+                $type: damLinkField
+                label: Image
+                datasource:
+                  $type: jcrDatasource
+                  workspace: dam
+                  rootPath: /
+                  allowedNodeTypes: 
+                    - mgnl:asset
+              title:
+                $type: textField
+                label: Title
+                i18n: true
+                defaultValue: "Servicios Financieros"
+              description:
+                $type: textField
+                label: Description
+                rows: 5
+                i18n: true
+                defaultValue: "Soluciones de autenticación biométrica para bancos, fintech y servicios de pago que requieren máxima seguridad y cumplimiento normativo."
+              link:
+                $type: linkField
+                label: Link
+                datasource:
+                  $type: jcrDatasource
+                  workspace: industries

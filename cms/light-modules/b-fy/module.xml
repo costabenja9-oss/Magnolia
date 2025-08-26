@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <name>b-fy</name>
+  <displayName>B-FY Light Module</displayName>
+  <description>B-FY Biometric Authentication Platform</description>
+  <class>info.magnolia.module.ModuleLifecycle</class>
+  <versionHandler>info.magnolia.module.DefaultModuleVersionHandler</versionHandler>
+  <version>1.0.0</version>
+
+  <components>
+    <component>
+      <type>info.magnolia.rendering.template.TemplateDefinition</type>
+      <implementation>info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition</implementation>
+      <scope>singleton</scope>
+    </component>
+  </components>
+
+  <repositories>
+    <repository>
+      <name>website</name>
+      <provider>jackrabbit</provider>
+      <loadOnStartup>true</loadOnStartup>
+    </repository>
+  </repositories>
+</module>

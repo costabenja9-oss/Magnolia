@@ -1,0 +1,65 @@
+---
+import { marked } from 'marked'
+import magnolia from '@/lib/magnolia'
+import Layout from '@/components/Layout.astro'
+import FormContainer from '@/components/FormContainer.astro'
+import Input from '@/components/Input.astro'
+import Select from '@/components/Select.astro'
+
+const { t } = Astro.locals
+
+const { title, description } = await magnolia.get('/pages/contact', {
+  lang: Astro.currentLocale!
+})
+---
+
+<Layout
+  title={t['contact']}
+  description={description.replace('\n', ' ')}
+  overlay
+>
+  <section
+    class:list={[
+      'pt-32 pb-24 px-5 bg-linear-180 from-red-50 to-red-100',
+      'bg-size-[auto_56%] bg-no-repeat sm:px-10 md:pb-32 lg:px-13 xl:pt-52'
+    ]}
+  >
+    <FormContainer>
+      <Fragment slot="header">
+        <h1 class="font-bold text-3xl xl:text-5xl">{title}</h1>
+        <p
+          class="mt-7 text-lg xl:text-xl/snug"
+          set:html={marked.parseInline(description, { breaks: true })}
+        />
+      </Fragment>
+      <div class="grid gap-4 md:grid-cols-2 xl:gap-5">
+        <Input placeholder={t['first_name']} required />
+        <Input placeholder={t['last_name']} required />
+        <Input placeholder={t['company_name']} required />
+        <Input placeholder={t['job_title']} required />
+        <Input placeholder={t['corporate_email']} required />
+        <Input type="number" placeholder={t['phone_number']} />
+        <Select placeholder={t['what_are_you_interested_in']}>
+          <option>{t['information']}</option>
+          <option>{t['a_meeting']}</option>
+          <option>{t['a_demo']}</option>
+        </Select>
+        <Select placeholder={t['company_size']}>
+          <option>50-100 {t['employees']}</option>
+          <option>100-150 {t['employees']}</option>
+          <option>{t['more_than']} 150 {t['employees']}</option>
+        </Select>
+        <Select src="industry-select" />
+        <Select src="region-select" />
+        <textarea
+          class:list={[
+            'py-3.5 px-4.5 rounded ring ring-inset ring-gray-500 resize-none',
+            'leading-tight placeholder:text-current/70 focus:ring-orange-600',
+            'md:col-span-2'
+          ]}
+          placeholder={`${t['your_message']}...`}
+          rows="4"></textarea>
+      </div>
+    </FormContainer>
+  </section>
+</Layout>

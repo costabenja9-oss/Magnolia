@@ -1,0 +1,5 @@
+title: Financial Services
+renderType: freemarker
+templateScript: /b-fy/templates/pages/industry-detail/financial-services.ftl
+dialog: b-fy:pages/industry-detail/financial-services
+visible: true

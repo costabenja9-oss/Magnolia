@@ -1,0 +1,7 @@
+title: Developers
+dialog: b-fy:pages/developers
+renderType: freemarker
+templateScript: /b-fy/templates/pages/developers.ftl
+description: Developers page migrated with default content
+
+visible: true

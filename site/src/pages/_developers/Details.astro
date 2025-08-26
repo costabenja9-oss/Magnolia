@@ -1,0 +1,71 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+interface Item {
+  icon: string
+  name: string
+  description: string
+  link?: string
+}
+
+const currentLocale = Astro.currentLocale!
+
+const [data, items] = await Promise.all([
+  magnolia.get('/pages/developers/details', { lang: currentLocale }),
+  magnolia.get<Item[]>('/pages/developers/details/items/@nodes', {
+    lang: currentLocale
+  })
+])
+---
+
+<section class="mb-15 bg-neutral-200 lg:grid lg:grid-cols-2">
+  <Image
+    class="size-full object-cover hidden rounded-tr-2xl lg:block"
+    data={data.image}
+  />
+  <div class="py-10 px-5 text-lg sm:p-10 xl:p-13">
+    <hgroup>
+      <p
+        class:list={[
+          'w-fit py-2.5 px-5 rounded bg-orange-600 leading-tight text-white',
+          'uppercase xl:text-xl'
+        ]}
+      >
+        {data.tagline}
+      </p>
+      <h2 class="mt-8 mb-5 font-bold text-3xl text-pretty xl:text-5xl">
+        {data.title}
+      </h2>
+    </hgroup>
+    <p>
+      <strong>{data.subtitle}</strong>
+      {data.description}
+    </p>
+    <ul class="mt-9 grid gap-5">
+      {
+        items.map(({ icon, name, description, link }) => {
+          const Element = link ? 'a' : 'span'
+          const props = link
+            ? {
+                class: 'underline-offset-2 hover:underline',
+                href: link,
+                target: '_blank',
+                rel: 'noreferrer'
+              }
+            : {}
+
+          return (
+            <li class="flex gap-4">
+              <Image class="size-10 mt-1 shrink-0 object-contain" src={icon} />
+              <Element {...props}>
+                <strong>{name}</strong>
+                {description}
+              </Element>
+            </li>
+          )
+        })
+      }
+    </ul>
+  </div>
+</section>

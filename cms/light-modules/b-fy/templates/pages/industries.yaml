@@ -1,0 +1,7 @@
+title: Industries
+dialog: b-fy:pages/industries
+renderType: freemarker
+templateScript: /b-fy/templates/pages/industries.ftl
+description: Industries page migrated with default content
+
+visible: true

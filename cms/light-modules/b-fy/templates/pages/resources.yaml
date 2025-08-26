@@ -1,0 +1,7 @@
+title: Resources
+dialog: b-fy:pages/resources
+renderType: freemarker
+templateScript: /b-fy/templates/pages/resources.ftl
+description: Resources page migrated with default content
+
+visible: true

@@ -1,0 +1,80 @@
+---
+import magnolia from '@/lib/magnolia'
+import Layout from '@/components/Layout.astro'
+import Video from '@/components/Video.astro'
+import Image from '@/components/Image'
+import CallToAction from '@/components/CallToAction.astro'
+import Threats from './_Threats.astro'
+import Features from './_Features.astro'
+import Product from './_Product.astro'
+
+type Details = Array<{
+  icon: string
+  title: string
+  description: string
+}>
+
+const { path, name } = Astro.params
+const currentLocale = Astro.currentLocale!
+
+if (path === 'en' || (path && path !== currentLocale)) {
+  return new Response(null, { status: 404 })
+}
+
+const [data, details] = await Promise.all([
+  magnolia.get(`/industries/${name}`, { lang: currentLocale }),
+  magnolia.get<Details>(`/industries/${name}/details/@nodes`, {
+    lang: currentLocale
+  })
+])
+
+if (data.error) return new Response(null, { status: 404 })
+---
+
+<Layout title={data.tagline} description={data.description}>
+  <section
+    class:list={[
+      'mt-12 px-5 bg-linear-(--color-red-100) bg-size-[auto_80%] bg-no-repeat',
+      'bg-bottom text-center text-pretty sm:px-10 sm:bg-size-[auto_70%]',
+      'lg:px-13 xl:mt-20'
+    ]}
+  >
+    <hgroup>
+      <p
+        class:list={[
+          'py-2.5 px-5 inline-block rounded bg-orange-600 leading-none',
+          'text-white uppercase'
+        ]}
+      >
+        {data.tagline}
+      </p>
+      <h1 class="max-w-2xl mt-6 mx-auto font-bold text-3xl xl:text-5xl">
+        {data.title}
+      </h1>
+    </hgroup>
+    <Video class="max-w-6xl! mt-20 mb-15 mx-auto" id={data.videoId} />
+    <p class="max-w-5xl mx-auto text-lg xl:text-xl/snug">
+      {data.description}
+    </p>
+    <div class="max-w-4xl mx-auto pt-20 pb-24 grid text-left sm:grid-cols-2">
+      {
+        details.map(({ icon, title, description }) => (
+          <article
+            class:list={[
+              'p-5 bg-white from-white to-red-100 even:bg-linear-240',
+              'sm:p-10 sm:nth-[4n]:bg-none sm:nth-[3n]:bg-linear-240 lg:p-13'
+            ]}
+          >
+            <Image class="size-11 object-contain" src={icon} />
+            <h3 class="mt-4 mb-3 font-bold text-xl/tight uppercase">{title}</h3>
+            <p class="leading-snug">{description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <Threats title={data.threatsTitle} />
+  <Features tagline={data.featuresTagline} title={data.featuresTitle} />
+  <Product />
+  <CallToAction background={data.callToAction} />
+</Layout>

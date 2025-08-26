@@ -1,0 +1,41 @@
+---
+import magnolia from '@/lib/magnolia'
+import IconFilter from '@/assets/icons/filter.svg'
+import IconArrowRight from '@/assets/icons/arrow-right.svg'
+import Pagination from './Pagination'
+
+interface Props {
+  featuredPost: string
+}
+
+const { t } = Astro.locals
+
+const categories = ['all', 'regulation', 'biometrics', 'cybersecurity']
+
+const params = {
+  '@name[ne]': Astro.props.featuredPost,
+  orderBy: 'createdAt desc,mgnl:lastModified desc',
+  limit: '9',
+  lang: Astro.currentLocale!
+}
+
+const labels = [
+  ...categories.map((category) => t[category]),
+  t['learn_more'],
+  t['view_more']
+]
+
+const data = await magnolia.get('/posts', params)
+---
+
+<Pagination
+  title={t['other_posts']}
+  categories={categories}
+  labels={labels}
+  initialState={data}
+  params={params}
+  client:visible
+>
+  <IconFilter class="w-5" slot="iconFilter" />
+  <IconArrowRight class="w-2.75" slot="iconArrowRight" />
+</Pagination>

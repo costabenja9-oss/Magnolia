@@ -1,0 +1,12 @@
+{
+  "traditional_2fa": "2FA Tradicional (SMS, OTP, Apps)",
+  "passwords": "Contraseñas",
+  "yes": "Sí",
+  "no": "No",
+  "request_demo_here": "Pide una demo aquí",
+  "register_in_seconds": "Regístrate en segundos",
+  "video_register_description": "Configura tu cuenta en pocos pasos y comienza a disfrutar de una autenticación segura y sin contraseñas.",
+  "this_easy_is_using_bfy": "Así de fácil es usar B-FY",
+  "video_login_description": "Accede a tus servicios rápidamente y sin esfuerzo. Mira cómo funciona, paso a paso.",
+  "want_to_know_more": "¿Quieres saber más?"
+}

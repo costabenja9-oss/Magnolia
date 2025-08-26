@@ -1,0 +1,5 @@
+title: Cookie Banner
+renderType: freemarker
+templateScript: /b-fy/templates/components/cookie-banner.ftl
+# No dialog needed for this static component
+modelClass: info.magnolia.rendering.model.RenderingModel

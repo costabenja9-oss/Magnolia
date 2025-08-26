@@ -1,0 +1,18 @@
+{
+  "name": "cms",
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "mgnl start"
+  },
+  "dependencies": {
+    "@magnolia/cli": "^5.0.2",
+    "@magnolia/cli-create-app-plugin": "^1.1.0",
+    "@magnolia/cli-create-component-plugin": "^1.2.1",
+    "@magnolia/cli-create-content-type-plugin": "^1.1.0",
+    "@magnolia/cli-create-light-module-plugin": "^1.0.2",
+    "@magnolia/cli-create-page-plugin": "^1.2.1",
+    "@magnolia/cli-create-virtual-uri-plugin": "^1.0.1",
+    "@magnolia/cli-start-plugin": "^1.0.3"
+  }
+}

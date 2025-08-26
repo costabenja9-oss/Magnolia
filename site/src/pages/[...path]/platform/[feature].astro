@@ -1,0 +1,79 @@
+---
+import magnolia from '@/lib/magnolia'
+import Layout from '@/components/Layout.astro'
+import Image from '@/components/Image'
+
+interface Item {
+  title: string
+  description: string
+  image: any
+}
+
+const { path, feature } = Astro.params
+const currentLocale = Astro.currentLocale!
+
+if (path === 'en' || (path && path !== currentLocale)) {
+  return new Response(null, { status: 404 })
+}
+
+const [result, items] = await Promise.all([
+  magnolia.get(`/features/${feature}`, { lang: currentLocale }),
+  magnolia.get<Item[]>(`/features/${feature}/items/@nodes`, {
+    lang: currentLocale
+  })
+])
+
+if (result.error) return new Response(null, { status: 404 })
+
+const { title, description, summary } = result
+---
+
+<Layout title={title} description={description}>
+  <section class="mt-12 mb-26 px-5 sm:px-10 lg:px-13 xl:mt-24">
+    <div class="max-w-215 mx-auto mb-15 text-center text-pretty">
+      <h1 class="mb-5 font-bold text-3xl xl:text-5xl">
+        {title}
+      </h1>
+      <p class="text-lg xl:text-xl/snug">{summary}</p>
+    </div>
+    <ol class="max-w-274 mx-auto grid gap-20">
+      {
+        items.map(({ title, description, image }, index) => (
+          <li
+            class:list={[
+              'py-8 px-7 grid gap-8 rounded-lg bg-neutral-200 md:pl-9',
+              'md:grid-cols-2 md:items-center xl:pl-11'
+            ]}
+          >
+            <div>
+              <mark
+                class:list={[
+                  'bg-transparent font-bold text-xl text-orange-600',
+                  'xl:text-3xl/none'
+                ]}
+              >
+                {String(index + 1).padStart(2, '0')}.
+              </mark>
+              <h2
+                class:list={[
+                  'mt-7 font-bold text-2xl/tight text-pretty md:max-w-100',
+                  'xl:mt-8 xl:text-4xl'
+                ]}
+              >
+                {title}
+              </h2>
+              <p class="mt-4.5 leading-snug text-balance xl:text-xl/snug">
+                {description}
+              </p>
+            </div>
+            <Image
+              class="size-full object-cover rounded-lg"
+              data={image}
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+</Layout>

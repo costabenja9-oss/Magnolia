@@ -1,0 +1,34 @@
+---
+import { marked } from 'marked'
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+const { image, tagline, title, description } = await magnolia.get(
+  `/industries/${Astro.params.name}/product`,
+  { lang: Astro.currentLocale! }
+)
+---
+
+<section class="bg-neutral-200 text-pretty md:grid md:grid-cols-2">
+  <Image
+    class="size-full object-cover rounded-tr-2xl hidden md:block"
+    data={image}
+  />
+  <div class="py-10 px-5 flex flex-col justify-center sm:p-10 lg:p-13">
+    <hgroup>
+      <p
+        class:list={[
+          'w-fit py-2.5 px-5 rounded bg-orange-600 leading-none text-white',
+          'uppercase'
+        ]}
+      >
+        {tagline}
+      </p>
+      <h2 class="my-5 font-bold text-3xl xl:text-5xl">{title}</h2>
+    </hgroup>
+    <div
+      class="space-y-5 text-lg xl:text-xl/snug"
+      set:html={marked.parse(description)}
+    />
+  </div>
+</section>

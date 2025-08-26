@@ -1,0 +1,26 @@
+$type: jcrDeliveryEndpoint_v2
+workspace: industries
+bypassWorkspaceAcls: true
+
+nodeTypes:
+  - mgnl:industries
+  - mgnl:contentNode
+
+references:
+  thumbnailReference:
+    propertyName: thumbnail
+    referenceResolver:
+      $type: assetReferenceResolver
+  iconReference:
+    propertyName: icon
+    referenceResolver:
+      $type: assetReferenceResolver
+      expand: false
+  imageReference:
+    propertyName: image
+    referenceResolver:
+      $type: assetReferenceResolver
+  callToActionReference:
+    propertyName: callToAction
+    referenceResolver:
+      $type: assetReferenceResolver

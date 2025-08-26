@@ -1,0 +1,64 @@
+---
+import Image from '@/components/Image'
+import CarouselButtons from '@/components/CarouselButtons.astro'
+
+interface Props {
+  list: Array<{ image: any; title: string; description: string }>
+}
+---
+
+<div class="overflow-hidden mt-16 rounded-lg" id="carousel">
+  <div class="flex text-left text-pretty text-white">
+    {
+      Astro.props.list.map(({ image, title, description }, index) => (
+        <article class="relative h-135 shrink-0 basis-full bg-stone-800">
+          <Image
+            class="size-full object-cover"
+            data={image}
+            loading={index === 0 ? 'eager' : 'lazy'}
+          />
+          <div
+            class:list={[
+              'absolute inset-0 p-5 flex flex-col justify-end bg-linear-180',
+              'to-orange-600 sm:p-10 lg:px-13'
+            ]}
+          >
+            <h2
+              class:list={[
+                'max-w-lg mb-5 pl-3 py-1 border-l-3 font-bold text-2xl',
+                'xl:text-3xl'
+              ]}
+            >
+              {title}
+            </h2>
+            <div
+              class="max-w-4xl space-y-2 text-lg xl:text-xl/snug"
+              set:html={description}
+            />
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</div>
+<CarouselButtons class="my-10 justify-end" />
+
+<script>
+  import EmblaCarousel from 'embla-carousel'
+
+  const carousel = document.getElementById('carousel')!
+
+  const buttonsContainer = carousel.nextElementSibling!
+
+  const embla = EmblaCarousel(carousel, {
+    loop: true,
+    breakpoints: { '(width >= 80rem)': { watchDrag: false } }
+  })
+
+  const prevButton = buttonsContainer.querySelector('button')!
+
+  const nextButton = buttonsContainer.querySelector('button:last-child')!
+
+  prevButton.addEventListener('click', () => embla.scrollPrev())
+  nextButton.addEventListener('click', () => embla.scrollNext())
+</script>

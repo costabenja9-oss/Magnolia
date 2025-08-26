@@ -1,0 +1,96 @@
+---
+import magnolia from '@/lib/magnolia'
+import { getLocalePath } from '@/lib/utils'
+import Image from '@/components/Image'
+import CarouselButtons from '@/components/CarouselButtons.astro'
+import IconArrowRight from '@/assets/icons/arrow-right.svg'
+
+interface Industry {
+  thumbnail: any
+  tagline: string
+  summary: string
+  '@name': string
+}
+
+const currentLocale = Astro.currentLocale!
+
+const [{ tagline, title, description }, { results }] = await Promise.all([
+  magnolia.get('/pages/home/industries', { lang: currentLocale }),
+  magnolia.get<{ results: Industry[] }>('/industries', {
+    'thumbnail[null]': 'false',
+    properties: 'thumbnail,tagline,summary',
+    lang: currentLocale
+  })
+])
+---
+
+<section
+  class:list={[
+    'overflow-hidden mb-26 py-15 px-5 bg-neutral-200 text-pretty sm:px-10',
+    'lg:px-13'
+  ]}
+>
+  <hgroup>
+    <p
+      class:list={[
+        'w-fit py-2.5 px-5 rounded bg-orange-600 leading-none uppercase',
+        'text-white xl:text-xl'
+      ]}
+    >
+      {tagline}
+    </p>
+    <h2 class="mt-7 mb-9 font-bold text-3xl xl:text-5xl">
+      {title}
+    </h2>
+  </hgroup>
+  <p class="max-w-220 text-lg xl:text-xl/snug">{description}</p>
+  <div class="mt-13" id="industries">
+    <div class="mb-13 flex gap-5">
+      {
+        results.map(({ thumbnail, tagline, summary, '@name': name }) => (
+          <article
+            class={
+              'max-w-100 w-[calc(100%-(--spacing(5)))] shrink-0 flex flex-col'
+            }
+          >
+            <Image class="rounded-lg" data={thumbnail} />
+            <h3 class="mt-8 mb-4 font-bold text-xl text-orange-600 uppercase">
+              {tagline}
+            </h3>
+            <p class="mb-5 text-lg">{summary}</p>
+            <a
+              class:list={[
+                'w-fit mt-auto flex gap-1.5 text-orange-600 transition-colors',
+                'hover:text-red-800'
+              ]}
+              href={getLocalePath(currentLocale, `industries/${name}`)}
+            >
+              <span class="underline underline-offset-2">
+                {Astro.locals.t['learn_more']}
+              </span>
+              <IconArrowRight class="w-2.75" />
+            </a>
+          </article>
+        ))
+      }
+    </div>
+    <CarouselButtons />
+  </div>
+</section>
+
+<script>
+  import EmblaCarousel from 'embla-carousel'
+
+  const carousel = document.getElementById('industries')!
+
+  const embla = EmblaCarousel(carousel, {
+    breakpoints: { '(width >= 80rem)': { watchDrag: false } }
+  })
+
+  const prevButton = carousel.querySelector('button')!
+
+  const nextButton = carousel.querySelector('button:last-child')!
+
+  prevButton.addEventListener('click', () => embla.scrollPrev())
+  nextButton.addEventListener('click', () => embla.scrollNext())
+</script>

@@ -1,0 +1,14 @@
+---
+import type { AstroInstance } from 'astro'
+
+const { currentLocale, params } = Astro
+const path = currentLocale === 'en' ? params.path : params.path!.substring(3)
+const pages = import.meta.glob<AstroInstance>('../_*/index.astro')
+const getPage = pages[`../_${path || 'home'}/index.astro`]
+
+if (!getPage) return new Response(null, { status: 404 })
+
+const { default: Page } = await getPage()
+---
+
+<Page />

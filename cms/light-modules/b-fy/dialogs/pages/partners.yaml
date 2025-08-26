@@ -1,0 +1,177 @@
+label: Partners
+form:
+  $type: tabbedForm
+  tabs:
+    page:
+      label: Properties
+      fields:
+        tagline:
+          $type: textField
+          label: Tagline
+          i18n: true
+          defaultValue: "Únete al ecosistema B-FY"
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Partnerships que transforman la autenticación digital"
+        image:
+          $type: damLinkField
+          label: Image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes: 
+              - mgnl:asset
+        description:
+          $type: textField
+          label: Description
+          rows: 3
+          i18n: true
+          defaultValue: "Conecta con B-FY y ofrece a tus usuarios la experiencia de autenticación biométrica más segura y privada del mercado."
+    details:
+      label: Details
+      fields:
+        details:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+              defaultValue: "Beneficios de ser partner B-FY"
+            description:
+              $type: textField
+              label: Description
+              rows: 3
+              i18n: true
+              defaultValue: "Descubre las ventajas exclusivas que obtienes al integrar la tecnología B-FY en tu plataforma."
+            items:
+              $type: jcrMultiField
+              label: Items
+              field:
+                $type: compositeField
+                label: Item
+                properties:
+                  image:
+                    $type: damLinkField
+                    label: Image
+                    datasource:
+                      $type: jcrDatasource
+                      workspace: dam
+                      rootPath: /
+                      allowedNodeTypes: 
+                        - mgnl:asset
+                  title:
+                    $type: textField
+                    label: Title
+                    i18n: true
+                  description:
+                    $type: textField
+                    label: Description
+                    rows: 4
+                    i18n: true
+    list:
+      label: Partners List
+      fields:
+        list:
+          $type: jcrMultiField
+          label: Properties
+          field:
+            $type: compositeField
+            label: Partner
+            properties:
+              name:
+                $type: textField
+                label: Name
+                defaultValue: "Partner Ejemplo"
+              logo:
+                $type: damLinkField
+                label: Logo
+                datasource:
+                  $type: jcrDatasource
+                  workspace: dam
+                  rootPath: /
+                  allowedNodeTypes: 
+                    - mgnl:asset
+    benefits:
+      label: Benefits
+      fields:
+        benefits:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+              defaultValue: "Ventajas competitivas para partners"
+            description:
+              $type: textField
+              label: Description
+              rows: 2
+              i18n: true
+              defaultValue: "Potencia tu negocio con la tecnología de autenticación biométrica más avanzada"
+            items:
+              $type: jcrMultiField
+              label: Items
+              field:
+                $type: compositeField
+                label: Item
+                properties:
+                  icon:
+                    $type: damLinkField
+                    label: Icon
+                    datasource:
+                      $type: jcrDatasource
+                      workspace: dam
+                      rootPath: /
+                      allowedNodeTypes: 
+                        - mgnl:asset
+                  title:
+                    $type: textField
+                    label: Title
+                    i18n: true
+                  description:
+                    $type: textField
+                    label: Description
+                    rows: 2
+                    i18n: true
+    form:
+      label: Form
+      fields:
+        form:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+              defaultValue: "¿Listo para ser partner de B-FY?"
+            content:
+              $type: richTextField
+              label: Content
+              height: 180
+              i18n: true
+              defaultValue: "Completa el formulario y nuestro equipo se pondrá en contacto contigo para explorar oportunidades de colaboración."
+            description:
+              $type: textField
+              label: Description
+              rows: 3
+              i18n: true
+              defaultValue: "Únete a nuestro ecosistema de partners y transforma la experiencia de autenticación de tus usuarios."

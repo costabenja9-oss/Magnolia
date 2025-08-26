@@ -1,0 +1,21 @@
+---
+import magnolia from '@/lib/magnolia'
+
+const { tagline, title, content } = await magnolia.get(
+  '/pages/about-us/message',
+  { lang: Astro.currentLocale! }
+)
+---
+
+<section class="py-15 px-5 bg-neutral-200 sm:px-10 lg:px-13">
+  <div class="max-w-6xl mx-auto">
+    <hgroup>
+      <strong class="text-lg xl:text-2xl">{tagline}</strong>
+      <h2 class="font-bold text-3xl xl:text-5xl">{title}</h2>
+    </hgroup>
+    <div
+      class="mt-5 space-y-4 leading-snug xl:text-xl/snug"
+      set:html={content}
+    />
+  </div>
+</section>

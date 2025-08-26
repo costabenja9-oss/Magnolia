@@ -1,0 +1,113 @@
+---
+import magnolia from '@/lib/magnolia'
+import IconChevron from '@/assets/icons/chevron.svg'
+
+interface Client {
+  testimonial: string
+  name: string
+  position: string
+}
+
+const clients: Client[] = await magnolia.get(
+  '/pages/home/testimonials/@nodes',
+  { lang: Astro.currentLocale! }
+)
+---
+
+<section class="mb-22 sm:px-10 lg:px-13">
+  <div
+    class:list={[
+      'overflow-hidden relative max-w-6xl mx-auto shadow-xl bg-red-100',
+      'sm:rounded-lg'
+    ]}
+    id="testimonials"
+  >
+    <ul class="flex text-center">
+      {
+        clients.map(({ testimonial, name, position }) => (
+          <li class="py-12 px-15 shrink-0 basis-full flex flex-col sm:px-18">
+            <figure class="max-w-3xl m-auto">
+              <blockquote
+                class="mb-12 space-y-4 text-lg/tight text-pretty"
+                set:html={testimonial}
+              />
+              <figcaption>
+                <cite class="font-bold text-2xl not-italic">{name}</cite>
+                <p class="mt-px leading-tight text-pretty">{position}</p>
+              </figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+    <button
+      class:list={[
+        'absolute inset-y-0 left-5 h-fit my-auto transition-colors',
+        'hover:text-orange-600 sm:left-6'
+      ]}
+    >
+      <IconChevron class="w-4 rotate-90" />
+    </button>
+    <button
+      class:list={[
+        'absolute inset-y-0 right-5 h-fit my-auto transition-colors',
+        'hover:text-orange-600 sm:right-6'
+      ]}
+    >
+      <IconChevron class="w-4 rotate-270" />
+    </button>
+  </div>
+  <nav class="mt-12">
+    <ul class="flex justify-center gap-2.5">
+      {
+        Array.from({ length: clients.length }, (_, index) => (
+          <li>
+            <button
+              class:list={[
+                'h-1.5 w-8 rounded-full transition-colors',
+                index === 0
+                  ? 'bg-neutral-400'
+                  : 'bg-neutral-300 hover:bg-red-100'
+              ]}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</section>
+
+<script>
+  import EmblaCarousel from 'embla-carousel'
+
+  const carousel = document.getElementById('testimonials')!
+
+  const embla = EmblaCarousel(carousel, {
+    loop: true,
+    breakpoints: { '(width >= 80rem)': { watchDrag: false } }
+  })
+
+  const prevButton = carousel.querySelector('button')!
+
+  const nextButton = carousel.querySelector('button:last-child')!
+
+  const dots = carousel.nextElementSibling!.querySelectorAll('ul li button')
+
+  prevButton.addEventListener('click', () => embla.scrollPrev())
+  nextButton.addEventListener('click', () => embla.scrollNext())
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => embla.scrollTo(index))
+  })
+
+  embla.on('select', () => {
+    const previous = embla.previousScrollSnap()
+    const selected = embla.selectedScrollSnap()
+
+    dots[previous].classList.remove('bg-neutral-400')
+    dots[previous].classList.add('bg-neutral-300', 'hover:bg-red-100')
+
+    dots[selected].classList.remove('bg-neutral-300', 'hover:bg-red-100')
+    dots[selected].classList.add('bg-neutral-400')
+  })
+</script>

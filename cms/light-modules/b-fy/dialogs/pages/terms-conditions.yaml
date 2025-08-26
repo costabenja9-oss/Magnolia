@@ -1,0 +1,11 @@
+label: Terms and conditions
+form:
+  properties:
+    content:
+      $type: richTextField
+      label: Content
+      images: true
+      source: true
+      tables: true
+      height: 280
+      i18n: true

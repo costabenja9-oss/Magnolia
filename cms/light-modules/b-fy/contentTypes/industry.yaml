@@ -1,0 +1,121 @@
+datasource:
+  workspace: industries
+  autoCreate: true
+
+model:
+  nodeType: mgnl:industries
+  properties:
+    thumbnail:
+      type: asset
+      label: Thumbnail
+      required: true
+    tagline:
+      label: Tagline
+      required: true
+      i18n: true
+    summary:
+      label: Summary
+      required: true
+      i18n: true
+    title:
+      label: Title
+      required: true
+      i18n: true
+    videoId:
+      label: Video ID
+      required: true
+      i18n: true
+    description:
+      label: Description
+      required: true
+      i18n: true
+    details:
+      type: detail
+      label: Details
+      multiple: true
+    threatsTitle:
+      label: Threats Title
+      required: true
+      i18n: true
+    threats:
+      type: threat
+      label: Threats
+      multiple: true
+    featuresTagline:
+      label: Features Tagline
+      i18n: true
+    featuresTitle:
+      label: Features Title
+      i18n: true
+    features:
+      type: feature
+      label: Features
+      multiple: true
+    product:
+      type: product
+      label: Product
+    callToAction:
+      type: asset
+      label: Call To Action
+
+  subModels:
+    detail:
+      properties:
+        icon:
+          type: asset
+          label: Icon
+          required: true
+        title:
+          label: Title
+          required: true
+          i18n: true
+        description:
+          label: Description
+          required: true
+          i18n: true
+    threat:
+      properties:
+        image:
+          type: asset
+          label: Image
+          required: true
+        title:
+          label: Title
+          required: true
+          i18n: true
+        description:
+          label: Description
+          required: true
+          i18n: true
+    feature:
+      properties:
+        icon:
+          type: asset
+          label: Icon
+          required: true
+        name:
+          label: Name
+          required: true
+          i18n: true
+        description:
+          label: Description
+          required: true
+          i18n: true
+    product:
+      properties:
+        image:
+          type: asset
+          label: Image
+          required: true
+        tagline:
+          label: Tagline
+          required: true
+          i18n: true
+        title:
+          label: Title
+          required: true
+          i18n: true
+        description:
+          label: Description
+          required: true
+          i18n: true

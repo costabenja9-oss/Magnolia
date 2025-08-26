@@ -1,0 +1,271 @@
+label: Home
+form:
+  $type: tabbedForm
+  tabs:
+    page:
+      label: Properties
+      fields:
+        tagline:
+          $type: textField
+          label: Tagline
+          i18n: true
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+        description:
+          $type: textField
+          label: Description
+          rows: 3
+          i18n: true
+        hook:
+          $type: textField
+          label: Hook
+          rows: 2
+          i18n: true
+        heroImage:
+          $type: damLinkField
+          label: Hero Image
+          required: false
+    platform:
+      label: Platform
+      fields:
+        platform:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            tagline:
+              $type: textField
+              label: Tagline
+              i18n: true
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 5
+              i18n: true
+    industries:
+      label: Industries
+      fields:
+        industries:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            tagline:
+              $type: textField
+              label: Tagline
+              i18n: true
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 3
+              i18n: true
+            items:
+              $type: jcrMultiField
+              label: Industry Items
+              field:
+                $type: compositeField
+                label: Industry
+                properties:
+                  name:
+                    $type: textField
+                    label: Name
+                    i18n: true
+                  summary:
+                    $type: textField
+                    label: Summary
+                    rows: 5
+                    i18n: true
+                  link:
+                    $type: textField
+                    label: Link (URL or anchor)
+                  thumbnail:
+                    $type: damLinkField
+                    label: Thumbnail Image
+    testimonials:
+      label: Testimonials
+      fields:
+        testimonialsConfig:
+          $type: compositeField
+          label: Section Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 5
+              i18n: true
+        testimonials:
+          $type: jcrMultiField
+          label: Properties
+          field:
+            $type: compositeField
+            label: Client
+            properties:
+              testimonial:
+                $type: textField
+                label: Testimonial
+                rows: 8
+                i18n: true
+              name:
+                $type: textField
+                label: Name
+              position:
+                $type: textField
+                label: Position
+                i18n: true
+    partners:
+      label: Partners
+      fields:
+        partners:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            image:
+              $type: damLinkField
+              label: Image
+            tagline:
+              $type: textField
+              label: Tagline
+              i18n: true
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 5
+              i18n: true
+            benefits:
+              $type: jcrMultiField
+              label: Benefits
+              field:
+                $type: compositeField
+                label: Benefit
+                properties:
+                  icon:
+                    $type: damLinkField
+                    label: Icon
+                  description:
+                    $type: textField
+                    label: Description
+                    i18n: true
+    callToAction:
+      label: Call To Action
+      fields:
+        cta:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            tagline:
+              $type: textField
+              label: Tagline
+              i18n: true
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 5
+              i18n: true
+            primaryButtonLabel:
+              $type: textField
+              label: Primary Button Label
+              i18n: true
+            primaryButtonLink:
+              $type: textField
+              label: Primary Button Link
+            secondaryButtonLabel:
+              $type: textField
+              label: Secondary Button Label
+              i18n: true
+            secondaryButtonLink:
+              $type: textField
+              label: Secondary Button Link
+            background:
+              $type: damLinkField
+              label: Background Image
+    newsletter:
+      label: Newsletter
+      fields:
+        newsletter:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 3
+              i18n: true
+    assets:
+      label: Assets
+      fields:
+        certifications:
+          $type: jcrMultiField
+          label: Certifications
+          field:
+            $type: compositeField
+            label: Certification
+            properties:
+              image:
+                $type: damLinkField
+                label: Image
+              alt:
+                $type: textField
+                label: Alt
+                i18n: true
+        logos:
+          $type: jcrMultiField
+          label: Logos
+          field:
+            $type: compositeField
+            label: Logo
+            properties:
+              logo:
+                $type: damLinkField
+                label: Image
+              alt:
+                $type: textField
+                label: Alt
+                i18n: true

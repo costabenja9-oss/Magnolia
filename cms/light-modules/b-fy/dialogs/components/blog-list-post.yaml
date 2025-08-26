@@ -1,0 +1,35 @@
+form:
+  tabs:
+    - name: tabBlog
+      label: Blog Settings
+      fields:
+        - name: title
+          class: info.magnolia.ui.field.TextFieldDefinition
+          label: Title
+          description: Main title for the blog list
+        - name: subtitle
+          class: info.magnolia.ui.field.TextFieldDefinition
+          label: Subtitle
+          description: Subtitle description
+        - name: folder
+          class: info.magnolia.ui.field.TextFieldDefinition
+          label: Stories Folder
+          description: Path to stories folder (e.g. /blog)
+          defaultValue: /blog
+        - name: limit
+          class: info.magnolia.ui.field.TextFieldDefinition
+          label: Limit
+          description: Maximum number of posts to show
+          defaultValue: 999
+        - name: sortBy
+          class: info.magnolia.ui.field.SelectFieldDefinition
+          label: Sort By
+          description: Sort order for posts
+          defaultValue: desc
+          options:
+            - name: desc
+              value: desc
+              label: Newest First
+            - name: asc
+              value: asc
+              label: Oldest First

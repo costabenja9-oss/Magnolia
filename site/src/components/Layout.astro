@@ -1,0 +1,67 @@
+---
+import Search from './Search.astro'
+import Language from './Language.astro'
+import Header from './Header.astro'
+import NavLink from './NavLink.astro'
+import Footer from './Footer.astro'
+import '@/style.css'
+
+interface Props {
+  title?: string
+  description?: string
+  overlay?: boolean
+}
+
+const { t } = Astro.locals
+
+const { title, description, overlay } = Astro.props
+
+const navLinks: Array<[string, string]> = [
+  ['platform', t['platform']],
+  ['industries', t['industries']],
+  ['partners', t['partners']],
+  ['developers', t['developers']],
+  ['resources', t['resources']],
+  ['resources#blog', t['blog']],
+  ['resources#white-papers', t['white_papers']],
+  ['resources#newsroom', t['newsroom']],
+  ['resources#faqs', t['faqs']],
+  ['about-us', t['about_us']],
+  ['contact', t['contact']]
+]
+---
+
+<html lang={Astro.currentLocale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} - B-FY` : 'B-FY'}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href="/favicon.png" />
+  </head>
+  <body class="bg-white text-black">
+    <aside
+      class:list={[
+        'py-2 px-5 flex justify-end gap-6 bg-orange-600 text-sm text-white',
+        'sm:px-10 lg:px-13'
+      ]}
+    >
+      <Search />
+      <Language />
+    </aside>
+    <Header class={overlay && 'absolute'}>
+      <NavLink path={navLinks[0][0]} items={navLinks.slice(1, 4)}>
+        {navLinks[0][1]}
+      </NavLink>
+      <NavLink path={navLinks[4][0]} items={navLinks.slice(5, 9)}>
+        {navLinks[4][1]}
+      </NavLink>
+      <NavLink path={navLinks[9][0]}>{navLinks[9][1]}</NavLink>
+      <NavLink path={navLinks[10][0]}>{navLinks[10][1]}</NavLink>
+    </Header>
+    <main class="min-h-svh">
+      <slot />
+    </main>
+    <Footer navLinks={navLinks} />
+  </body>
+</html>

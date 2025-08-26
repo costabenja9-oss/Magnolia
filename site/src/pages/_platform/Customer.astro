@@ -1,0 +1,57 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+import CallToAction from './CallToAction.astro'
+
+interface Data {
+  title: string
+  description: string
+}
+
+const currentLocale = Astro.currentLocale!
+
+async function data(callback: (data: Data) => any) {
+  return magnolia
+    .get('/pages/platform/customer', { lang: currentLocale })
+    .then(callback)
+}
+
+async function features(callback: (feature: Data) => any) {
+  return magnolia
+    .get('/pages/platform/customer/features/@nodes', { lang: currentLocale })
+    .then((features: Data[]) => features.map(callback))
+}
+---
+
+<section class="relative py-24 px-5 text-center text-white sm:px-10 lg:px-13">
+  {
+    data(({ title, description }) => (
+      <>
+        <h2 class="font-bold text-3xl text-balance xl:text-5xl">{title}</h2>
+        <p class="max-w-3xl mt-9 mx-auto text-xl/snug xl:text-2xl">
+          {description}
+        </p>
+      </>
+    ))
+  }
+  <div
+    class="max-w-5xl mt-18 mb-24 mx-auto grid gap-15 md:grid-cols-2 lg:gap-x-24"
+  >
+    {
+      features(({ title, description }) => (
+        <article class="text-lg  xl:text-xl/tight">
+          <h3 class="font-bold text-pretty uppercase">{title}</h3>
+          <p class="max-w-108 mt-2 mx-auto">{description}</p>
+        </article>
+      ))
+    }
+  </div>
+  <CallToAction>{Astro.locals.t['want_to_know_more']}</CallToAction>
+  <Image
+    class="absolute inset-0 -z-1 size-full object-cover"
+    src="/images/customer.webp"
+    width={1440}
+    height={1071}
+  />
+  <span class="absolute inset-0 -z-1 bg-black/70"></span>
+</section>

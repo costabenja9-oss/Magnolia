@@ -1,0 +1,12 @@
+label: Contact Page
+workspace: website
+nodeType: mgnl:page
+properties:
+  title:
+    $type: text
+    required: true
+  description:
+    $type: text
+    required: true
+  content:
+    $type: richText

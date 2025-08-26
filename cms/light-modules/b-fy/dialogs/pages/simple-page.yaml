@@ -1,0 +1,12 @@
+label: Simple Page
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    description:
+      $type: textField
+      label: Text
+      rows: 2
+      i18n: true

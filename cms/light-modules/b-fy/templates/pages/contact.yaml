@@ -1,0 +1,4 @@
+title: Contact 
+templateScript: /b-fy/templates/pages/contact.ftl
+renderType: freemarker
+dialog: b-fy:pages/contact

@@ -1,0 +1,103 @@
+---
+import { getEntry } from 'astro:content'
+import magnolia from '@/lib/magnolia'
+import { getLocalePath } from '@/lib/utils'
+import IconPlus from '@/assets/icons/plus.svg'
+
+interface Props {
+  page: string
+}
+
+type Data = Array<{ question: string; answer: string }>
+
+const currentLocale = Astro.currentLocale!
+
+const { page } = Astro.props
+
+const [{ data: t }, data] = await Promise.all([
+  getEntry('translations', `${currentLocale}/faqs`)!,
+  magnolia.get<Data>(`/pages/${page}/faqs/@nodes`, { lang: currentLocale })
+])
+---
+
+<section class="pt-15 pb-18 px-5 bg-neutral-200 sm:px-10 lg:px-13" id="faqs">
+  <hgroup>
+    <p
+      class:list={[
+        'w-fit mx-auto py-2.5 px-5 rounded bg-orange-600 leading-none',
+        'text-white uppercase xl:text-xl'
+      ]}
+    >
+      {Astro.locals.t['faqs']}
+    </p>
+    <h2 class="mt-7 font-bold text-center text-3xl xl:text-5xl">
+      {t['title']}
+    </h2>
+  </hgroup>
+  <div class="max-w-4xl m-12 mb-15 mx-auto">
+    {
+      data.map(({ question, answer }) => (
+        <details class="group pt-4.5 pb-4 border-neutral-400 not-last:border-b">
+          <summary
+            class:list={[
+              'pb-2 flex justify-between gap-5 list-none select-none',
+              'trannsition-colors hover:*:text-red-800'
+            ]}
+          >
+            <strong class="text-lg/tight text-balance lg:text-xl/tight">
+              {question}
+            </strong>
+            <IconPlus
+              class:list={[
+                'w-5 shrink-0 text-orange-600 transition-transform',
+                'duration-300 group-open:-rotate-45'
+              ]}
+            />
+          </summary>
+          <div
+            class:list={[
+              'overflow-hidden h-0 space-y-2 leading-snug text-pretty',
+              'lg:text-lg'
+            ]}
+            set:html={answer}
+          />
+        </details>
+      ))
+    }
+  </div>
+  <p class="text-center text-lg text-pretty">
+    {t['question']}
+    <a
+      class:list={[
+        'text-orange-600 underline underline-offset-2 transition-colors',
+        'hover:text-red-800'
+      ]}
+      href={getLocalePath(Astro.currentLocale!, 'contact')}
+    >
+      {t['answer']}
+    </a>
+  </p>
+</section>
+
+<script>
+  import { gsap } from 'gsap'
+
+  for (const details of document.querySelectorAll('details')) {
+    details.addEventListener('toggle', () => {
+      if (details.open) {
+        gsap.fromTo(
+          details.querySelector('div'),
+          { y: -12, height: 0 },
+          { y: 0, height: 'auto', duration: 0.3, ease: 'power1.inOut' }
+        )
+      } else {
+        gsap.to(details.querySelector('div'), {
+          y: -12,
+          height: 0,
+          duration: 0.3,
+          ease: 'power1.inOut'
+        })
+      }
+    })
+  }
+</script>

@@ -1,0 +1,45 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+import IconCircleChevron from '@/assets/icons/circle-chevron.svg'
+
+type List = Array<{ name: string; description: string }>
+
+const currentLocale = Astro.currentLocale!
+
+const [{ image, title }, list] = await Promise.all([
+  magnolia.get('/pages/about-us/values', { lang: currentLocale }),
+  magnolia.get<List>('/pages/about-us/values/list/@nodes', {
+    lang: currentLocale
+  })
+])
+---
+
+<section class="text-lg lg:grid lg:grid-cols-2 xl:text-xl/snug">
+  <Image
+    class="size-full object-cover rounded-tr-2xl hidden lg:block"
+    data={image}
+  />
+  <div class="py-10 px-5 flex flex-col justify-center sm:p-10 lg:p-13">
+    <h2
+      class:list={[
+        'w-fit py-2.5 px-5 rounded bg-orange-600 leading-none text-white',
+        'uppercase'
+      ]}
+    >
+      {title}
+    </h2>
+    <ul class="mt-6 grid gap-4">
+      {
+        list.map(({ name, description }) => (
+          <li class="flex gap-3">
+            <IconCircleChevron class="size-5 mt-1 shrink-0 text-orange-600" />
+            <p>
+              <strong>{name}:</strong> {description}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

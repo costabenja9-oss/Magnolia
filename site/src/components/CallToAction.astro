@@ -1,0 +1,60 @@
+---
+import { getEntry } from 'astro:content'
+import { getLocalePath } from '@/lib/utils'
+import Image from './Image'
+
+interface Props {
+  background?: { '@link': string; metadata: { width: number; height: number } }
+}
+
+const currentLocale = Astro.currentLocale!
+
+const { t } = Astro.locals
+
+const { background } = Astro.props
+
+const { data } = await getEntry(
+  'translations',
+  `${currentLocale}/call-to-action`
+)!
+---
+
+<section
+  class:list={[
+    'relative pt-26 pb-20 px-5 text-center text-lg/none text-white sm:px-10',
+    'lg:px-13 xl:text-xl'
+  ]}
+>
+  <hgroup>
+    <p class="uppercase">{data.tagline}</p>
+    <h2 class="mt-5 mb-8 font-bold text-5xl">{data.title}</h2>
+  </hgroup>
+  <p class="max-w-2xl mb-16 mx-auto leading-snug">{data.description}</p>
+  <div class="flex flex-col gap-6 sm:flex-row sm:justify-center">
+    <a
+      class:list={[
+        'py-2.5 px-5 rounded bg-white text-black transition-colors',
+        'hover:text-red-800'
+      ]}
+      href={getLocalePath(currentLocale, 'contact')}
+    >
+      {t['request_demo']}
+    </a>
+    <a
+      class:list={[
+        'py-2.5 px-5 rounded ring ring-inset transition-colors',
+        'hover:text-orange-600'
+      ]}
+      href={getLocalePath(currentLocale, 'contact')}
+    >
+      {t['contact_us']}
+    </a>
+  </div>
+  <Image
+    class="absolute inset-0 -z-1 size-full object-cover"
+    src={background?.['@link'] || '/images/call-to-action.webp'}
+    width={background?.metadata.width || 1440}
+    height={background?.metadata.height || 490}
+  />
+  <span class="absolute inset-0 -z-1 bg-linear-180 to-black"></span>
+</section>

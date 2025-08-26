@@ -1,0 +1,27 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+const { title, description, image } = await magnolia.get(
+  '/pages/about-us/vision',
+  { lang: Astro.currentLocale! }
+)
+---
+
+<section class="text-right text-lg md:grid md:grid-cols-2 xl:text-xl/snug">
+  <div class="py-10 px-5 flex flex-col justify-center sm:p-10 lg:p-13">
+    <h2
+      class:list={[
+        'w-fit ml-auto py-2.5 px-5 rounded bg-orange-600 leading-none',
+        'text-white uppercase'
+      ]}
+    >
+      {title}
+    </h2>
+    <p class="mt-6 text-pretty">{description}</p>
+  </div>
+  <Image
+    class="size-full object-cover rounded-tr-2xl hidden md:block"
+    data={image}
+  />
+</section>

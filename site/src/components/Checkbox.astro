@@ -1,0 +1,21 @@
+---
+interface Props {
+  label: string
+  required?: boolean
+}
+
+const { label, required } = Astro.props
+---
+
+<label class="w-fit my-2 flex gap-3 text-sm/tight text-pretty hover:underline">
+  <input
+    class:list={[
+      'appearance-none size-4 mt-0.5 shrink-0 border border-black rounded-xs',
+      'checked:bg-orange-600'
+    ]}
+    type="checkbox"
+    checked
+    required={required}
+  />
+  {label}
+</label>

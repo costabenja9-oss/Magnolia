@@ -1,0 +1,5 @@
+title: Cookies and cache template
+renderType: freemarker
+templateScript: /b-fy/templates/pages/cookies-cache.ftl
+dialog: b-fy:pages/cookies-cache
+visible: true

@@ -1,0 +1,5 @@
+title: Decentralized Authentication
+renderType: freemarker
+templateScript: /b-fy/templates/pages/platform-details/decentralized-authentication.ftl
+dialog: b-fy:pages/platform-details/decentralized-authentication
+visible: true

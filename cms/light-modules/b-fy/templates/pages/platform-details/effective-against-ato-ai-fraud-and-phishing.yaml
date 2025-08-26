@@ -1,0 +1,5 @@
+title: Effective Against ATO AI Fraud and Phishing
+renderType: freemarker
+templateScript: /b-fy/templates/pages/platform-details/effective-against-ato-ai-fraud-and-phishing.ftl
+dialog: b-fy:pages/platform-details/effective-against-ato-ai-fraud-and-phishing
+visible: true

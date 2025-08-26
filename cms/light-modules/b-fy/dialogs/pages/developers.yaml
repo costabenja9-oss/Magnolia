@@ -1,0 +1,187 @@
+label: Developers
+form:
+  $type: tabbedForm
+  tabs:
+    page:
+      label: Properties
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Construye con B-FY"
+        description:
+          $type: textField
+          label: Description
+          rows: 2
+          i18n: true
+          defaultValue: "APIs y SDKs potentes para integrar autenticación biométrica descentralizada"
+        subtitle:
+          $type: textField
+          label: Subtitle
+          i18n: true
+          defaultValue: "Documentación completa y herramientas para developers"
+    features:
+      label: Features
+      fields:
+        features:
+          $type: jcrMultiField
+          label: Properties
+          field:
+            $type: compositeField
+            label: Feature
+            properties:
+              name:
+                $type: textField
+                label: Name
+                i18n: true
+                defaultValue: "SDK JavaScript"
+              description:
+                $type: textField
+                label: Description
+                rows: 4
+                i18n: true
+                defaultValue: "Integración fácil y rápida con aplicaciones web modernas"
+    details:
+      label: Details
+      fields:
+        details:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            image:
+              $type: damLinkField
+              label: Image
+              datasource:
+                $type: jcrDatasource
+                workspace: dam
+                rootPath: /
+                allowedNodeTypes: 
+                  - mgnl:asset
+            tagline:
+              $type: textField
+              label: Tagline
+              i18n: true
+              defaultValue: "Desarrollo simplificado"
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+              defaultValue: "Herramientas y recursos para desarrolladores"
+            subtitle:
+              $type: textField
+              label: Subtitle
+              i18n: true
+              defaultValue: "Todo lo que necesitas para integrar B-FY"
+            description:
+              $type: textField
+              label: Description
+              rows: 5
+              i18n: true
+              defaultValue: "Accede a nuestra completa documentación, ejemplos de código y herramientas de desarrollo para implementar autenticación biométrica en tiempo récord."
+            items:
+              $type: jcrMultiField
+              label: Items
+              field:
+                $type: compositeField
+                label: Item
+                properties:
+                  icon:
+                    $type: damLinkField
+                    label: Icon
+                    datasource:
+                      $type: jcrDatasource
+                      workspace: dam
+                      rootPath: /
+                      allowedNodeTypes: 
+                        - mgnl:asset
+                  name:
+                    $type: textField
+                    label: Name
+                    i18n: true
+                  description:
+                    $type: textField
+                    label: Description
+                    rows: 3
+                    i18n: true
+                  link:
+                    $type: textField
+                    label: Link
+    resources:
+      label: Resources
+      fields:
+        resources:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            tagline:
+              $type: textField
+              label: Tagline
+              i18n: true
+              defaultValue: "Recursos completos"
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+              defaultValue: "Documentación y ejemplos"
+            items:
+              $type: jcrMultiField
+              label: Items
+              field:
+                $type: compositeField
+                label: Item
+                properties:
+                  icon:
+                    $type: damLinkField
+                    label: Icon
+                    datasource:
+                      $type: jcrDatasource
+                      workspace: dam
+                      rootPath: /
+                      allowedNodeTypes: 
+                        - mgnl:asset
+                  title:
+                    $type: textField
+                    label: Title
+                    i18n: true
+                  description:
+                    $type: textField
+                    label: Description
+                    rows: 2
+                    i18n: true
+                  name:
+                    $type: textField
+                    label: Name
+                    i18n: true
+                  link:
+                    $type: textField
+                    label: Link
+    faqs:
+      label: FAQs
+      fields:
+        faqs:
+          $type: jcrMultiField
+          label: Properties
+          field:
+            $type: compositeField
+            label: FAQ
+            properties:
+              question:
+                $type: textField
+                label: Question
+                i18n: true
+                defaultValue: "¿Qué tiempo toma integrar B-FY?"
+              answer:
+                $type: textField
+                label: Answer
+                rows: 3
+                i18n: true
+                defaultValue: "La integración básica puede realizarse en menos de una hora usando nuestros SDKs."

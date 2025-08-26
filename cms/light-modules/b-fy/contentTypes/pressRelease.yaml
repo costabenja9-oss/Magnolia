@@ -1,0 +1,38 @@
+datasource:
+  workspace: pressReleases
+  autoCreate: true
+
+model:
+  nodeType: mgnl:pressReleases
+  properties:
+    name:
+      label: Name
+      required: true
+      i18n: true
+    date:
+      type: Date
+      label: Publication date
+      required: true
+    resources:
+      type: resource
+      label: Resource
+      multiple: true
+
+  subModels:
+    resource:
+      properties:
+        link:
+          type: asset
+          label: File
+          required: true
+          i18n: true
+        label:
+          label: Label
+          required: true
+          options:
+            word:
+              value: WORD
+              label: WORD
+            pdf:
+              value: PDF
+              label: PDF

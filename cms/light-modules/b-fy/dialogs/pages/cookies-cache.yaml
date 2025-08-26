@@ -1,0 +1,12 @@
+label: Cookies and cache
+form:
+  properties:
+    content:
+      $type: richTextField
+      label: Content
+      alignment: true
+      images: true
+      source: true
+      tables: true
+      height: 280
+      i18n: true

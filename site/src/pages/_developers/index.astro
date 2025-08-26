@@ -1,0 +1,55 @@
+---
+import magnolia from '@/lib/magnolia'
+import Layout from '@/components/Layout.astro'
+import FAQs from '@/components/FAQs.astro'
+import IconCircleCheck from '@/assets/icons/circle-check.svg'
+import Details from './Details.astro'
+import Resources from './Resources.astro'
+
+interface Feature {
+  name: string
+  description: string
+}
+
+const currentLocale = Astro.currentLocale!
+
+const { t } = Astro.locals
+
+const [{ title, description, subtitle }, features] = await Promise.all([
+  magnolia.get('/pages/developers', { lang: currentLocale }),
+  magnolia.get<Feature[]>('/pages/developers/features/@nodes', {
+    lang: currentLocale
+  })
+])
+---
+
+<Layout title={t['developers']} description={description}>
+  <section class="mt-12 mb-22 px-5 sm:px-10 lg:px-13 xl:mt-24">
+    <div class="max-w-232 mx-auto text-center">
+      <h1 class="font-bold text-3xl xl:text-5xl">{title}</h1>
+      <p class="mt-5 text-lg xl:text-xl/snug">{description}</p>
+    </div>
+    <div class="max-w-6xl mt-17 mx-auto grid gap-10 xl:grid-cols-[3fr_5fr]">
+      <h2
+        class="font-bold text-xl/tight text-pretty text-orange-600 xl:text-3xl"
+      >
+        {subtitle}
+      </h2>
+      <div class="grid gap-y-5 gap-x-10 lg:grid-cols-2">
+        {
+          features.map(({ name, description }) => (
+            <p class="grid grid-cols-[auto_1fr] gap-3 leading-snug xl:text-lg">
+              <IconCircleCheck class="w-6 text-orange-600" aria-hidden="true" />
+              <span>
+                <strong>{name}</strong> {description}
+              </span>
+            </p>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <Details />
+  <Resources />
+  <FAQs page="developers" />
+</Layout>

@@ -1,0 +1,115 @@
+label: Platform Page
+workspace: website
+nodeType: mgnl:page
+properties:
+  title:
+    $type: text
+    required: true
+  description:
+    $type: text
+    required: true
+  image:
+    $type: reference
+    required: true
+  videoId:
+    $type: text
+    required: true
+  features:
+    $type: collection
+    properties:
+      icon:
+        $type: reference
+        required: true
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+  comparison:
+    $type: collection
+    properties:
+      feature:
+        $type: text
+        required: true
+  process:
+    $type: composite
+    properties:
+      infographic:
+        $type: reference
+        required: true
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+      items:
+        $type: collection
+        properties:
+          item:
+            $type: text
+            required: true
+  details:
+    $type: composite
+    properties:
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+      items:
+        $type: collection
+        properties:
+          icon:
+            $type: reference
+            required: true
+          title:
+            $type: text
+            required: true
+          description:
+            $type: text
+            required: true
+      register:
+        $type: composite
+        properties:
+          title:
+            $type: text
+            required: true
+          description:
+            $type: text
+            required: true
+          videoId:
+            $type: text
+            required: true
+      login:
+        $type: composite
+        properties:
+          title:
+            $type: text
+            required: true
+          description:
+            $type: text
+            required: true
+          videoId:
+            $type: text
+            required: true
+  customer:
+    $type: composite
+    properties:
+      title:
+        $type: text
+        required: true
+      description:
+        $type: text
+        required: true
+      features:
+        $type: collection
+        properties:
+          title:
+            $type: text
+            required: true
+          description:
+            $type: text
+            required: true

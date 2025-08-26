@@ -1,0 +1,5 @@
+title: Client Authentication
+renderType: freemarker
+templateScript: /b-fy/templates/pages/platform-details/client-authentication.ftl
+dialog: b-fy:pages/platform-details/client-authentication
+visible: true

@@ -1,0 +1,34 @@
+---
+import magnolia from '@/lib/magnolia'
+import Layout from '@/components/Layout.astro'
+import CallToAction from '@/components/CallToAction.astro'
+import Carousel from './Carousel.astro'
+import Message from './Message.astro'
+import Details from './Details.astro'
+import Mission from './Mission.astro'
+import Vision from './Vision.astro'
+import Values from './Values.astro'
+
+const currentLocale = Astro.currentLocale!
+
+const [{ title, description }, list] = await Promise.all([
+  magnolia.get('/pages/about-us', { lang: currentLocale }),
+  magnolia.get('/pages/about-us/carousel/@nodes', { lang: currentLocale })
+])
+---
+
+<Layout title={Astro.locals.t['about_us']} description={description}>
+  <section
+    class="mt-12 px-5 text-center text-pretty sm:px-10 lg:px-13 xl:mt-24"
+  >
+    <h1 class="max-w-xl mx-auto font-bold text-3xl xl:text-5xl">{title}</h1>
+    <p class="max-w-236 mt-8 mx-auto text-lg xl:text-xl/snug">{description}</p>
+    <Carousel list={list} />
+  </section>
+  <Message />
+  <Details />
+  <Mission />
+  <Vision />
+  <Values />
+  <CallToAction />
+</Layout>

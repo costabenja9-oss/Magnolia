@@ -1,0 +1,10 @@
+!content-type:pressRelease
+name: pressReleases
+label: Newsroom
+subApps:
+  detail:
+    label: Properties
+    form:
+      properties:
+        name:
+          rows: 2

@@ -1,0 +1,40 @@
+---
+import magnolia from '@/lib/magnolia'
+import Layout from '@/components/Layout.astro'
+import Image from '@/components/Image'
+import Details from './Details.astro'
+import Marquee from './Marquee.astro'
+import Benefits from './Benefits.astro'
+import Form from './Form.astro'
+
+const currentLocale = Astro.currentLocale!
+
+const { tagline, title, image, description } = await magnolia.get(
+  '/pages/partners',
+  { lang: currentLocale }
+)
+---
+
+<Layout title={Astro.locals.t['partners']} description={description}>
+  <section class="mt-12 mb-20 px-5 text-center sm:px-10 lg:px-13 xl:mt-20">
+    <hgroup>
+      <p
+        class:list={[
+          'py-2.5 px-5 inline-block rounded bg-orange-600 leading-none',
+          'text-white uppercase xl:text-xl'
+        ]}
+      >
+        {tagline}
+      </p>
+      <h1 class="mt-7 mb-10 font-bold text-3xl text-pretty xl:text-5xl">
+        {title}
+      </h1>
+    </hgroup>
+    <Image class="inline-block rounded-lg" data={image} loading="eager" />
+    <p class="max-w-236 mt-12 mx-auto text-lg xl:text-xl/snug">{description}</p>
+  </section>
+  <Details />
+  <Marquee />
+  <Benefits />
+  <Form />
+</Layout>

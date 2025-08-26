@@ -1,0 +1,7 @@
+label: Cookies and cache Page
+workspace: website
+nodeType: mgnl:page
+properties:
+  content:
+    $type: richText
+    required: true

@@ -1,0 +1,46 @@
+---
+import { getLocalePath } from '@/lib/utils'
+import IconWorld from '@/assets/icons/world.svg'
+import IconChevron from '@/assets/icons/chevron.svg'
+
+const currentLocale = Astro.currentLocale!
+
+const languages = new Map([
+  ['en', 'English'],
+  ['es', 'Español']
+])
+
+const currentLanguage = languages.get(currentLocale)
+
+languages.delete(currentLocale)
+---
+
+<button class="group flex items-center gap-2.5" popovertarget="language">
+  <IconWorld class="w-4.5" />
+  {currentLanguage}
+  <IconChevron
+    class="w-2.25 transition-transform duration-300 group-open:rotate-x-180"
+  />
+</button>
+<nav
+  class:list={[
+    'absolute top-8.5 left-auto right-5 py-2 px-4 gap-1 rounded shadow',
+    'bg-white text-center text-black open:grid md:right-12'
+  ]}
+  popover
+  id="language"
+>
+  {
+    Array.from(languages, ([locale, label]) => (
+      <a
+        class="leading-normal transition-colors hover:text-red-800"
+        href={getLocalePath(
+          locale,
+          Astro.url.pathname.substring(currentLocale === 'en' ? 1 : 4)
+        )}
+      >
+        {label}
+      </a>
+    ))
+  }
+</nav>

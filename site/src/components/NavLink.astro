@@ -1,0 +1,51 @@
+---
+import { getLocalePath } from '@/lib/utils'
+import IconChevron from '@/assets/icons/chevron.svg'
+
+interface Props {
+  path: string
+  items?: Array<[string, string]>
+}
+
+const currentLocale = Astro.currentLocale!
+const { path, items } = Astro.props
+---
+
+<li class="group xl:mt-4 xl:pb-4">
+  <a
+    class={items
+      ? 'flex gap-2 transition-colors group-hover:text-red-800'
+      : 'transition-colors hover:text-red-800'}
+    href={getLocalePath(currentLocale, path)}
+  >
+    <slot />
+    {
+      items && (
+        <IconChevron
+          class:list={['w-2.25', items && 'rotate-270 xl:rotate-0']}
+        />
+      )
+    }
+  </a>
+  {
+    items && (
+      <ul
+        class:list={[
+          'z-1 mt-2 rounded bg-white text-lg/tight xl:absolute xl:mt-3 xl:p-3',
+          'xl:hidden xl:shadow xl:group-hover:block'
+        ]}
+      >
+        {items.map(([path, label]) => (
+          <li class="py-1.5 px-3">
+            <a
+              class="transition-colors hover:text-orange-600"
+              href={getLocalePath(currentLocale, path)}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</li>

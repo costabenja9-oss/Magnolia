@@ -1,0 +1,40 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+const currentLocale = Astro.currentLocale!
+
+const [{ title, description, image }, countries] = await Promise.all([
+  magnolia.get('/pages/about-us/details', { lang: currentLocale }),
+  magnolia.get<{ field: string }[]>(
+    '/pages/about-us/details/countries/@nodes',
+    { lang: currentLocale }
+  )
+])
+---
+
+<section class="py-20">
+  <div class="px-5 text-center text-pretty sm:px-10 lg:px-13">
+    <h2 class="font-bold text-3xl xl:text-5xl">{title}</h2>
+    <div
+      class="max-w-6xl my-6 mx-auto space-y-5 text-lg xl:text-xl/snug"
+      set:html={description}
+    />
+  </div>
+  <Image data={image} />
+  <p
+    class:list={[
+      'mt-5 px-5 flex flex-wrap gap-2 justify-center text-xl/tight sm:px-10',
+      'lg:px-13 xl:text-2xl'
+    ]}
+  >
+    {
+      countries.map(({ field }, index) => (
+        <>
+          {index !== 0 && <span class="text-orange-600">|</span>}
+          {field}
+        </>
+      ))
+    }
+  </p>
+</section>

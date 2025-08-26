@@ -1,0 +1,96 @@
+---
+import magnolia from '@/lib/magnolia'
+import { getLocalePath } from '@/lib/utils'
+import Image from '@/components/Image'
+import IconArrowRight from '@/assets/icons/arrow-right.svg'
+
+interface Data {
+  tagline: string
+  title: string
+  description: string
+}
+
+interface Feature extends Data {
+  icon: string
+  name: string
+}
+
+const currentLocale = Astro.currentLocale!
+const { t } = Astro.locals
+
+async function data(callback: (data: Data) => any) {
+  return magnolia
+    .get('/pages/home/platform', { lang: currentLocale })
+    .then(callback)
+}
+
+async function features(callback: (feature: Feature) => any) {
+  return magnolia
+    .get('/features/@nodes', { lang: currentLocale })
+    .then((features: Feature[]) => features.map(callback))
+}
+---
+
+<section class="mt-20 mb-15 px-5 sm:px-10 md:mb-26 lg:px-13">
+  {
+    data(({ tagline, title, description }) => (
+      <>
+        <hgroup class="text-center">
+          <p
+            class:list={[
+              'w-fit mx-auto py-2.5 px-5 rounded bg-orange-600 text-white',
+              'uppercase leading-tight xl:text-xl'
+            ]}
+          >
+            {tagline}
+          </p>
+          <h2
+            class:list={[
+              'max-w-4xl mx-auto mt-10 font-bold text-3xl text-pretty',
+              'xl:text-5xl'
+            ]}
+          >
+            {title}
+          </h2>
+        </hgroup>
+        <p class="mt-7 text-center text-lg text-balance xl:text-xl/snug">
+          {description}
+        </p>
+      </>
+    ))
+  }
+  <div class="mt-15 grid md:mt-20 md:grid-cols-2 xl:grid-cols-3">
+    {
+      features(({ icon, tagline, title, description, name }) => (
+        <article
+          class:list={[
+            'py-9 px-7.5 flex flex-col items-start rounded-lg from-white',
+            'to-red-100 odd:bg-linear-240 sm:py-12 sm:px-10',
+            'md:odd:rounded-r-none md:even:rounded-l-none',
+            'md:nth-[4n-1]:bg-none md:nth-[4n]:bg-linear-240 xl:odd:bg-none',
+            'xl:even:bg-linear-240 xl:rounded-none xl:nth-2:rounded-t-lg',
+            'xl:nth-[3n+1]:rounded-l-lg xl:nth-[3n]:rounded-r-lg',
+            'xl:nth-last-2:rounded-b-lg'
+          ]}
+        >
+          <Image class="size-11 object-contain" src={icon} />
+          <hgroup>
+            <p class="mt-4 mb-2 text-orange-600 leading-tight">{tagline}</p>
+            <h3 class="font-bold text-xl/tight uppercase">{title}</h3>
+          </hgroup>
+          <p class="mt-3 mb-6 leading-snug text-pretty">{description}</p>
+          <a
+            class:list={[
+              'mt-auto flex gap-1.5 text-orange-600 transition-colors',
+              'hover:text-red-800'
+            ]}
+            href={getLocalePath(currentLocale, `platform/${name}`)}
+          >
+            <span class="underline underline-offset-2">{t['learn_more']}</span>
+            <IconArrowRight class="w-2.75" />
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</section>

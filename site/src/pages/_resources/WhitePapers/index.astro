@@ -1,0 +1,81 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+import Input from '@/components/Input.astro'
+import Checkbox from '@/components/Checkbox.astro'
+import Download from './Download'
+
+interface Item {
+  image: any
+  title: string
+  description: string
+  document: string
+}
+
+const currentLocale = Astro.currentLocale!
+
+const { t } = Astro.locals
+
+const [{ title, description }, items] = await Promise.all([
+  magnolia.get('/pages/resources/white-papers', { lang: currentLocale }),
+  magnolia.get<Item[]>('/pages/resources/white-papers/items/@nodes', {
+    lang: currentLocale
+  })
+])
+---
+
+<section
+  class:list={[
+    'pt-13 pb-15 px-5 bg-linear-180 from-red-50 to-red-100 text-pretty',
+    'sm:px-10 lg:px-13'
+  ]}
+  id="white-papers"
+>
+  <div class="mb-20 text-center">
+    <hgroup>
+      <p
+        class:list={[
+          'py-2.5 px-5 inline-block rounded bg-orange-600 leading-none',
+          'text-white uppercase xl:text-xl'
+        ]}
+      >
+        {t['white_papers']}
+      </p>
+      <h2 class="mt-7 mb-5 font-bold text-3xl xl:text-4xl">{title}</h2>
+    </hgroup>
+    <p class="max-w-4xl mx-auto text-lg xl:text-xl/snug">{description}</p>
+  </div>
+  <div class="grid gap-y-15 gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      items.map(({ image, title, description, document }) => (
+        <article class="flex flex-col">
+          <Image
+            class="w-full aspect-3/2 object-cover mb-8 rounded-lg"
+            data={image}
+          />
+          <h3 class="font-bold text-xl/tight text-orange-600 uppercase">
+            {title}
+          </h3>
+          <p class="mt-3 mb-6 text-lg">{description}</p>
+          <Download t={t} url={document} client:load>
+            <div class="grid gap-4 md:grid-cols-2 xl:gap-5">
+              <Input placeholder={t['first_name']} required />
+              <Input placeholder={t['last_name']} required />
+              <Input placeholder={t['company']} required />
+              <Input placeholder={t['job_title']} required />
+              <Input placeholder={t['corporate_email']} required />
+              <Input placeholder={t['company_website']} required />
+            </div>
+            <p class="my-6 text-red-800">* {t['required_fields']}</p>
+            <Checkbox
+              label={t['accept_privacy_policy_and_legal_notice']}
+              required
+            />
+            <Checkbox label={t['contact_by_email']} />
+            <Checkbox label={t['subscribe_to_updates']} />
+          </Download>
+        </article>
+      ))
+    }
+  </div>
+</section>

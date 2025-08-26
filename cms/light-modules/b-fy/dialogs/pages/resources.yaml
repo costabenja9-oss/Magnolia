@@ -1,0 +1,109 @@
+label: Resources
+form:
+  $type: tabbedForm
+  tabs:
+    page:
+      label: Properties
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+        description:
+          $type: textField
+          label: Description
+          rows: 3
+          i18n: true
+        featuredPost:
+          $type: linkField
+          label: Featured post
+          datasource:
+            $type: jcrDatasource
+            workspace: posts
+    whitePapers:
+      label: White Papers
+      fields:
+        white-papers:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 2
+              i18n: true
+            items:
+              $type: jcrMultiField
+              label: Items
+              field:
+                $type: compositeField
+                label: Item
+                properties:
+                  image:
+                    $type: damLinkField
+                    label: Image
+                  title:
+                    $type: textField
+                    label: Title
+                    i18n: true
+                  description:
+                    $type: textField
+                    label: Description
+                    rows: 3
+                    i18n: true
+                  document:
+                    $type: damLinkField
+                    label: Document
+                    i18n: true
+    newsroom:
+      label: Newsroom
+      fields:
+        newsroom:
+          $type: compositeField
+          label: Properties
+          layout:
+            $type: stacked
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            tagline:
+              $type: textField
+              label: Tagline
+              i18n: true
+            title:
+              $type: textField
+              label: Title
+              i18n: true
+            description:
+              $type: textField
+              label: Description
+              rows: 2
+              i18n: true
+    faqs:
+      label: FAQs
+      fields:
+        faqs:
+          $type: jcrMultiField
+          label: Properties
+          field:
+            $type: compositeField
+            label: FAQ
+            properties:
+              question:
+                $type: textField
+                label: Question
+                rows: 3
+                i18n: true
+              answer:
+                $type: richTextField
+                label: Answer
+                height: 180
+                i18n: true

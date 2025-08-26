@@ -1,0 +1,4 @@
+class: info.magnolia.virtualuri.VirtualUriMapping
+fromUri: /resources/blog/(.+)
+toUri: forward:/blog.mgnl?slug=$1
+priority: 102

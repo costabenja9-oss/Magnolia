@@ -1,0 +1,44 @@
+---
+import magnolia from '@/lib/magnolia'
+import Layout from '@/components/Layout.astro'
+import Image from '@/components/Image'
+import Features from './Features.astro'
+import Links from './Links.astro'
+import Table from './Table.astro'
+import AuthProcess from './AuthProcess.astro'
+import CallToAction from './CallToAction.astro'
+import Details from './Details.astro'
+import Customer from './Customer.astro'
+import Video from '@/components/Video.astro'
+
+const { t } = Astro.locals
+
+const { title, description, image, videoId, comparison } = await magnolia.get(
+  '/pages/platform',
+  { lang: Astro.currentLocale! }
+)
+---
+
+<Layout title={Astro.locals.t['platform']} description={description}>
+  <section
+    class:list={[
+      'min-h-svh mt-12 mb-24 pb-15 px-5 bg-linear-(--color-neutral-100)',
+      'bg-size-[auto_60%] bg-no-repeat bg-bottom text-center sm:px-10 lg:px-13',
+      'xl:mt-24'
+    ]}
+  >
+    <h1 class="font-bold text-3xl xl:text-5xl">{title}</h1>
+    <p class="max-w-240 mt-9 mb-15 mx-auto text-lg xl:text-xl/snug">
+      {description}
+    </p>
+    <Image class="mb-26 mx-auto" data={image} loading="eager" />
+    <Features />
+    <Video class="max-w-6xl! mx-auto mb-18" id={videoId} />
+    <Links />
+    <Table features={comparison} />
+    <AuthProcess />
+    <CallToAction>{t['request_demo_here']}</CallToAction>
+  </section>
+  <Details />
+  <Customer />
+</Layout>

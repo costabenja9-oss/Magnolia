@@ -1,0 +1,31 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+type Data = Array<{ name: string; logo: any }>
+
+const data: Data = await magnolia.get('/pages/partners/list/@nodes')
+---
+
+<section class="overflow-hidden my-24">
+  <h2 class="font-bold text-center text-2xl/tight text-orange-600 xl:text-4xl">
+    {Astro.locals.t['they_are_our_partners']}
+  </h2>
+  <div
+    class:list={[
+      'mt-20 mb-10 min-w-[200%] w-max flex items-center justify-around',
+      'animate-marquee *:shrink-0'
+    ]}
+  >
+    {
+      data.map(({ logo, name }) => (
+        <Image class="h-15 w-35 object-contain mx-10" data={logo} alt={name} />
+      ))
+    }
+    {
+      data.map(({ logo, name }) => (
+        <Image class="h-15 w-35 object-contain mx-10" data={logo} alt={name} />
+      ))
+    }
+  </div>
+</section>

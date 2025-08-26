@@ -1,0 +1,9 @@
+$type: jcrDeliveryEndpoint_v2
+workspace: posts
+bypassWorkspaceAcls: true
+
+references:
+  imageReference:
+    propertyName: image
+    referenceResolver:
+      $type: assetReferenceResolver

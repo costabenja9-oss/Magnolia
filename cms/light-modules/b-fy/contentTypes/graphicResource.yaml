@@ -1,0 +1,34 @@
+datasource:
+  workspace: graphicResources
+  autoCreate: true
+
+model:
+  nodeType: mgnl:graphicResources
+  properties:
+    name:
+      label: Name
+      required: true
+      i18n: true
+    date:
+      type: Date
+      label: Publication date
+      required: true
+    resources:
+      type: resource
+      label: Resource
+      multiple: true
+
+  subModels:
+    resource:
+      properties:
+        link:
+          label: Link
+          required: true
+          i18n: true
+        label:
+          label: Label
+          required: true
+          options:
+            youtube:
+              value: YouTube
+              label: YouTube

@@ -1,0 +1,66 @@
+---
+import magnolia from '@/lib/magnolia'
+import Image from '@/components/Image'
+
+interface Item {
+  image: any
+  title: string
+  description: string
+}
+
+const currentLocale = Astro.currentLocale!
+
+const [{ title, description }, items] = await Promise.all([
+  magnolia.get('/pages/partners/details', { lang: currentLocale }),
+  magnolia.get<Item[]>('/pages/partners/details/items/@nodes', {
+    lang: currentLocale
+  })
+])
+---
+
+<section class="mb-24">
+  <div class="max-w-262 mx-auto px-5 text-center sm:px-10 lg:px-13">
+    <h2
+      class="font-bold text-2xl/tight text-balance text-orange-600 xl:text-4xl"
+    >
+      {title}
+    </h2>
+    <p class="mt-6 text-lg xl:text-xl/snug">{description}</p>
+  </div>
+  <div class="mt-17 grid md:grid-cols-2">
+    {
+      items.map(({ image, title, description }) => (
+        <article class="relative text-white">
+          <Image class="w-full h-145.5 object-cover" data={image} />
+          <div
+            class:list={[
+              'absolute inset-0 p-5 flex flex-col justify-end bg-linear-180',
+              'to-orange-600 sm:p-10 lg:p-13'
+            ]}
+          >
+            <h3
+              class:list={[
+                'pl-4 border-l-2 font-bold text-xl/tight uppercase',
+                'xl:text-3xl'
+              ]}
+            >
+              {title}
+            </h3>
+            <p class="mt-3 leading-snug text-pretty xl:text-lg">
+              {description}
+            </p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+  <a
+    class:list={[
+      'mt-15 w-fit mx-auto py-2.5 px-5 block rounded bg-orange-600',
+      'text-lg/none text-white transition-colors hover:bg-red-800 xl:text-xl'
+    ]}
+    href="#form"
+  >
+    {Astro.locals.t['lets_do_business']}
+  </a>
+</section>

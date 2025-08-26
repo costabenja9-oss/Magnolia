@@ -1,0 +1,26 @@
+---
+import IconArrowRight from '@/assets/icons/arrow-right.svg'
+
+interface Props {
+  class?: string
+}
+---
+
+<div class:list={['flex gap-5', Astro.props.class]}>
+  <button
+    class:list={[
+      'size-14 grid place-items-center rounded-full shadow-md bg-white',
+      'transition-colors hover:text-red-800'
+    ]}
+  >
+    <IconArrowRight class="w-6.5 rotate-180" />
+  </button>
+  <button
+    class:list={[
+      'size-14 grid place-items-center rounded-full shadow-md bg-white',
+      'transition-colors hover:text-red-800'
+    ]}
+  >
+    <IconArrowRight class="w-6.5" />
+  </button>
+</div>

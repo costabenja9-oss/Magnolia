@@ -1,0 +1,247 @@
+
+label: Financial Services Page
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        tagline:
+          $type: textField
+          label: Tagline
+          i18n: true
+          defaultValue: "FINANZAS Y BANCA"
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Seguridad biométrica para banca y servicios financieros"
+        description:
+          $type: richTextField
+          label: Description
+          i18n: true
+          defaultValue: "Protege a tus clientes y operaciones con autenticación biométrica descentralizada. B-FY elimina el riesgo de suplantación de identidad en banca digital, sucursales y cajeros, garantizando acceso seguro y cumplimiento normativo."
+        videoId:
+          $type: textField
+          label: Video ID
+          i18n: true
+          defaultValue: "fjvPHPtZvXk"
+    details:
+      label: Details (4 cards)
+      fields:
+        detail1Icon:
+          $type: damLinkField
+          label: Detail 1 Icon
+        detail1Title:
+          $type: textField
+          label: Detail 1 Title
+          i18n: true
+          defaultValue: "BANCA DIGITAL"
+        detail1Description:
+          $type: textField
+          label: Detail 1 Description
+          i18n: true
+          defaultValue: "Acceso biométrico seguro a plataformas digitales, apps y banca online, eliminando contraseñas y riesgos de fraude."
+        detail2Icon:
+          $type: damLinkField
+          label: Detail 2 Icon
+        detail2Title:
+          $type: textField
+          label: Detail 2 Title
+          i18n: true
+          defaultValue: "SUCURSALES Y CAJEROS"
+        detail2Description:
+          $type: textField
+          label: Detail 2 Description
+          i18n: true
+          defaultValue: "Autenticación biométrica para clientes y empleados en sucursales, cajeros automáticos y puntos de atención presencial."
+        detail3Icon:
+          $type: damLinkField
+          label: Detail 3 Icon
+        detail3Title:
+          $type: textField
+          label: Detail 3 Title
+          i18n: true
+          defaultValue: "CUMPLIMIENTO NORMATIVO"
+        detail3Description:
+          $type: textField
+          label: Detail 3 Description
+          i18n: true
+          defaultValue: "Verificación biométrica para procesos KYC, AML y cumplimiento de regulaciones financieras internacionales."
+        detail4Icon:
+          $type: damLinkField
+          label: Detail 4 Icon
+        detail4Title:
+          $type: textField
+          label: Detail 4 Title
+          i18n: true
+          defaultValue: "PROTECCIÓN DE DATOS"
+        detail4Description:
+          $type: textField
+          label: Detail 4 Description
+          i18n: true
+          defaultValue: "Gestión segura de datos personales y financieros con autenticación biométrica descentralizada."
+    threats:
+      label: Threats Section
+      fields:
+        threatsTitle:
+          $type: textField
+          label: Threats Title
+          i18n: true
+          defaultValue: "Principales amenazas en banca y finanzas"
+        threat1Image:
+          $type: damLinkField
+          label: Threat 1 Image
+        threat1Title:
+          $type: textField
+          label: Threat 1 Title
+          i18n: true
+          defaultValue: "SUPLANTACIÓN DE IDENTIDAD"
+        threat1Description:
+          $type: richTextField
+          label: Threat 1 Description
+          i18n: true
+          defaultValue: "Acceso fraudulento a cuentas bancarias y servicios financieros mediante robo o falsificación de credenciales."
+        threat2Image:
+          $type: damLinkField
+          label: Threat 2 Image
+        threat2Title:
+          $type: textField
+          label: Threat 2 Title
+          i18n: true
+          defaultValue: "FRAUDE EN TRANSACCIONES"
+        threat2Description:
+          $type: richTextField
+          label: Threat 2 Description
+          i18n: true
+          defaultValue: "Transferencias y pagos no autorizados por suplantación de identidad o manipulación de sistemas."
+        threat3Image:
+          $type: damLinkField
+          label: Threat 3 Image
+        threat3Title:
+          $type: textField
+          label: Threat 3 Title
+          i18n: true
+          defaultValue: "ATAQUES A INFRAESTRUCTURA FINANCIERA"
+        threat3Description:
+          $type: richTextField
+          label: Threat 3 Description
+          i18n: true
+          defaultValue: "Infiltración en sistemas bancarios, cajeros y plataformas digitales mediante credenciales comprometidas."
+    features:
+      label: Features Section
+      fields:
+        featuresTagline:
+          $type: textField
+          label: Features Tagline
+          i18n: true
+          defaultValue: "BANCA SEGURA"
+        featuresTitle:
+          $type: textField
+          label: Features Title
+          i18n: true
+          defaultValue: "B-FY protege tus clientes y operaciones"
+        feature1Icon:
+          $type: damLinkField
+          label: Feature 1 Icon
+        feature1Title:
+          $type: textField
+          label: Feature 1 Title
+          i18n: true
+          defaultValue: "ACCESO BIOMÉTRICO UNIVERSAL"
+        feature1Description:
+          $type: richTextField
+          label: Feature 1 Description
+          i18n: true
+          defaultValue: "Clientes y empleados acceden a todos los servicios financieros con biometría, eliminando contraseñas y PINs."
+        feature2Icon:
+          $type: damLinkField
+          label: Feature 2 Icon
+        feature2Title:
+          $type: textField
+          label: Feature 2 Title
+          i18n: true
+          defaultValue: "AUTENTICACIÓN OMNICANAL"
+        feature2Description:
+          $type: richTextField
+          label: Feature 2 Description
+          i18n: true
+          defaultValue: "Verificación biométrica en banca online, sucursales, cajeros y apps móviles, garantizando experiencia segura y fluida."
+        feature3Icon:
+          $type: damLinkField
+          label: Feature 3 Icon
+        feature3Title:
+          $type: textField
+          label: Feature 3 Title
+          i18n: true
+          defaultValue: "CUMPLIMIENTO AUTOMÁTICO"
+        feature3Description:
+          $type: richTextField
+          label: Feature 3 Description
+          i18n: true
+          defaultValue: "Cumplimiento automático de regulaciones KYC, AML y protección de datos mediante autenticación biométrica."
+        feature4Icon:
+          $type: damLinkField
+          label: Feature 4 Icon
+        feature4Title:
+          $type: textField
+          label: Feature 4 Title
+          i18n: true
+          defaultValue: "PROTECCIÓN CONTRA FRAUDE"
+        feature4Description:
+          $type: richTextField
+          label: Feature 4 Description
+          i18n: true
+          defaultValue: "Prevención de fraudes y suplantación de identidad en todos los canales y servicios financieros."
+    product:
+      label: Product Section
+      fields:
+        productImage:
+          $type: damLinkField
+          label: Product Image
+        productTagline:
+          $type: textField
+          label: Product Tagline
+          i18n: true
+          defaultValue: "FINANZAS SEGURAS"
+        productTitle:
+          $type: textField
+          label: Product Title
+          i18n: true
+          defaultValue: "Protección total para banca y servicios financieros"
+        productDescription:
+          $type: richTextField
+          label: Product Description
+          i18n: true
+          defaultValue: "B-FY transforma la seguridad en banca y servicios financieros mediante autenticación biométrica descentralizada. Protege a tus clientes, empleados y operaciones en todos los canales, previniendo fraudes, suplantación de identidad y cumpliendo con las regulaciones más exigentes."
+    cta:
+      label: Call to Action
+      fields:
+        ctaBackground:
+          $type: damLinkField
+          label: CTA Background Image
+        ctaTitle:
+          $type: textField
+          label: CTA Title
+          i18n: true
+          defaultValue: "¿LISTO PARA PROTEGER TU BANCA?"
+        ctaHeading:
+          $type: textField
+          label: CTA Heading
+          i18n: true
+          defaultValue: "Seguridad biométrica para clientes y empleados."
+        ctaDescription:
+          $type: textField
+          label: CTA Description
+          i18n: true
+          defaultValue: "Descubre cómo B-FY puede proteger tu banca y servicios financieros. Solicita una demo personalizada para tu entidad."
+        ctaButton1:
+          $type: textField
+          label: CTA Button 1
+          i18n: true
+          defaultValue: "Solicita una demo"
+        ctaButton2:
+          $type: textField
+          label: CTA Button 2
+          i18n: true
+          defaultValue: "Habla con un experto"

@@ -1,0 +1,62 @@
+name: b-fy
+enabled: true
+fallback: false
+
+domains:
+  localhost:
+    pattern: localhost:8080/*
+    
+mappings:
+  website: /b-fy
+
+theme:
+  name: default
+
+i18n:
+  class: info.magnolia.cms.i18n.DefaultI18nContentSupport
+  enabled: true
+  defaultLocale: en
+  locales:
+    en:
+      language: en
+      enabled: true
+    es:
+      language: es
+      enabled: true
+
+templates:
+  pages:
+    simple-page:
+      id: b-fy:pages/simple-page
+    contact-1:
+      id: b-fy:pages/contact-1
+    home:
+      id: b-fy:pages/home
+    about-us:
+      id: b-fy:pages/about-us
+    platform:
+      id: b-fy:pages/platform
+    industries:
+      id: b-fy:pages/industries
+    partners:
+      id: b-fy:pages/partners
+    developers:
+      id: b-fy:pages/developers
+    resources:
+      id: b-fy:pages/resources
+    privacy-policy:
+      id: b-fy:pages/privacy-policy
+    terms-conditions:
+      id: b-fy:pages/terms-conditions
+    cookies-policy:
+      id: b-fy:pages/cookies-policy
+    cookies-cache:
+      id: b-fy:pages/cookies-cache
+    blog-post:
+      id: b-fy:pages/blog-post
+    platform-feature:
+      id: b-fy:pages/platform-feature
+    industry-detail:
+      id: b-fy:pages/industry-detail
+    contact:
+      id: b-fy:pages/contact

@@ -1,0 +1,5 @@
+title: Transport & Logistics
+renderType: freemarker
+templateScript: /b-fy/templates/pages/industry-detail/transport-logistics.ftl
+dialog: b-fy:pages/industry-detail/transport-logistics
+visible: true

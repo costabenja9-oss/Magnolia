@@ -1,0 +1,92 @@
+label: Regulatory Compliance Page
+form:
+  $type: tabbedForm
+  tabs:
+    content:
+      label: Content
+      fields:
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+          defaultValue: "Cumplimiento normativo"
+        description:
+          $type: richTextField
+          label: Description
+          i18n: true
+          defaultValue: "B-FY facilita el cumplimiento de regulaciones internacionales de privacidad y seguridad como GDPR, CCPA, PCI-DSS y normativas bancarias mediante biometría descentralizada."
+    section1:
+      label: Section 1
+      fields:
+        section1Title:
+          $type: textField
+          label: Section 1 Title
+          i18n: true
+          defaultValue: "GDPR y privacidad by design"
+        section1Description:
+          $type: richTextField
+          label: Section 1 Description
+          i18n: true
+          defaultValue: "Al mantener datos biométricos exclusivamente en el dispositivo del usuario, B-FY cumple nativamente con GDPR, eliminando riesgos de transferencias no autorizadas."
+        section1Image:
+          $type: damLinkField
+          label: Section 1 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section2:
+      label: Section 2
+      fields:
+        section2Title:
+          $type: textField
+          label: Section 2 Title
+          i18n: true
+          defaultValue: "Certificaciones internacionales"
+        section2Description:
+          $type: richTextField
+          label: Section 2 Description
+          i18n: true
+          defaultValue: "B-FY cuenta con certificaciones ISO 27001, ISO 9001 e ISO 27701, demostrando compromiso con los más altos estándares de seguridad y calidad internacional."
+        section2Image:
+          $type: damLinkField
+          label: Section 2 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
+    section3:
+      label: Section 3
+      fields:
+        section3Title:
+          $type: textField
+          label: Section 3 Title
+          i18n: true
+          defaultValue: "Auditorías simplificadas"
+        section3Description:
+          $type: richTextField
+          label: Section 3 Description
+          i18n: true
+          defaultValue: "La arquitectura descentralizada reduce dramáticamente la superficie de auditoría, facilitando el cumplimiento continuo y reduciendo costos de verificación normativa."
+        section3Image:
+          $type: damLinkField
+          label: Section 3 Image
+          required: false
+          mediaTypes:
+            - image
+          datasource:
+            $type: jcrDatasource
+            workspace: dam
+            rootPath: /
+            allowedNodeTypes:
+              - mgnl:asset
