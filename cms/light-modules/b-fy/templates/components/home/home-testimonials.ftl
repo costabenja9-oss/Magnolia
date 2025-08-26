@@ -258,6 +258,8 @@
 			}
 		</style>
 	</#if>
+	
+	<#-- DEF: Resolve configuration -->
 	<#assign _tConf = {} />
 	<#if content.testimonialsConfig??>
 		<#assign _tChildren = (content.testimonialsConfig?children)![] />
@@ -267,6 +269,8 @@
 	</#if>
 	<#assign _title = cms.cmsOrDefault(_tConf.title!'', title) />
 	<#assign _desc = cms.cmsOrDefault(_tConf.description!'', description) />
+	
+	<#-- DEF: Resolve testimonials list -->
 	<#assign testimonialList = [] />
 	<#if content.testimonials?has_content>
 		<#assign _testChildren = (content.testimonials?children)![] />
@@ -320,6 +324,7 @@
 			}
 		] />
 	</#if>
+	
 	<section class="testimonials" aria-label="Testimonials">
 		<#if _title?has_content || _desc?has_content>
 			<div class="testimonials__heading">
@@ -327,6 +332,7 @@
 				<#if _desc?has_content><p>${_desc}</p></#if>
 			</div>
 		</#if>
+		
 		<div class="testimonials__viewport" id="testimonials-carousel">
 			<ul class="testimonials__slides" id="testimonials-slides">
 				<#list testimonialList as t>
@@ -359,89 +365,87 @@
 					</li>
 				</#list>
 			</ul>
-			<button type="button"
-  class="testimonials__navBtn testimonials__navBtn--prev"
-  aria-label="Previous"
-  onclick="(function(){
-    if(typeof window.currentTestimonial!=='number'||typeof window.testimonialCount!=='number') return;
-    window.currentTestimonial = (window.currentTestimonial - 1 + window.testimonialCount) % window.testimonialCount;
-    window.updateTestimonials();
-  })()">
-  <svg class="testimonials__navIcon" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
-    <path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
-  </svg>
-</button>
-
-<button type="button"
-  class="testimonials__navBtn testimonials__navBtn--next"
-  aria-label="Next"
-  onclick="(function(){
-    if(typeof window.currentTestimonial!=='number'||typeof window.testimonialCount!=='number') return;
-    window.currentTestimonial = (window.currentTestimonial + 1) % window.testimonialCount;
-    window.updateTestimonials();
-  })()">
-  <svg class="testimonials__navIcon" style="transform:rotate(180deg)" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
-    <path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
-  </svg>
-</button>
-
+			
+			<button type="button" class="testimonials__navBtn testimonials__navBtn--prev" aria-label="Previous">
+				<svg class="testimonials__navIcon" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
+					<path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
+				</svg>
+			</button>
+			
+			<button type="button" class="testimonials__navBtn testimonials__navBtn--next" aria-label="Next">
+				<svg class="testimonials__navIcon" style="transform:rotate(180deg)" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
+					<path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
+				</svg>
+			</button>
 		</div>
-		<div class="testimonials__dotsWrap"><div class="testimonials__dots" id="testimonials-dots"></div></div>
+		
+		<div class="testimonials__dotsWrap">
+			<div class="testimonials__dots" id="testimonials-dots"></div>
+		</div>
+		
 		<script>
-(function () {
-  const slides   = document.getElementById('testimonials-slides');
-  const dotsC    = document.getElementById('testimonials-dots');
-  const viewport = document.getElementById('testimonials-carousel');
-  if (!slides || !dotsC || !viewport) return;
-
-  // Estado global (lo usan las flechas)
-  window.testimonialCount   = slides.children.length;
-  window.currentTestimonial = 0;
-
-  function renderDots() {
-    dotsC.innerHTML = '';
-    for (let i = 0; i < window.testimonialCount; i++) {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'testimonials__dot';
-      b.addEventListener('click', () => {
-        window.currentTestimonial = i;
-        window.updateTestimonials();
-      });
-      dotsC.appendChild(b);
-    }
-  }
-
-  function updateDots() {
-    [...dotsC.children].forEach((d, i) =>
-      d.classList.toggle('is-active', i === window.currentTestimonial)
-    );
-  }
-
-  // Ancho visible (1 “slide”)
-  function slideWidth() {
-    return viewport.getBoundingClientRect().width;
-  }
-
-  // ✅ Mover por múltiplos del ancho visible (px), no en %
-  window.updateTestimonials = function () {
-    const offsetPx = -window.currentTestimonial * slideWidth();
-    slides.style.transform = 'translateX(' + offsetPx + 'px)';
-    updateDots();
-  };
-
-  // Recalcular en resize para que no quede “a medias”
-  let resizeTO;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTO);
-    resizeTO = setTimeout(() => window.updateTestimonials(), 100);
-  });
-
-  renderDots();
-  window.updateTestimonials();
-})();
-</script>
-
-
+		(function(){
+			const slidesContainer = document.getElementById('testimonials-slides');
+			const dotsContainer = document.getElementById('testimonials-dots');
+			const viewport = document.getElementById('testimonials-carousel');
+			
+			if (!slidesContainer || !dotsContainer || !viewport) return;
+			
+			const prevButton = viewport.querySelector('.testimonials__navBtn--prev');
+			const nextButton = viewport.querySelector('.testimonials__navBtn--next');
+			
+			let currentIndex = 0;
+			const totalSlides = slidesContainer.children.length;
+			
+			// Create dots navigation
+			function createDots() {
+				dotsContainer.innerHTML = '';
+				for (let i = 0; i < totalSlides; i++) {
+					const dot = document.createElement('button');
+					dot.type = 'button';
+					dot.className = 'testimonials__dot';
+					if (i === 0) dot.classList.add('is-active');
+					dot.addEventListener('click', () => goToSlide(i));
+					dotsContainer.appendChild(dot);
+				}
+			}
+			
+			// Update active dot indicator
+			function updateDots() {
+				const dots = dotsContainer.querySelectorAll('.testimonials__dot');
+				dots.forEach((dot, index) => {
+					dot.classList.toggle('is-active', index === currentIndex);
+				});
+			}
+			
+			// Move to specific slide
+			function goToSlide(index) {
+				currentIndex = index;
+				const translateX = -currentIndex * 100;
+				slidesContainer.style.transform = 'translateX(' + translateX + '%)';
+				updateDots();
+			}
+			
+			// Navigate to previous slide
+			function prevSlide() {
+				currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+				goToSlide(currentIndex);
+			}
+			
+			// Navigate to next slide  
+			function nextSlide() {
+				currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+				goToSlide(currentIndex);
+			}
+			
+			// Add event listeners
+			if (prevButton) prevButton.addEventListener('click', prevSlide);
+			if (nextButton) nextButton.addEventListener('click', nextSlide);
+			
+			// Initialize carousel
+			createDots();
+			goToSlide(0);
+		})();
+		</script>
 	</section>
 </#macro>
