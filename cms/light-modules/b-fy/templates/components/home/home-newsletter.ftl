@@ -74,10 +74,80 @@
         <h3 class="newsletter-title">${nlTitle}</h3>
         <p class="newsletter-description">${nlDescription}</p>
       </div>
-      <form class="newsletter-form" method="post" action="/newsletter" novalidate>
+      <form id="newsletter-form" class="newsletter-form" onsubmit="return false;" novalidate>
+        <!-- Honeypot (antispam) -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; opacity:0;" />
         <input type="email" name="email" placeholder="${emailPlaceholder}" aria-label="${emailPlaceholder}" required class="newsletter-input"/>
         <button type="submit" class="newsletter-button">${buttonLabel}</button>
       </form>
     </div>
   </section>
+
+  <!-- EmailJS SDK + envío para newsletter -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Verificar que EmailJS esté disponible
+      if (typeof window.emailjs === 'undefined') {
+        console.error('EmailJS SDK no se cargó correctamente');
+        return;
+      }
+
+      // 1) Init - usando las mismas credenciales que contact
+      emailjs.init("KQDglcggc3HBv46cx"); // <-- REEMPLAZAR con tu public key
+
+      const form = document.getElementById("newsletter-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Honeypot: si está relleno, no enviamos
+        const hp = form.querySelector('input[name="website"]');
+        if (hp && hp.value.trim() !== "") return;
+
+        // Validación básica del email
+        const emailInput = form.querySelector('input[name="email"]');
+        if (!emailInput || !emailInput.value.trim()) {
+          alert("Please enter your email address.");
+          return;
+        }
+
+        // Validación simple de formato de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+
+        // UX botón
+        const btn = form.querySelector('button[type="submit"]');
+        const original = btn ? btn.textContent : null;
+        if (btn) { btn.disabled = true; btn.textContent = "Subscribing..."; }
+
+        // 3) Crear objeto filtrado solo con campos que tienen valor
+        const templateParams = {};
+        
+        // Solo agregar el email (que ya validamos que existe)
+        templateParams.email = emailInput.value.trim();
+        
+        // Agregar tipo de formulario para identificación en el template
+        templateParams.form_type = "newsletter";
+        
+        // 4) Enviar usando emailjs.send en lugar de sendForm para tener control total
+        emailjs.send("service_bd0x4ke", "template_txdnffe", templateParams) // <-- Mismas credenciales que contact
+          .then(() => {
+            alert("Thank you for subscribing to our newsletter!");
+            form.reset();
+          })
+          .catch((err) => {
+            console.error(err);
+            alert("We couldn't process your subscription. Please try again.");
+          })
+          .finally(() => {
+            if (btn) { btn.disabled = false; btn.textContent = original; }
+          });
+      });
+    });
+  </script>
 [/#macro]
