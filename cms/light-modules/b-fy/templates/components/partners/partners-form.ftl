@@ -168,7 +168,10 @@
         <p class="form-description">${formDescription3}</p>
       </div>
       
-      <form method="POST" action="${ctx.contextPath}/api/partners/submit">
+      <form id="partners-form" onsubmit="return false;">
+        <!-- Honeypot (antispam) -->
+        <input type="text" name="website_bot" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; opacity:0;" />
+        
         <!-- Company data -->
         <div class="form-section">
           <h3 class="form-section-title">Company data</h3>
@@ -329,11 +332,11 @@
           
           <div class="form-checkbox-group">
             <div class="form-checkbox-item">
-              <input type="checkbox" id="privacy_policy" name="privacy_policy" required />
+              <input type="checkbox" id="privacy_policy" name="acceptPrivacy" required />
               <label for="privacy_policy">By submitting this form, I accept the Privacy Policy and Legal Notice.</label>
             </div>
             <div class="form-checkbox-item">
-              <input type="checkbox" id="marketing_consent" name="marketing_consent" />
+              <input type="checkbox" id="marketing_consent" name="subscribeUpdates" value="yes" />
               <label for="marketing_consent">I agree to receive updates about B‑FY, news, products, events, and more.</label>
             </div>
           </div>
@@ -347,36 +350,73 @@
   </div>
 </section>
 
+<!-- EmailJS SDK + envío -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('form[action*="/api/partners/submit"]');
-  
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Basic form validation
-      const requiredFields = form.querySelectorAll('[required]');
-      let isValid = true;
-      
-      requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-          isValid = false;
-          field.style.borderColor = '#dc2626';
-        } else {
-          field.style.borderColor = '#d1d5db';
-        }
-      });
-      
-      if (isValid) {
-        // Simulate form submission
-        alert('Thank you for your interest in our Partner Program. We will contact you soon.');
-        form.reset();
+  // Verificar que EmailJS esté disponible
+  if (typeof window.emailjs === 'undefined') {
+    console.error('EmailJS SDK no se cargó correctamente');
+    return;
+  }
+
+  // 1) Init - usando las mismas credenciales que contact
+  emailjs.init("KQDglcggc3HBv46cx"); // <-- REEMPLAZAR con tu public key
+
+  const form = document.getElementById("partners-form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Honeypot: si está relleno, no enviamos
+    const hp = form.querySelector('input[name="website_bot"]');
+    if (hp && hp.value.trim() !== "") return;
+
+    // Validación de privacidad
+    const privacy = form.querySelector('input[name="acceptPrivacy"]');
+    if (privacy && !privacy.checked) {
+      alert("You must accept the Privacy Policy.");
+      return;
+    }
+
+    // Validación de campos requeridos
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        isValid = false;
+        field.style.borderColor = '#dc2626';
       } else {
-        alert('Please fill in all required fields.');
+        field.style.borderColor = '#d1d5db';
       }
     });
-  }
+
+    if (!isValid) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    // UX botón
+    const btn = form.querySelector('button[type="submit"]');
+    const original = btn ? btn.textContent : null;
+    if (btn) { btn.disabled = true; btn.textContent = "Sending..."; }
+
+    // 2) Enviar - usando el template ID específico para partners
+    emailjs.sendForm("service_bd0x4ke", "template_fbun6ii", form) //
+      .then(() => {
+        alert("Thank you for your interest in our Partner Program. We will contact you soon.");
+        form.reset();
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("We couldn't send your message. Please try again.");
+      })
+      .finally(() => {
+        if (btn) { btn.disabled = false; btn.textContent = original; }
+      });
+  });
 });
 </script>
 </#macro>
