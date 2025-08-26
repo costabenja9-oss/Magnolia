@@ -43,9 +43,9 @@
 
 <#macro partnersHero>
 
-<#assign tagline = cmsValueWithFallback(content.tagline!"", "Únete al ecosistema B-FY") />
-<#assign title = cmsValueWithFallback(content.title!"", "Partnerships que transforman la autenticación digital") />
-<#assign description = cmsValueWithFallback(content.description!"", "Conecta con B-FY y ofrece a tus usuarios la experiencia de autenticación biométrica más segura y privada del mercado.") />
+<#assign tagline = cmsValueWithFallback(content.tagline!"", "PARTNER PROGRAM") />
+<#assign title = cmsValueWithFallback(content.title!"", "Boost your business with B-FY") />
+<#assign description = cmsValueWithFallback(content.description!"", "Expand your reach, offer new benefits to your clients, and maximize your profitability with B-FY's advanced solutions in decentralized biometrics, passwordless authentication, and online identity fraud prevention.") />
 <#assign heroImage = damImageWithFallback(content.image!"", "partners-hero.webp") />
 
 <section style="margin: 1rem 0 3rem; padding: 0 1.25rem; text-align: center;">

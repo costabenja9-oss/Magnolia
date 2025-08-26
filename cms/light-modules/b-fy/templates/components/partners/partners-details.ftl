@@ -43,18 +43,18 @@
 
 <#macro partnersDetails>
 
-<#assign sectionTitle = cmsValueWithFallback(content.details.title!"", "Beneficios de ser partner B-FY") />
-<#assign sectionDescription = cmsValueWithFallback(content.details.description!"", "Descubre las ventajas exclusivas que obtienes al integrar la tecnología B-FY en tu plataforma.") />
+<#assign sectionTitle = cmsValueWithFallback(content.details.title!"", "Innovation as the driving force behind your success") />
+<#assign sectionDescription = cmsValueWithFallback(content.details.description!"", "The B-FY Partner Program is designed for companies and professionals who want to stand out in the market with cutting-edge technology. If you're looking to expand your commercial offering with secure and efficient solutions, now is the ideal time to join.") />
 
 <#assign partnerTypes = [
   {
-    "title": "Referral partner",
+    "title": "REFERRAL PARTNER",
     "description": "If you have a strong network in the industry and want to earn income by recommending innovative tech solutions, this model is for you. Referral Partners include B-FY as a trusted option for their clients and receive incentives for each signed contract.",
     "image": "partners-referral.webp"
   },
   {
-    "title": "Integration partner", 
-    "description": "Ideal for companies looking to offer advanced, customized technology solutions. As an Integration Partner, you can incorporate B-FY into your services — designing, implementing, and maintaining comprehensive solutions that stops all online ID fraud on its tracks while bringing superior user experience to your customers.",
+    "title": "INTEGRATION PARTNER", 
+    "description": "Ideal for companies looking to offer advanced, customized technology solutions. As an Integration Partner, you can incorporate B-FY into your services—designing, implementing, and maintaining comprehensive solutions that stops all online ID fraud on its tracks while bringing superior user experience to your customers.",
     "image": "partners-integration.webp"
   }
 ] />

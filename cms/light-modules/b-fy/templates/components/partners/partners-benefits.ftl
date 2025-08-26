@@ -8,32 +8,32 @@
 <#assign benefits = [
   {
     "icon": "briefcase",
-    "title": "Financial incentives", 
+    "title": "FINANCIAL INCENTIVES", 
     "description": "Explore new revenue streams by collaborating on high-growth potential projects. Earn attractive financial rewards for referrals and sales."
   },
   {
-    "icon": "book",
-    "title": "Training and certification",
-    "description": "We offer a training process to help you earn your Official B-FY Partner certification."
-  },
-  {
     "icon": "handstack", 
-    "title": "Support at every step",
+    "title": "SUPPORT AT EVERY STEP",
     "description": "We'll assist you in generating business opportunities and expanding your solutions portfolio."
   },
   {
-    "icon": "security",
-    "title": "Technical support",
-    "description": "Our technical and commercial teams will support you to ensure your project's success."
-  },
-  {
     "icon": "presentation",
-    "title": "Marketing resources", 
+    "title": "MARKETING RESOURCES", 
     "description": "Access sales and marketing materials, plus support to strengthen your commercial strategy."
   },
   {
+    "icon": "book",
+    "title": "TRAINING AND CERTIFICATION",
+    "description": "We offer a training process to help you earn your Official B-FY Partner certification."
+  },
+  {
+    "icon": "security",
+    "title": "TECHNICAL SUPPORT",
+    "description": "Our technical and commercial teams will support you to ensure your project's success."
+  },
+  {
     "icon": "users",
-    "title": "Collaborative work",
+    "title": "COLLABORATIVE WORK",
     "description": "Our sales team will be by your side when needed to help shape proposals and new client projects."
   }
 ] />
