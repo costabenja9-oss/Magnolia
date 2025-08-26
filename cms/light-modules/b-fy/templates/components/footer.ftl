@@ -292,8 +292,7 @@
         
         <!-- Company Logo & LinkedIn -->
         <div class="footer-logo-section">
-          <!-- Logo del footer -->
-          <a href="${base}/" class="footer-logo" aria-label="Inicio B-FY">
+          <a href="${base}/" class="footer-logo" aria-label="Home B-FY">
             <img
               src="${base}/.resources/b-fy/webresources/images/logo-footer.png"
               alt="B-FY"
@@ -304,7 +303,7 @@
           </a>
           <a href="#" class="footer-linkedin" aria-label="LinkedIn">
             <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.063 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
           </a>
         </div>
@@ -313,13 +312,13 @@
         <div class="footer-links-section">
           <h3 class="footer-links-title">Links</h3>
           <nav class="footer-links-nav">
-            <a href="${base}/" class="footer-link">Inicio</a>
-            <a href="${base}/platform" class="footer-link">Plataforma</a>
-            <a href="${base}/industries" class="footer-link">Industrias</a>
+            <a href="${base}/" class="footer-link">Home</a>
+            <a href="${base}/platform" class="footer-link">Platform</a>
+            <a href="${base}/industries" class="footer-link">Industries</a>
             <a href="${base}/partners" class="footer-link">Partners</a>
-            <a href="${base}/developers" class="footer-link">Desarrolladores</a>
-            <a href="${base}/about-us" class="footer-link">Sobre nosotros</a>
-            <a href="${base}/resources" class="footer-link">Recursos</a>
+            <a href="${base}/developers" class="footer-link">Developers</a>
+            <a href="${base}/about-us" class="footer-link">About Us</a>
+            <a href="${base}/resources" class="footer-link">Resources</a>
           </nav>
         </div>
 
@@ -327,15 +326,15 @@
         <div class="footer-legal-section">
           <h3 class="footer-legal-title">Legal</h3>
           <nav class="footer-legal-nav" aria-label="Legal">
-            <a href="${base}/legal/privacy-policy">Política de Privacidad</a>
-            <a href="${base}/legal/terms-of-service">Términos de Servicio</a>
-            <a href="${base}/legal/cookies-policy">Política de Cookies</a>
+            <a href="${base}/privacy-policy">Privacy Policy</a>
+            <a href="${base}/terms-of-service">Terms of Service</a>
+            <a href="${base}/cookies-policy">Cookies Policy</a>
           </nav>
         </div>
 
         <!-- Contact -->
         <div class="footer-contact-section">
-          <h3 class="footer-contact-title">Contacto</h3>
+          <h3 class="footer-contact-title">Contact</h3>
           <a href="#" class="footer-contact-button">
             hello@b-fy.com
           </a>
@@ -345,12 +344,12 @@
 
       <!-- Certifications Section -->
       <div class="footer-certifications">
-        <h3 class="footer-certifications-title">Certificaciones</h3>
+        <h3 class="footer-certifications-title">Certifications</h3>
         <div class="footer-certifications-grid">
           <img src="${base}/.resources/b-fy/webresources/images/iso-9001.svg" alt="ISO 9001" class="footer-cert-img">
           <img src="${base}/.resources/b-fy/webresources/images/iso-iec-27001.svg" alt="ISO/IEC 27001" class="footer-cert-img">
           <img src="${base}/.resources/b-fy/webresources/images/iso-iec-27701.svg" alt="ISO/IEC 27701" class="footer-cert-img">
-          <img src="${base}/.resources/b-fy/webresources/images/pacto-digital.webp" alt="Pacto Digital" class="footer-cert-img">
+          <img src="${base}/.resources/b-fy/webresources/images/pacto-digital.webp" alt="Digital Pact" class="footer-cert-img">
           <img src="${base}/.resources/b-fy/webresources/images/incibe.webp" alt="INCIBE" class="footer-cert-img">
           <img src="${base}/.resources/b-fy/webresources/images/openid.webp" alt="OpenID" class="footer-cert-img">
         </div>
@@ -358,7 +357,7 @@
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; ${.now?string("yyyy")} B-FY. Todos los derechos reservados.</p>
+      <p>&copy; ${.now?string("yyyy")} B-FY. All rights reserved.</p>
     </div>
   </footer>
 </#macro>

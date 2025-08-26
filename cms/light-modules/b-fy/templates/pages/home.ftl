@@ -60,5 +60,14 @@
 
 <#import "/b-fy/templates/components/footer.ftl" as layout />
 <@layout.siteFooter />
+
+<!-- Redirection script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (location.pathname === "/" || location.pathname === "") {
+      location.replace("/home");
+    }
+  });
+</script>
 </body>
 </html>
