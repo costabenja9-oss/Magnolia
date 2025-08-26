@@ -32,11 +32,15 @@
   gap: 2.5rem;
 }
 
-.footer-logo {
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: white;
+.footer-logo { /* anchor */
+  display: inline-block;
   margin: 0;
+}
+
+.footer-logo-img {
+  display: block;
+  height: 56px;   /* alto base del logo del footer */
+  width: auto;
 }
 
 .footer-linkedin {
@@ -51,7 +55,6 @@
 }
 
 .footer-links-section {
-  /* Ajuste: dejamos que el grid defina la altura, sin forzar span */
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -65,7 +68,6 @@
 }
 
 .footer-links-nav {
-  /* Re-distribución multi-columna más compacta */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: .5rem 1.25rem;
@@ -188,7 +190,6 @@
   }
   
   .footer-links-title { text-align: left; }
-  /* Multi-col mantiene auto-fill; solo ajustamos densidad */
   .footer-links-nav { gap: .5rem 1.75rem; }
   
   .footer-link {
@@ -219,9 +220,8 @@
   }
   
   .footer-links-nav {
-  grid-template-rows: repeat(6, minmax(0, 1fr));
-  /* Reduce vertical gap entre links */
-  gap: 1rem;
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    gap: 1rem;
   }
   
   .footer-legal-section {
@@ -238,7 +238,6 @@
     padding-left: 3.25rem;
     padding-right: 3.25rem;
   }
-  .footer-links-nav { gap: .4rem 2.25rem; }
   .footer-links-nav { gap: .4rem 2.75rem; }
   
   .footer-contact-section {
@@ -262,10 +261,8 @@
     gap: 3rem;
     border-left: 1px solid currentColor;
   }
-  
-  .footer-logo {
-    font-size: 2.25rem;
-  }
+
+  .footer-logo-img { height: 80px; } /* un poco más grande en desktop */
   
   .footer-linkedin {
     width: 1.5625rem;
@@ -295,9 +292,17 @@
         
         <!-- Company Logo & LinkedIn -->
         <div class="footer-logo-section">
-          <!-- Logo (usa favicon provisional si no hay logotipo dedicado) -->
-          <a href="${base}/" class="footer-logo" aria-label="Inicio B-FY">B-FY</a>
-          <a href="#" class="footer-linkedin">
+          <!-- Logo del footer -->
+          <a href="${base}/" class="footer-logo" aria-label="Inicio B-FY">
+            <img
+              src="${base}/.resources/b-fy/webresources/images/logo-footer.png"
+              alt="B-FY"
+              class="footer-logo-img"
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+          <a href="#" class="footer-linkedin" aria-label="LinkedIn">
             <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
@@ -315,7 +320,6 @@
             <a href="${base}/developers" class="footer-link">Desarrolladores</a>
             <a href="${base}/about-us" class="footer-link">Sobre nosotros</a>
             <a href="${base}/resources" class="footer-link">Recursos</a>
-            <!-- Legal links moved to Legal column -->
           </nav>
         </div>
 
@@ -343,18 +347,18 @@
       <div class="footer-certifications">
         <h3 class="footer-certifications-title">Certificaciones</h3>
         <div class="footer-certifications-grid">
-      <img src="${base}/.resources/b-fy/webresources/images/iso-9001.svg" alt="ISO 9001" class="footer-cert-img">
-      <img src="${base}/.resources/b-fy/webresources/images/iso-iec-27001.svg" alt="ISO/IEC 27001" class="footer-cert-img">
-      <img src="${base}/.resources/b-fy/webresources/images/iso-iec-27701.svg" alt="ISO/IEC 27701" class="footer-cert-img">
-      <img src="${base}/.resources/b-fy/webresources/images/pacto-digital.webp" alt="Pacto Digital" class="footer-cert-img">
-      <img src="${base}/.resources/b-fy/webresources/images/incibe.webp" alt="INCIBE" class="footer-cert-img">
-      <img src="${base}/.resources/b-fy/webresources/images/openid.webp" alt="OpenID" class="footer-cert-img">
+          <img src="${base}/.resources/b-fy/webresources/images/iso-9001.svg" alt="ISO 9001" class="footer-cert-img">
+          <img src="${base}/.resources/b-fy/webresources/images/iso-iec-27001.svg" alt="ISO/IEC 27001" class="footer-cert-img">
+          <img src="${base}/.resources/b-fy/webresources/images/iso-iec-27701.svg" alt="ISO/IEC 27701" class="footer-cert-img">
+          <img src="${base}/.resources/b-fy/webresources/images/pacto-digital.webp" alt="Pacto Digital" class="footer-cert-img">
+          <img src="${base}/.resources/b-fy/webresources/images/incibe.webp" alt="INCIBE" class="footer-cert-img">
+          <img src="${base}/.resources/b-fy/webresources/images/openid.webp" alt="OpenID" class="footer-cert-img">
         </div>
       </div>
     </div>
     
     <div class="footer-bottom">
-    <p>&copy; ${.now?string("yyyy")} B-FY. Todos los derechos reservados.</p>
+      <p>&copy; ${.now?string("yyyy")} B-FY. Todos los derechos reservados.</p>
     </div>
   </footer>
 </#macro>
