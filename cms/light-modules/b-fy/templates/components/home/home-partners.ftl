@@ -1,22 +1,6 @@
 <#-- Import shared CMS utilities -->
 <#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
 
-<#-- Funciones de emergencia inline -->
-<#function hasRealContent value>
-  <#if !value??>
-    <#return false />
-  </#if>
-  <#return (value?has_content && value?is_string && value?trim != '') || (value?is_hash) />
-</#function>
-
-<#function cmsOrDefault cmsValue defaultValue>
-  <#if hasRealContent(cmsValue!'')>
-    <#return cmsValue />
-  <#else>
-    <#return defaultValue />
-  </#if>
-</#function>
-
 <#-- Consolidated original home-partners.ftl content -->
 
 <#-- Helper functions extracted to top-level (cannot be inside macro) -->
@@ -45,14 +29,14 @@
 		</#if>
 	</#if>
 	<#assign _fallback = {
-		"tagline":"Discover our partner program",
+		"tagline":"Discover our Partner Program",
 		"title":"Be part of the future of omnichannel authentication",
-		"description":"B-FY is looking for strategic partners: integrators, technology providers, consultants. Expand your reach, increase client value and maximize profitability with decentralized biometrics, passwordless authentication, and advanced fraud prevention.",
-		"benefits":["Access to cutting‑edge technology","Incentive structure","Technical support and specialized training","Marketing materials and resources"]
+		"description":"B-FY is looking for strategic partners interested in expanding their commercial offering with advanced solutions in decentralized biometrics, passwordless authentication, and fraud and identity theft prevention.\n\nIf you are a systems integrator, technology provider, or consultant, join our ecosystem. Discover how partnering with B-FY can help you expand your reach, increase value for your clients, and maximize your business profitability.",
+		"benefits":["Access to cutting-edge technology","Incentive structure","Technical support and specialized training","Marketing materials and resources","Support in generating business opportunities"]
 	} />
-	<#assign _tagline = cmsOrDefault(partnersNode.tagline!'', _fallback.tagline) />
-	<#assign _title = cmsOrDefault(partnersNode.title!'', _fallback.title) />
-	<#assign _desc = cmsOrDefault(partnersNode.description!'', _fallback.description) />
+	<#assign _tagline = cms.cmsOrDefault(partnersNode.tagline!'', _fallback.tagline) />
+	<#assign _title = cms.cmsOrDefault(partnersNode.title!'', _fallback.title) />
+	<#assign _desc = cms.cmsOrDefault(partnersNode.description!'', _fallback.description) />
 	<#assign benefits = [] />
 	<#if partnersNode.benefits?has_content>
 		<#assign benefits = partnersNode.benefits?children />

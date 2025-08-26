@@ -1,38 +1,11 @@
-
 <#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
-
-<#-- Funciones de emergencia inline -->
-<#function hasRealContent value>
-	<#if !value??>
-		<#return false />
-	</#if>
-	<#return (value?has_content && value?is_string && value?trim != '') || (value?is_hash) />
-</#function>
-
-<#function cmsOrDefault cmsValue defaultValue>
-	<#if hasRealContent(cmsValue!'')>
-		<#return cmsValue />
-	<#else>
-		<#return defaultValue />
-	</#if>
-</#function>
 
 <#-- Consolidated original home-industries.ftl content -->
 <#macro homeIndustries 
 	tagline="B‑FY in action"
 	title="A solution that adapts to every sector"
-	description="Our technology meets the demands of different industries. B‑FY protects institutions from all types of online identity fraud, including growing attack vectors such as AI, APP, ATO, and bots."
+	description="Our technology meets the demands of various industries. B-FY protects institutions against all forms of online identity fraud, including the growing attack vectors driven by AI, APP fraud, ATO, and bots."
 >
-	<#assign financialThumb = ctx.contextPath + "/.resources/b-fy/webresources/images/financial-services-thumbnail.webp" />
-	<#assign transportThumb = ctx.contextPath + "/.resources/b-fy/webresources/images/transportation-logistics-thumbnail.webp" />
-	<#assign educationThumb = ctx.contextPath + "/.resources/b-fy/webresources/images/education-thumbnail.webp" />
-	<#assign healthcareThumb = ctx.contextPath + "/.resources/b-fy/webresources/images/healthcare-thumbnail.webp" />
-	<#assign fallbackIndustryItems = [
-		{"name":"Financial Services","summary":"Stop ATO and APP threats, MFA bombing, and other attacks and data breaches with B-FY’s secure, decentralized biometric authentication. Balance regulatory compliance and user experience with strong security measures that stop all forms of online identity fraud.","link":"/industries#financial","thumbnail":financialThumb},
-		{"name":"Transport & Logistics","summary":"Meet all sector-specific regulatory requirements while offering a seamless user experience with B-FY’s decentralized, passwordless-by-design solution. Eliminate financial fraud stemming from identity theft caused by both internal and external actors.","link":"/industries#transport","thumbnail":transportThumb},
-		{"name":"Education","summary":"Protect students, teachers, and administrative staff against ransomware, data breaches, and online financial fraud in payments, student loans, grants, and scholarships. Improve user experience by streamlining enrollment and ensure only authorized individuals access restricted areas with B-FY.","link":"${ctx.contextPath}/industries/education","thumbnail":educationThumb},
-		{"name":"Healthcare Services","summary":"Comply with all privacy, quality, and security regulations, including HIPAA and GDPR. Deliver a frictionless user experience with B-FY’s decentralized, passwordless-by-design solution. We protect healthcare institutions and their users against medical identity theft, insurance fraud, and data breaches.","link":"/industries#healthcare","thumbnail":healthcareThumb}
-	] />
 	<#if !HOME_INDUSTRIES_STYLE_INCLUDED??>
 		<#global HOME_INDUSTRIES_STYLE_INCLUDED = true />
 		<style>
@@ -44,6 +17,22 @@
 				background: #f8fafc;
 				font-optical-sizing: auto;
 			}
+			
+			@media (min-width: 640px) {
+				.industries {
+					padding: 100px 40px 120px;
+				}
+			}
+			
+			@media (min-width: 1024px) {
+				.industries {
+					padding: 120px 52px 140px;
+				}
+			}
+			
+			/* Header Styles */
+			.industries__tag {
+				margin: 0 auto;
 				padding: 12px 24px;
 				border-radius: 12px;
 				background: #ea580c;
@@ -257,12 +246,15 @@
 			}
 		</style>
 	</#if>
+	
+	<#-- DEF: Resolver variables una sola vez al inicio -->
 	<#assign fallbackIndustryItems = [
-		{"name":"Financial Services","summary":"Stop ATO and APP threats, MFA bombing, and other attacks and data breaches with B-FY’s secure, decentralized biometric authentication. Balance regulatory compliance and user experience with strong security measures that stop all forms of online identity fraud.","link":"${ctx.contextPath}/industries/financial-services"},
-		{"name":"Transport & Logistics","summary":"Meet all sector-specific regulatory requirements while offering a seamless user experience with B-FY’s decentralized, passwordless-by-design solution. Eliminate financial fraud stemming from identity theft caused by both internal and external actors.","link":"${ctx.contextPath}/industries/transport-services"},
+		{"name":"Finance","summary":"Stop ATO and APP threats, MFA bombing, and other attacks and data breaches with B-FY's secure, decentralized biometric authentication. Balance regulatory compliance and user experience with strong security measures that stop all forms of online identity fraud.","link":"${ctx.contextPath}/industries/financial-services","thumbnail":"${ctx.contextPath}/.resources/b-fy/webresources/images/financial-services-thumbnail.webp"},
+		{"name":"Transport & Logistics","summary":"Meet all sector-specific regulatory requirements while offering a seamless user experience with B-FY's decentralized, passwordless-by-design solution. Eliminate financial fraud stemming from identity theft caused by both internal and external actors.","link":"${ctx.contextPath}/industries/transport-services","thumbnail":"${ctx.contextPath}/.resources/b-fy/webresources/images/transportation-logistics-thumbnail.webp"},
 		{"name":"Education","summary":"Protect students, teachers, and administrative staff against ransomware, data breaches, and online financial fraud in payments, student loans, grants, and scholarships. Improve user experience by streamlining enrollment and ensure only authorized individuals access restricted areas with B-FY.","link":"${ctx.contextPath}/industries/education","thumbnail":"${ctx.contextPath}/.resources/b-fy/webresources/images/education-thumbnail.webp"},
-		{"name":"Healthcare Services","summary":"Comply with all privacy, quality, and security regulations, including HIPAA and GDPR. Deliver a frictionless user experience with B-FY’s decentralized, passwordless-by-design solution. We protect healthcare institutions and their users against medical identity theft, insurance fraud, and data breaches.","link":"${ctx.contextPath}/industries/healthcare"}
+		{"name":"Healthcare Services","summary":"Comply with all privacy, quality, and security regulations, including HIPAA and GDPR. Deliver a frictionless user experience with B-FY's decentralized, passwordless-by-design solution. We protect healthcare institutions and their users against medical identity theft, insurance fraud, and data breaches.","link":"${ctx.contextPath}/industries/healthcare","thumbnail":"${ctx.contextPath}/.resources/b-fy/webresources/images/healthcare-thumbnail.webp"}
 	] />
+	
 	<#assign _industries = {} />
 	<#if content.industries??>
 		<#assign _indChildren = (content.industries?children)![] />
@@ -270,34 +262,19 @@
 			<#assign _industries = _indChildren[0] />
 		</#if>
 	</#if>
-	<#assign _tag = cmsOrDefault(_industries.tagline!'', tagline) />
-	<#assign _title = cmsOrDefault(_industries.title!'', title) />
-	<#assign _desc = cmsOrDefault(_industries.description!'', description) />
-	<#assign itemList = fallbackIndustryItems />
-	<#assign authoredItems = [] />
-	<#if _industries?has_content>
-		<#if _industries.items?has_content && _industries.items?is_sequence>
-			<#assign authoredItems = _industries.items />
-		<#elseif _industries.items?has_content && _industries.items?is_hash>
-			<#if _industries.items?children?has_content>
-				<#assign authoredItems = _industries.items?children />
-			</#if>
-		</#if>
-		<#if authoredItems?size == 0>
-			<#assign tmp = [] />
-			<#list _industries?children as ch>
-				<#if ch.@name?starts_with('items')>
-					<#assign tmp += [ch] />
-				</#if>
-			</#list>
-			<#if tmp?size gt 0>
-				<#assign authoredItems = tmp />
-			</#if>
-		</#if>
+	
+	<#assign _tag = cms.cmsOrDefault(_industries.tagline!'', tagline) />
+	<#assign _title = cms.cmsOrDefault(_industries.title!'', title) />
+	<#assign _desc = cms.cmsOrDefault(_industries.description!'', description) />
+	<#assign _items = fallbackIndustryItems />
+	
+	<#-- Procesar items si viene del CMS -->
+	<#if cms.hasRealMultifieldContent(_industries.items!'')>
+		<#assign _items = cms.processMultifield(_industries.items) />
+	<#elseif _industries.items?has_content && _industries.items?is_sequence>
+		<#assign _items = _industries.items />
 	</#if>
-	<#if authoredItems?size gt 0>
-		<#assign itemList = authoredItems />
-	</#if>
+	
 	<section class="industries" aria-label="Industries overview">
 		<hgroup>
 			<p class="industries__tag">${_tag}</p>
@@ -305,99 +282,25 @@
 		</hgroup>
 		<p class="industries__desc">${_desc}</p>
 		<div class="industries__scroller" id="industries-scroll">
-			<#list itemList as it>
+			<#list _items as it>
 				<article class="industry">
-					<#assign thumbSrc = "" />
-					<#if it.thumbnail?has_content>
-						<#assign rawThumb = it.thumbnail />
-						<#if rawThumb?is_hash>
-							<#if rawThumb.@path?has_content && (damfn??)>
-								<#attempt>
-									<#assign thumbNode = cmsfn.contentByPath(rawThumb.@path, "dam")! />
-									<#if thumbNode??>
-										<#assign thumbSrc = (damfn.link(thumbNode))!thumbSrc />
-									</#if>
-								<#recover></#recover>
-							</#if>
-							<#if (thumbSrc == "") && (rawThumb.identifier?has_content || rawThumb.uuid?has_content) && (damfn??)>
-								<#assign _id = rawThumb.identifier!rawThumb.uuid />
-								<#attempt>
-									<#assign assetNode = cmsfn.contentById(_id, "dam")! />
-									<#if assetNode??>
-										<#assign thumbSrc = (damfn.link(assetNode))!thumbSrc />
-									</#if>
-								<#recover></#recover>
-							</#if>
-							<#if thumbSrc == "">
-								<#list rawThumb?keys as k>
-									<#assign lk = k?lower_case />
-									<#if (lk?contains('uuid') || lk?contains('identifier')) && (damfn??)>
-										<#attempt>
-											<#assign nodeByAny = cmsfn.contentById(rawThumb[k], "dam")! />
-											<#if nodeByAny??>
-												<#assign thumbSrc = (damfn.link(nodeByAny))!thumbSrc />
-											</#if>
-										<#recover></#recover>
-									</#if>
-									<#if thumbSrc == "" && lk?contains('path') && rawThumb[k]?has_content && (damfn??)>
-										<#attempt>
-											<#assign nodeByPath = cmsfn.contentByPath(rawThumb[k], "dam")! />
-											<#if nodeByPath??>
-												<#assign thumbSrc = (damfn.link(nodeByPath))!thumbSrc />
-											</#if>
-										<#recover></#recover>
-									</#if>
-								</#list>
-							</#if>
-							<#if thumbSrc == "" && rawThumb.src?has_content>
-								<#assign thumbSrc = rawThumb.src />
-							</#if>
-						<#elseif rawThumb?is_string>
-							<#assign thumbSrc = rawThumb />
-							<#if damfn??>
-								<#attempt>
-									<#assign _maybeNode = cmsfn.contentById(rawThumb, "dam")! />
-									<#if _maybeNode??>
-										<#assign thumbSrc = (damfn.link(_maybeNode))!thumbSrc />
-									<#else>
-										<#if rawThumb?starts_with("/")>
-											<#assign thumbNode2 = cmsfn.contentByPath(rawThumb, "dam")! />
-											<#if thumbNode2??>
-												<#assign thumbSrc = (damfn.link(thumbNode2))!thumbSrc />
-											</#if>
-										</#if>
-									</#if>
-								<#recover></#recover>
-							</#if>
-						</#if>
-					</#if>
-					<#if thumbSrc?has_content>
-						<img src="${thumbSrc}" alt="" class="industry__thumb" loading="lazy" />
-					<#elseif it.thumbnail?has_content && it.thumbnail?is_string>
-						<img src="${it.thumbnail}" alt="" class="industry__thumb" loading="lazy" />
+					<#-- Check if we're using CMS content (has real thumbnail) or fallback items -->
+					<#assign _isFallbackItem = (it.thumbnail!'')? starts_with(ctx.contextPath + "/.resources/") />
+					<#if !_isFallbackItem && it.thumbnail?has_content>
+						<#-- Use CMS thumbnail -->
+						<#assign _thumbSrc = cms.damOrLocal(it.thumbnail, 'industries.webp') />
 					<#else>
-						<#-- Smart fallback based on industry name -->
-						<#assign fallbackThumb = "" />
-						<#assign industryName = (it.name!"")?lower_case />
-						<#if industryName?contains("financial") || industryName?contains("banking")>
-							<#assign fallbackThumb = ctx.contextPath + "/.resources/b-fy/webresources/images/financial-services-thumbnail.webp" />
-						<#elseif industryName?contains("transport") || industryName?contains("logistics")>
-							<#assign fallbackThumb = ctx.contextPath + "/.resources/b-fy/webresources/images/transportation-logistics-thumbnail.webp" />
-						<#elseif industryName?contains("education") || industryName?contains("school")>
-							<#assign fallbackThumb = ctx.contextPath + "/.resources/b-fy/webresources/images/education-thumbnail.webp" />
-						<#elseif industryName?contains("healthcare") || industryName?contains("health") || industryName?contains("medical")>
-							<#assign fallbackThumb = ctx.contextPath + "/.resources/b-fy/webresources/images/healthcare-thumbnail.webp" />
-						<#else>
-							<#assign fallbackThumb = ctx.contextPath + "/.resources/b-fy/webresources/images/industries.webp" />
-						</#if>
-						<img src="${fallbackThumb}" alt="${it.name!}" class="industry__thumb" loading="lazy" />
+						<#-- For fallback items, use the specific thumbnail already assigned -->
+						<#assign _thumbSrc = it.thumbnail!ctx.contextPath + "/.resources/b-fy/webresources/images/industries.webp" />
 					</#if>
+					
+					<img src="${_thumbSrc}" alt="${it.name!}" class="industry__thumb" loading="lazy" />
 					<div class="industry__content">
 						<h3 class="industry__name">${it.name!}</h3>
 						<p class="industry__summary">${it.summary!it.description!}</p>
 						<#if it.link?has_content>
 							<a class="industry__more" href="${it.link}">
-								<span>Leer más</span>
+								<span>Read more</span>
 								<svg class="industries__arrow" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
 									<path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
 								</svg>
@@ -408,8 +311,16 @@
 			</#list>
 		</div>
 		<div class="industries__controls" aria-hidden="true">
-			<button type="button" class="industries__btn" data-dir="prev" onclick="(function(btn){const sc=document.getElementById('industries-scroll');if(!sc)return;sc.scrollBy({left:-sc.clientWidth*0.85,behavior:'smooth'});})(this)"><svg viewBox="0 0 11 9" fill="currentColor" aria-hidden="true"><path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/></svg></button>
-			<button type="button" class="industries__btn" data-dir="next" onclick="(function(btn){const sc=document.getElementById('industries-scroll');if(!sc)return;sc.scrollBy({left:sc.clientWidth*0.85,behavior:'smooth'});})(this)"><svg style="transform:rotate(180deg)" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true"><path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/></svg></button>
+			<button type="button" class="industries__btn" data-dir="prev" onclick="(function(btn){const sc=document.getElementById('industries-scroll');if(!sc)return;sc.scrollBy({left:-sc.clientWidth*0.85,behavior:'smooth'});})(this)">
+				<svg viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
+					<path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
+				</svg>
+			</button>
+			<button type="button" class="industries__btn" data-dir="next" onclick="(function(btn){const sc=document.getElementById('industries-scroll');if(!sc)return;sc.scrollBy({left:sc.clientWidth*0.85,behavior:'smooth'});})(this)">
+				<svg style="transform:rotate(180deg)" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
+					<path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
+				</svg>
+			</button>
 		</div>
 	</section>
 </#macro>

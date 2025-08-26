@@ -1,22 +1,6 @@
 <#-- Import shared CMS utilities -->
 <#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
 
-<#-- Funciones de emergencia inline -->
-<#function hasRealContent value>
-  <#if !value??>
-    <#return false />
-  </#if>
-  <#return (value?has_content && value?is_string && value?trim != '') || (value?is_hash) />
-</#function>
-
-<#function cmsOrDefault cmsValue defaultValue>
-  <#if hasRealContent(cmsValue!'')>
-    <#return cmsValue />
-  <#else>
-    <#return defaultValue />
-  </#if>
-</#function>
-
 <#-- Consolidated original home-testimonials.ftl content -->
 <#macro homeTestimonials title="" description="">
 	<#if !HOME_TESTIMONIALS_STYLE_INCLUDED??>
@@ -281,8 +265,8 @@
 			<#assign _tConf = _tChildren[0] />
 		</#if>
 	</#if>
-	<#assign _title = cmsOrDefault(_tConf.title!'', title) />
-	<#assign _desc = cmsOrDefault(_tConf.description!'', description) />
+	<#assign _title = cms.cmsOrDefault(_tConf.title!'', title) />
+	<#assign _desc = cms.cmsOrDefault(_tConf.description!'', description) />
 	<#assign testimonialList = [] />
 	<#if content.testimonials?has_content>
 		<#assign _testChildren = (content.testimonials?children)![] />
@@ -290,8 +274,51 @@
 			<#assign testimonialList = _testChildren />
 		</#if>
 	</#if>
+	
+	<#-- Fallback testimonials if no CMS content -->
 	<#if testimonialList?size == 0>
-		<#return />
+		<#assign testimonialList = [
+			{
+				"name": "Jorge Téllez Higareda",
+				"position": "Cybersecurity Risk Director, ATIO® Group",
+				"testimonial": "We chose B-FY because their decentralized, passwordless-by-design architecture aligns perfectly with our zero-trust cybersecurity framework.\n\nThe biometric authentication eliminates the attack vectors associated with traditional credentials while providing the regulatory compliance we need across all our operations.\n\nB-FY's solution has significantly enhanced our security posture while improving user experience across our platforms."
+			},
+			{
+				"name": "David García Martín",
+				"position": "CTO, Qualoom",
+				"testimonial": "B-FY's technology represents the future of digital identity verification. Their decentralized approach ensures user privacy while delivering enterprise-grade security.\n\nThe seamless integration and passwordless experience have transformed how our users interact with our platform, reducing friction while eliminating identity-related security risks.\n\nThe implementation was straightforward, and the ongoing support has been exceptional."
+			},
+			{
+				"name": "Peter Michaud",
+				"position": "Chief Information Security Officer, TSG",
+				"testimonial": "After evaluating multiple biometric authentication solutions, B-FY stood out for its decentralized architecture and comprehensive security approach.\n\nThe solution addresses our most critical security challenges - eliminating password-based attacks, preventing account takeovers, and ensuring regulatory compliance across multiple jurisdictions.\n\nB-FY has become an integral part of our cybersecurity infrastructure, providing both security and usability improvements that our stakeholders immediately recognized."
+			},
+			{
+				"name": "Ernesto Urías",
+				"position": "Head of Digital Transformation, HOLA TI",
+				"testimonial": "B-FY's passwordless authentication has revolutionized our digital transformation strategy. The decentralized biometric approach eliminates the security vulnerabilities inherent in traditional authentication methods.\n\nOur clients now enjoy a frictionless user experience while we maintain the highest security standards. The solution seamlessly integrates with our existing infrastructure and scales effortlessly with our growing user base.\n\nThe ROI has been exceptional, both in terms of security improvements and operational efficiency gains."
+			},
+			{
+				"name": "Carlos Mendoza",
+				"position": "Director of Information Security, CTN",
+				"testimonial": "B-FY's decentralized biometric authentication has been a game-changer for our organization. The technology addresses the fundamental flaws of password-based systems while providing a superior user experience.\n\nThe implementation process was smooth, and the security benefits were immediately apparent. We've seen a dramatic reduction in security incidents related to compromised credentials.\n\nB-FY's approach to privacy and data protection aligns perfectly with our commitment to user privacy and regulatory compliance."
+			},
+			{
+				"name": "María José Fernández",
+				"position": "IT Director, Madrid Golf Federation",
+				"testimonial": "We implemented B-FY's authentication solution to enhance security for our member portal and tournament management systems.\n\nThe passwordless experience has been incredibly well-received by our members, particularly given the diverse age range and technical comfort levels in our community.\n\nB-FY's solution provides enterprise-level security without the complexity, making it perfect for our organization's needs. The support team has been outstanding throughout the entire process."
+			},
+			{
+				"name": "Alexandru Șerban",
+				"position": "CEO, Serban Group",
+				"testimonial": "B-FY's innovative approach to digital identity represents exactly what we needed for our digital infrastructure.\n\nTheir decentralized, biometric-based authentication eliminates the security risks associated with traditional password systems while providing an exceptional user experience.\n\nThe technology has enabled us to offer our clients a more secure and user-friendly platform, which has translated directly into improved client satisfaction and business growth."
+			},
+			{
+				"name": "Roberto Díaz",
+				"position": "Chief Technology Officer, SOLDIG",
+				"testimonial": "B-FY's passwordless authentication technology has exceeded our expectations in every aspect. The decentralized architecture provides the security guarantees we require while the biometric approach eliminates user friction.\n\nThe integration with our existing systems was seamless, and the scalability has been impressive as we've grown our user base.\n\nB-FY has become a cornerstone of our security infrastructure, providing both immediate security benefits and a foundation for future growth."
+			}
+		] />
 	</#if>
 	<section class="testimonials" aria-label="Testimonials">
 		<#if _title?has_content || _desc?has_content>
@@ -332,10 +359,89 @@
 					</li>
 				</#list>
 			</ul>
-			<button type="button" class="testimonials__navBtn testimonials__navBtn--prev" aria-label="Previous" onclick="(function(){const s=document.getElementById('testimonials-slides');if(!s)return;currentTestimonial=(currentTestimonial-1+testimonialCount)%testimonialCount;updateTestimonials();})()"><svg class="testimonials__navIcon" viewBox='0 0 11 9' fill='currentColor' aria-hidden='true'><path d='M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z'/></svg></button>
-			<button type="button" class="testimonials__navBtn testimonials__navBtn--next" aria-label="Next" onclick="(function(){const s=document.getElementById('testimonials-slides');if(!s)return;currentTestimonial=(currentTestimonial+1)%testimonialCount;updateTestimonials();})()"><svg class="testimonials__navIcon" style='transform:rotate(180deg)' viewBox='0 0 11 9' fill='currentColor' aria-hidden='true'><path d='M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z'/></svg></button>
+			<button type="button"
+  class="testimonials__navBtn testimonials__navBtn--prev"
+  aria-label="Previous"
+  onclick="(function(){
+    if(typeof window.currentTestimonial!=='number'||typeof window.testimonialCount!=='number') return;
+    window.currentTestimonial = (window.currentTestimonial - 1 + window.testimonialCount) % window.testimonialCount;
+    window.updateTestimonials();
+  })()">
+  <svg class="testimonials__navIcon" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
+    <path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
+  </svg>
+</button>
+
+<button type="button"
+  class="testimonials__navBtn testimonials__navBtn--next"
+  aria-label="Next"
+  onclick="(function(){
+    if(typeof window.currentTestimonial!=='number'||typeof window.testimonialCount!=='number') return;
+    window.currentTestimonial = (window.currentTestimonial + 1) % window.testimonialCount;
+    window.updateTestimonials();
+  })()">
+  <svg class="testimonials__navIcon" style="transform:rotate(180deg)" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
+    <path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
+  </svg>
+</button>
+
 		</div>
 		<div class="testimonials__dotsWrap"><div class="testimonials__dots" id="testimonials-dots"></div></div>
-		<script>(function(){const slides=document.getElementById('testimonials-slides');const dotsC=document.getElementById('testimonials-dots');if(!slides||!dotsC)return;window.testimonialCount=[...slides.children].length;window.currentTestimonial=0;function renderDots(){dotsC.innerHTML='';for(let i=0;i<testimonialCount;i++){const b=document.createElement('button');b.type='button';b.className='testimonials__dot';b.addEventListener('click',()=>{currentTestimonial=i;updateTestimonials();});dotsC.appendChild(b);} }function updateDots(){[...dotsC.children].forEach((d,i)=>d.classList.toggle('is-active',i===currentTestimonial));}window.updateTestimonials=function(){const offset=-currentTestimonial*100;slides.style.transform='translateX('+offset+'%)';updateDots();};renderDots();updateTestimonials();})();</script>
+		<script>
+(function () {
+  const slides   = document.getElementById('testimonials-slides');
+  const dotsC    = document.getElementById('testimonials-dots');
+  const viewport = document.getElementById('testimonials-carousel');
+  if (!slides || !dotsC || !viewport) return;
+
+  // Estado global (lo usan las flechas)
+  window.testimonialCount   = slides.children.length;
+  window.currentTestimonial = 0;
+
+  function renderDots() {
+    dotsC.innerHTML = '';
+    for (let i = 0; i < window.testimonialCount; i++) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'testimonials__dot';
+      b.addEventListener('click', () => {
+        window.currentTestimonial = i;
+        window.updateTestimonials();
+      });
+      dotsC.appendChild(b);
+    }
+  }
+
+  function updateDots() {
+    [...dotsC.children].forEach((d, i) =>
+      d.classList.toggle('is-active', i === window.currentTestimonial)
+    );
+  }
+
+  // Ancho visible (1 “slide”)
+  function slideWidth() {
+    return viewport.getBoundingClientRect().width;
+  }
+
+  // ✅ Mover por múltiplos del ancho visible (px), no en %
+  window.updateTestimonials = function () {
+    const offsetPx = -window.currentTestimonial * slideWidth();
+    slides.style.transform = 'translateX(' + offsetPx + 'px)';
+    updateDots();
+  };
+
+  // Recalcular en resize para que no quede “a medias”
+  let resizeTO;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTO);
+    resizeTO = setTimeout(() => window.updateTestimonials(), 100);
+  });
+
+  renderDots();
+  window.updateTestimonials();
+})();
+</script>
+
+
 	</section>
 </#macro>

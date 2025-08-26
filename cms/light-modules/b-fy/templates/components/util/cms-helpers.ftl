@@ -5,7 +5,7 @@
   <#if !value??>
     <#return false />
   </#if>
-  <#return (value?has_content && value?is_string && value?trim != '') || (value?is_hash) />
+  <#return (value?has_content && value?is_string && value?trim != '') || (value?is_hash) || (value?is_sequence && value?size > 0) />
 </#function>
 
 <#-- Función para obtener valor del CMS o default -->
@@ -19,31 +19,60 @@
 
 <#-- Función para detectar si un multifield tiene contenido real -->
 <#function hasRealMultifieldContent multifieldValue>
-  <#if !multifieldValue?? || !multifieldValue?is_hash>
+  <#if !multifieldValue??>
     <#return false />
   </#if>
   
-  <#-- Contar items reales (claves numéricas) -->
-  <#assign realItemCount = 0 />
-  <#list multifieldValue?keys as key>
-    <#if key?matches('^[0-9]+$') && multifieldValue[key]?is_hash>
-      <#assign item = multifieldValue[key] />
-      <#-- Verificar si el item tiene al menos un campo con contenido real -->
-      <#list item?keys as itemKey>
-        <#if hasRealContent(item[itemKey])>
-          <#assign realItemCount = realItemCount + 1 />
-          <#break />
-        </#if>
-      </#list>
-    </#if>
-  </#list>
+  <#-- Si es secuencia, verificar que tenga elementos con contenido -->
+  <#if multifieldValue?is_sequence>
+    <#list multifieldValue as item>
+      <#if item?is_hash>
+        <#list item?keys as itemKey>
+          <#if hasRealContent(item[itemKey])>
+            <#return true />
+          </#if>
+        </#list>
+      </#if>
+    </#list>
+    <#return false />
+  </#if>
   
-  <#return realItemCount gt 0 />
+  <#-- Si es hash, contar items reales (claves numéricas) -->
+  <#if multifieldValue?is_hash>
+    <#assign realItemCount = 0 />
+    <#list multifieldValue?keys as key>
+      <#if key?matches('^[0-9]+$') && multifieldValue[key]?is_hash>
+        <#assign item = multifieldValue[key] />
+        <#-- Verificar si el item tiene al menos un campo con contenido real -->
+        <#list item?keys as itemKey>
+          <#if hasRealContent(item[itemKey])>
+            <#assign realItemCount = realItemCount + 1 />
+            <#break />
+          </#if>
+        </#list>
+      </#if>
+    </#list>
+    <#return realItemCount gt 0 />
+  </#if>
+  
+  <#return false />
 </#function>
 
 <#-- Función para limpiar y procesar multifield del CMS -->
 <#function processMultifield rawMultifield>
   <#assign cleanItems = [] />
+  
+  <#-- Si ya es una secuencia, procesarla directamente -->
+  <#if rawMultifield?? && rawMultifield?is_sequence>
+    <#list rawMultifield as node>
+      <#if node?is_hash>
+        <#assign cleanItems += [node] />
+      </#if>
+    </#list>
+    <#return cleanItems />
+  </#if>
+  
+  <#-- Si es hash, extraer elementos numerados -->
   <#if rawMultifield?? && rawMultifield?is_hash>
     <#list rawMultifield?keys?sort as k>
       <#-- Ignorar propiedades de sistema (jcr:*, mgnl:*) -->
@@ -58,13 +87,8 @@
         </#if>
       </#if>
     </#list>
-  <#elseif rawMultifield?? && rawMultifield?is_sequence>
-    <#list rawMultifield as node>
-      <#if node?is_hash>
-        <#assign cleanItems += [node] />
-      </#if>
-    </#list>
   </#if>
+  
   <#return cleanItems />
 </#function>
 

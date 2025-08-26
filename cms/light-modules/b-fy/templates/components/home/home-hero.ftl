@@ -1,48 +1,14 @@
 <#-- Import shared CMS utilities -->
 <#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms>
 
-<#-- Función de emergencia para resolver imágenes DAM con fallback local -->
-<#function damOrLocal damImage localPath>
-  <#if damImage?? && damImage?has_content && (damfn??)>
-    <#attempt>
-      <#local damUrl = damfn.link(damImage) />
-      <#if damUrl?has_content>
-        <#return damUrl />
-      </#if>
-    <#recover>
-    </#attempt>
-  </#if>
-  <#if localPath?starts_with("http") || localPath?starts_with("/")>
-    <#return localPath />
-  </#if>
-  <#return ctx.contextPath + "/.resources/b-fy/webresources/images/" + localPath />
-</#function>
-
-<#-- Función de emergencia para detectar contenido "real" -->
-<#function hasRealContent value>
-  <#if !value??>
-    <#return false />
-  </#if>
-  <#return (value?has_content && value?is_string && value?trim != '') || (value?is_hash) />
-</#function>
-
-<#-- Función de emergencia para CMS o default -->
-<#function cmsOrDefault cmsValue defaultValue>
-  <#if hasRealContent(cmsValue!'')>
-    <#return cmsValue />
-  <#else>
-    <#return defaultValue />
-  </#if>
-</#function>
-
 <#-- HOME HERO -->
 <#macro homeHero 
   tagline="Say goodbye to passwords. Say hello to security and frictionless experience." 
   title="The passwordless biometric solution to authenticate people and protect their privacy" 
   description="B-FY transforms authentication with its decentralized biometric identification solution. It guarantees secure, seamless experiences for users, increases customer retention, trust, and eliminates online ID fraud." 
   hook="Identity fraud represents more than 65% of all cyberattacks. With the advent of AI, this percentage is only increasing." 
-  buttonLabel="Request demo" 
-  privacyIntro="Review our privacy policy" 
+  buttonLabel="Get a demo" 
+  privacyIntro="Check our Privacy Policy" 
   privacyLinkLabel="here" 
   securityActivated="Security activated" 
   systemGreeting="System secure greeting" 
@@ -154,17 +120,18 @@
     </style>
   </#if>
 
-  <#assign _tag       = cmsOrDefault(content.tagline!'', tagline) />
-  <#assign _title     = cmsOrDefault(content.title!'', title) />
-  <#assign _desc      = cmsOrDefault(content.description!'', description) />
-  <#assign _hook      = cmsOrDefault(content.hook!'', hook) />
-  <#assign _btn       = cmsOrDefault(content.buttonLabel!'', buttonLabel) />
-  <#assign _priv      = cmsOrDefault(content.privacyIntro!'', privacyIntro) />
-  <#assign _privHere  = cmsOrDefault(content.privacyLinkLabel!'', privacyLinkLabel) />
-  <#assign _secAct    = cmsOrDefault(content.securityActivated!'', securityActivated) />
-  <#assign _sysGreet  = cmsOrDefault(content.systemGreeting!'', systemGreeting) />
-  <#assign _emailPh   = cmsOrDefault(content.emailPlaceholder!'', emailPlaceholder) />
-  <#assign _heroImg   = damOrLocal(content.heroImage!'', 'hero.webp') />
+  <#-- DEF: Resolver variables una sola vez al inicio -->
+  <#assign _tag       = cms.cmsOrDefault(content.tagline!'', tagline) />
+  <#assign _title     = cms.cmsOrDefault(content.title!'', title) />
+  <#assign _desc      = cms.cmsOrDefault(content.description!'', description) />
+  <#assign _hook      = cms.cmsOrDefault(content.hook!'', hook) />
+  <#assign _btn       = cms.cmsOrDefault(content.buttonLabel!'', buttonLabel) />
+  <#assign _priv      = cms.cmsOrDefault(content.privacyIntro!'', privacyIntro) />
+  <#assign _privHere  = cms.cmsOrDefault(content.privacyLinkLabel!'', privacyLinkLabel) />
+  <#assign _secAct    = cms.cmsOrDefault(content.securityActivated!'', securityActivated) />
+  <#assign _sysGreet  = cms.cmsOrDefault(content.systemGreeting!'', systemGreeting) />
+  <#assign _emailPh   = cms.cmsOrDefault(content.emailPlaceholder!'', emailPlaceholder) />
+  <#assign _heroImg   = cms.damOrLocal(content.heroImage!'', 'hero.webp') />
 
   <section class="home-hero" aria-label="Hero">
     <div class="home-hero__text">

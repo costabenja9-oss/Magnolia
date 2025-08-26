@@ -1,26 +1,18 @@
 [#-- Import shared CMS utilities --]
 [#import "/b-fy/templates/components/util/cms-helpers.ftl" as cms]
 
-[#-- Helpers --]
-[#function hasRealContent value]
-  [#if !value??][#return false /][/#if]
-  [#return (value?has_content && value?is_string && value?trim != '') || (value?is_hash) /]
-[/#function]
-[#function cmsOrDefault cmsValue defaultValue]
-  [#if hasRealContent(cmsValue!'')][#return cmsValue /][#else][#return defaultValue /][/#if]
-[/#function]
-
 [#macro homeNewsletter]
+  [#-- DEF: Resolver variables una sola vez al inicio --]
   [#assign newsletterNode = {} /]
   [#if content.newsletter??]
     [#assign _children = (content.newsletter?children)![] /]
     [#if _children?size gt 0][#assign newsletterNode = _children[0] /][/#if]
   [/#if]
 
-  [#assign nlTitle          = cmsOrDefault(newsletterNode.title!'', "Subscribe to our Newsletter") /]
-  [#assign nlDescription    = cmsOrDefault(newsletterNode.description!'', "Receive the latest updates on digital identity, security and authentication innovation.") /]
-  [#assign buttonLabel      = cmsOrDefault(newsletterNode.buttonLabel!'', "Request a demo") /]
-  [#assign emailPlaceholder = cmsOrDefault(newsletterNode.emailPlaceholder!'', "Enter your email") /]
+  [#assign _title          = cms.cmsOrDefault(newsletterNode.title!'', "Subscribe to our Newsletter") /]
+  [#assign _description    = cms.cmsOrDefault(newsletterNode.description!'', "Receive the latest updates on digital identity, security and authentication innovation.") /]
+  [#assign _buttonLabel    = cms.cmsOrDefault(newsletterNode.buttonLabel!'', "Request a demo") /]
+  [#assign _emailPlaceholder = cms.cmsOrDefault(newsletterNode.emailPlaceholder!'', "Enter your email") /]
 
   [#if !HOME_NEWSLETTER_STYLE_INCLUDED??]
     [#global HOME_NEWSLETTER_STYLE_INCLUDED = true /]
@@ -71,14 +63,14 @@
   <section class="newsletter-section">
     <div class="newsletter-container">
       <div class="newsletter-content">
-        <h3 class="newsletter-title">${nlTitle}</h3>
-        <p class="newsletter-description">${nlDescription}</p>
+        <h3 class="newsletter-title">${_title}</h3>
+        <p class="newsletter-description">${_description}</p>
       </div>
       <form id="newsletter-form" class="newsletter-form" onsubmit="return false;" novalidate>
         <!-- Honeypot (antispam) -->
         <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; opacity:0;" />
-        <input type="email" name="email" placeholder="${emailPlaceholder}" aria-label="${emailPlaceholder}" required class="newsletter-input"/>
-        <button type="submit" class="newsletter-button">${buttonLabel}</button>
+        <input type="email" name="email" placeholder="${_emailPlaceholder}" aria-label="${_emailPlaceholder}" required class="newsletter-input"/>
+        <button type="submit" class="newsletter-button">${_buttonLabel}</button>
       </form>
     </div>
   </section>
