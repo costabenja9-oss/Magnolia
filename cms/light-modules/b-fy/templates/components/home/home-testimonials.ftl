@@ -367,13 +367,13 @@
 			</ul>
 			
 			<button type="button" class="testimonials__navBtn testimonials__navBtn--prev" aria-label="Previous">
-				<svg class="testimonials__navIcon" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
+				<svg class="testimonials__navIcon" viewBox="0 0 11 9" style="transform:rotate(180deg)" fill="currentColor" aria-hidden="true">
 					<path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
 				</svg>
 			</button>
 			
 			<button type="button" class="testimonials__navBtn testimonials__navBtn--next" aria-label="Next">
-				<svg class="testimonials__navIcon" style="transform:rotate(180deg)" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
+				<svg class="testimonials__navIcon" viewBox="0 0 11 9" fill="currentColor" aria-hidden="true">
 					<path d="M10.645 4.08 6.738.173A.588.588 0 0 0 6.32 0 .588.588 0 0 0 5.9.173l-.355.355a.6.6 0 0 0 0 .842l2.28 2.284H.584A.578.578 0 0 0 0 4.236v.502c0 .326.258.608.584.608h7.267L5.546 7.643a.583.583 0 0 0 0 .831l.355.354c.112.111.26.172.419.172a.588.588 0 0 0 .419-.173l3.906-3.907a.588.588 0 0 0 .173-.42.588.588 0 0 0-.173-.42Z"/>
 				</svg>
 			</button>
@@ -421,7 +421,7 @@
 			// Move to specific slide
 			function goToSlide(index) {
 				currentIndex = index;
-				const translateX = -currentIndex * 100;
+				const translateX = -currentIndex * 97;
 				slidesContainer.style.transform = 'translateX(' + translateX + '%)';
 				updateDots();
 			}

@@ -1,10 +1,11 @@
 <#-- Industries CTA Component -->
 <#macro industriesCta>
-<#assign ctaTitle = "What are you waiting for?" />
-<#assign ctaSubtitle = "Experience the new era of authentication." />
+<#assign ctaTitle = "WHAT ARE YOU WAITING FOR?" />
+<#assign ctaSubtitle = "Experience the New Era of Authentication." />
 <#assign ctaDescription = "Discover how B-FY can transform your company's security. Request a demo or contact us for more information." />
 
-<section style="padding: 6.25rem 1.25rem; text-align: center; background-color: #f8fafc;">
+<section style="padding: 6.25rem 1.25rem; text-align: center; background-image: url('${ctx.contextPath}/.resources/b-fy/webresources/images/call-to-action.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;">
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
   <style>
     @media (min-width: 640px) {
       .industries-cta { padding: 6.25rem 2.5rem; }
@@ -12,11 +13,16 @@
     @media (min-width: 1024px) {
       .industries-cta { padding: 6.25rem 3.25rem; }
     }
+    .industries-cta {
+      position: relative;
+      z-index: 2;
+    }
     .industries-cta h2 {
       font-weight: bold;
       font-size: 1.875rem;
       line-height: 1.2;
       margin-bottom: 1rem;
+      color: white;
     }
     @media (min-width: 1280px) {
       .industries-cta h2 {
@@ -27,7 +33,7 @@
       font-size: 1.5rem;
       line-height: 1.3;
       margin-bottom: 1.5rem;
-      color: #6b7280;
+      color: #e5e7eb;
     }
     @media (min-width: 1280px) {
       .industries-cta h3 {
@@ -39,7 +45,7 @@
       margin: 0 auto 3rem;
       font-size: 1.125rem;
       line-height: 1.6;
-      color: #6b7280;
+      color: #e5e7eb;
     }
     @media (min-width: 1280px) {
       .industries-cta p {
@@ -97,7 +103,7 @@
     <p>${ctaDescription}</p>
     <div class="industries-cta-buttons">
       <a class="industries-cta-btn industries-cta-btn-primary" href="${ctx.contextPath}/get-demo">
-        Get a demo
+        Request a demo
       </a>
       <a class="industries-cta-btn industries-cta-btn-secondary" href="${ctx.contextPath}/contact">
         Contact us

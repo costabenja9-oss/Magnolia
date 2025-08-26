@@ -1,8 +1,8 @@
 <#-- Industries Hero Component -->
 
 <#macro industriesHero>
-  <#assign title = "Secure, frictionless authentication for every industry" />
-  <#assign description = "B-FY delivers a decentralized biometric authentication solution designed to meet the demands of any industry. By ensuring that only legitimate users of your company can access your physical and digital environments, B-FY enhances user experience, strengthens compliance, and helps boost your bottom line. From finance to logistics, healthcare to education, our technology provides robust protection against today's most sophisticated threats — generative AI, malicious apps, bots, account takeovers (ATO), phishing, and identity fraud." />
+  <#assign title = "Secure, Frictionless Authentication for Every Industry" />
+  <#assign description = "B-FY delivers a decentralized biometric authentication solution designed to meet the demands of any industry. By ensuring that only legitimate users of your company can access your physical and digital environments, B-FY enhances user experience, strengthens compliance, and helps boost your bottom line.<br><br>From finance to logistics, healthcare to education, our technology provides robust protection against today's most sophisticated threats—generative AI, malicious apps, bots, account takeovers (ATO), phishing, and identity fraud." />
   <#assign heroImgUrl = "${ctx.contextPath}/.resources/b-fy/webresources/images/industries.webp" />
 
 <section style="margin-top: 3rem; padding: 0 1.25rem; text-align: center;">

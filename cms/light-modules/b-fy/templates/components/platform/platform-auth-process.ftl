@@ -67,11 +67,6 @@
   <#return ctx.contextPath + "/.resources/b-fy/webresources/images/" + localPath />
 </#function>
 
-<#--	<#assign fbSteps = [
-		"The user scans the B‑FY QR code at an online or physical access point.",
-		"Biometric verification is performed through the institution's mobile app (with B‑FY libraries integrated).",
-		"B‑FY grants direct access to the user, not just their credentials."
-	] />ored to mirror Astro AuthProcess (3 steps, infographic + list) -->
 <#macro platformAuthProcess>
 	<#assign fbTitle = "Simple and frictionless authentication" />
 		<#assign fbDescription = "A smarter and safer way to authenticate:" />
