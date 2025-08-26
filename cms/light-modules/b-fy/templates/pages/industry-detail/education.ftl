@@ -676,10 +676,10 @@
     <#-- Hero section following Astro structure exactly -->
     <section class="hero-section">
       <hgroup>
-        <#assign tagline = cmsValueWithFallback(content.tagline!"", "EDUCACIÓN SEGURA") />
+        <#assign tagline = cmsValueWithFallback(content.tagline!"", "Education") />
         <p class="hero-tagline">${tagline}</p>
         
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Protección integral para instituciones educativas") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Agile Authentication for On-Campus and Online Education") />
         <h1 class="hero-title">${heroTitle}</h1>
       </hgroup>
       
@@ -690,7 +690,7 @@
         <@vid.platformVideo class="max-w-none" id=videoId title=heroTitle />
       </div>
       
-      <#assign heroDescription = cmsValueWithFallback(content.description!"", "Acceso seguro y controlado a instalaciones educativas: aulas, laboratorios, bibliotecas, dormitorios y áreas administrativas. La solución biométrica descentralizada de B-FY garantiza la protección de estudiantes, profesores y personal mientras facilita un entorno educativo seguro y eficiente.") />
+      <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY ensures the real identity of every student and educator through decentralized biometric authentication—from Learning Management Systems (LMS) to physical classrooms—guaranteeing access only to authorized and legitimate participants while eliminating the risks of password leaks.") />
       <p class="hero-description">${heroDescription}</p>
       
       <#-- Details grid (4 cards) -->
@@ -699,9 +699,9 @@
         <article class="detail-card">
           <#assign detail1Icon = damImageWithFallback(content.detail1Icon!"", "icons/user-scan.svg") />
           <img class="detail-icon" src="${detail1Icon}" alt="" />
-          <#assign detail1Title = cmsValueWithFallback(content.detail1Title!"", "CONTROL DE ACCESO ESTUDIANTIL") />
+          <#assign detail1Title = cmsValueWithFallback(content.detail1Title!"", "MAKE EVERYTHING SIMPLER") />
           <h3 class="detail-title">${detail1Title}</h3>
-          <#assign detail1Desc = cmsValueWithFallback(content.detail1Description!"", "Verificación biométrica instantánea para estudiantes, profesores y personal en aulas, laboratorios y áreas especializadas de la institución.") />
+          <#assign detail1Desc = cmsValueWithFallback(content.detail1Description!"", "Students can access all services quickly and easily using biometric verification from their mobile devices—no more access cards, PINs, or passwords.") />
           <p class="detail-description">${detail1Desc}</p>
         </article>
 
@@ -709,9 +709,9 @@
         <article class="detail-card">
           <#assign detail2Icon = damImageWithFallback(content.detail2Icon!"", "icons/shield-lock.svg") />
           <img class="detail-icon" src="${detail2Icon}" alt="" />
-          <#assign detail2Title = cmsValueWithFallback(content.detail2Title!"", "SEGURIDAD EN CAMPUS") />
+          <#assign detail2Title = cmsValueWithFallback(content.detail2Title!"", "KNOW WHO'S REALLY LOGGED IN") />
           <h3 class="detail-title">${detail2Title}</h3>
-          <#assign detail2Desc = cmsValueWithFallback(content.detail2Description!"", "Acceso controlado a dormitorios, bibliotecas, instalaciones deportivas y áreas comunes, garantizando un entorno seguro 24/7.") />
+          <#assign detail2Desc = cmsValueWithFallback(content.detail2Description!"", "Prevent cheating during exams and block fraudulent moderators by verifying who is entering the virtual classroom.") />
           <p class="detail-description">${detail2Desc}</p>
         </article>
 
@@ -719,9 +719,9 @@
         <article class="detail-card">
           <#assign detail3Icon = damImageWithFallback(content.detail3Icon!"", "icons/security.svg") />
           <img class="detail-icon" src="${detail3Icon}" alt="" />
-          <#assign detail3Title = cmsValueWithFallback(content.detail3Title!"", "PROTECCIÓN DE MENORES") />
+          <#assign detail3Title = cmsValueWithFallback(content.detail3Title!"", "ACCESS FROM ANYWHERE") />
           <h3 class="detail-title">${detail3Title}</h3>
-          <#assign detail3Desc = cmsValueWithFallback(content.detail3Description!"", "Control riguroso de acceso en instituciones educativas primarias y secundarias, con registro detallado de entradas y salidas.") />
+          <#assign detail3Desc = cmsValueWithFallback(content.detail3Description!"", "Turn your app into the single key for students, faculty, and staff to securely access all educational services, resources, and records—on campus or online.") />
           <p class="detail-description">${detail3Desc}</p>
         </article>
 
@@ -729,9 +729,9 @@
         <article class="detail-card">
           <#assign detail4Icon = damImageWithFallback(content.detail4Icon!"", "icons/briefcase.svg") />
           <img class="detail-icon" src="${detail4Icon}" alt="" />
-          <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "GESTIÓN ADMINISTRATIVA") />
+          <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "PROTECT STUDENTS' AND STAFF'S BIOMETRICS") />
           <h3 class="detail-title">${detail4Title}</h3>
-          <#assign detail4Desc = cmsValueWithFallback(content.detail4Description!"", "Acceso seguro a oficinas administrativas, secretarías y archivos confidenciales con trazabilidad completa de actividades.") />
+          <#assign detail4Desc = cmsValueWithFallback(content.detail4Description!"", "Authenticate users without compromising their privacy—their biometric data stays securely stored on their own mobile device.") />
           <p class="detail-description">${detail4Desc}</p>
         </article>
       </div>
@@ -739,7 +739,7 @@
 
     <#-- Threats Section -->
     <section class="threats-section">
-      <#assign threatsTitle = cmsValueWithFallback(content.threatsTitle!"", "Riesgos de seguridad en instituciones educativas") />
+      <#assign threatsTitle = cmsValueWithFallback(content.threatsTitle!"", "Critical Threats to Educational Institutions") />
       <h2 class="threats-title">${threatsTitle}</h2>
       
       <div class="threats-grid">
@@ -748,9 +748,9 @@
           <#assign threat1Image = damImageWithFallback(content.threat1Image!"", "images/education-threats-01.webp") />
           <img class="threat-image" src="${threat1Image}" alt="Threat 1" />
           <div class="threat-content">
-            <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "ACCESO NO AUTORIZADO A MENORES") />
+            <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "Remote Exam Impersonation") />
             <h3 class="threat-title">${threat1Title}</h3>
-            <#assign threat1Desc = cmsValueWithFallback(content.threat1Description!"", "Infiltración de personas no autorizadas en colegios y universidades mediante suplantación de identidad o credenciales falsificadas.") />
+            <#assign threat1Desc = cmsValueWithFallback(content.threat1Description!"", "Cybercriminals use stolen credentials—or even video deepfakes—to take exams on behalf of students.") />
             <p class="threat-description">${threat1Desc}</p>
           </div>
         </article>
@@ -760,9 +760,9 @@
           <#assign threat2Image = damImageWithFallback(content.threat2Image!"", "images/education-threats-02.webp") />
           <img class="threat-image" src="${threat2Image}" alt="Threat 2" />
           <div class="threat-content">
-            <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "ROBO EN LABORATORIOS Y EQUIPOS") />
+            <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "LMS/SIS Account Hijacking") />
             <h3 class="threat-title">${threat2Title}</h3>
-            <#assign threat2Desc = cmsValueWithFallback(content.threat2Description!"", "Sustracción de equipos costosos, materiales de investigación y tecnología especializada en laboratorios y aulas de informática.") />
+            <#assign threat2Desc = cmsValueWithFallback(content.threat2Description!"", "Hackers who gain access to institutional emails can alter grades, leak restricted materials, steal critical student information, or launch ransomware attacks on virtual campuses.") />
             <p class="threat-description">${threat2Desc}</p>
           </div>
         </article>
@@ -772,9 +772,9 @@
           <#assign threat3Image = damImageWithFallback(content.threat3Image!"", "images/education-threats-03.webp") />
           <img class="threat-image" src="${threat3Image}" alt="Threat 3" />
           <div class="threat-content">
-            <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "VIOLACIÓN DE PRIVACIDAD ESTUDIANTIL") />
+            <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "AI-Driven Phishing Attacks") />
             <h3 class="threat-title">${threat3Title}</h3>
-            <#assign threat3Desc = cmsValueWithFallback(content.threat3Description!"", "Acceso no autorizado a expedientes académicos, datos personales de estudiantes y información confidencial administrativa.") />
+            <#assign threat3Desc = cmsValueWithFallback(content.threat3Description!"", "Emails mimicking university administration trick students into revealing banking details with fake scholarship or payment alerts.") />
             <p class="threat-description">${threat3Desc}</p>
           </div>
         </article>
@@ -784,9 +784,9 @@
     <#-- Features Section -->
     <section class="features-section">
       <hgroup class="features-header">
-        <#assign featuresTagline = cmsValueWithFallback(content.featuresTagline!"", "EDUCACIÓN INTELIGENTE") />
+        <#assign featuresTagline = cmsValueWithFallback(content.featuresTagline!"", "SIMPLE AND SEAMLESS") />
         <p class="features-tagline">${featuresTagline}</p>
-        <#assign featuresTitle = cmsValueWithFallback(content.featuresTitle!"", "B-FY protege tu comunidad educativa") />
+        <#assign featuresTitle = cmsValueWithFallback(content.featuresTitle!"", "B-FY safeguards institution's brand and reputation.") />
         <h2 class="features-title">${featuresTitle}</h2>
       </hgroup>
       
@@ -796,9 +796,9 @@
           <#assign feature1Icon = damImageWithFallback(content.feature1Icon!"", "icons/book-shield.svg") />
           <img class="feature-icon" src="${feature1Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature1Title = cmsValueWithFallback(content.feature1Title!"", "ACCESO SEGURO A INSTALACIONES") />
+            <#assign feature1Title = cmsValueWithFallback(content.feature1Title!"", "CONTINUOUS VERIFICATION") />
             <h3 class="feature-title">${feature1Title}</h3>
-            <#assign feature1Desc = cmsValueWithFallback(content.feature1Description!"", "Estudiantes y profesores acceden rápidamente a aulas, laboratorios y bibliotecas con verificación biométrica, eliminando el riesgo de tarjetas perdidas.") />
+            <#assign feature1Desc = cmsValueWithFallback(content.feature1Description!"", "Throughout the online exam process, B-FY continuously verifies the presence and legitimacy of the student—without friction or disruption.") />
             <p class="feature-text">${feature1Desc}</p>
           </div>
         </article>
@@ -808,9 +808,9 @@
           <#assign feature2Icon = damImageWithFallback(content.feature2Icon!"", "icons/users.svg") />
           <img class="feature-icon" src="${feature2Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature2Title = cmsValueWithFallback(content.feature2Title!"", "PROTECCIÓN INFANTIL AVANZADA") />
+            <#assign feature2Title = cmsValueWithFallback(content.feature2Title!"", "LEGITIMATE EVALUATIONS") />
             <h3 class="feature-title">${feature2Title}</h3>
-            <#assign feature2Desc = cmsValueWithFallback(content.feature2Description!"", "Sistema de control parental que notifica a tutores sobre entradas y salidas, garantizando la seguridad de menores en todo momento.") />
+            <#assign feature2Desc = cmsValueWithFallback(content.feature2Description!"", "From registration to final submission, B-FY confirms the identity of the authorized student, blocking any attempt at fraud.") />
             <p class="feature-text">${feature2Desc}</p>
           </div>
         </article>
@@ -820,9 +820,9 @@
           <#assign feature3Icon = damImageWithFallback(content.feature3Icon!"", "icons/checklist.svg") />
           <img class="feature-icon" src="${feature3Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature3Title = cmsValueWithFallback(content.feature3Title!"", "GESTIÓN DE ASISTENCIA AUTOMÁTICA") />
+            <#assign feature3Title = cmsValueWithFallback(content.feature3Title!"", "PASSWORDLESS SSO") />
             <h3 class="feature-title">${feature3Title}</h3>
-            <#assign feature3Desc = cmsValueWithFallback(content.feature3Description!"", "Registro automático de asistencia de estudiantes y profesores, eliminando procesos manuales y mejorando la administración académica.") />
+            <#assign feature3Desc = cmsValueWithFallback(content.feature3Description!"", "With just a quick biometric scan—taking less than 3 seconds—students can securely log in to the university portal and all associated tools, no passwords needed.") />
             <p class="feature-text">${feature3Desc}</p>
           </div>
         </article>
@@ -832,9 +832,9 @@
           <#assign feature4Icon = damImageWithFallback(content.feature4Icon!"", "icons/file-shield.svg") />
           <img class="feature-icon" src="${feature4Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature4Title = cmsValueWithFallback(content.feature4Title!"", "CUMPLIMIENTO DE NORMATIVAS EDUCATIVAS") />
+            <#assign feature4Title = cmsValueWithFallback(content.feature4Title!"", "EASY TO INTEGRATE") />
             <h3 class="feature-title">${feature4Title}</h3>
-            <#assign feature4Desc = cmsValueWithFallback(content.feature4Description!"", "Cumplimiento automático con regulaciones de protección de menores, privacidad estudiantil y normativas de seguridad educativa.") />
+            <#assign feature4Desc = cmsValueWithFallback(content.feature4Description!"", "B-FY's cross-platform SDK integrates with your web, mobile, and LMS/SIS systems in just hours—no structural changes or code rewrites required.") />
             <p class="feature-text">${feature4Desc}</p>
           </div>
         </article>
@@ -848,13 +848,13 @@
       
       <div class="product-content">
         <hgroup>
-          <#assign productTagline = cmsValueWithFallback(content.productTagline!"", "EDUCACIÓN PROTEGIDA") />
+          <#assign productTagline = cmsValueWithFallback(content.productTagline!"", "SIMPLE AND SEAMLESS") />
           <p class="product-tagline">${productTagline}</p>
-          <#assign productTitle = cmsValueWithFallback(content.productTitle!"", "Un entorno educativo verdaderamente seguro") />
+          <#assign productTitle = cmsValueWithFallback(content.productTitle!"", "B-FY safeguards institution's brand and reputation.") />
           <h2 class="product-title">${productTitle}</h2>
         </hgroup>
         <div>
-          <#assign productDesc = cmsValueWithFallback(content.productDescription!"", "B-FY transforma la seguridad educativa mediante autenticación biométrica descentralizada que protege a toda la comunidad académica. Desde preescolar hasta universidad, garantizamos que solo personal autorizado acceda a instalaciones, mientras los padres y administradores mantienen control total. Protegemos la privacidad estudiantil, cumplimos normativas educativas y creamos un ambiente de aprendizaje verdaderamente seguro.") />
+          <#assign productDesc = cmsValueWithFallback(content.productDescription!"", "With B-FY, educational institutions can prevent all kinds of fraud—whether it's students skipping class or cheating on exams—as well as block external threats like cyberattacks and data breaches. Students can be identified both in virtual classrooms and physical campus locations using the one thing they always carry with them: their mobile device. B-FY safeguards your institution's transparency and reputation, reducing the risk of fraudulent diplomas and lowering IT support costs tied to password management.") />
           <p class="product-description">${productDesc}</p>
         </div>
       </div>
@@ -863,18 +863,18 @@
     <#-- CTA Section -->
     <section class="cta-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${damImageWithFallback(content.ctaBackground!"", "images/education-call-to-action.webp")}');">
       <div class="cta-content">
-        <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "¿LISTO PARA PROTEGER TU INSTITUCIÓN?") />
+        <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "WHAT ARE YOU WAITING FOR?") />
         <p class="cta-tag">${ctaTag}</p>
         
-        <#assign ctaHeading = cmsValueWithFallback(content.ctaHeading!"", "Transforma la seguridad de tu institución educativa.") />
+        <#assign ctaHeading = cmsValueWithFallback(content.ctaHeading!"", "Request a demo") />
         <h2 class="cta-title">${ctaHeading}</h2>
         
-        <#assign ctaDesc = cmsValueWithFallback(content.ctaDescription!"", "Descubre cómo B-FY puede proteger tu comunidad educativa y brindar tranquilidad a padres y administradores. Solicita una demo adaptada a tu institución.") />
+        <#assign ctaDesc = cmsValueWithFallback(content.ctaDescription!"", "Discover how B-FY can transform your organization's security, with the simplest, easiest, and most enjoyable authentication solution in the market.") />
         <p class="cta-description">${ctaDesc}</p>
         
         <div class="cta-buttons">
-          <#assign ctaButton1 = cmsValueWithFallback(content.ctaButton1!"", "Solicita una demo") />
-          <#assign ctaButton2 = cmsValueWithFallback(content.ctaButton2!"", "Habla con un experto") />
+          <#assign ctaButton1 = cmsValueWithFallback(content.ctaButton1!"", "Request a demo") />
+          <#assign ctaButton2 = cmsValueWithFallback(content.ctaButton2!"", "Contact us") />
           <a href="${ctx.contextPath}/contact" class="cta-button cta-button-primary">${ctaButton1}</a>
           <a href="${ctx.contextPath}/contact" class="cta-button cta-button-secondary">${ctaButton2}</a>
         </div>

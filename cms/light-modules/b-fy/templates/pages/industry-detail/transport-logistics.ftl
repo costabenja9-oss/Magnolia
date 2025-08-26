@@ -676,10 +676,10 @@
     <#-- Hero section following Astro structure exactly -->
     <section class="hero-section">
       <hgroup>
-        <#assign tagline = cmsValueWithFallback(content.tagline!"", "TRANSPORTE Y LOGÍSTICA") />
+        <#assign tagline = cmsValueWithFallback(content.tagline!"", "Transport & Logistics") />
         <p class="hero-tagline">${tagline}</p>
         
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Seguridad y eficiencia en toda tu cadena logística") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "24/7 Secure Access for Critical Logistics Operations") />
         <h1 class="hero-title">${heroTitle}</h1>
       </hgroup>
       
@@ -690,7 +690,7 @@
         <@vid.platformVideo class="max-w-none" id=videoId title=heroTitle />
       </div>
       
-      <#assign heroDescription = cmsValueWithFallback(content.description!"", "Acceso seguro en toda tu cadena logística: terminales, estaciones de servicio, almacenes y centros de distribución. La solución biométrica descentralizada de B-FY garantiza autenticación ágil y segura de conductores, personal y clientes, eliminando riesgos de suplantación mientras optimiza las operaciones.") />
+      <#assign heroDescription = cmsValueWithFallback(content.description!"", "Turn your corporate app into the single key to loading docks, distribution centers, and remote systems. With B-FY's biometric authentication, only authorized personnel can take action — no cards, keys, or passwords to lose or clone.") />
       <p class="hero-description">${heroDescription}</p>
       
       <#-- Details grid (4 cards) -->
@@ -699,9 +699,9 @@
         <article class="detail-card">
           <#assign detail1Icon = damImageWithFallback(content.detail1Icon!"", "icons/security.svg") />
           <img class="detail-icon" src="${detail1Icon}" alt="" />
-          <#assign detail1Title = cmsValueWithFallback(content.detail1Title!"", "CONTROL DE ACCESOS") />
+          <#assign detail1Title = cmsValueWithFallback(content.detail1Title!"", "24/7 SECURE ACCESS") />
           <h3 class="detail-title">${detail1Title}</h3>
-          <#assign detail1Desc = cmsValueWithFallback(content.detail1Description!"", "Verificación biométrica instantánea para conductores, personal logístico y visitantes en terminales, almacenes y centros de distribución.") />
+          <#assign detail1Desc = cmsValueWithFallback(content.detail1Description!"", "Strengthen the security of your logistics system by turning your app into the universal key for all physical and digital logistics services. Ensure that only authorized individuals gain access at all times.") />
           <p class="detail-description">${detail1Desc}</p>
         </article>
 
@@ -709,9 +709,9 @@
         <article class="detail-card">
           <#assign detail2Icon = damImageWithFallback(content.detail2Icon!"", "icons/tir.svg") />
           <img class="detail-icon" src="${detail2Icon}" alt="" />
-          <#assign detail2Title = cmsValueWithFallback(content.detail2Title!"", "GESTIÓN DE FLOTAS") />
+          <#assign detail2Title = cmsValueWithFallback(content.detail2Title!"", "STREAMLINE OPERATIONS") />
           <h3 class="detail-title">${detail2Title}</h3>
-          <#assign detail2Desc = cmsValueWithFallback(content.detail2Description!"", "Seguimiento y autorización biométrica de conductores, garantizando que solo personal autorizado maneje vehículos de la flota.") />
+          <#assign detail2Desc = cmsValueWithFallback(content.detail2Description!"", "Simplify workflows by allowing staff to access services with a single, fast biometric authentication using their mobile devices. Eliminate access cards, keys, and passwords.") />
           <p class="detail-description">${detail2Desc}</p>
         </article>
 
@@ -719,9 +719,9 @@
         <article class="detail-card">
           <#assign detail3Icon = damImageWithFallback(content.detail3Icon!"", "icons/briefcase.svg") />
           <img class="detail-icon" src="${detail3Icon}" alt="" />
-          <#assign detail3Title = cmsValueWithFallback(content.detail3Title!"", "CADENA DE CUSTODIA") />
+          <#assign detail3Title = cmsValueWithFallback(content.detail3Title!"", "BIOMETRICS FOR YOUR SECURITY") />
           <h3 class="detail-title">${detail3Title}</h3>
-          <#assign detail3Desc = cmsValueWithFallback(content.detail3Description!"", "Trazabilidad completa de mercancías con verificación biométrica en cada punto de transferencia y almacenamiento.") />
+          <#assign detail3Desc = cmsValueWithFallback(content.detail3Description!"", "Carry out cargo and access checks with maximum security, as biometric data is stored and protected locally on authorized devices.") />
           <p class="detail-description">${detail3Desc}</p>
         </article>
 
@@ -729,9 +729,9 @@
         <article class="detail-card">
           <#assign detail4Icon = damImageWithFallback(content.detail4Icon!"", "icons/checklist.svg") />
           <img class="detail-icon" src="${detail4Icon}" alt="" />
-          <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "OPERACIONES 24/7") />
+          <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "VERIFY TRANSPORT PERSONNEL") />
           <h3 class="detail-title">${detail4Title}</h3>
-          <#assign detail4Desc = cmsValueWithFallback(content.detail4Description!"", "Acceso seguro y rápido para operaciones nocturnas y turnos especiales sin comprometer la seguridad ni la agilidad operativa.") />
+          <#assign detail4Desc = cmsValueWithFallback(content.detail4Description!"", "Prevent unauthorized access and protect the integrity of your logistics operations by accurately identifying and verifying all individuals entering restricted areas.") />
           <p class="detail-description">${detail4Desc}</p>
         </article>
       </div>
@@ -739,7 +739,7 @@
 
     <#-- Threats Section -->
     <section class="threats-section">
-      <#assign threatsTitle = cmsValueWithFallback(content.threatsTitle!"", "Riesgos de seguridad en transporte y logística") />
+      <#assign threatsTitle = cmsValueWithFallback(content.threatsTitle!"", "Critical Threats to Logistics and Transport") />
       <h2 class="threats-title">${threatsTitle}</h2>
       
       <div class="threats-grid">
@@ -748,9 +748,9 @@
           <#assign threat1Image = damImageWithFallback(content.threat1Image!"", "images/transportation-logistics-threats-01.webp") />
           <img class="threat-image" src="${threat1Image}" alt="Threat 1" />
           <div class="threat-content">
-            <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "ROBO DE CARGA Y MERCANCÍAS") />
+            <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "PHYSICAL INTRUSION INTO WAREHOUSES") />
             <h3 class="threat-title">${threat1Title}</h3>
-            <#assign threat1Desc = cmsValueWithFallback(content.threat1Description!"", "Acceso no autorizado a vehículos y almacenes mediante suplantación de identidad de conductores o personal logístico autorizado.") />
+            <#assign threat1Desc = cmsValueWithFallback(content.threat1Description!"", "Cloned RFID cards or master keys allow theft of high-value goods and cause costly operational disruptions.") />
             <p class="threat-description">${threat1Desc}</p>
           </div>
         </article>
@@ -760,9 +760,9 @@
           <#assign threat2Image = damImageWithFallback(content.threat2Image!"", "images/transportation-logistics-threats-02.webp") />
           <img class="threat-image" src="${threat2Image}" alt="Threat 2" />
           <div class="threat-content">
-            <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "FRAUDE EN DOCUMENTACIÓN") />
+            <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "THEFT OF FUEL AND MOBILE ASSETS") />
             <h3 class="threat-title">${threat2Title}</h3>
-            <#assign threat2Desc = cmsValueWithFallback(content.threat2Description!"", "Falsificación de licencias de conducir, documentos de transporte y credenciales de acceso a instalaciones logísticas críticas.") />
+            <#assign threat2Desc = cmsValueWithFallback(content.threat2Description!"", "Fake identities are used to authorize diesel loading or spare parts withdrawals, directly impacting OPEX.") />
             <p class="threat-description">${threat2Desc}</p>
           </div>
         </article>
@@ -772,9 +772,9 @@
           <#assign threat3Image = damImageWithFallback(content.threat3Image!"", "images/transportation-logistics-threats-03.webp") />
           <img class="threat-image" src="${threat3Image}" alt="Threat 3" />
           <div class="threat-content">
-            <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "ATAQUES A INFRAESTRUCTURA CRÍTICA") />
+            <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "LEAKAGE OF ROUTES AND CUSTOMER DATA") />
             <h3 class="threat-title">${threat3Title}</h3>
-            <#assign threat3Desc = cmsValueWithFallback(content.threat3Description!"", "Infiltración en centros de distribución, terminales portuarias y aeroportuarias mediante credenciales comprometidas.") />
+            <#assign threat3Desc = cmsValueWithFallback(content.threat3Description!"", "Cybercriminals use stolen TMS credentials to plan coordinated attacks and extortion across the transport chain.") />
             <p class="threat-description">${threat3Desc}</p>
           </div>
         </article>
@@ -784,9 +784,9 @@
     <#-- Features Section -->
     <section class="features-section">
       <hgroup class="features-header">
-        <#assign featuresTagline = cmsValueWithFallback(content.featuresTagline!"", "LOGÍSTICA INTELIGENTE") />
+        <#assign featuresTagline = cmsValueWithFallback(content.featuresTagline!"", "FAST AND TRANSPARENT") />
         <p class="features-tagline">${featuresTagline}</p>
-        <#assign featuresTitle = cmsValueWithFallback(content.featuresTitle!"", "B-FY optimiza tu cadena de suministro") />
+        <#assign featuresTitle = cmsValueWithFallback(content.featuresTitle!"", "Secure Your Supply Chain") />
         <h2 class="features-title">${featuresTitle}</h2>
       </hgroup>
       
@@ -796,9 +796,9 @@
           <#assign feature1Icon = damImageWithFallback(content.feature1Icon!"", "icons/mobile.svg") />
           <img class="feature-icon" src="${feature1Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature1Title = cmsValueWithFallback(content.feature1Title!"", "ACCESO RÁPIDO A TERMINALES") />
+            <#assign feature1Title = cmsValueWithFallback(content.feature1Title!"", "INSTANT MOBILE AUTHENTICATION") />
             <h3 class="feature-title">${feature1Title}</h3>
-            <#assign feature1Desc = cmsValueWithFallback(content.feature1Description!"", "Conductores y personal acceden instantáneamente a terminales, almacenes y zonas restringidas con verificación biométrica, eliminando demoras en carga y descarga.") />
+            <#assign feature1Desc = cmsValueWithFallback(content.feature1Description!"", "With a simple QR scan and biometric recognition, your personnel gain instant access to docks, warehouses, and the TMS — no physical cards or passwords required.") />
             <p class="feature-text">${feature1Desc}</p>
           </div>
         </article>
@@ -808,9 +808,9 @@
           <#assign feature2Icon = damImageWithFallback(content.feature2Icon!"", "icons/security.svg") />
           <img class="feature-icon" src="${feature2Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature2Title = cmsValueWithFallback(content.feature2Title!"", "TRAZABILIDAD TOTAL") />
+            <#assign feature2Title = cmsValueWithFallback(content.feature2Title!"", "ANTI-FRAUD VERIFICATION") />
             <h3 class="feature-title">${feature2Title}</h3>
-            <#assign feature2Desc = cmsValueWithFallback(content.feature2Description!"", "Registro biométrico en cada punto de la cadena logística, desde origen hasta destino, garantizando la integridad y responsabilidad en cada transferencia.") />
+            <#assign feature2Desc = cmsValueWithFallback(content.feature2Description!"", "B-FY guarantees that at every point in your transport and logistics chain, the person accessing the system is the legitimate, organization-authorized user.") />
             <p class="feature-text">${feature2Desc}</p>
           </div>
         </article>
@@ -820,9 +820,9 @@
           <#assign feature3Icon = damImageWithFallback(content.feature3Icon!"", "icons/tir.svg") />
           <img class="feature-icon" src="${feature3Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature3Title = cmsValueWithFallback(content.feature3Title!"", "GESTIÓN DE FLOTAS INTELIGENTE") />
+            <#assign feature3Title = cmsValueWithFallback(content.feature3Title!"", "CARRIER ID VERIFICATION") />
             <h3 class="feature-title">${feature3Title}</h3>
-            <#assign feature3Desc = cmsValueWithFallback(content.feature3Description!"", "Control biométrico de vehículos que impide el uso no autorizado de la flota, reduciendo robos, accidentes y uso indebido de recursos.") />
+            <#assign feature3Desc = cmsValueWithFallback(content.feature3Description!"", "Each driver links their fingerprint or face to the vehicle's license plate and the digital delivery note, ensuring that only authorized personnel handle the cargo.") />
             <p class="feature-text">${feature3Desc}</p>
           </div>
         </article>
@@ -832,9 +832,9 @@
           <#assign feature4Icon = damImageWithFallback(content.feature4Icon!"", "icons/checklist.svg") />
           <img class="feature-icon" src="${feature4Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature4Title = cmsValueWithFallback(content.feature4Title!"", "CUMPLIMIENTO REGULATORIO") />
+            <#assign feature4Title = cmsValueWithFallback(content.feature4Title!"", "OFFLINE BIOMETRICS") />
             <h3 class="feature-title">${feature4Title}</h3>
-            <#assign feature4Desc = cmsValueWithFallback(content.feature4Description!"", "Cumplimiento automático con regulaciones de transporte internacional, aduanas y normativas de seguridad logística específicas de cada región.") />
+            <#assign feature4Desc = cmsValueWithFallback(content.feature4Description!"", "Our solution empowers users by ensuring maximum privacy through an offline authentication process, carried out directly on the mobile device using native biometrics.") />
             <p class="feature-text">${feature4Desc}</p>
           </div>
         </article>
@@ -848,13 +848,13 @@
       
       <div class="product-content">
         <hgroup>
-          <#assign productTagline = cmsValueWithFallback(content.productTagline!"", "LOGÍSTICA SEGURA") />
+          <#assign productTagline = cmsValueWithFallback(content.productTagline!"", "FAST AND TRANSPARENT") />
           <p class="product-tagline">${productTagline}</p>
-          <#assign productTitle = cmsValueWithFallback(content.productTitle!"", "Eficiencia y seguridad en cada kilómetro") />
+          <#assign productTitle = cmsValueWithFallback(content.productTitle!"", "Secure Your Supply Chain") />
           <h2 class="product-title">${productTitle}</h2>
         </hgroup>
         <div>
-          <#assign productDesc = cmsValueWithFallback(content.productDescription!"", "B-FY revoluciona la logística mediante autenticación biométrica descentralizada que protege toda tu cadena de suministro. Desde terminales hasta destinos finales, garantizamos que solo personal autorizado maneje mercancías, vehículos e instalaciones. Reducimos robos, optimizamos operaciones y cumplimos con regulaciones internacionales, todo mientras mejoramos la eficiencia operativa y la experiencia del personal.") />
+          <#assign productDesc = cmsValueWithFallback(content.productDescription!"", "With B-FY, you can prevent unauthorized access to docks, warehouses, and fleets, simplify carrier registration, and streamline authorization processes in seconds — all without compromising user privacy. Ensure traceability, protect the confidentiality of routes and goods, and deliver a seamless experience to customers and suppliers with B-FY.") />
           <p class="product-description">${productDesc}</p>
         </div>
       </div>
@@ -863,18 +863,18 @@
     <#-- CTA Section -->
     <section class="cta-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${damImageWithFallback(content.ctaBackground!"", "images/transportation-logistics-call-to-action.webp")}');">
       <div class="cta-content">
-        <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "¿LISTO PARA OPTIMIZAR TU LOGÍSTICA?") />
+        <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "WHAT ARE YOU WAITING FOR?") />
         <p class="cta-tag">${ctaTag}</p>
         
-        <#assign ctaHeading = cmsValueWithFallback(content.ctaHeading!"", "Transforma tu cadena de suministro con seguridad biométrica.") />
+        <#assign ctaHeading = cmsValueWithFallback(content.ctaHeading!"", "Request a Demo") />
         <h2 class="cta-title">${ctaHeading}</h2>
         
-        <#assign ctaDesc = cmsValueWithFallback(content.ctaDescription!"", "Descubre cómo B-FY puede proteger tu operación logística y aumentar la eficiencia. Solicita una demo adaptada a tu cadena de suministro.") />
+        <#assign ctaDesc = cmsValueWithFallback(content.ctaDescription!"", "Discover how B-FY can transform your organization's security.") />
         <p class="cta-description">${ctaDesc}</p>
         
         <div class="cta-buttons">
-          <#assign ctaButton1 = cmsValueWithFallback(content.ctaButton1!"", "Solicita una demo") />
-          <#assign ctaButton2 = cmsValueWithFallback(content.ctaButton2!"", "Habla con un experto") />
+          <#assign ctaButton1 = cmsValueWithFallback(content.ctaButton1!"", "Request a demo") />
+          <#assign ctaButton2 = cmsValueWithFallback(content.ctaButton2!"", "Contact us") />
           <a href="${ctx.contextPath}/contact" class="cta-button cta-button-primary">${ctaButton1}</a>
           <a href="${ctx.contextPath}/contact" class="cta-button cta-button-secondary">${ctaButton2}</a>
         </div>

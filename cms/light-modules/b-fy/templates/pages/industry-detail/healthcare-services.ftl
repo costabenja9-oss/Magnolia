@@ -676,10 +676,10 @@
     <#-- Hero section following Astro structure exactly -->
     <section class="hero-section">
       <hgroup>
-        <#assign tagline = cmsValueWithFallback(content.tagline!"", "SECTOR DE SALUD") />
+        <#assign tagline = cmsValueWithFallback(content.tagline!"", "HEALTHCARE SERVICES") />
         <p class="hero-tagline">${tagline}</p>
         
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Protección biométrica para personas y procesos médicos") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Secure Biometric protection for medical staff and patients") />
         <h1 class="hero-title">${heroTitle}</h1>
       </hgroup>
       
@@ -690,7 +690,7 @@
         <@vid.platformVideo class="max-w-none" id=videoId title=heroTitle />
       </div>
       
-      <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY vincula la identidad física real de médicos, pacientes y personal sanitario con cada acceso digital o presencial, evitando amenazas internas, protege los datos más sensibles y ayuda a garantizar el cumplimiento de normas como GDPR y HIPAA.") />
+      <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY seamlessly connects real, human identities of doctors, patients and healthcare staff to every digital or on-premises interaction—eliminating passwords and vulnerable tokens. This prevents unauthorized access, safeguards sensitive medical data, and helps ensure full compliance with regulations like GDPR and HIPAA.") />
       <p class="hero-description">${heroDescription}</p>
       
       <#-- Details grid (4 cards) -->
@@ -699,9 +699,9 @@
         <article class="detail-card">
           <#assign detail1Icon = damImageWithFallback(content.detail1Icon!"", "icons/mobile.svg") />
           <img class="detail-icon" src="${detail1Icon}" alt="" />
-          <#assign detail1Title = cmsValueWithFallback(content.detail1Title!"", "FACILIDAD DE USO") />
+          <#assign detail1Title = cmsValueWithFallback(content.detail1Title!"", "EFFORTLESS USER EXPERIENCE") />
           <h3 class="detail-title">${detail1Title}</h3>
-          <#assign detail1Desc = cmsValueWithFallback(content.detail1Description!"", "Tus pacientes pueden acceder fácilmente a sus registros usando verificación biométrica desde su dispositivo móvil.") />
+          <#assign detail1Desc = cmsValueWithFallback(content.detail1Description!"", "Your patients can access all your services through a simple biometric verification on their mobile device.") />
           <p class="detail-description">${detail1Desc}</p>
         </article>
 
@@ -709,9 +709,9 @@
         <article class="detail-card">
           <#assign detail2Icon = damImageWithFallback(content.detail2Icon!"", "icons/users.svg") />
           <img class="detail-icon" src="${detail2Icon}" alt="" />
-          <#assign detail2Title = cmsValueWithFallback(content.detail2Title!"", "REDUCE EL RIESGO 4.91B PACIENTES") />
+          <#assign detail2Title = cmsValueWithFallback(content.detail2Title!"", "KNOW YOUR PATIENTS") />
           <h3 class="detail-title">${detail2Title}</h3>
-          <#assign detail2Desc = cmsValueWithFallback(content.detail2Description!"", "Elimina el riesgo de registros no correspondientes de los pacientes en cada cita e interacción con los servicios.") />
+          <#assign detail2Desc = cmsValueWithFallback(content.detail2Description!"", "Eliminate the risk of mismatched records by confirming each patient's identity at every appointment or interaction.") />
           <p class="detail-description">${detail2Desc}</p>
         </article>
 
@@ -719,9 +719,9 @@
         <article class="detail-card">
           <#assign detail3Icon = damImageWithFallback(content.detail3Icon!"", "icons/security.svg") />
           <img class="detail-icon" src="${detail3Icon}" alt="" />
-          <#assign detail3Title = cmsValueWithFallback(content.detail3Title!"", "ACCESO SEGURO 24/7") />
+          <#assign detail3Title = cmsValueWithFallback(content.detail3Title!"", "SECURE 24/7 ACCESS") />
           <h3 class="detail-title">${detail3Title}</h3>
-          <#assign detail3Desc = cmsValueWithFallback(content.detail3Description!"", "Conecta la aplicación de la clínica con el portal del paciente desde donde pueden lograr acceso hasta en líneas para sus pacientes, dividiendo por horarios.") />
+          <#assign detail3Desc = cmsValueWithFallback(content.detail3Description!"", "Turn your app into the single key to unlock every physical or digital medical service, wherever your patients need it.") />
           <p class="detail-description">${detail3Desc}</p>
         </article>
 
@@ -729,9 +729,9 @@
         <article class="detail-card">
           <#assign detail4Icon = damImageWithFallback(content.detail4Icon!"", "icons/shield-lock.svg") />
           <img class="detail-icon" src="${detail4Icon}" alt="" />
-          <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "PROTEGE LA BIOMETRÍA") />
+          <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "BIOMETRICS STAY PROTECTED") />
           <h3 class="detail-title">${detail4Title}</h3>
-          <#assign detail4Desc = cmsValueWithFallback(content.detail4Description!"", "Reduce una identificación sin riesgo de un sistema de gestión de clave biométrica permanente en un proceso descriptor móvil.") />
+          <#assign detail4Desc = cmsValueWithFallback(content.detail4Description!"", "Identification is risk-free, as biometric data remains securely stored on the user's own mobile device.") />
           <p class="detail-description">${detail4Desc}</p>
         </article>
       </div>
@@ -739,7 +739,7 @@
 
     <#-- Threats Section -->
     <section class="threats-section">
-      <#assign threatsTitle = cmsValueWithFallback(content.threatsTitle!"", "Vectores de ataque en la atención médica moderna") />
+      <#assign threatsTitle = cmsValueWithFallback(content.threatsTitle!"", "Modern Healthcare's Attack Vectors") />
       <h2 class="threats-title">${threatsTitle}</h2>
       
       <div class="threats-grid">
@@ -748,9 +748,9 @@
           <#assign threat1Image = damImageWithFallback(content.threat1Image!"", "images/healthcare-threats-01.webp") />
           <img class="threat-image" src="${threat1Image}" alt="Threat 1" />
           <div class="threat-content">
-            <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "RIESGO DE SUPLANTACIÓN DE PROFESIONALES") />
+            <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "PATIENT IDENTITY THEFT") />
             <h3 class="threat-title">${threat1Title}</h3>
-            <#assign threat1Desc = cmsValueWithFallback(content.threat1Description!"", "Acceso no autorizado mediante el uso de credenciales comprometidas de médicos o personal sanitario, permitiendo acceso a sistemas críticos y datos de pacientes.") />
+            <#assign threat1Desc = cmsValueWithFallback(content.threat1Description!"", "Hackers use leaked PII and social engineering to impersonate real patients, gain access to treatment or opioids, and bill insurance providers. The damage multiplies when false clinical data corrupts patient records—threatening patient safety and the institution's reputation.<br><br>B-FY´s three-layer SCA and the use of a passwordless, decentralized biometric authentication solution avoids any impersonation or fake identity.") />
             <p class="threat-description">${threat1Desc}</p>
           </div>
         </article>
@@ -760,9 +760,9 @@
           <#assign threat2Image = damImageWithFallback(content.threat2Image!"", "images/healthcare-threats-02.webp") />
           <img class="threat-image" src="${threat2Image}" alt="Threat 2" />
           <div class="threat-content">
-            <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "CIBERATAQUES DIRIGIDOS AL SECTOR SALUD") />
+            <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "CLINICAL PORTAL ACCOUNT TAKEOVERS (ATO)") />
             <h3 class="threat-title">${threat2Title}</h3>
-            <#assign threat2Desc = cmsValueWithFallback(content.threat2Description!"", "Ataques sofisticados que explotan vulnerabilidades en sistemas hospitalarios, desde ransomware hasta phishing dirigido específicamente al personal médico.") />
+            <#assign threat2Desc = cmsValueWithFallback(content.threat2Description!"", "Reused or stolen passwords give intruders direct access to EHRs, where full records are stolen, sold, or encrypted in ransomware attacks. Just one compromised account can unleash malware across a network and cripple a hospital's operations.<br><br>B-FY´s independent, passwordless by design platform and access protocol shields and avoids any engagement with legacy credentials from the Master account, avoiding any ATO.") />
             <p class="threat-description">${threat2Desc}</p>
           </div>
         </article>
@@ -772,9 +772,9 @@
           <#assign threat3Image = damImageWithFallback(content.threat3Image!"", "images/healthcare-threats-03.webp") />
           <img class="threat-image" src="${threat3Image}" alt="Threat 3" />
           <div class="threat-content">
-            <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "FRAUDES DE IDENTIDAD DE PACIENTES") />
+            <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "AI-GENERATED ATTACKS") />
             <h3 class="threat-title">${threat3Title}</h3>
-            <#assign threat3Desc = cmsValueWithFallback(content.threat3Description!"", "Suplantación de identidad de pacientes para acceder de forma fraudulenta a servicios médicos, seguros o información sanitaria sensible.") />
+            <#assign threat3Desc = cmsValueWithFallback(content.threat3Description!"", "Large language models now generate fake appointment reminders or lab results that mimic your institution's voice and tone, slipping past traditional email and SMS filters.<br><br>B-FY´s requires legitimate human beings following a manual process of authentication that avoids any artificial intrusion.") />
             <p class="threat-description">${threat3Desc}</p>
           </div>
         </article>
@@ -784,9 +784,9 @@
     <#-- Features Section -->
     <section class="features-section">
       <hgroup class="features-header">
-        <#assign featuresTagline = cmsValueWithFallback(content.featuresTagline!"", "SOLO Y PRIVADO") />
+        <#assign featuresTagline = cmsValueWithFallback(content.featuresTagline!"", "EASY AND SECURE") />
         <p class="features-tagline">${featuresTagline}</p>
-        <#assign featuresTitle = cmsValueWithFallback(content.featuresTitle!"", "B-FY protege la experiencia sanitaria") />
+        <#assign featuresTitle = cmsValueWithFallback(content.featuresTitle!"", "B-FY protects the patient experience") />
         <h2 class="features-title">${featuresTitle}</h2>
       </hgroup>
       
@@ -796,9 +796,9 @@
           <#assign feature1Icon = damImageWithFallback(content.feature1Icon!"", "icons/mobile.svg") />
           <img class="feature-icon" src="${feature1Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature1Title = cmsValueWithFallback(content.feature1Title!"", "ACCESO SIN CONTRASEÑAS") />
+            <#assign feature1Title = cmsValueWithFallback(content.feature1Title!"", "PASSWORDLESS ACCESS") />
             <h3 class="feature-title">${feature1Title}</h3>
-            <#assign feature1Desc = cmsValueWithFallback(content.feature1Description!"", "Tus pacientes inician sesión en portales y apps con un único gesto biométrico, eliminando por completo la gestión de claves y evitando retrasos en urgencias o consultorios.") />
+            <#assign feature1Desc = cmsValueWithFallback(content.feature1Description!"", "Patients log into portals and apps with a single biometric gesture—eliminating password management and avoiding delays during emergencies or consultations.") />
             <p class="feature-text">${feature1Desc}</p>
           </div>
         </article>
@@ -808,9 +808,9 @@
           <#assign feature2Icon = damImageWithFallback(content.feature2Icon!"", "icons/fingerprint.svg") />
           <img class="feature-icon" src="${feature2Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature2Title = cmsValueWithFallback(content.feature2Title!"", "AUTENTICACIÓN OMNICANAL") />
+            <#assign feature2Title = cmsValueWithFallback(content.feature2Title!"", "OMNICHANNEL AUTHENTICATION") />
             <h3 class="feature-title">${feature2Title}</h3>
-            <#assign feature2Desc = cmsValueWithFallback(content.feature2Description!"", "En menos de un segundo, confirmamos que quien accede a la cita, querándo o tele consulta es la persona correcta, reduciendo el riesgo de tratamientos erróneos y fraudes sanitarios.") />
+            <#assign feature2Desc = cmsValueWithFallback(content.feature2Description!"", "In less than a second, B-FY confirms whether the person entering the OR, joining a video consult, or checking in for an appointment is truly who they say they are—reducing misdiagnosis and insurance fraud.") />
             <p class="feature-text">${feature2Desc}</p>
           </div>
         </article>
@@ -820,9 +820,9 @@
           <#assign feature3Icon = damImageWithFallback(content.feature3Icon!"", "icons/shield-lock.svg") />
           <img class="feature-icon" src="${feature3Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature3Title = cmsValueWithFallback(content.feature3Title!"", "PROTECCIÓN ANTI-IA GENERATIVA") />
+            <#assign feature3Title = cmsValueWithFallback(content.feature3Title!"", "ANTI-GENERATIVE AI PROTECTION") />
             <h3 class="feature-title">${feature3Title}</h3>
-            <#assign feature3Desc = cmsValueWithFallback(content.feature3Description!"", "Identifica y bloquea en tiempo real deep fakes, voces sintéticas y manipulaciones faciales creadas por IA, evitando que correos, vídeos o selfies falsos engañen los sistemas médicos.") />
+            <#assign feature3Desc = cmsValueWithFallback(content.feature3Description!"", "Real-time detection and blocking of deepfakes, synthetic voices, and AI-altered faces ensure fake selfies, emails or videos don't fool your systems.") />
             <p class="feature-text">${feature3Desc}</p>
           </div>
         </article>
@@ -832,9 +832,9 @@
           <#assign feature4Icon = damImageWithFallback(content.feature4Icon!"", "icons/checklist.svg") />
           <img class="feature-icon" src="${feature4Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature4Title = cmsValueWithFallback(content.feature4Title!"", "CUMPLIMIENTO NORMATIVO") />
+            <#assign feature4Title = cmsValueWithFallback(content.feature4Title!"", "COMPLIANCE READY") />
             <h3 class="feature-title">${feature4Title}</h3>
-            <#assign feature4Desc = cmsValueWithFallback(content.feature4Description!"", "B-FY con su proceso de autenticación de 3 capas cumple los criterios más exigentes SCA (Strong Customer Authentication) y de privacidad para el sector de salud.") />
+            <#assign feature4Desc = cmsValueWithFallback(content.feature4Description!"", "B-FY's three-layer authentication process meets the highest SCA (Strong Customer Authentication) and privacy standards in the healthcare sector.") />
             <p class="feature-text">${feature4Desc}</p>
           </div>
         </article>
@@ -848,13 +848,13 @@
       
       <div class="product-content">
         <hgroup>
-          <#assign productTagline = cmsValueWithFallback(content.productTagline!"", "SOLO Y PRIVADO") />
+          <#assign productTagline = cmsValueWithFallback(content.productTagline!"", "AGILE AND ROBUST") />
           <p class="product-tagline">${productTagline}</p>
-          <#assign productTitle = cmsValueWithFallback(content.productTitle!"", "Confianza y privacidad en cada interacción clínica") />
+          <#assign productTitle = cmsValueWithFallback(content.productTitle!"", "Trust & Privacy in Every Clinical Touchpoint") />
           <h2 class="product-title">${productTitle}</h2>
         </hgroup>
         <div>
-          <#assign productDesc = cmsValueWithFallback(content.productDescription!"", "B-FY elimina las fricciones por suplantación de identidad, potencia la verificación de pacientes en cada interacción y elimina por completo las credenciales vulnerables, evitando así brechas de seguridad en pacientes y profesionales. Con B-FY refuerza la privacidad y optimiza la experiencia de tus pacientes, profesionales sanitarios y personal administrativo.") />
+          <#assign productDesc = cmsValueWithFallback(content.productDescription!"", "B-FY eliminates identity fraud by verifying patients at every interaction and removing vulnerable credentials entirely—helping avoid costly penalties while building trust among patients and healthcare professionals.<br><br>B-FY enhances privacy and streamlines the experience for patients, medical professionals, and healthcare administrators alike.") />
           <p class="product-description">${productDesc}</p>
         </div>
       </div>
@@ -863,18 +863,18 @@
     <#-- CTA Section -->
     <section class="cta-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${damImageWithFallback(content.ctaBackground!"", "images/healthcare-call-to-action.webp")}');">
       <div class="cta-content">
-        <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "¿QUÉ ESTÁS ESPERANDO?") />
+        <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "WHAT ARE YOU WAITING FOR?") />
         <p class="cta-tag">${ctaTag}</p>
         
-        <#assign ctaHeading = cmsValueWithFallback(content.ctaHeading!"", "Prueba la nueva era de la autenticación.") />
+        <#assign ctaHeading = cmsValueWithFallback(content.ctaHeading!"", "Request a Demo") />
         <h2 class="cta-title">${ctaHeading}</h2>
         
-        <#assign ctaDesc = cmsValueWithFallback(content.ctaDescription!"", "Descubre cómo B-FY puede transformar la seguridad de tu empresa. Solicita una demo y comencemos a crear más información.") />
+        <#assign ctaDesc = cmsValueWithFallback(content.ctaDescription!"", "Discover how B-FY can transform your organization's security.") />
         <p class="cta-description">${ctaDesc}</p>
         
         <div class="cta-buttons">
-          <#assign ctaButton1 = cmsValueWithFallback(content.ctaButton1!"", "Solicita una demo") />
-          <#assign ctaButton2 = cmsValueWithFallback(content.ctaButton2!"", "Conocénos") />
+          <#assign ctaButton1 = cmsValueWithFallback(content.ctaButton1!"", "Request a demo") />
+          <#assign ctaButton2 = cmsValueWithFallback(content.ctaButton2!"", "Contact us") />
           <a href="${ctx.contextPath}/contact" class="cta-button cta-button-primary">${ctaButton1}</a>
           <a href="${ctx.contextPath}/contact" class="cta-button cta-button-secondary">${ctaButton2}</a>
         </div>

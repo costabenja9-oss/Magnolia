@@ -676,10 +676,10 @@
     <#-- Hero section following Astro structure exactly -->
     <section class="hero-section">
       <hgroup>
-        <#assign tagline = cmsValueWithFallback(content.tagline!"", "SERVICIOS FINANCIEROS") />
+        <#assign tagline = cmsValueWithFallback(content.tagline!"", "Financial Services") />
         <p class="hero-tagline">${tagline}</p>
         
-        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Defensa biométrica contra el fraude de identidad") />
+        <#assign heroTitle = cmsValueWithFallback(content.title!"", "Frictionless authentication for secure financial transactions.") />
         <h1 class="hero-title">${heroTitle}</h1>
       </hgroup>
       
@@ -690,7 +690,7 @@
         <@vid.platformVideo class="max-w-none" id=videoId title=heroTitle />
       </div>
       
-      <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY mantiene a raya el fraude con autenticación biométrica real, descentralizada y sin contraseñas que detiene el phishing, ATO y ataques generados por IA. No solo verificamos credenciales, verificamos usuarios legítimos y garantizamos que cada interacción sea segura y cumpla con las normativas.") />
+      <#assign heroDescription = cmsValueWithFallback(content.description!"", "B-FY links a legitimate, real, human user identity to every digital or on-premises transaction, through a robust three-layer authentication process (SCA). This ensures your organization meets GDPR standards and, if you're a payment service provider, also PSD2 and KYC requirements. Your bank or fintech can eliminate credentials that may be stolen—boosting both revenue and reputation.") />
       <p class="hero-description">${heroDescription}</p>
       
       <#-- Details grid (4 cards) -->
@@ -699,9 +699,9 @@
         <article class="detail-card">
           <#assign detail1Icon = damImageWithFallback(content.detail1Icon!"", "icons/shield-lock.svg") />
           <img class="detail-icon" src="${detail1Icon}" alt="" />
-          <#assign detail1Title = cmsValueWithFallback(content.detail1Title!"", "PREVENCIÓN DE FRAUDES") />
+          <#assign detail1Title = cmsValueWithFallback(content.detail1Title!"", "MAKE EVERYTHING EASIER") />
           <h3 class="detail-title">${detail1Title}</h3>
-          <#assign detail1Desc = cmsValueWithFallback(content.detail1Description!"", "Detección en tiempo real de intentos de fraude, incluyendo suplantación de identidad, phishing y ataques de ingeniería social dirigidos a clientes bancarios.") />
+          <#assign detail1Desc = cmsValueWithFallback(content.detail1Description!"", "Let your customers access securely and very fast, all your banking services with a simple biometric verification on their smartphone.") />
           <p class="detail-description">${detail1Desc}</p>
         </article>
 
@@ -709,9 +709,9 @@
         <article class="detail-card">
           <#assign detail2Icon = damImageWithFallback(content.detail2Icon!"", "icons/checklist.svg") />
           <img class="detail-icon" src="${detail2Icon}" alt="" />
-          <#assign detail2Title = cmsValueWithFallback(content.detail2Title!"", "CUMPLIMIENTO NORMATIVO PCI DSS") />
+          <#assign detail2Title = cmsValueWithFallback(content.detail2Title!"", "KNOW YOUR CUSTOMERS") />
           <h3 class="detail-title">${detail2Title}</h3>
-          <#assign detail2Desc = cmsValueWithFallback(content.detail2Description!"", "Cumple con los estándares más exigentes de la industria financiera, incluyendo PCI DSS, KYC y regulaciones anti-lavado de dinero (AML).") />
+          <#assign detail2Desc = cmsValueWithFallback(content.detail2Description!"", "Verify beyond doubt that your clients are who they claim to be—at every touchpoint and across all transactions within your financial ecosystem.") />
           <p class="detail-description">${detail2Desc}</p>
         </article>
 
@@ -719,9 +719,9 @@
         <article class="detail-card">
           <#assign detail3Icon = damImageWithFallback(content.detail3Icon!"", "icons/mobile.svg") />
           <img class="detail-icon" src="${detail3Icon}" alt="" />
-          <#assign detail3Title = cmsValueWithFallback(content.detail3Title!"", "BANCA DIGITAL SEGURA") />
+          <#assign detail3Title = cmsValueWithFallback(content.detail3Title!"", "ACCESS FROM ANYWHERE") />
           <h3 class="detail-title">${detail3Title}</h3>
-          <#assign detail3Desc = cmsValueWithFallback(content.detail3Description!"", "Acceso instantáneo y seguro a aplicaciones móviles, banca en línea y servicios fintech sin comprometer la experiencia del usuario.") />
+          <#assign detail3Desc = cmsValueWithFallback(content.detail3Description!"", "Turn your app into the one key that opens every channel of your online and in-branch banking services.") />
           <p class="detail-description">${detail3Desc}</p>
         </article>
 
@@ -729,9 +729,9 @@
         <article class="detail-card">
           <#assign detail4Icon = damImageWithFallback(content.detail4Icon!"", "icons/mobile.svg") />
           <img class="detail-icon" src="${detail4Icon}" alt="" />
-          <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "TRANSACCIONES DE ALTO VALOR") />
+          <#assign detail4Title = cmsValueWithFallback(content.detail4Title!"", "PROTECT BIOMETRICS") />
           <h3 class="detail-title">${detail4Title}</h3>
-          <#assign detail4Desc = cmsValueWithFallback(content.detail4Description!"", "Verificación biométrica para transacciones de alto valor y operaciones sensibles, garantizando que solo usuarios autorizados puedan ejecutarlas.") />
+          <#assign detail4Desc = cmsValueWithFallback(content.detail4Description!"", "Authenticate without risk: biometric data stays securely on the user's own device.") />
           <p class="detail-description">${detail4Desc}</p>
         </article>
       </div>
@@ -739,7 +739,7 @@
 
     <#-- Threats Section -->
     <section class="threats-section">
-      <#assign threatsTitle = cmsValueWithFallback(content.threatsTitle!"", "Amenazas críticas en el sector financiero") />
+      <#assign threatsTitle = cmsValueWithFallback(content.threatsTitle!"", "Critical Threats to Financial Security") />
       <h2 class="threats-title">${threatsTitle}</h2>
       
       <div class="threats-grid">
@@ -748,9 +748,9 @@
           <#assign threat1Image = damImageWithFallback(content.threat1Image!"", "images/financial-services-threats-01.webp") />
           <img class="threat-image" src="${threat1Image}" alt="Threat 1" />
           <div class="threat-content">
-            <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "FRAUDE EN PAGOS DIGITALES") />
+            <#assign threat1Title = cmsValueWithFallback(content.threat1Title!"", "Online Banking Account Takeover (ATO)") />
             <h3 class="threat-title">${threat1Title}</h3>
-            <#assign threat1Desc = cmsValueWithFallback(content.threat1Description!"", "Suplantación de identidad en transacciones digitales, uso fraudulento de tarjetas de crédito y manipulación de sistemas de pago móvil.") />
+            <#assign threat1Desc = cmsValueWithFallback(content.threat1Description!"", "Leaked credentials are combined with bots that test thousands of sessions until access is gained. Once inside, attackers register trusted devices and empty accounts through instant transfers. B-FY´s independent and passwordless platform and access protocol shields and avoids any engagement with legacy credentials from the Master account, avoiding any ATO.") />
             <p class="threat-description">${threat1Desc}</p>
           </div>
         </article>
@@ -760,9 +760,9 @@
           <#assign threat2Image = damImageWithFallback(content.threat2Image!"", "images/financial-services-threats-02.webp") />
           <img class="threat-image" src="${threat2Image}" alt="Threat 2" />
           <div class="threat-content">
-            <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "ATAQUES DE ACCOUNT TAKEOVER (ATO)") />
+            <#assign threat2Title = cmsValueWithFallback(content.threat2Title!"", "Sophisticated Phishing / Vishing Attacks") />
             <h3 class="threat-title">${threat2Title}</h3>
-            <#assign threat2Desc = cmsValueWithFallback(content.threat2Description!"", "Toma de control de cuentas bancarias mediante credenciales robadas, ataques de fuerza bruta y técnicas de credential stuffing.") />
+            <#assign threat2Desc = cmsValueWithFallback(content.threat2Description!"", "AI-assisted calls mimic the voice of bank agents to request 'security verification' and steal signing codes. Caller ID spoofing masks these scams behind legitimate numbers, avoiding customer suspicion. B-FY´s requires legitimate human beings following a manual process of authentication that avoids any artificial intrusion.") />
             <p class="threat-description">${threat2Desc}</p>
           </div>
         </article>
@@ -772,9 +772,9 @@
           <#assign threat3Image = damImageWithFallback(content.threat3Image!"", "images/financial-services-threats-03.webp") />
           <img class="threat-image" src="${threat3Image}" alt="Threat 3" />
           <div class="threat-content">
-            <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "PHISHING Y DEEPFAKES FINANCIEROS") />
+            <#assign threat3Title = cmsValueWithFallback(content.threat3Title!"", "AI-Powered Payment Fraud") />
             <h3 class="threat-title">${threat3Title}</h3>
-            <#assign threat3Desc = cmsValueWithFallback(content.threat3Description!"", "Campañas sofisticadas de phishing que imitan bancos legítimos y uso de deepfakes para evadir sistemas de verificación de identidad.") />
+            <#assign threat3Desc = cmsValueWithFallback(content.threat3Description!"", "Video deepfakes are used to authorize transfers, while adaptive scripts manipulate amounts in real time to bypass fraud rules.") />
             <p class="threat-description">${threat3Desc}</p>
           </div>
         </article>
@@ -784,9 +784,9 @@
     <#-- Features Section -->
     <section class="features-section">
       <hgroup class="features-header">
-        <#assign featuresTagline = cmsValueWithFallback(content.featuresTagline!"", "SEGURIDAD FINANCIERA") />
+        <#assign featuresTagline = cmsValueWithFallback(content.featuresTagline!"", "PASSWORDLESS BANKING") />
         <p class="features-tagline">${featuresTagline}</p>
-        <#assign featuresTitle = cmsValueWithFallback(content.featuresTitle!"", "B-FY protege cada transacción financiera") />
+        <#assign featuresTitle = cmsValueWithFallback(content.featuresTitle!"", "Create a Secure Environment for Your Clients") />
         <h2 class="features-title">${featuresTitle}</h2>
       </hgroup>
       
@@ -796,9 +796,9 @@
           <#assign feature1Icon = damImageWithFallback(content.feature1Icon!"", "icons/fingerprint.svg") />
           <img class="feature-icon" src="${feature1Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature1Title = cmsValueWithFallback(content.feature1Title!"", "AUTENTICACIÓN BIOMÉTRICA INSTANTÁNEA") />
+            <#assign feature1Title = cmsValueWithFallback(content.feature1Title!"", "PASSWORDLESS BANKING") />
             <h3 class="feature-title">${feature1Title}</h3>
-            <#assign feature1Desc = cmsValueWithFallback(content.feature1Description!"", "Los clientes acceden a sus cuentas bancarias con un simple gesto biométrico, eliminando contraseñas vulnerables y reduciendo el tiempo de autenticación a menos de un segundo.") />
+            <#assign feature1Desc = cmsValueWithFallback(content.feature1Description!"", "With B-FY, customers authenticate and authorize transactions using their biometrics, eliminating phishing, keylogging, and brute-force attacks on credentials.") />
             <p class="feature-text">${feature1Desc}</p>
           </div>
         </article>
@@ -808,9 +808,9 @@
           <#assign feature2Icon = damImageWithFallback(content.feature2Icon!"", "icons/security.svg") />
           <img class="feature-icon" src="${feature2Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature2Title = cmsValueWithFallback(content.feature2Title!"", "DETECCIÓN DE FRAUDES EN TIEMPO REAL") />
+            <#assign feature2Title = cmsValueWithFallback(content.feature2Title!"", "OMNICHANNEL AUTHENTICATION") />
             <h3 class="feature-title">${feature2Title}</h3>
-            <#assign feature2Desc = cmsValueWithFallback(content.feature2Description!"", "Sistema avanzado que identifica y bloquea intentos de fraude instantáneamente, incluyendo transacciones sospechosas y patrones de comportamiento anómalos.") />
+            <#assign feature2Desc = cmsValueWithFallback(content.feature2Description!"", "A single biometric check secures access across web, mobile apps, ATMs, and branches, offering a smooth, secure omnichannel experience.") />
             <p class="feature-text">${feature2Desc}</p>
           </div>
         </article>
@@ -820,9 +820,9 @@
           <#assign feature3Icon = damImageWithFallback(content.feature3Icon!"", "icons/checklist.svg") />
           <img class="feature-icon" src="${feature3Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature3Title = cmsValueWithFallback(content.feature3Title!"", "CUMPLIMIENTO AUTOMÁTICO") />
+            <#assign feature3Title = cmsValueWithFallback(content.feature3Title!"", "NO MORE SMS-OTPs OR TOKENS") />
             <h3 class="feature-title">${feature3Title}</h3>
-            <#assign feature3Desc = cmsValueWithFallback(content.feature3Description!"", "Cumplimiento automático con regulaciones financieras globales incluyendo PCI DSS, GDPR, SOX y normativas locales de cada jurisdicción.") />
+            <#assign feature3Desc = cmsValueWithFallback(content.feature3Description!"", "Forget SMS codes or hardware tokens—our biometric MFA helps your institution meet PSD2 SCA requirements without additional steps.") />
             <p class="feature-text">${feature3Desc}</p>
           </div>
         </article>
@@ -832,9 +832,9 @@
           <#assign feature4Icon = damImageWithFallback(content.feature4Icon!"", "icons/puzzle.svg") />
           <img class="feature-icon" src="${feature4Icon}" alt="" />
           <div class="feature-content">
-            <#assign feature4Title = cmsValueWithFallback(content.feature4Title!"", "INTEGRACIÓN OMNICANAL") />
+            <#assign feature4Title = cmsValueWithFallback(content.feature4Title!"", "ONE-STEP AUTHORIZATION") />
             <h3 class="feature-title">${feature4Title}</h3>
-            <#assign feature4Desc = cmsValueWithFallback(content.feature4Description!"", "Experiencia unificada a través de sucursales físicas, cajeros automáticos, banca móvil y plataformas web con el mismo nivel de seguridad biométrica.") />
+            <#assign feature4Desc = cmsValueWithFallback(content.feature4Description!"", "Customers confirm payments and transfers with a real-time biometric gesture, streamlining the process and boosting conversion rates without compromising security.") />
             <p class="feature-text">${feature4Desc}</p>
           </div>
         </article>
@@ -848,13 +848,13 @@
       
       <div class="product-content">
         <hgroup>
-          <#assign productTagline = cmsValueWithFallback(content.productTagline!"", "BANCA SEGURA") />
+          <#assign productTagline = cmsValueWithFallback(content.productTagline!"", "EASY AND FRICTIONLESS") />
           <p class="product-tagline">${productTagline}</p>
-          <#assign productTitle = cmsValueWithFallback(content.productTitle!"", "Confianza total en cada transacción financiera") />
+          <#assign productTitle = cmsValueWithFallback(content.productTitle!"", "Create a Secure Environment for Your Clients") />
           <h2 class="product-title">${productTitle}</h2>
         </hgroup>
         <div>
-          <#assign productDesc = cmsValueWithFallback(content.productDescription!"", "B-FY transforma la seguridad bancaria mediante autenticación biométrica descentralizada que elimina las vulnerabilidades de las contraseñas tradicionales. Protegemos a bancos, fintech y servicios de pago contra fraudes sofisticados, cumpliendo con las regulaciones más exigentes mientras mejoramos la experiencia del cliente. Cada transacción queda protegida por verificación biométrica real, imposible de replicar por IA generativa.") />
+          <#assign productDesc = cmsValueWithFallback(content.productDescription!"", "B-FY dramatically reduces transactional fraud, simplifies digital onboarding, and enhances customer experience with a lightning-fast authentication process that never compromises privacy—shielding users from the leading threats in the financial sector. Ensure Security. Protect Privacy. Elevate User Experience. With B-FY, you get all three.") />
           <p class="product-description">${productDesc}</p>
         </div>
       </div>
@@ -863,18 +863,18 @@
     <#-- CTA Section -->
     <section class="cta-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${damImageWithFallback(content.ctaBackground!"", "images/financial-services-call-to-action.webp")}');">
       <div class="cta-content">
-        <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "¿LISTO PARA REVOLUCIONAR TU SEGURIDAD FINANCIERA?") />
+        <#assign ctaTag = cmsValueWithFallback(content.ctaTitle!"", "WHAT ARE YOU WAITING FOR?") />
         <p class="cta-tag">${ctaTag}</p>
         
-        <#assign ctaHeading = cmsValueWithFallback(content.ctaHeading!"", "Protege cada transacción con biometría avanzada.") />
+        <#assign ctaHeading = cmsValueWithFallback(content.ctaHeading!"", "Request a Demo") />
         <h2 class="cta-title">${ctaHeading}</h2>
         
-        <#assign ctaDesc = cmsValueWithFallback(content.ctaDescription!"", "Descubre cómo B-FY puede eliminar el fraude financiero y mejorar la experiencia de tus clientes. Solicita una demo personalizada para tu institución financiera.") />
+        <#assign ctaDesc = cmsValueWithFallback(content.ctaDescription!"", "Discover how B-FY can transform your organization's security.") />
         <p class="cta-description">${ctaDesc}</p>
         
         <div class="cta-buttons">
-          <#assign ctaButton1 = cmsValueWithFallback(content.ctaButton1!"", "Solicita una demo") />
-          <#assign ctaButton2 = cmsValueWithFallback(content.ctaButton2!"", "Contacta con ventas") />
+          <#assign ctaButton1 = cmsValueWithFallback(content.ctaButton1!"", "Request a demo") />
+          <#assign ctaButton2 = cmsValueWithFallback(content.ctaButton2!"", "Contact us") />
           <a href="${ctx.contextPath}/contact" class="cta-button cta-button-primary">${ctaButton1}</a>
           <a href="${ctx.contextPath}/contact" class="cta-button cta-button-secondary">${ctaButton2}</a>
         </div>
