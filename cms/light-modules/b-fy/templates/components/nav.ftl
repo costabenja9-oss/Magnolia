@@ -20,8 +20,8 @@
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd" />
         </svg>
         <select class="language-select">
-          <option value="en">English</option>
-          <option value="es">Español</option>
+          <option value="en" data-no-translate>English</option>
+          <option value="es" data-no-translate>Español</option>
         </select>
       </div>
     </div>
@@ -32,7 +32,7 @@
       <#-- Logo -->
       <div class="nav-logo">
         <a href="${base}/home" aria-label="B-FY">
-          <img src="${ctx.contextPath}/.resources/b-fy/webresources/favicon.png" alt="B-FY" class="logo-img" />
+          <img src="${ctx.contextPath}/.resources/b-fy/webresources/favicon.png" alt="B-FY" class="logo-img" data-no-translate />
         </a>
       </div>
 
@@ -547,6 +547,129 @@
       }
     </style>
 
+    <#-- Translation functionality -->
+    <script>
+(function(){
+  const ENDPOINT = "https://brilliant-pixie-63bcd6.netlify.app/.netlify/functions/translate";
+
+  // 1) Recolecta SOLO nodos de texto visibles (sin <script/style>, respetando data-no-translate)
+  function collectTextNodes(root=document) {
+    const BLOCK_SEL = "h1,h2,h3,p,span,label,button,a,li,small,strong,em,blockquote";
+    const elements = Array.from(root.querySelectorAll(BLOCK_SEL))
+      .filter(el =>
+        el.offsetParent !== null &&
+        !el.closest('[data-no-translate]') &&
+        !el.hasAttribute('data-no-translate')
+      );
+
+    const walkerNodes = [];
+    const isIgnorable = (node) => (
+      node.nodeType !== Node.TEXT_NODE ||
+      !node.nodeValue || !node.nodeValue.trim()
+    );
+
+    elements.forEach(el => {
+      // Evitar traducir scripts/estilos dentro del elemento
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          if (isIgnorable(node)) return NodeFilter.FILTER_REJECT;
+          // Si algún ancestro tiene data-no-translate, descartar
+          if (node.parentElement && (node.parentElement.closest('script,style,[data-no-translate]'))) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      let n;
+      while ((n = walker.nextNode())) {
+        walkerNodes.push(n);
+      }
+    });
+
+    // Textos a traducir
+    const texts = walkerNodes.map(n => n.nodeValue.trim());
+    return { walkerNodes, texts };
+  }
+
+  async function callProxy(texts, target) {
+    const res = await fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ texts, target })
+    });
+    if (!res.ok) throw new Error("Proxy error");
+    return res.json();
+  }
+
+  async function translatePlaceholders(targetLang){
+    const inputs = Array.from(document.querySelectorAll('input[placeholder], textarea[placeholder]'))
+      .filter(el => !el.hasAttribute('data-no-translate'));
+    if (!inputs.length) return;
+
+    const texts = inputs.map(el => el.getAttribute('placeholder'));
+    const res = await fetch(ENDPOINT, {
+      method: "POST", 
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ texts, target: targetLang.toUpperCase() })
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    (data.translations || []).forEach((t,i) => {
+      if (t?.text) inputs[i].setAttribute('placeholder', t.text);
+    });
+  }
+
+  // 2) Traduce reemplazando SOLO node.nodeValue (no innerText)
+  async function translatePage(targetLang) {
+    const { walkerNodes, texts } = collectTextNodes();
+    try { localStorage.setItem('siteLang', targetLang); } catch(e){}
+
+    const batchSize = 120; // podés ajustar
+    for (let i = 0; i < texts.length; i += batchSize) {
+      const chunk = texts.slice(i, i + batchSize);
+      const data = await callProxy(chunk, targetLang.toUpperCase());
+      const translations = (data.translations || []).map(t => t.text);
+      for (let j = 0; j < translations.length; j++) {
+        const idx = i + j;
+        if (walkerNodes[idx] && translations[j]) {
+          // Reemplaza solo el contenido textual; preserva <a>, <svg>, etc.
+          walkerNodes[idx].nodeValue = translations[j];
+        }
+      }
+    }
+
+    if (targetLang.toLowerCase() !== 'en') {
+      await translatePlaceholders(targetLang);
+    }
+  }
+
+  async function applyPersisted() {
+    let pref = null;
+    try { pref = localStorage.getItem('siteLang'); } catch(e){}
+    if (pref && pref.toLowerCase() !== 'en') await translatePage(pref);
+  }
+
+  // API global que ya usás
+  window._deepl = {
+    setLang: async (code) => {
+      const lang = (code || 'en').toLowerCase();
+      if (lang === 'en') {
+        try { localStorage.removeItem('siteLang'); } catch(e){}
+        location.reload();
+      } else {
+        await translatePage(lang);
+      }
+    },
+    applyPersisted
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    window._deepl.applyPersisted();
+  });
+})();
+</script>
+
+
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuButton = document.querySelector('.mobile-menu-button');
@@ -575,13 +698,20 @@
           }
         });
         
-        // Language switcher
+        // Language switcher with translation integration
         if (languageSelect) {
+          try {
+            const pref = localStorage.getItem('siteLang');
+            languageSelect.value = pref ? pref.toLowerCase() : 'en';
+          } catch(e) { 
+            languageSelect.value = 'en'; 
+          }
+
           languageSelect.addEventListener('change', function() {
-            const selectedLang = this.value;
-            // Add language switching logic here
-            console.log('Selected language:', selectedLang);
-            // Example: window.location.href = '/' + selectedLang + window.location.pathname;
+            const lang = this.value; // 'en' | 'es'
+            if (window._deepl && typeof window._deepl.setLang === 'function') {
+              window._deepl.setLang(lang);
+            }
           });
         }
         
