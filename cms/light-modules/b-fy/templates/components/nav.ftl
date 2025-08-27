@@ -38,7 +38,6 @@
 
       <#-- Menú principal -->
       <ul class="nav-list">
-        <@navItem path="about-us" currentPage=currentPage>About Us</@navItem>
         <@navItem path="platform" currentPage=currentPage items={
           "client-authentication": "Client Authentication",
           "user-biometry": "User-Powered Biometry",
@@ -56,6 +55,7 @@
         <@navItem path="partners" currentPage=currentPage>Partners</@navItem>
         <@navItem path="developers" currentPage=currentPage>Developers</@navItem>
         <@navItem path="resources" currentPage=currentPage>Resources</@navItem>
+        <@navItem path="about-us" currentPage=currentPage>About Us</@navItem>
         <@navItem path="contact" currentPage=currentPage>Contact</@navItem>
       </ul>
 
@@ -78,12 +78,12 @@
     <#-- Menú mobile -->
     <div class="mobile-menu">
       <ul class="mobile-nav-list">
-        <@mobileNavItem path="about-us" currentPage=currentPage>About Us</@mobileNavItem>
         <@mobileNavItem path="platform" currentPage=currentPage>Platform</@mobileNavItem>
         <@mobileNavItem path="industries" currentPage=currentPage>Industries</@mobileNavItem>
         <@mobileNavItem path="partners" currentPage=currentPage>Partners</@mobileNavItem>
         <@mobileNavItem path="developers" currentPage=currentPage>Developers</@mobileNavItem>
         <@mobileNavItem path="resources" currentPage=currentPage>Resources</@mobileNavItem>
+        <@mobileNavItem path="about-us" currentPage=currentPage>About Us</@mobileNavItem>
         <@mobileNavItem path="contact" currentPage=currentPage>Contact</@mobileNavItem>
       </ul>
     </div>
